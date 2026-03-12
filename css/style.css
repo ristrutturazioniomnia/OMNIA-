@@ -2195,8 +2195,6 @@ textarea.form-input {
 .small-label.light {
     color: var(--grigio);
 }
-
-/* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {
     .footer-main {
         flex-direction: column;
@@ -2377,110 +2375,32 @@ textarea.form-input {
         grid-area: image;
     }
 
-    .contact-grid {
-        gap: 28px;
-    }
-
     .contact-box {
-        max-width: 100%;
-        padding: 30px 22px;
-        border-radius: 22px;
+        padding: 34px 26px;
     }
 
     .contact-title {
-        font-size: 2rem;
-        margin-bottom: 22px;
-    }
-
-    .contact-row {
-        padding: 18px 0;
-    }
-
-    .label {
-        font-size: 0.82rem;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-    }
-
-    .value {
-        font-size: 1rem;
-        line-height: 1.45;
+        font-size: 2.2rem;
     }
 
     .footer {
         overflow: hidden;
-        padding: 56px 0 24px;
     }
 
     .footer-main {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 30px;
-        margin-bottom: 34px;
-    }
-
-    .footer-logo {
-        font-size: 1.45rem;
-        line-height: 1;
-        max-width: 100%;
-        white-space: nowrap;
-        word-break: normal;
-        overflow-wrap: normal;
-    }
-
-    .footer-logo span {
-        display: inline;
-    }
-
-    .footer-logo p {
-        margin-top: 8px;
-        font-size: 0.98rem !important;
-        line-height: 1.45;
+        gap: 36px;
     }
 
     .footer-links {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
-        width: 100%;
-    }
-
-    .footer-col:first-child {
-        padding-right: 18px;
-        border-right: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .footer-col:nth-child(2) {
-        padding-left: 18px;
-    }
-
-    .footer-col h4 {
-        font-size: 0.92rem;
-        margin-bottom: 14px;
-    }
-
-    .footer-col li {
-        margin-bottom: 10px;
-    }
-
-    .footer-col a {
-        font-size: 0.98rem;
-        line-height: 1.4;
+        gap: 28px;
     }
 
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        margin-top: 0;
-        padding-top: 18px;
-    }
-
-    .footer-bottom p,
-    .footer-bottom a {
-        font-size: 0.92rem;
-        line-height: 1.5;
-        word-break: break-word;
     }
 }
 
@@ -2583,90 +2503,6 @@ textarea.form-input {
         margin-bottom: 26px;
     }
 
-    .footer-logo {
-        font-size: 1rem;
-        line-height: 1;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: clip;
-    }
-
-    .footer-logo span {
-        display: inline;
-    }
-
-    .footer-logo p {
-        font-size: 0.92rem !important;
-        line-height: 1.45;
-        margin-top: 8px;
-        white-space: normal;
-    }
-
-    .footer-links {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 22px 18px;
-        width: 100%;
-    }
-
-    .footer-col:first-child {
-        padding-right: 12px;
-        border-right: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .footer-col:nth-child(2) {
-        padding-left: 12px;
-    }
-
-    .footer-col:nth-child(3) {
-        grid-column: 1 / -1;
-        padding-top: 4px;
-    }
-
-    .footer-col h4 {
-        margin-bottom: 10px;
-    }
-
-    .footer-col ul {
-        display: grid;
-        gap: 8px;
-    }
-
-    .footer-col li {
-        margin-bottom: 0;
-    }
-
-    .footer-col a {
-        font-size: 0.96rem;
-    }
-
-    .footer-bottom {
-        margin-top: 22px;
-        padding-top: 16px;
-    }
-}
-@media (max-width: 400px) {
-    .logo {
-        font-size: 0.74rem;
-        max-width: 52%;
-    }
-
-    .btn-nav {
-        padding: 5px 7px;
-        font-size: 0.58rem;
-        max-width: 84px;
-    }
-
-    .hero-title {
-        font-size: 1.56rem;
-    }
-
-    .hero-btn {
-        font-size: 0.8rem;
-        padding: 12px 14px;
-    }
-}
-@media (max-width: 576px) {
     .footer-logo,
     .footer-logo span {
         white-space: nowrap !important;
@@ -2705,5 +2541,36 @@ textarea.form-input {
     .footer-col:nth-child(3) {
         grid-column: 1 / -1;
         margin-top: 6px;
+    }
+
+    .footer-bottom {
+        margin-top: 22px;
+        padding-top: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 0.74rem;
+        max-width: 52%;
+    }
+
+    .btn-nav {
+        padding: 5px 7px;
+        font-size: 0.58rem;
+        max-width: 84px;
+    }
+
+    .hero-title {
+        font-size: 1.56rem;
+    }
+
+    .hero-btn {
+        font-size: 0.8rem;
+        padding: 12px 14px;
+    }
+
+    .footer-logo {
+        font-size: 1.05rem !important;
     }
 }
