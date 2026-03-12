@@ -909,8 +909,36 @@ textarea.form-input {
 }
 
 @media (max-width: 900px) {
+    .navbar {
+        padding: 8px 0;
+    }
+
+    .navbar .container {
+        gap: 12px;
+        min-height: 48px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    .logo span {
+        display: inline;
+    }
+
     .nav-links {
         display: none;
+    }
+
+    .btn-nav {
+        padding: 7px 14px;
+        font-size: 0.78rem;
+        line-height: 1.2;
+        text-align: center;
+        white-space: normal;
+        max-width: 140px;
+        border-radius: 24px;
     }
 
     .services-grid {
@@ -927,11 +955,50 @@ textarea.form-input {
     .services-header h2 {
         font-size: 2.4rem;
     }
+
+    .hero-fullscreen {
+        min-height: 720px;
+    }
+
+    .hero-content {
+        padding: 110px 24px 72px;
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+        margin-bottom: 28px;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 24px;
+        padding: 0 18px;
+    }
+
+    .navbar {
+        padding: 7px 0;
+    }
+
+    .navbar .container {
+        gap: 10px;
+        min-height: 44px;
+    }
+
+    .logo {
+        font-size: 0.98rem;
+        max-width: 58%;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn-nav {
+        padding: 6px 12px;
+        font-size: 0.72rem;
+        max-width: 118px;
+        border-radius: 20px;
+        flex-shrink: 0;
     }
 
     .section,
@@ -943,18 +1010,26 @@ textarea.form-input {
         padding: 72px 0;
     }
 
+    .hero-fullscreen {
+        min-height: 680px;
+    }
+
     .hero-content {
-        padding: 0 24px;
+        padding: 100px 18px 64px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
-        margin-bottom: 28px;
+        font-size: 2.15rem;
+        margin-bottom: 24px;
+        line-height: 1.18;
     }
 
     .hero-btn {
-        padding: 14px 34px;
-        font-size: 1rem;
+        width: 100%;
+        max-width: 520px;
+        padding: 15px 24px;
+        font-size: 0.98rem;
+        border-radius: 40px;
     }
 
     .gallery-masonry {
@@ -976,7 +1051,6 @@ textarea.form-input {
         font-size: 2.2rem;
     }
 
-    /* FOOTER FIX */
     .footer {
         overflow: hidden;
     }
@@ -1039,15 +1113,51 @@ textarea.form-input {
 
 @media (max-width: 576px) {
     .container {
-        padding: 0 18px;
+        padding: 0 14px;
+    }
+
+    .navbar {
+        padding: 6px 0;
+    }
+
+    .navbar .container {
+        min-height: 40px;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 0.84rem;
+        max-width: 55%;
+    }
+
+    .btn-nav {
+        padding: 6px 10px;
+        font-size: 0.66rem;
+        max-width: 104px;
+        border-radius: 18px;
+    }
+
+    .hero-fullscreen {
+        min-height: 620px;
     }
 
     .hero-content {
-        padding: 0 18px;
+        padding: 92px 14px 54px;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.85rem;
+        line-height: 1.16;
+        margin-bottom: 22px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 18px;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        border-radius: 34px;
     }
 
     .section-title,
@@ -1081,7 +1191,6 @@ textarea.form-input {
         font-size: 1rem;
     }
 
-    /* FOOTER FIX MOBILE */
     .footer {
         padding: 56px 0 22px;
     }
@@ -1117,5 +1226,27 @@ textarea.form-input {
         font-size: 0.92rem;
         line-height: 1.5;
         word-break: break-word;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 0.76rem;
+        max-width: 52%;
+    }
+
+    .btn-nav {
+        padding: 5px 8px;
+        font-size: 0.62rem;
+        max-width: 92px;
+    }
+
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .hero-btn {
+        font-size: 0.84rem;
+        padding: 13px 16px;
     }
 }
