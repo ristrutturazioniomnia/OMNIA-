@@ -900,12 +900,25 @@ textarea.form-input {
     }
 
     .philosophy-grid,
-    .special-grid,
-    .contact-grid,
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+.contact-grid,
+.about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.special-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.special-grid.reverse {
+    direction: ltr;
+}
+
+.special-grid.reverse .special-content,
+.special-grid.reverse .special-image {
+    direction: ltr;
+}
 
     .contact-box {
         max-width: 100%;
