@@ -171,12 +171,14 @@ span {
 .btn-nav {
     background-color: var(--terracotta);
     color: white;
-    border-radius: 40px;
+    padding: 8px 18px;
+    border-radius: 28px;
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 18px;
     font-size: 0.82rem;
+    line-height: 1.2;
     transition: all 0.3s;
+    flex-shrink: 0;
 }
 
 .btn-nav:hover {
@@ -186,16 +188,16 @@ span {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.72);
+    background-color: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 10px 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .navbar .container {
@@ -212,6 +214,8 @@ span {
     color: var(--blu);
     text-decoration: none;
     flex-shrink: 0;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .logo span {
@@ -253,9 +257,10 @@ span {
 .hero-fullscreen {
     position: relative;
     width: 100%;
-    height: calc(100vh - 0px);
+    height: 100vh;
     min-height: 600px;
     overflow: hidden;
+    padding-top: 72px;
 }
 
 .hero-background {
@@ -296,7 +301,6 @@ span {
     color: white;
     padding: 0 32px;
 }
-
 .hero-title {
     font-family: 'Prata', serif;
     font-size: 4rem;
