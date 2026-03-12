@@ -2666,3 +2666,44 @@ textarea.form-input {
         padding: 12px 14px;
     }
 }
+@media (max-width: 576px) {
+    .footer-logo,
+    .footer-logo span {
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+    }
+
+    .footer-logo {
+        font-size: 0.88rem !important;
+        line-height: 1 !important;
+        letter-spacing: -0.01em;
+    }
+
+    .footer-logo p,
+    .footer-logo p a {
+        white-space: normal !important;
+        font-size: 0.92rem !important;
+    }
+
+    .footer-links {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 22px 18px !important;
+        width: 100%;
+    }
+
+    .footer-col:first-child {
+        padding-right: 12px;
+        border-right: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .footer-col:nth-child(2) {
+        padding-left: 12px;
+    }
+
+    .footer-col:nth-child(3) {
+        grid-column: 1 / -1;
+        margin-top: 6px;
+    }
+}
