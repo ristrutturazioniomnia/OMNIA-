@@ -171,11 +171,11 @@ span {
 .btn-nav {
     background-color: var(--terracotta);
     color: white;
-    padding: 10px 24px;
     border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    padding: 8px 18px;
+    font-size: 0.82rem;
     transition: all 0.3s;
 }
 
@@ -186,11 +186,15 @@ span {
 
 /* ===== NAVBAR ===== */
 .navbar {
-    background-color: white;
-    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 10px 0;
     box-shadow: 0 2px 20px rgba(0,0,0,0.03);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 100;
 }
 
@@ -198,12 +202,13 @@ span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
+    min-height: 52px;
 }
 
 .logo {
     font-family: 'Prata', serif;
-    font-size: 1.8rem;
+    font-size: 1.45rem;
     color: var(--blu);
     text-decoration: none;
     flex-shrink: 0;
@@ -216,7 +221,7 @@ span {
 
 .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
@@ -224,6 +229,7 @@ span {
     text-decoration: none;
     color: var(--blu);
     font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.2s;
     position: relative;
 }
@@ -247,7 +253,7 @@ span {
 .hero-fullscreen {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 0px);
     min-height: 600px;
     overflow: hidden;
 }
