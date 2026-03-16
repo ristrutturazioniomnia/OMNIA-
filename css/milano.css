@@ -1,0 +1,407 @@
+/* ===== PAGINA SECONDARIA: MILANO ===== */
+
+.milano-hero {
+    padding: 150px 0 90px;
+    background:
+        linear-gradient(135deg, rgba(230,126,34,0.96), rgba(192,109,44,0.96)),
+        linear-gradient(180deg, #E67E22 0%, #c06d2c 100%);
+    color: white;
+}
+
+.milano-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 56px;
+    align-items: center;
+}
+
+.milano-hero h1 {
+    font-size: 4rem;
+    line-height: 1.08;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.milano-hero__lead {
+    font-size: 1.14rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+.milano-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.milano-hero__list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.milano-hero__list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+}
+
+.milano-hero__list i {
+    color: white;
+    flex-shrink: 0;
+}
+
+.milano-hero__image {
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 22px 22px 0 rgba(255,255,255,0.16);
+    min-height: 520px;
+    background: rgba(255,255,255,0.08);
+}
+
+.milano-hero__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+}
+
+.milano-intro {
+    background: var(--sfondo);
+}
+
+.milano-intro__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.milano-intro__card {
+    background: white;
+    border: 1px solid var(--grigio);
+    border-radius: 24px;
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+}
+
+.milano-intro__card:hover {
+    transform: translateY(-8px);
+    border-color: var(--terracotta);
+    box-shadow: 0 20px 40px rgba(26,46,64,0.08);
+}
+
+.milano-intro__card i {
+    font-size: 1.8rem;
+    color: var(--terracotta);
+    margin-bottom: 18px;
+}
+
+.milano-intro__card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.milano-intro__card p {
+    color: var(--testo-chiaro);
+    font-size: 1rem;
+}
+
+.milano-services {
+    background: white;
+}
+
+.milano-services__header {
+    margin-bottom: 52px;
+}
+
+.milano-services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.milano-service {
+    border: 1px solid var(--grigio);
+    border-radius: 24px;
+    padding: 30px 26px;
+    background: var(--sfondo);
+    transition: all 0.3s ease;
+}
+
+.milano-service:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-6px);
+}
+
+.milano-service h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.milano-service p {
+    color: var(--testo-chiaro);
+}
+
+.milano-areas {
+    background: linear-gradient(135deg, var(--terracotta), #c06d2c);
+    color: white;
+}
+
+.milano-areas .section-title,
+.milano-areas .small-label,
+.milano-areas h2,
+.milano-areas h3 {
+    color: white;
+}
+
+.milano-areas__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 52px;
+    align-items: center;
+}
+
+.milano-areas__content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.08rem;
+    margin-bottom: 28px;
+}
+
+.milano-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.milano-tags span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.14);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.milano-areas__image {
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 22px 22px 0 rgba(255,255,255,0.12);
+    min-height: 440px;
+    background: rgba(255,255,255,0.08);
+}
+
+.milano-areas__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    object-fit: cover;
+}
+
+.milano-content {
+    background: white;
+}
+
+.milano-content__text {
+    max-width: 980px;
+    display: grid;
+    gap: 18px;
+}
+
+.milano-content__text p {
+    color: var(--testo-chiaro);
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.milano-process {
+    background: linear-gradient(135deg, #f8f4ef 0%, #ffffff 100%);
+}
+
+.milano-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.milano-step {
+    background: white;
+    border: 1px solid var(--grigio);
+    border-radius: 24px;
+    padding: 28px 24px;
+    height: 100%;
+}
+
+.milano-step__num {
+    display: inline-flex;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: var(--terracotta);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.milano-step h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.milano-step p {
+    color: var(--testo-chiaro);
+}
+
+.milano-faq {
+    background: var(--sfondo);
+}
+
+.milano-faq__header {
+    margin-bottom: 52px;
+}
+
+.milano-faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.milano-faq__item {
+    background: white;
+    border: 1px solid var(--grigio);
+    border-radius: 22px;
+    padding: 28px 24px;
+}
+
+.milano-faq__item h3 {
+    font-size: 1.28rem;
+    margin-bottom: 12px;
+}
+
+.milano-faq__item p {
+    color: var(--testo-chiaro);
+}
+
+.milano-contact {
+    border-top: 1px solid var(--grigio);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .milano-hero__grid,
+    .milano-areas__wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .milano-process__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .milano-services__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .milano-intro__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .milano-hero {
+        padding: 128px 0 72px;
+    }
+
+    .milano-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .milano-faq__grid,
+    .milano-services__grid,
+    .milano-process__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .milano-hero__image,
+    .milano-hero__image img,
+    .milano-areas__image,
+    .milano-areas__image img {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .milano-hero {
+        padding: 116px 0 64px;
+    }
+
+    .milano-hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.12;
+    }
+
+    .milano-hero__lead {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .milano-hero__actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .milano-hero__actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .milano-intro__card,
+    .milano-service,
+    .milano-step,
+    .milano-faq__item {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .milano-hero {
+        padding: 104px 0 56px;
+    }
+
+    .milano-hero h1 {
+        font-size: 1.82rem;
+    }
+
+    .milano-hero__image,
+    .milano-hero__image img,
+    .milano-areas__image,
+    .milano-areas__image img {
+        min-height: 280px;
+    }
+
+    .milano-intro__card h3,
+    .milano-service h3 {
+        font-size: 1.3rem;
+    }
+
+    .milano-step h3,
+    .milano-faq__item h3 {
+        font-size: 1.2rem;
+    }
+
+    .milano-content__text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
