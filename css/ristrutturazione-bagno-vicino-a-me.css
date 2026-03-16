@@ -1,0 +1,409 @@
+/* ===== PAGINA SECONDARIA: RISTRUTTURAZIONE BAGNO VICINO A ME ===== */
+
+.bath-hero {
+    padding: 150px 0 90px;
+    background:
+        linear-gradient(135deg, rgba(26, 46, 64, 0.96), rgba(42, 64, 85, 0.96)),
+        linear-gradient(180deg, #1A2E40 0%, #2a4055 100%);
+    color: white;
+}
+
+.bath-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 56px;
+    align-items: center;
+}
+
+.bath-hero h1 {
+    font-size: 4rem;
+    line-height: 1.08;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.bath-hero__lead {
+    font-size: 1.14rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.86);
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+.bath-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.bath-hero__list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.bath-hero__list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.92);
+    font-size: 1rem;
+}
+
+.bath-hero__list i {
+    color: var(--oro);
+    flex-shrink: 0;
+}
+
+.bath-hero__image {
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 22px 22px 0 rgba(230,126,34,0.28);
+    min-height: 520px;
+    background: rgba(255,255,255,0.08);
+}
+
+.bath-hero__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+}
+
+.bath-intro {
+    background: var(--sfondo);
+}
+
+.bath-intro__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.bath-intro__card {
+    background: white;
+    border: 1px solid var(--grigio);
+    border-radius: 24px;
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+}
+
+.bath-intro__card:hover {
+    transform: translateY(-8px);
+    border-color: var(--terracotta);
+    box-shadow: 0 20px 40px rgba(26,46,64,0.08);
+}
+
+.bath-intro__card i {
+    font-size: 1.8rem;
+    color: var(--terracotta);
+    margin-bottom: 18px;
+}
+
+.bath-intro__card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.bath-intro__card p {
+    color: var(--testo-chiaro);
+    font-size: 1rem;
+}
+
+.bath-services {
+    background: white;
+}
+
+.bath-services__header {
+    margin-bottom: 52px;
+}
+
+.bath-services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.bath-service {
+    border: 1px solid var(--grigio);
+    border-radius: 24px;
+    padding: 30px 26px;
+    background: var(--sfondo);
+    transition: all 0.3s ease;
+}
+
+.bath-service:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-6px);
+}
+
+.bath-service h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.bath-service p {
+    color: var(--testo-chiaro);
+}
+
+.bath-process {
+    background: linear-gradient(135deg, #f8f4ef 0%, #ffffff 100%);
+}
+
+.bath-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.bath-step {
+    background: white;
+    border: 1px solid var(--grigio);
+    border-radius: 24px;
+    padding: 28px 24px;
+    height: 100%;
+}
+
+.bath-step__num {
+    display: inline-flex;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: var(--terracotta);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.bath-step h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.bath-step p {
+    color: var(--testo-chiaro);
+}
+
+.bath-types {
+    background: var(--blu);
+    color: white;
+}
+
+.bath-types .section-title,
+.bath-types .small-label,
+.bath-types h2,
+.bath-types h3 {
+    color: white;
+}
+
+.bath-types__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 52px;
+    align-items: center;
+}
+
+.bath-types__content p {
+    color: rgba(255,255,255,0.82);
+    font-size: 1.08rem;
+    margin-bottom: 28px;
+}
+
+.bath-types__list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.bath-types__list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.92);
+}
+
+.bath-types__list i {
+    color: var(--oro);
+    flex-shrink: 0;
+}
+
+.bath-types__image {
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 22px 22px 0 rgba(230,126,34,0.26);
+    min-height: 460px;
+    background: rgba(255,255,255,0.08);
+}
+
+.bath-types__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    object-fit: cover;
+}
+
+.bath-faq {
+    background: var(--sfondo);
+}
+
+.bath-faq__header {
+    margin-bottom: 52px;
+}
+
+.bath-faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.bath-faq__item {
+    background: white;
+    border: 1px solid var(--grigio);
+    border-radius: 22px;
+    padding: 28px 24px;
+}
+
+.bath-faq__item h3 {
+    font-size: 1.28rem;
+    margin-bottom: 12px;
+}
+
+.bath-faq__item p {
+    color: var(--testo-chiaro);
+}
+
+.bath-content-seo {
+    background: white;
+}
+
+.bath-content-seo__text {
+    max-width: 980px;
+    display: grid;
+    gap: 18px;
+}
+
+.bath-content-seo__text p {
+    color: var(--testo-chiaro);
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.bath-contact {
+    border-top: 1px solid var(--grigio);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .bath-hero__grid,
+    .bath-types__wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bath-process__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bath-services__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bath-intro__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .bath-hero {
+        padding: 128px 0 72px;
+    }
+
+    .bath-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .bath-faq__grid,
+    .bath-services__grid,
+    .bath-process__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bath-hero__image,
+    .bath-hero__image img,
+    .bath-types__image,
+    .bath-types__image img {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bath-hero {
+        padding: 116px 0 64px;
+    }
+
+    .bath-hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.12;
+    }
+
+    .bath-hero__lead {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .bath-hero__actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .bath-hero__actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bath-intro__card,
+    .bath-service,
+    .bath-step,
+    .bath-faq__item {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bath-hero {
+        padding: 104px 0 56px;
+    }
+
+    .bath-hero h1 {
+        font-size: 1.82rem;
+    }
+
+    .bath-hero__image,
+    .bath-hero__image img,
+    .bath-types__image,
+    .bath-types__image img {
+        min-height: 280px;
+    }
+
+    .bath-intro__card h3,
+    .bath-service h3 {
+        font-size: 1.3rem;
+    }
+
+    .bath-step h3,
+    .bath-faq__item h3 {
+        font-size: 1.2rem;
+    }
+
+    .bath-content-seo__text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}
