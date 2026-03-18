@@ -339,34 +339,39 @@ span {
 
 /* ===== CHI SIAMO ===== */
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    align-items: start;
+    display: block;
+    width: 100%;
 }
 
 .about-content {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.about-content .section-title {
+    max-width: 760px;
 }
 
 .about-text {
+    max-width: 760px;
     font-size: 1.1rem;
     color: var(--testo-chiaro);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     line-height: 1.8;
 }
 
 .about-features {
     display: grid;
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-    gap: 28px 40px;
-    margin-top: 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 56px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .feature {
     display: flex;
-    gap: 16px;
     align-items: flex-start;
+    gap: 16px;
 }
 
 .feature i {
@@ -379,21 +384,13 @@ span {
 .feature h4 {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin: 0 0 6px 0;
 }
 
 .feature p {
     color: var(--testo-chiaro);
     font-size: 0.95rem;
     margin: 0;
-}
-
-.about-image {
-    display: none;
-}
-
-.about-image img {
-    display: none;
 }
 /* ===== FILOSOFIA ===== */
 .philosophy {
