@@ -255,7 +255,11 @@ span {
 .nav-links a:hover::after {
     width: 100%;
 }
-
+.logo img {
+    display: block;
+    height: 56px;
+    width: auto;
+}
 /* ===== HERO FULL-SCREEN ===== */
 .hero-fullscreen {
     position: relative;
