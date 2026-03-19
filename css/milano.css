@@ -3,8 +3,8 @@
 .milano-hero {
     padding: 150px 0 90px;
     background:
-        linear-gradient(135deg, rgba(230,126,34,0.96), rgba(192,109,44,0.96)),
-        linear-gradient(180deg, #E67E22 0%, #c06d2c 100%);
+        linear-gradient(135deg, rgba(201,122,61,0.95), rgba(185,108,53,0.95)),
+        linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
     color: white;
 }
 
@@ -150,7 +150,7 @@
 }
 
 .milano-areas {
-    background: linear-gradient(135deg, var(--terracotta), #c06d2c);
+    background: linear-gradient(135deg, #C97A3D, #B96C35);
     color: white;
 }
 
@@ -184,7 +184,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.16);
     color: white;
     padding: 10px 20px;
     border-radius: 999px;
