@@ -46,8 +46,8 @@ span {
 :root {
     --blu: #1A2E40;
     --blu-chiaro: #2a4055;
-    --terracotta: #E67E22;
-    --terracotta-chiaro: #f39c5e;
+    --terracotta: #C97A3D;
+    --terracotta-chiaro: #D89A69;
     --oro: #C69C6D;
     --oro-chiaro: #dbb38c;
     --sfondo: #fcfaf8;
@@ -523,7 +523,7 @@ span {
 }
 
 .zona-section {
-    background: linear-gradient(135deg, var(--terracotta), #c06d2c);
+    background: linear-gradient(135deg, #C97A3D, #B96C35);
 }
 
 .special-grid {
