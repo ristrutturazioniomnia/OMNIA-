@@ -194,7 +194,7 @@ span {
     background-color: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 10px 0;
+    padding: 4px 0;
     box-shadow: 0 2px 20px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
@@ -207,8 +207,8 @@ span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 18px;
-    min-height: 52px;
+    gap: 12px;
+    min-height: 36px;
 }
 
 .logo {
@@ -228,7 +228,7 @@ span {
 
 .nav-links {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
@@ -255,6 +255,7 @@ span {
 .nav-links a:hover::after {
     width: 100%;
 }
+
 .logo img {
     display: block;
     height: 110px;
