@@ -1445,3 +1445,71 @@ textarea.form-input {
         font-size: 0.9rem !important;
     }
 }
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 !important;
+    }
+
+    .navbar .container {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-areas:
+            "logo cta"
+            "links links" !important;
+        align-items: center !important;
+        row-gap: 6px !important;
+        column-gap: 8px !important;
+        min-height: auto !important;
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .logo {
+        grid-area: logo !important;
+        max-width: none !important;
+    }
+
+    .logo img {
+        height: 42px !important;
+        width: auto !important;
+    }
+
+    .btn-nav {
+        grid-area: cta !important;
+        justify-self: end !important;
+        padding: 6px 10px !important;
+        font-size: 0.66rem !important;
+        line-height: 1.15 !important;
+        max-width: 104px !important;
+        border-radius: 16px !important;
+    }
+
+    .nav-links {
+        grid-area: links !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        padding: 0 0 2px 0 !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .nav-links a {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        font-size: 0.74rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-fullscreen {
+        padding-top: 96px !important;
+    }
+}
