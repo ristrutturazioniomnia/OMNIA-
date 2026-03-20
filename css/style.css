@@ -194,7 +194,7 @@ span {
     background-color: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 4px 0;
+    padding: 0;
     box-shadow: 0 2px 20px rgba(0,0,0,0.04);
     position: fixed;
     top: 0;
@@ -207,9 +207,11 @@ span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    min-height: 36px;
+    gap: 8px;
+    min-height: 24px;
 }
+
+
 
 .logo {
     font-family: 'Prata', serif;
@@ -225,12 +227,12 @@ span {
     color: var(--terracotta);
     font-style: italic;
 }
-
 .nav-links {
     display: flex;
-    gap: 16px;
+    gap: 10px;
     flex-wrap: wrap;
 }
+
 
 .nav-links a {
     text-decoration: none;
