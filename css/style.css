@@ -1471,10 +1471,10 @@ textarea.form-input {
         white-space: nowrap !important;
     }
 
-    .logo img {
-        height: 30px !important;
-        width: auto !important;
-    }
+   .logo img {
+    height: 42px !important;
+    width: auto !important;
+}
 
     .nav-links {
         display: flex !important;
