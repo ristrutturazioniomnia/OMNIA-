@@ -235,6 +235,7 @@
 }
 
 .bath-types__image {
+     margin-top: 40px;
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 22px 22px 0 rgba(230,126,34,0.26);
