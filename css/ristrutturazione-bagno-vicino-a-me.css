@@ -250,33 +250,61 @@
 }
 
 .bath-faq {
-    background: var(--sfondo);
+    background:
+        radial-gradient(circle at top center, rgba(255,255,255,0.10), transparent 42%),
+        linear-gradient(180deg, #183149 0%, #1A2E40 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .bath-faq__header {
-    margin-bottom: 52px;
+    margin-bottom: 40px;
 }
 
 .bath-faq__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 20px;
+    align-items: stretch;
 }
 
 .bath-faq__item {
-    background: white;
-    border: 1px solid var(--grigio);
-    border-radius: 22px;
-    padding: 28px 24px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 28px;
+    padding: 30px 30px;
+    box-shadow:
+        0 14px 34px rgba(8, 20, 32, 0.16),
+        0 1px 0 rgba(255,255,255,0.55) inset;
+    backdrop-filter: blur(8px);
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease,
+        background 0.28s ease;
+}
+
+.bath-faq__item:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 22px 44px rgba(8, 20, 32, 0.20),
+        0 1px 0 rgba(255,255,255,0.65) inset;
+    border-color: rgba(230,126,34,0.22);
+    background: rgba(255,255,255,0.97);
 }
 
 .bath-faq__item h3 {
-    font-size: 1.28rem;
+    font-size: 1.22rem;
+    line-height: 1.35;
     margin-bottom: 12px;
+    color: #1A2E40;
 }
 
 .bath-faq__item p {
-    color: var(--testo-chiaro);
+    color: #4c6785;
+    line-height: 1.7;
+    margin: 0;
 }
 
 .bath-content-seo {
@@ -368,12 +396,12 @@
         text-align: center;
     }
 
-    .bath-intro__card,
-    .bath-service,
-    .bath-step,
-    .bath-faq__item {
-        padding: 24px 20px;
-    }
+   .bath-intro__card,
+.bath-service,
+.bath-step,
+.bath-faq__item {
+    padding: 22px 18px;
+}
 }
 
 @media (max-width: 576px) {
@@ -406,4 +434,11 @@
         font-size: 1rem;
         line-height: 1.8;
     }
+    .bath-faq__grid {
+    gap: 16px;
+}
+
+.bath-faq__item {
+    border-radius: 22px;
+}
 }
