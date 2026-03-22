@@ -192,16 +192,19 @@
     color: var(--testo-chiaro);
 }
 
-.milano-areas {
-    background: linear-gradient(135deg, #C97A3D, #B96C35);
+.milano-areas .section-title,
+.milano-areas h2 {
     color: white;
 }
 
-.milano-areas .section-title,
-.milano-areas .small-label,
-.milano-areas h2,
-.milano-areas h3 {
-    color: white;
+.milano-areas .small-label {
+    color: #C97A3D;
+    background: #1A2E40;
+    border: 1px solid #1A2E40;
+}
+
+.milano-areas .milano-faq__item h3 {
+    color: #1A2E40;
 }
 
 .milano-areas__wrap {
