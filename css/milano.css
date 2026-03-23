@@ -20,6 +20,7 @@
     line-height: 1.08;
     color: white;
     margin-bottom: 24px;
+    font-family: 'Playfair Display', serif;
 }
 
 .milano-hero__lead {
@@ -149,6 +150,7 @@
 .milano-intro__card h3 {
     font-size: 1.6rem;
     margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
 }
 
 .milano-intro__card p {
@@ -186,6 +188,7 @@
 .milano-service h3 {
     font-size: 1.45rem;
     margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
 }
 
 .milano-service p {
@@ -251,6 +254,7 @@
 
 .milano-areas .milano-faq__item h3 {
     color: #1A2E40;
+    font-family: 'Playfair Display', serif;
 }
 
 .milano-areas .milano-faq__item p {
