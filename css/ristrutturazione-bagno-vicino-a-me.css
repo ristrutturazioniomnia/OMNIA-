@@ -6,6 +6,21 @@
         linear-gradient(135deg, rgba(26, 46, 64, 0.96), rgba(42, 64, 85, 0.96)),
         linear-gradient(180deg, #1A2E40 0%, #2a4055 100%);
     color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.bath-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, #1A2E40, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .bath-hero__grid {
@@ -76,6 +91,34 @@
 
 .bath-intro {
     background: var(--sfondo);
+    position: relative;
+    z-index: 1;
+}
+
+.bath-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--sfondo), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.bath-intro::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, var(--sfondo), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .bath-intro__grid {
@@ -117,6 +160,34 @@
 
 .bath-services {
     background: white;
+    position: relative;
+    z-index: 1;
+}
+
+.bath-services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, white, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.bath-services::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, white, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .bath-services__header {
@@ -154,6 +225,28 @@
 
 .bath-process {
     background: linear-gradient(135deg, #f8f4ef 0%, #ffffff 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.bath-process::before,
+.bath-process::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, #f8f4ef, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+.bath-process::before {
+    top: 0;
+}
+.bath-process::after {
+    bottom: 0;
+    background: linear-gradient(to top, #f8f4ef, transparent);
 }
 
 .bath-process__grid {
@@ -196,6 +289,34 @@
 .bath-types {
     background: var(--blu);
     color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.bath-types::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--blu), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.bath-types::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, var(--blu), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .bath-types .section-title,
@@ -261,6 +382,32 @@
     color: white;
     position: relative;
     overflow: hidden;
+}
+
+.bath-faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, #1A2E40, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.bath-faq::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, #1A2E40, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .bath-faq__header {
@@ -331,6 +478,21 @@
 
 .bath-contact {
     border-top: 1px solid var(--grigio);
+    position: relative;
+    z-index: 1;
+}
+
+.bath-contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, white, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 /* ===== RESPONSIVE ===== */
