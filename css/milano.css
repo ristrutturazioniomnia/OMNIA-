@@ -192,32 +192,108 @@
     color: var(--testo-chiaro);
 }
 
-.milano-areas .section-title,
-.milano-areas h2 {
-    color: white;
+/* ===== SEZIONE FAQ STILE COME SECONDA FOTO, MA ARANCIONE ===== */
+
+.milano-areas {
+    background:
+        linear-gradient(135deg, rgba(201,122,61,0.98), rgba(185,108,53,0.98)),
+        linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.milano-areas .container {
+    position: relative;
+    z-index: 1;
+}
+
+.milano-areas__wrap {
+    display: block;
+}
+
+.milano-areas__content {
+    max-width: 100%;
+}
+
+.milano-areas__content p {
+    color: rgba(255,255,255,0.92);
+    font-size: 1.08rem;
+    margin-bottom: 28px;
+}
+
+.milano-areas .milano-areas__image {
+    display: none;
 }
 
 .milano-areas .small-label {
+    display: table;
+    margin: 0 auto 26px;
+    padding: 10px 26px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
     color: #C97A3D;
     background: #1A2E40;
     border: 1px solid #1A2E40;
+    border-radius: 999px;
+    line-height: 1;
+}
+
+.milano-areas .section-title,
+.milano-areas h2 {
+    max-width: 980px;
+    margin: 0 auto 56px;
+    text-align: center;
+    color: #ffffff;
+    font-size: clamp(2.2rem, 4.7vw, 4.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.milano-areas .milano-faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
+}
+
+.milano-areas .milano-faq__item {
+    background: #f6f1eb;
+    border: 1px solid rgba(26,46,64,0.10);
+    border-radius: 34px;
+    padding: 34px 36px;
+    min-height: 230px;
+    box-shadow:
+        0 18px 45px rgba(26,46,64,0.10),
+        0 1px 0 rgba(255,255,255,0.45) inset;
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+.milano-areas .milano-faq__item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(26,46,64,0.18);
+    box-shadow:
+        0 24px 52px rgba(26,46,64,0.14),
+        0 1px 0 rgba(255,255,255,0.55) inset;
 }
 
 .milano-areas .milano-faq__item h3 {
     color: #1A2E40;
+    font-size: 1.22rem;
+    line-height: 1.45;
+    margin-bottom: 22px;
+    font-weight: 500;
 }
 
-.milano-areas__wrap {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-    gap: 52px;
-    align-items: center;
-}
-
-.milano-areas__content p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.08rem;
-    margin-bottom: 28px;
+.milano-areas .milano-faq__item p {
+    color: #4f6b8c;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
 }
 
 .milano-tags {
@@ -237,21 +313,6 @@
     font-size: 0.95rem;
     font-weight: 600;
     border: 1px solid rgba(26,46,64,0.14);
-}
-
-.milano-areas__image {
-    border-radius: 28px;
-    overflow: hidden;
-    box-shadow: 22px 22px 0 rgba(255,255,255,0.12);
-    min-height: 440px;
-    background: rgba(255,255,255,0.08);
-}
-
-.milano-areas__image img {
-    width: 100%;
-    height: 100%;
-    min-height: 440px;
-    object-fit: cover;
 }
 
 .milano-content {
@@ -376,7 +437,8 @@
 
     .milano-faq__grid,
     .milano-services__grid,
-    .milano-process__grid {
+    .milano-process__grid,
+    .milano-areas .milano-faq__grid {
         grid-template-columns: 1fr;
     }
 
@@ -385,6 +447,15 @@
     .milano-areas__image,
     .milano-areas__image img {
         min-height: 360px;
+    }
+
+    .milano-areas .section-title,
+    .milano-areas h2 {
+        margin-bottom: 42px;
+    }
+
+    .milano-areas .milano-faq__item {
+        min-height: auto;
     }
 }
 
@@ -416,8 +487,13 @@
     .milano-intro__card,
     .milano-service,
     .milano-step,
-    .milano-faq__item {
+    .milano-faq__item,
+    .milano-areas .milano-faq__item {
         padding: 24px 20px;
+    }
+
+    .milano-areas .small-label {
+        margin-bottom: 20px;
     }
 }
 
@@ -443,12 +519,19 @@
     }
 
     .milano-step h3,
-    .milano-faq__item h3 {
-        font-size: 1.2rem;
+    .milano-faq__item h3,
+    .milano-areas .milano-faq__item h3 {
+        font-size: 1.12rem;
     }
 
-    .milano-content__text p {
+    .milano-content__text p,
+    .milano-areas .milano-faq__item p {
         font-size: 1rem;
         line-height: 1.8;
+    }
+
+    .milano-areas .section-title,
+    .milano-areas h2 {
+        font-size: 1.9rem;
     }
 }
