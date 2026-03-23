@@ -6,6 +6,21 @@
         linear-gradient(135deg, rgba(201,122,61,0.95), rgba(185,108,53,0.95)),
         linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
     color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.milano-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, #C97A3D, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .milano-hero__grid {
@@ -119,6 +134,34 @@
 
 .milano-intro {
     background: var(--sfondo);
+    position: relative;
+    z-index: 1;
+}
+
+.milano-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--sfondo), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.milano-intro::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, var(--sfondo), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .milano-intro__grid {
@@ -160,6 +203,34 @@
 
 .milano-services {
     background: white;
+    position: relative;
+    z-index: 1;
+}
+
+.milano-services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, white, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.milano-services::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, white, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .milano-services__header {
@@ -201,6 +272,34 @@
     background:
         linear-gradient(135deg, rgba(201,122,61,0.98), rgba(185,108,53,0.98)),
         linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.milano-areas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, #C97A3D, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.milano-areas::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, #C97A3D, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
 }
 
 .milano-areas__wrap {
