@@ -200,16 +200,22 @@
         linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
 }
 
-.milano-areas .section-title,
-.milano-areas h2 {
-    color: white;
+.milano-areas__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.milano-areas__content {
+    width: 100%;
 }
 
 .milano-areas .small-label {
     display: block;
-    margin-bottom: 18px;
+    margin: 0 0 18px;
     padding: 0;
-    color: white;
+    color: #ffffff;
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -219,51 +225,48 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     line-height: 1;
+    text-align: center;
+}
+
+.milano-areas .section-title,
+.milano-areas h2 {
+    color: #ffffff;
+    text-align: center;
+    max-width: 980px;
+    margin: 0 auto 44px;
+}
+
+.milano-areas .milano-faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.milano-areas .milano-faq__item {
+    background: #ffffff;
+    border: 1px solid var(--grigio);
+    border-radius: 22px;
+    padding: 28px 24px;
 }
 
 .milano-areas .milano-faq__item h3 {
     color: #1A2E40;
 }
 
-.milano-areas__wrap {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-    gap: 52px;
-    align-items: center;
-}
-
-.milano-areas__content p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.08rem;
-    margin-bottom: 28px;
-}
-
-.milano-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.milano-tags span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(26,46,64,0.16);
-    color: #1A2E40;
-    padding: 10px 20px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border: 1px solid rgba(26,46,64,0.14);
+.milano-areas .milano-faq__item p {
+    color: var(--testo-chiaro);
+    margin: 0;
 }
 
 .milano-areas__image {
     display: block;
+    width: 100%;
+    max-width: 100%;
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 22px 22px 0 rgba(101,78,58,0.65);
     min-height: 440px;
-    background: rgba(26,46,64,0.18);
+    background: rgba(26,46,64,0.12);
 }
 
 .milano-areas__image img {
@@ -274,94 +277,23 @@
     object-fit: cover;
 }
 
-.milano-content {
-    background: white;
+/* ===== RESPONSIVE SEZIONE FAQ MILANO ===== */
+@media (max-width: 900px) {
+    .milano-areas .milano-faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .milano-areas__image,
+    .milano-areas__image img {
+        min-height: 360px;
+    }
 }
 
-.milano-content__text {
-    max-width: 980px;
-    display: grid;
-    gap: 18px;
-}
-
-.milano-content__text p {
-    color: var(--testo-chiaro);
-    font-size: 1.08rem;
-    line-height: 1.9;
-}
-
-.milano-process {
-    background: linear-gradient(135deg, #f8f4ef 0%, #ffffff 100%);
-}
-
-.milano-process__grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.milano-step {
-    background: white;
-    border: 1px solid var(--grigio);
-    border-radius: 24px;
-    padding: 28px 24px;
-    height: 100%;
-}
-
-.milano-step__num {
-    display: inline-flex;
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    background: var(--blu);
-    color: white;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.milano-step h3 {
-    font-size: 1.35rem;
-    margin-bottom: 10px;
-}
-
-.milano-step p {
-    color: var(--testo-chiaro);
-}
-
-.milano-faq {
-    background: var(--sfondo);
-}
-
-.milano-faq__header {
-    margin-bottom: 52px;
-}
-
-.milano-faq__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.milano-faq__item {
-    background: white;
-    border: 1px solid var(--grigio);
-    border-radius: 22px;
-    padding: 28px 24px;
-}
-
-.milano-faq__item h3 {
-    font-size: 1.28rem;
-    margin-bottom: 12px;
-}
-
-.milano-faq__item p {
-    color: var(--testo-chiaro);
-}
-
-.milano-contact {
-    border-top: 1px solid var(--grigio);
+@media (max-width: 576px) {
+    .milano-areas__image,
+    .milano-areas__image img {
+        min-height: 280px;
+    }
 }
 
 /* ===== RESPONSIVE ===== */
