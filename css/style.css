@@ -1679,3 +1679,19 @@ textarea.form-input {
         word-break: break-word;
     }
 }
+.footer-logo iframe {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    border: 0;
+    border-radius: 14px;
+    margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+    .footer-logo iframe {
+        max-width: 100%;
+        height: 200px;
+    }
+}
