@@ -69,7 +69,8 @@ p, li, a, span {
     z-index: 1;
 }
 
-/* Transizioni morbide tra sezioni */
+/* === TRANSIZIONI SFUMATE TRA SEZIONI === */
+/* Sfumatura in uscita (bottom) per sezioni con sfondo diverso */
 .section::after,
 .special-section::after,
 .services::after,
@@ -80,15 +81,90 @@ p, li, a, span {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40px;
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02));
+    height: 80px;
+    background: linear-gradient(to top, currentColor, transparent);
     pointer-events: none;
-    z-index: 0;
+    z-index: 2;
+    opacity: 0.25;
+    transition: opacity 0.3s;
 }
 
-.section:last-child::after,
-.special-section:last-child::after {
+/* Sfumatura in entrata (top) per la sezione successiva */
+.section::before,
+.special-section::before,
+.services::before,
+.gallery::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, currentColor, transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.25;
+    transition: opacity 0.3s;
+}
+
+/* Applico colori specifici per ogni tipo di sezione */
+.section { color: var(--sfondo); }  /* usato per la sfumatura */
+.services { color: white; }          /* sfondo bianco, ma la sfumatura usa bianco */
+.gallery { color: var(--sfondo); }
+.contact { color: white; }
+.special-section { color: inherit; }
+
+/* Forzo i gradienti con i colori reali delle sezioni */
+.bagni-section {
+    background: linear-gradient(135deg, var(--blu), var(--blu-chiaro));
+}
+.bagni-section::before,
+.bagni-section::after {
+    background: linear-gradient(to bottom, var(--blu), transparent);
+}
+.bagni-section::after {
+    background: linear-gradient(to top, var(--blu), transparent);
+}
+
+.zona-section {
+    background: linear-gradient(135deg, #C97A3D, #B96C35);
+}
+.zona-section::before,
+.zona-section::after {
+    background: linear-gradient(to bottom, #C97A3D, transparent);
+}
+.zona-section::after {
+    background: linear-gradient(to top, #C97A3D, transparent);
+}
+
+/* Per sezioni con sfondo bianco (services, gallery, contact) uso bianco */
+.services::before,
+.services::after,
+.gallery::before,
+.gallery::after,
+.contact::before,
+.contact::after {
+    background: linear-gradient(to bottom, white, transparent);
+}
+.services::after,
+.gallery::after,
+.contact::after {
+    background: linear-gradient(to top, white, transparent);
+}
+
+/* Rimuovo le sfumature inutili per la hero (non serve) */
+.hero-fullscreen::before,
+.hero-fullscreen::after {
     display: none;
+}
+
+/* Aumento l'intensità delle sfumature al passaggio del mouse per effetto più evidente */
+.section:hover::before,
+.section:hover::after,
+.special-section:hover::before,
+.special-section:hover::after {
+    opacity: 0.45;
 }
 
 .section-title {
@@ -480,30 +556,6 @@ p, li, a, span {
     position: relative;
     z-index: 1;
     color: white;
-}
-
-.special-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.special-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
-    pointer-events: none;
-    z-index: 0;
 }
 
 .bagni-section {
