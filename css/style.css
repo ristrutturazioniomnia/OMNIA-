@@ -504,7 +504,68 @@ p, li, a, span {
     margin: 0;
     text-align: center;
 }
+/* ===== SERVIZI ===== */
+.services {
+    padding: 100px 0;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
 
+.services-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.services-header h2 {
+    font-size: 3rem;
+    color: var(--blu);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.service-item {
+    text-align: center;
+    padding: 40px 30px;
+    border: 1px solid var(--grigio);
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.service-item:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(230,126,34,0.1);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.service-item p {
+    color: var(--testo-chiaro);
+}
 /* ===== SPECIAL SECTION ===== */
 .special-section {
     padding: 120px 0;
