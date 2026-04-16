@@ -470,8 +470,8 @@ p, li, a, span {
 
 .about-features {
     display: grid;
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-    gap: 28px 56px;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 28px 72px;
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
@@ -480,9 +480,9 @@ p, li, a, span {
 .feature {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 16px;
-    text-align: center;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .feature i {
@@ -496,9 +496,8 @@ p, li, a, span {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
-
 .feature p {
     color: var(--testo-chiaro);
     font-size: 0.95rem;
