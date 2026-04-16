@@ -488,68 +488,76 @@ p, li, a, span {
 }
 
 /* ===== SERVIZI ===== */
-.services {
-    padding: 100px 0;
-    background: white;
-    position: relative;
-    z-index: 1;
+.about-grid {
+    display: block;
+    width: 100%;
 }
 
-.services-header {
-    text-align: center;
-    margin-bottom: 60px;
+.about-content {
+    width: 100%;
+    max-width: 100%;
 }
 
-.services-header h2 {
-    font-size: 3rem;
-    color: var(--blu);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.service-item {
-    text-align: center;
-    padding: 40px 30px;
-    border: 1px solid var(--grigio);
-    border-radius: 30px;
-    transition: all 0.3s;
-}
-
-.service-item:hover {
-    border-color: var(--terracotta);
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(230,126,34,0.1);
-}
-
-.service-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--terracotta);
-    border-radius: 50%;
+.about-content-centered {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 24px;
+    text-align: center;
 }
 
-.service-icon i {
-    font-size: 2rem;
-    color: white;
+.about-content-centered .section-title {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.service-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
+.section-title-centered {
+    text-align: center;
 }
 
-.service-item p {
+.about-text {
+    max-width: 820px;
+    font-size: 1.1rem;
     color: var(--testo-chiaro);
+    margin-bottom: 40px;
+    line-height: 1.8;
+    text-align: center;
 }
 
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 28px 56px;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.feature i {
+    color: var(--terracotta);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.feature h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+}
+
+.feature p {
+    color: var(--testo-chiaro);
+    font-size: 0.95rem;
+    margin: 0;
+}
 /* ===== SPECIAL SECTION ===== */
 .special-section {
     padding: 120px 0;
