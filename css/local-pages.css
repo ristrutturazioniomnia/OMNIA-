@@ -540,13 +540,28 @@
         font-size: 0.9rem;
     }
 
-    .local-faq__list article {
-        padding: 22px 0;
-    }
+  .local-faq__layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+}
 
-    .local-faq__list h3 {
-        font-size: 1.22rem;
-    }
+.local-heading--left {
+    text-align: center;
+    margin: 0 auto 36px;
+}
+
+.local-faq__contact {
+    position: static;
+    padding: 34px 28px;
+}
+
+.local-faq__list article {
+    padding: 22px 0;
+}
+
+.local-faq__list h3 {
+    font-size: 1.22rem;
+}
 }
 
 @media (max-width: 576px) {
