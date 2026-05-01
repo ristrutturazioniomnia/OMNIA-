@@ -201,63 +201,103 @@
 /* ===== BATHROOM CTA ===== */
 
 .local-bathroom {
-    padding: 86px 0;
+    padding: 92px 0;
     background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,0.16), transparent 28%),
         linear-gradient(135deg, rgba(201,122,61,0.97), rgba(185,108,53,0.97)),
         linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
 }
 
 .local-bathroom__box {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 36px;
+    gap: 42px;
     align-items: center;
     max-width: 1180px;
     margin: 0 auto;
-    padding: 44px 48px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, rgba(26,46,64,0.96), rgba(42,64,85,0.96));
-    border: 1px solid rgba(255,255,255,0.20);
+    padding: 48px 54px;
+    border-radius: 34px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(26,46,64,0.74), rgba(42,64,85,0.58)),
+        rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.26);
     box-shadow:
-        20px 20px 0 rgba(101,78,58,0.32),
-        0 24px 50px rgba(26,46,64,0.18),
-        inset 0 1px 0 rgba(255,255,255,0.12);
+        22px 24px 0 rgba(101,78,58,0.30),
+        0 28px 58px rgba(26,46,64,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.20);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.local-bathroom__box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.18), transparent 38%),
+        radial-gradient(circle at 82% 22%, rgba(216,154,105,0.28), transparent 30%);
+    pointer-events: none;
+    opacity: 0.95;
+}
+
+.local-bathroom__box::after {
+    content: '';
+    position: absolute;
+    left: 54px;
+    right: 54px;
+    bottom: 0;
+    height: 4px;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(90deg, transparent, #D89A69, transparent);
+    opacity: 0.9;
+}
+
+.local-bathroom__box > div,
+.local-bathroom__box > a {
+    position: relative;
+    z-index: 2;
 }
 
 .local-bathroom .local-kicker {
     color: #D89A69;
+    margin-bottom: 14px;
 }
 
 .local-bathroom h2 {
     color: white;
-    font-size: 2.35rem;
-    line-height: 1.12;
-    margin-bottom: 14px;
+    font-size: 2.55rem;
+    line-height: 1.08;
+    margin-bottom: 16px;
+    max-width: 780px;
 }
 
 .local-bathroom p {
-    color: rgba(255,255,255,0.86);
-    max-width: 780px;
-    font-size: 1.05rem;
-    line-height: 1.75;
+    color: rgba(255,255,255,0.88);
+    max-width: 800px;
+    font-size: 1.06rem;
+    line-height: 1.78;
 }
 
 .local-bathroom__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 56px;
-    padding: 0 28px;
+    min-height: 58px;
+    padding: 0 30px;
     border-radius: 999px;
-    background: #C97A3D;
-    border: 2px solid #C97A3D;
+    background: rgba(201,122,61,0.95);
+    border: 1px solid rgba(255,255,255,0.30);
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-weight: 800;
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+    box-shadow:
+        0 16px 32px rgba(0,0,0,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.18);
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -266,14 +306,25 @@
         box-shadow 0.25s ease;
 }
 
+.local-bathroom__btn::after {
+    content: '→';
+    margin-left: 10px;
+    transition: transform 0.25s ease;
+}
+
 .local-bathroom__btn:hover {
     transform: translateY(-2px);
     background: #ffffff;
     color: #1A2E40;
     border-color: #ffffff;
-    box-shadow: 0 18px 34px rgba(0,0,0,0.24);
+    box-shadow:
+        0 20px 38px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.30);
 }
 
+.local-bathroom__btn:hover::after {
+    transform: translateX(4px);
+}
 /* ===== FAQ ===== */
 
 .local-faq {
