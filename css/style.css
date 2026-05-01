@@ -582,106 +582,65 @@ p, li, a, span {
     background: linear-gradient(135deg, #C97A3D, #B96C35);
 }
 
-.special-grid {
+.zone-header {
+    margin-bottom: 42px;
+}
+
+.zone-city-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
 }
 
-.special-grid.reverse {
-    direction: rtl;
-}
-
-.special-grid.reverse .special-content {
-    direction: ltr;
-}
-
-.special-content h2 {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    color: white;
-}
-
-.special-content p {
-    font-size: 1.1rem;
-    margin-bottom: 32px;
-    color: #eee;
-}
-
-.special-list {
-    list-style: none;
-    margin-bottom: 40px;
-}
-
-.special-list li {
-    margin-bottom: 12px;
+.zone-city-card {
     display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.special-list i {
-    color: var(--oro);
-}
-
-.btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: transparent;
-    border: 2px solid var(--terracotta);
-    color: var(--terracotta);
-    padding: 12px 32px;
-    border-radius: 60px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-.btn-outline.light {
-    border-color: white;
-    color: white;
-}
-
-.btn-outline:hover {
-    background: var(--terracotta);
-    color: white;
-    border-color: var(--terracotta);
-}
-
-.btn-outline.light:hover {
-    background: white;
-    color: var(--blu);
-    border-color: white;
-}
-
-.special-image {
+    flex-direction: column;
+    min-height: 420px;
+    padding: 26px;
     border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 20px 20px 0 rgba(230,126,34,0.3);
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 18px 18px 0 rgba(101, 78, 58, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.special-image img {
+.zone-city-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.42);
+    box-shadow: 22px 26px 0 rgba(101, 78, 58, 0.42);
+}
+
+.zone-city-card h2 {
+    color: white;
+    font-size: 2.05rem;
+    line-height: 1.08;
+    margin-bottom: 24px;
+}
+
+.zone-city-image {
+    flex: 1;
     width: 100%;
-    height: auto;
+    min-height: 270px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.18);
 }
 
-.zone-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 40px;
+.zone-city-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    object-fit: cover;
 }
-
-.zone-tags span {
-    background: rgba(255,255,255,0.1);
-    padding: 8px 20px;
-    border-radius: 40px;
-    font-size: 0.9rem;
-}
-
 /* ===== GALLERIA MASONRY ===== */
 .gallery {
     padding: 100px 0;
