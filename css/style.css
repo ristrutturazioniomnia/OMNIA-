@@ -761,7 +761,7 @@ p, li, a, span {
 }
 
 .zone-city-card:nth-child(4)::after {
-    content: 'Ristrutturazioni a Casorate Primo →';
+    content: 'Ristrutturazioni a Mortara →';
 }
 
 .zone-city-card:hover {
