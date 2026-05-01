@@ -673,7 +673,13 @@ p, li, a, span {
 
 /* NUOVA HOME - ZONE SERVITE */
 .zone-header {
-    margin-bottom: 42px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.zone-header h2 {
+    font-size: 3rem;
+    color: white;
 }
 
 .zone-city-grid {
