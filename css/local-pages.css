@@ -356,6 +356,9 @@
     .local-map iframe {
         min-height: 300px;
     }
+    .local-service-card__image {
+    height: 220px;
+}
 }
 
 @media (max-width: 576px) {
