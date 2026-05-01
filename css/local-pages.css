@@ -382,6 +382,8 @@
     .local-bathroom__box {
         grid-template-columns: 1fr;
         text-align: left;
+        padding: 40px 34px;
+        gap: 30px;
     }
 
     .local-bathroom__btn {
@@ -418,17 +420,71 @@
         padding: 70px 0;
     }
 
+    .local-heading {
+        margin-bottom: 38px;
+    }
+
+    .local-heading h2 {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
     .local-service-list {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .local-service-card__image {
         height: 220px;
     }
 
+    .local-service-card__content {
+        padding: 26px 22px 28px;
+    }
+
+    .local-service-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .local-bathroom__box {
+        grid-template-columns: 1fr;
+        padding: 34px 26px;
+        gap: 28px;
+        border-radius: 28px;
+        box-shadow:
+            14px 16px 0 rgba(101,78,58,0.28),
+            0 22px 44px rgba(26,46,64,0.20),
+            inset 0 1px 0 rgba(255,255,255,0.20);
+    }
+
+    .local-bathroom__box::after {
+        left: 28px;
+        right: 28px;
+    }
+
+    .local-bathroom h2 {
+        font-size: 2rem;
+        line-height: 1.12;
+    }
+
+    .local-bathroom p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
     .local-bathroom__btn {
         width: 100%;
         min-height: 54px;
+        padding: 0 22px;
+        font-size: 0.9rem;
+    }
+
+    .local-faq__list article {
+        padding: 22px 0;
+    }
+
+    .local-faq__list h3 {
+        font-size: 1.22rem;
     }
 }
 
@@ -445,16 +501,50 @@
         font-size: 1.85rem;
     }
 
+    .local-hero__btn {
+        max-width: 100%;
+        padding: 13px 18px;
+        font-size: 0.82rem;
+    }
+
     .local-heading h2,
     .local-bathroom h2 {
         font-size: 1.85rem;
     }
 
-    .local-bathroom__box {
-        padding: 30px 22px;
+    .local-kicker {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+    }
+
+    .local-service-card__image {
+        height: 200px;
     }
 
     .local-service-card__content {
-        padding: 26px 22px 28px;
+        padding: 24px 20px 26px;
+    }
+
+    .local-bathroom {
+        padding: 62px 0;
+    }
+
+    .local-bathroom__box {
+        padding: 30px 22px;
+        border-radius: 26px;
+    }
+
+    .local-bathroom__box::after {
+        left: 24px;
+        right: 24px;
+    }
+
+    .local-bathroom p {
+        font-size: 0.96rem;
+    }
+
+    .local-bathroom__btn {
+        min-height: 52px;
+        font-size: 0.86rem;
     }
 }
