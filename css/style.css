@@ -1097,24 +1097,25 @@ p, li, a, span {
         grid-row: span 1;
     }
 
-    .zona-section .special-grid,
-    .zona-section .special-grid.reverse {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "content"
-            "image";
-        gap: 40px;
-        direction: ltr;
-    }
+   .zone-city-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
 
-    .zona-section .special-content {
-        grid-area: content;
-    }
+.zone-city-card {
+    min-height: 340px;
+    padding: 22px;
+    box-shadow: 12px 12px 0 rgba(101, 78, 58, 0.35);
+}
 
-    .zona-section .special-image {
-        grid-area: image;
-    }
+.zone-city-card h2 {
+    font-size: 1.8rem;
+}
+
+.zone-city-image,
+.zone-city-image img {
+    min-height: 230px;
+}
 
     .contact-grid {
         gap: 28px;
