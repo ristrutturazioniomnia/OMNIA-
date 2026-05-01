@@ -70,7 +70,6 @@ p, li, a, span {
 }
 
 /* === TRANSIZIONI SFUMATE TRA SEZIONI === */
-/* Sfumatura in uscita (bottom) per sezioni con sfondo diverso */
 .section::after,
 .special-section::after,
 .services::after,
@@ -89,7 +88,6 @@ p, li, a, span {
     transition: opacity 0.3s;
 }
 
-/* Sfumatura in entrata (top) per la sezione successiva */
 .section::before,
 .special-section::before,
 .services::before,
@@ -108,21 +106,21 @@ p, li, a, span {
     transition: opacity 0.3s;
 }
 
-/* Applico colori specifici per ogni tipo di sezione */
-.section { color: var(--sfondo); }  /* usato per la sfumatura */
-.services { color: white; }          /* sfondo bianco, ma la sfumatura usa bianco */
+.section { color: var(--sfondo); }
+.services { color: white; }
 .gallery { color: var(--sfondo); }
 .contact { color: white; }
 .special-section { color: inherit; }
 
-/* Forzo i gradienti con i colori reali delle sezioni */
 .bagni-section {
     background: linear-gradient(135deg, var(--blu), var(--blu-chiaro));
 }
+
 .bagni-section::before,
 .bagni-section::after {
     background: linear-gradient(to bottom, var(--blu), transparent);
 }
+
 .bagni-section::after {
     background: linear-gradient(to top, var(--blu), transparent);
 }
@@ -130,15 +128,16 @@ p, li, a, span {
 .zona-section {
     background: linear-gradient(135deg, #C97A3D, #B96C35);
 }
+
 .zona-section::before,
 .zona-section::after {
     background: linear-gradient(to bottom, #C97A3D, transparent);
 }
+
 .zona-section::after {
     background: linear-gradient(to top, #C97A3D, transparent);
 }
 
-/* Per sezioni con sfondo bianco (services, gallery, contact) uso bianco */
 .services::before,
 .services::after,
 .gallery::before,
@@ -147,19 +146,18 @@ p, li, a, span {
 .contact::after {
     background: linear-gradient(to bottom, white, transparent);
 }
+
 .services::after,
 .gallery::after,
 .contact::after {
     background: linear-gradient(to top, white, transparent);
 }
 
-/* Rimuovo le sfumature inutili per la hero (non serve) */
 .hero-fullscreen::before,
 .hero-fullscreen::after {
     display: none;
 }
 
-/* Aumento l'intensità delle sfumature al passaggio del mouse per effetto più evidente */
 .section:hover::before,
 .section:hover::after,
 .special-section:hover::before,
@@ -498,12 +496,14 @@ p, li, a, span {
     margin: 0;
     text-align: left;
 }
+
 .feature p {
     color: var(--testo-chiaro);
     font-size: 0.95rem;
     margin: 0;
     text-align: center;
 }
+
 /* ===== SERVIZI ===== */
 .services {
     padding: 100px 0;
@@ -566,6 +566,7 @@ p, li, a, span {
 .service-item p {
     color: var(--testo-chiaro);
 }
+
 /* ===== SPECIAL SECTION ===== */
 .special-section {
     padding: 120px 0;
@@ -582,6 +583,95 @@ p, li, a, span {
     background: linear-gradient(135deg, #C97A3D, #B96C35);
 }
 
+/* BLOCCO ORIGINALE - SERVE PER LA SEZIONE BAGNI */
+.special-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.special-grid.reverse {
+    direction: rtl;
+}
+
+.special-grid.reverse .special-content {
+    direction: ltr;
+}
+
+.special-content h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.special-content p {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    color: #eee;
+}
+
+.special-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.special-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.special-list i {
+    color: var(--oro);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 2px solid var(--terracotta);
+    color: var(--terracotta);
+    padding: 12px 32px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-outline.light {
+    border-color: white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
+}
+
+.btn-outline.light:hover {
+    background: white;
+    color: var(--blu);
+    border-color: white;
+}
+
+.special-image {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0 rgba(230,126,34,0.3);
+}
+
+.special-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* NUOVA HOME - ZONE SERVITE */
 .zone-header {
     margin-bottom: 42px;
 }
@@ -641,6 +731,7 @@ p, li, a, span {
     min-height: 270px;
     object-fit: cover;
 }
+
 /* ===== GALLERIA MASONRY ===== */
 .gallery {
     padding: 100px 0;
@@ -903,13 +994,14 @@ p, li, a, span {
     .gallery-masonry {
         grid-template-columns: repeat(2, 1fr);
     }
-    .zone-city-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 
-.zone-city-card {
-    min-height: 380px;
-}
+    .zone-city-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .zone-city-card {
+        min-height: 380px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1104,25 +1196,25 @@ p, li, a, span {
         grid-row: span 1;
     }
 
-   .zone-city-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-}
+    .zone-city-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 
-.zone-city-card {
-    min-height: 340px;
-    padding: 22px;
-    box-shadow: 12px 12px 0 rgba(101, 78, 58, 0.35);
-}
+    .zone-city-card {
+        min-height: 340px;
+        padding: 22px;
+        box-shadow: 12px 12px 0 rgba(101, 78, 58, 0.35);
+    }
 
-.zone-city-card h2 {
-    font-size: 1.8rem;
-}
+    .zone-city-card h2 {
+        font-size: 1.8rem;
+    }
 
-.zone-city-image,
-.zone-city-image img {
-    min-height: 230px;
-}
+    .zone-city-image,
+    .zone-city-image img {
+        min-height: 230px;
+    }
 
     .contact-grid {
         gap: 28px;
