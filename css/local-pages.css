@@ -117,6 +117,14 @@
     background: linear-gradient(90deg, #C97A3D, #C69C6D);
 }
 
+.local-heading-text {
+    max-width: 860px;
+    margin: 22px auto 0;
+    color: #5a6f84;
+    font-size: 1.08rem;
+    line-height: 1.78;
+}
+
 .local-kicker {
     display: block;
     margin-bottom: 18px;
@@ -133,83 +141,100 @@
     background: #ffffff;
 }
 
-.local-service-list {
+.local-service-sections {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 28px;
+    gap: 54px;
 }
 
-.local-service-card {
-    display: flex;
-    flex-direction: column;
+.local-service-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 46px;
+    align-items: stretch;
+    padding: 34px;
+    border-radius: 34px;
     background: #fcfaf8;
     border: 1px solid #e5ded6;
-    border-radius: 28px;
-    overflow: hidden;
     box-shadow:
-        0 18px 38px rgba(26, 46, 64, 0.07),
-        inset 0 1px 0 rgba(255,255,255,0.65);
-    transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease,
-        border-color 0.28s ease;
+        0 22px 48px rgba(26, 46, 64, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.70);
 }
 
-.local-service-card:hover {
-    transform: translateY(-8px);
-    border-color: #C97A3D;
-    box-shadow:
-        0 26px 52px rgba(26, 46, 64, 0.12),
-        0 10px 24px rgba(201, 122, 61, 0.12);
+.local-service-detail--reverse {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 }
 
-.local-service-card__image {
+.local-service-detail--reverse .local-service-detail__image {
+    order: 2;
+}
+
+.local-service-detail--reverse .local-service-detail__content {
+    order: 1;
+}
+
+.local-service-detail__image {
     position: relative;
-    width: 100%;
-    height: 230px;
+    min-height: 360px;
+    border-radius: 26px;
     overflow: hidden;
     background: linear-gradient(135deg, rgba(26,46,64,0.16), rgba(201,122,61,0.12));
+    box-shadow:
+        16px 16px 0 rgba(201,122,61,0.13),
+        inset 0 0 0 1px rgba(255,255,255,0.20);
 }
 
-.local-service-card__image::after {
+.local-service-detail__image::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(to top, rgba(26,46,64,0.34), transparent 58%),
-        linear-gradient(135deg, rgba(201,122,61,0.10), transparent);
+        linear-gradient(to top, rgba(26,46,64,0.38), transparent 58%),
+        linear-gradient(135deg, rgba(201,122,61,0.12), transparent);
     pointer-events: none;
 }
 
-.local-service-card__image img {
+.local-service-detail__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition:
-        transform 0.45s ease,
-        filter 0.45s ease;
 }
 
-.local-service-card:hover .local-service-card__image img {
-    transform: scale(1.07);
-    filter: contrast(1.04) saturate(1.04);
+.local-service-detail__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 10px;
 }
 
-.local-service-card__content {
-    flex: 1;
-    padding: 28px 26px 30px;
+.local-service-number {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(201,122,61,0.10);
+    color: #C97A3D;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
 }
 
-.local-service-card h3 {
-    font-size: 1.55rem;
-    line-height: 1.15;
-    margin-bottom: 14px;
+.local-service-detail h3 {
+    font-size: 2.25rem;
+    line-height: 1.1;
     color: #1A2E40;
+    margin-bottom: 22px;
 }
 
-.local-service-card p {
+.local-service-detail p {
     color: #5a6f84;
-    line-height: 1.72;
+    font-size: 1.04rem;
+    line-height: 1.78;
+    margin-bottom: 16px;
+}
+
+.local-service-detail p:last-child {
+    margin-bottom: 0;
 }
 
 /* ===== BATHROOM CTA ===== */
@@ -505,8 +530,14 @@
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 1100px) {
-    .local-service-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .local-service-detail,
+    .local-service-detail--reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .local-service-detail--reverse .local-service-detail__image,
+    .local-service-detail--reverse .local-service-detail__content {
+        order: initial;
     }
 }
 
@@ -584,21 +615,33 @@
         margin-top: 20px;
     }
 
-    .local-service-list {
-        grid-template-columns: 1fr;
-        gap: 24px;
+    .local-heading-text {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
-    .local-service-card__image {
-        height: 220px;
+    .local-service-sections {
+        gap: 34px;
     }
 
-    .local-service-card__content {
-        padding: 26px 22px 28px;
+    .local-service-detail {
+        padding: 24px;
+        border-radius: 28px;
+        gap: 28px;
     }
 
-    .local-service-card h3 {
-        font-size: 1.4rem;
+    .local-service-detail__image {
+        min-height: 260px;
+        border-radius: 22px;
+    }
+
+    .local-service-detail h3 {
+        font-size: 1.75rem;
+    }
+
+    .local-service-detail p {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
     .local-bathroom__box {
@@ -711,12 +754,17 @@
         letter-spacing: 0.18em;
     }
 
-    .local-service-card__image {
-        height: 200px;
+    .local-service-detail {
+        padding: 20px;
+        border-radius: 24px;
     }
 
-    .local-service-card__content {
-        padding: 24px 20px 26px;
+    .local-service-detail__image {
+        min-height: 220px;
+    }
+
+    .local-service-detail h3 {
+        font-size: 1.55rem;
     }
 
     .local-bathroom {
