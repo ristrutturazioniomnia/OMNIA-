@@ -52,7 +52,7 @@
     line-height: 1.16;
     margin-bottom: 34px;
     color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 10px 26px rgba(0, 0, 0, 0.34);
     font-weight: 500;
     letter-spacing: -0.02em;
 }
@@ -91,24 +91,38 @@
 }
 
 .local-heading {
-    max-width: 860px;
-    margin: 0 auto 54px;
+    max-width: 920px;
+    margin: 0 auto 58px;
     text-align: center;
 }
 
 .local-heading h2 {
+    position: relative;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
     font-size: 2.75rem;
     line-height: 1.12;
     color: #1A2E40;
-    margin-bottom: 18px;
+}
+
+.local-heading h2::after {
+    content: '';
+    display: block;
+    width: 78px;
+    height: 3px;
+    margin: 24px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #C97A3D, #C69C6D);
 }
 
 .local-kicker {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     color: #C97A3D;
 }
@@ -216,9 +230,9 @@
     padding: 48px 54px;
     border-radius: 34px;
     overflow: hidden;
-   background:
-    linear-gradient(135deg, rgba(26,46,64,0.96), rgba(42,64,85,0.92)),
-    rgba(26,46,64,0.28);
+    background:
+        linear-gradient(135deg, rgba(26,46,64,0.96), rgba(42,64,85,0.92)),
+        rgba(26,46,64,0.28);
     border: 1px solid rgba(255,255,255,0.26);
     box-shadow:
         22px 24px 0 rgba(101,78,58,0.30),
@@ -263,11 +277,23 @@
 }
 
 .local-bathroom h2 {
+    position: relative;
     color: white;
     font-size: 2.55rem;
     line-height: 1.08;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     max-width: 780px;
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.local-bathroom h2::after {
+    content: '';
+    display: block;
+    width: 78px;
+    height: 3px;
+    margin-top: 20px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #D89A69, rgba(255,255,255,0.55));
 }
 
 .local-bathroom p {
@@ -322,6 +348,7 @@
 .local-bathroom__btn:hover::after {
     transform: translateX(4px);
 }
+
 /* ===== FAQ + CONTACT ===== */
 
 .local-faq {
@@ -339,6 +366,16 @@
     text-align: left;
     margin: 0 0 42px;
     max-width: 760px;
+}
+
+.local-heading--left h2 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.local-heading--left h2::after {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .local-faq__list {
@@ -386,10 +423,23 @@
 }
 
 .local-faq__contact h2 {
+    position: relative;
+    max-width: 620px;
     color: white;
     font-size: 2.25rem;
     line-height: 1.12;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.local-faq__contact h2::after {
+    content: '';
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin-top: 18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #D89A69, rgba(255,255,255,0.55));
 }
 
 .local-faq__contact p {
@@ -451,6 +501,7 @@
 .local-faq__contact-links a:hover strong {
     color: #ffffff;
 }
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 1100px) {
@@ -472,6 +523,10 @@
     .local-heading h2,
     .local-bathroom h2 {
         font-size: 2.3rem;
+    }
+
+    .local-faq__contact h2 {
+        font-size: 2.15rem;
     }
 
     .local-bathroom__box {
@@ -524,6 +579,11 @@
         line-height: 1.15;
     }
 
+    .local-heading h2::after {
+        width: 70px;
+        margin-top: 20px;
+    }
+
     .local-service-list {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -574,36 +634,51 @@
         font-size: 0.9rem;
     }
 
-  .local-faq__layout {
-    grid-template-columns: 1fr;
-    gap: 38px;
-}
+    .local-faq__layout {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
 
-.local-heading--left {
-    text-align: center;
-    margin: 0 auto 36px;
-}
+    .local-heading--left {
+        text-align: center;
+        margin: 0 auto 36px;
+    }
 
-.local-faq__contact {
-    position: static;
-    padding: 34px 28px;
-}
+    .local-heading--left h2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.local-faq__list article {
-    padding: 22px 0;
-}
+    .local-heading--left h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.local-faq__list h3 {
-    font-size: 1.22rem;
-}
+    .local-faq__contact {
+        position: static;
+        padding: 34px 28px;
+    }
+
+    .local-faq__contact h2 {
+        font-size: 2rem;
+    }
+
+    .local-faq__list article {
+        padding: 22px 0;
+    }
+
+    .local-faq__list h3 {
+        font-size: 1.22rem;
+    }
+
     .local-faq__contact-links {
-    grid-template-columns: 1fr;
-}
+        grid-template-columns: 1fr;
+    }
 
-.local-faq__contact-links a:first-child {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.18);
-}
+    .local-faq__contact-links a:first-child {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
 }
 
 @media (max-width: 576px) {
@@ -626,7 +701,8 @@
     }
 
     .local-heading h2,
-    .local-bathroom h2 {
+    .local-bathroom h2,
+    .local-faq__contact h2 {
         font-size: 1.85rem;
     }
 
