@@ -202,10 +202,7 @@
 
 .local-bathroom {
     padding: 92px 0;
-    background:
-        radial-gradient(circle at 18% 18%, rgba(255,255,255,0.16), transparent 28%),
-        linear-gradient(135deg, rgba(201,122,61,0.97), rgba(185,108,53,0.97)),
-        linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
+    background: #ffffff;
 }
 
 .local-bathroom__box {
