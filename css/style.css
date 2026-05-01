@@ -903,6 +903,13 @@ p, li, a, span {
     .gallery-masonry {
         grid-template-columns: repeat(2, 1fr);
     }
+    .zone-city-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.zone-city-card {
+    min-height: 380px;
+}
 }
 
 @media (max-width: 1000px) {
