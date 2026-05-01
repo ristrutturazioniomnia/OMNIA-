@@ -174,7 +174,7 @@
 /* ===== BATHROOM CTA ===== */
 
 .local-bathroom {
-    padding: 82px 0;
+    padding: 86px 0;
     background:
         linear-gradient(135deg, rgba(201,122,61,0.97), rgba(185,108,53,0.97)),
         linear-gradient(180deg, #C97A3D 0%, #B96C35 100%);
@@ -183,70 +183,51 @@
 .local-bathroom__box {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 34px;
+    gap: 36px;
     align-items: center;
-    padding: 42px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 44px 48px;
     border-radius: 30px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.28);
-    box-shadow: 18px 18px 0 rgba(101,78,58,0.30);
-}
-
-.local-bathroom h2,
-.local-bathroom p {
-    color: white;
+    background:
+        linear-gradient(135deg, rgba(26,46,64,0.94), rgba(42,64,85,0.94));
+    border: 1px solid rgba(255,255,255,0.20);
+    box-shadow:
+        20px 20px 0 rgba(101,78,58,0.32),
+        0 24px 50px rgba(26,46,64,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.12);
 }
 
 .local-bathroom .local-kicker {
-    color: #1A2E40;
+    color: #D89A69;
 }
 
-/* ===== MAP + CONTACT ===== */
-
-.local-map-contact {
-    background: #fcfaf8;
+.local-bathroom h2 {
+    color: white;
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin-bottom: 14px;
 }
 
-.local-map-contact__grid {
-    display: grid;
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-    gap: 48px;
-    align-items: center;
+.local-bathroom p {
+    color: rgba(255,255,255,0.86);
+    max-width: 780px;
+    font-size: 1.05rem;
+    line-height: 1.75;
 }
 
-.local-contact-box {
-    display: grid;
-    gap: 14px;
-    margin-top: 30px;
-}
-
-.local-contact-box a {
-    color: #1A2E40;
-    font-weight: 800;
-    text-decoration: none;
-    width: fit-content;
-    border-bottom: 1px solid rgba(26,46,64,0.35);
-}
-
-.local-contact-box a:hover {
-    color: #C97A3D;
+.local-bathroom .local-btn {
+    background: #C97A3D;
     border-color: #C97A3D;
+    color: white;
+    white-space: nowrap;
 }
 
-.local-map {
-    border-radius: 30px;
-    overflow: hidden;
-    min-height: 360px;
-    box-shadow:
-        18px 18px 0 rgba(201,122,61,0.18),
-        0 22px 44px rgba(26,46,64,0.10);
+.local-bathroom .local-btn:hover {
+    background: white;
+    border-color: white;
+    color: #1A2E40;
 }
-
-.local-map iframe {
-    display: block;
-    min-height: 360px;
-}
-
 /* ===== FAQ ===== */
 
 .local-faq {
