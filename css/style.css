@@ -127,6 +127,7 @@ p, li, a, span {
 
 .zona-section {
     background: linear-gradient(135deg, #C97A3D, #B96C35);
+    padding: 90px 0 120px;
 }
 
 .zona-section::before,
@@ -166,22 +167,9 @@ p, li, a, span {
 }
 
 .section-title {
-    position: relative;
-    display: inline-block;
-    font-size: 2.7rem;
-    margin-bottom: 1.8rem;
-    line-height: 1.16;
-    color: var(--blu);
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 86px;
-    height: 3px;
-    margin: 22px auto 0;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--terracotta), var(--oro));
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .section-subhead {
@@ -527,50 +515,12 @@ p, li, a, span {
 
 .services-header {
     text-align: center;
-    margin-bottom: 64px;
-}
-
-.services-header .small-label {
-    position: relative;
-    display: inline-block;
-    padding: 0 18px;
-}
-
-.services-header .small-label::before,
-.services-header .small-label::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 42px;
-    height: 1px;
-    background: rgba(201,122,61,0.45);
-}
-
-.services-header .small-label::before {
-    right: 100%;
-}
-
-.services-header .small-label::after {
-    left: 100%;
+    margin-bottom: 60px;
 }
 
 .services-header h2 {
-    position: relative;
-    display: inline-block;
     font-size: 3rem;
-    line-height: 1.12;
     color: var(--blu);
-    max-width: 880px;
-}
-
-.services-header h2::after {
-    content: '';
-    display: block;
-    width: 92px;
-    height: 3px;
-    margin: 24px auto 0;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--terracotta), var(--oro));
 }
 
 .services-grid {
@@ -651,22 +601,10 @@ p, li, a, span {
 }
 
 .special-content h2 {
-    position: relative;
     font-size: 3rem;
     line-height: 1.1;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     color: white;
-    max-width: 760px;
-}
-
-.special-content h2::after {
-    content: '';
-    display: block;
-    width: 92px;
-    height: 3px;
-    margin-top: 22px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--oro), rgba(255,255,255,0.55));
 }
 
 .special-content p {
@@ -737,26 +675,12 @@ p, li, a, span {
 /* NUOVA HOME - ZONE SERVITE */
 .zone-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 54px;
 }
 
 .zone-header h2 {
-    position: relative;
-    display: inline-block;
     font-size: 3rem;
-    line-height: 1.12;
     color: white;
-    text-shadow: 0 12px 28px rgba(80,45,20,0.22);
-}
-
-.zone-header h2::after {
-    content: '';
-    display: block;
-    width: 92px;
-    height: 3px;
-    margin: 24px auto 0;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, var(--blu), transparent);
 }
 
 .zone-city-grid {
@@ -915,49 +839,12 @@ p, li, a, span {
 
 .gallery-header {
     text-align: center;
-    margin-bottom: 64px;
-}
-
-.gallery-header .small-label {
-    position: relative;
-    display: inline-block;
-    padding: 0 18px;
-}
-
-.gallery-header .small-label::before,
-.gallery-header .small-label::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 42px;
-    height: 1px;
-    background: rgba(201,122,61,0.45);
-}
-
-.gallery-header .small-label::before {
-    right: 100%;
-}
-
-.gallery-header .small-label::after {
-    left: 100%;
+    margin-bottom: 60px;
 }
 
 .gallery-header h2 {
-    position: relative;
-    display: inline-block;
     font-size: 3rem;
-    line-height: 1.12;
     color: var(--blu);
-}
-
-.gallery-header h2::after {
-    content: '';
-    display: block;
-    width: 92px;
-    height: 3px;
-    margin: 24px auto 0;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--terracotta), var(--oro));
 }
 
 .gallery-masonry {
@@ -1009,22 +896,10 @@ p, li, a, span {
 }
 
 .contact-info h2 {
-    position: relative;
     font-size: 3rem;
     line-height: 1.1;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     color: var(--blu);
-    max-width: 760px;
-}
-
-.contact-info h2::after {
-    content: '';
-    display: block;
-    width: 86px;
-    height: 3px;
-    margin-top: 22px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--terracotta), var(--oro));
 }
 
 .contact-info p {
@@ -1046,23 +921,12 @@ p, li, a, span {
 }
 
 .contact-title {
-    position: relative;
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
     line-height: 1.1;
-    margin: 0 0 36px 0;
+    margin: 0 0 32px 0;
     text-align: center;
     color: var(--blu);
-}
-
-.contact-title::after {
-    content: '';
-    display: block;
-    width: 74px;
-    height: 3px;
-    margin: 18px auto 0;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--terracotta), var(--oro));
 }
 
 .contact-row {
@@ -1200,13 +1064,13 @@ p, li, a, span {
 /* ===== SMALL LABEL ===== */
 .small-label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: var(--terracotta);
     display: block;
-    margin-bottom: 18px;
-    font-weight: 800;
+    margin-bottom: 16px;
+    font-weight: 700;
 }
 
 .small-label.light {
@@ -1438,16 +1302,26 @@ p, li, a, span {
     .zone-city-card {
         min-height: 340px;
         padding: 22px;
-        box-shadow: 12px 12px 0 rgba(101, 78, 58, 0.35);
+        box-shadow:
+            12px 12px 0 rgba(26, 46, 64, 0.34),
+            0 18px 34px rgba(26, 46, 64, 0.22),
+            inset 0 1px 0 rgba(255, 255, 255, 0.22);
     }
 
     .zone-city-card h2 {
         font-size: 1.8rem;
+        margin-bottom: 18px;
+    }
+
+    .zone-city-card::after {
+        margin-top: 14px;
+        padding: 8px 14px;
+        font-size: 0.82rem;
     }
 
     .zone-city-image,
     .zone-city-image img {
-        min-height: 230px;
+        min-height: 220px;
     }
 
     .contact-grid {
