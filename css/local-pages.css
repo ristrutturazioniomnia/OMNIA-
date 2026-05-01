@@ -85,34 +85,88 @@
     background: #ffffff;
 }
 
+.local-services .local-heading {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 54px;
+}
+
 .local-service-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    border-top: 1px solid #eae7e2;
-    border-left: 1px solid #eae7e2;
+    gap: 28px;
+    border: 0;
 }
 
-.local-service-list article {
-    padding: 32px 26px;
-    border-right: 1px solid #eae7e2;
-    border-bottom: 1px solid #eae7e2;
-    background: #ffffff;
-    transition: background .25s ease, transform .25s ease;
-}
-
-.local-service-list article:hover {
+.local-service-card {
+    display: flex;
+    flex-direction: column;
     background: #fcfaf8;
-    transform: translateY(-4px);
+    border: 1px solid #e5ded6;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow:
+        0 18px 38px rgba(26, 46, 64, 0.07),
+        inset 0 1px 0 rgba(255,255,255,0.65);
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
 }
 
-.local-service-list h3 {
-    font-size: 1.45rem;
-    line-height: 1.16;
+.local-service-card:hover {
+    transform: translateY(-8px);
+    border-color: #C97A3D;
+    box-shadow:
+        0 26px 52px rgba(26, 46, 64, 0.12),
+        0 10px 24px rgba(201, 122, 61, 0.12);
+}
+
+.local-service-card__image {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(26,46,64,0.16), rgba(201,122,61,0.12));
+}
+
+.local-service-card__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(26,46,64,0.34), transparent 58%),
+        linear-gradient(135deg, rgba(201,122,61,0.10), transparent);
+    pointer-events: none;
+}
+
+.local-service-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.local-service-card:hover .local-service-card__image img {
+    transform: scale(1.07);
+    filter: contrast(1.04) saturate(1.04);
+}
+
+.local-service-card__content {
+    flex: 1;
+    padding: 28px 26px 30px;
+}
+
+.local-service-card h3 {
+    font-size: 1.55rem;
+    line-height: 1.15;
     margin-bottom: 14px;
     color: #1A2E40;
 }
 
-.local-service-list p {
+.local-service-card p {
     color: #5a6f84;
     line-height: 1.72;
 }
