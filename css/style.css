@@ -410,6 +410,19 @@ p, li, a, span {
     padding: 0 32px;
 }
 
+.hero-content > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hero-title {
     font-family: 'Playfair Display', serif;
     max-width: 980px;
