@@ -468,36 +468,41 @@ p, li, a, span {
     max-width: 980px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 .section-title-centered {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-text {
     max-width: 820px;
     font-size: 1.1rem;
     color: var(--testo-chiaro);
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     line-height: 1.8;
     text-align: center;
 }
 
 .about-features {
     display: grid;
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
-    gap: 28px 72px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 90px;
     width: 100%;
-    max-width: 980px;
+    max-width: 780px;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 16px;
     width: 100%;
-    justify-content: flex-start;
 }
 
 .feature i {
@@ -518,7 +523,7 @@ p, li, a, span {
     color: var(--testo-chiaro);
     font-size: 0.95rem;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
 
 /* ===== SERVIZI ===== */
@@ -1215,8 +1220,15 @@ p, li, a, span {
     }
 
     .about-features {
-        max-width: 100%;
-    }
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.feature {
+    justify-content: flex-start;
+}
 }
 
 @media (max-width: 900px) {
