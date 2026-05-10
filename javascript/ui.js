@@ -34,28 +34,28 @@
     const row = Math.floor(index / 2);
     const column = index % 2;
 
-    const stagger = row * 0.10 + column * 0.045;
+    const stagger = row * 0.075 + column * 0.035;
 
-    const startPoint = viewportHeight * 0.94;
-    const endPoint = viewportHeight * 0.28;
+    const startPoint = viewportHeight * 0.98;
+    const endPoint = viewportHeight * 0.34;
 
     const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
-    const serviceProgress = clamp((rawProgress - stagger) / 0.86, 0, 1);
+    const serviceProgress = clamp((rawProgress - stagger) / 0.92, 0, 1);
 
-    const imageProgress = clamp(serviceProgress / 0.58, 0, 1);
-    const panelProgress = clamp((serviceProgress - 0.22) / 0.54, 0, 1);
-    const contentProgress = clamp((serviceProgress - 0.42) / 0.48, 0, 1);
+    const imageProgress = clamp(serviceProgress / 0.52, 0, 1);
+    const panelProgress = clamp((serviceProgress - 0.20) / 0.52, 0, 1);
+    const contentProgress = clamp((serviceProgress - 0.38) / 0.48, 0, 1);
 
     const cardCenter = rect.top + rect.height / 2;
     const parallaxProgress = clamp((viewportHeight * 0.5 - cardCenter) / viewportHeight, -1, 1);
 
-    const cardY = lerp(110, 0, serviceProgress);
-    const imageY = lerp(42, -14, imageProgress) + parallaxProgress * -18;
-    const imageScale = lerp(1.12, 1.015, imageProgress);
-    const panelY = lerp(96, 0, panelProgress);
-    const panelOpacity = panelProgress;
-    const contentY = lerp(34, 0, contentProgress);
-    const contentOpacity = contentProgress;
+    const cardY = lerp(84, 0, serviceProgress);
+    const imageY = lerp(28, -6, imageProgress) + parallaxProgress * -10;
+    const imageScale = lerp(1.08, 1.015, imageProgress);
+    const panelY = lerp(54, 0, panelProgress);
+    const panelOpacity = clamp(panelProgress * 1.15, 0, 1);
+    const contentY = lerp(22, 0, contentProgress);
+    const contentOpacity = clamp(contentProgress * 1.15, 0, 1);
 
     card.style.setProperty('--service-progress', serviceProgress.toFixed(3));
     card.style.setProperty('--image-progress', imageProgress.toFixed(3));
@@ -69,8 +69,8 @@
     card.style.setProperty('--content-y', `${contentY.toFixed(2)}px`);
     card.style.setProperty('--content-opacity', contentOpacity.toFixed(3));
 
-    card.classList.toggle('is-visible', serviceProgress > 0.04);
-    card.classList.toggle('image-visible', imageProgress > 0.12);
+    card.classList.toggle('is-visible', serviceProgress > 0.03);
+    card.classList.toggle('image-visible', imageProgress > 0.08);
     card.classList.toggle('panel-visible', panelProgress > 0.08);
     card.classList.toggle('content-visible', contentProgress > 0.08);
   }
@@ -85,6 +85,7 @@
 
   function requestServiceUpdate() {
     if (ticking) return;
+
     ticking = true;
     window.requestAnimationFrame(updateServices);
   }
@@ -127,12 +128,12 @@
     card.style.setProperty('--image-progress', '0');
     card.style.setProperty('--panel-progress', '0');
     card.style.setProperty('--content-progress', '0');
-    card.style.setProperty('--card-y', '110px');
-    card.style.setProperty('--image-y', '42px');
-    card.style.setProperty('--image-scale', '1.12');
-    card.style.setProperty('--panel-y', '96px');
+    card.style.setProperty('--card-y', '84px');
+    card.style.setProperty('--image-y', '28px');
+    card.style.setProperty('--image-scale', '1.08');
+    card.style.setProperty('--panel-y', '54px');
     card.style.setProperty('--panel-opacity', '0');
-    card.style.setProperty('--content-y', '34px');
+    card.style.setProperty('--content-y', '22px');
     card.style.setProperty('--content-opacity', '0');
   });
 
