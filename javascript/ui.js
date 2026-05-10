@@ -49,82 +49,54 @@
     const isHero = Boolean(element.closest('.hero'));
     const isMedia = element.classList.contains('scroll-reveal-media');
     const isTitle = element.classList.contains('scroll-reveal-title');
-    const isCta = element.classList.contains('scroll-reveal-cta');
-    const isSection = element.classList.contains('scroll-reveal-section');
 
     if (isHero) {
       return {
         yStart: 0,
-        yEnd: -16,
+        yEnd: -14,
         scaleStart: 1,
-        scaleEnd: 0.994,
+        scaleEnd: 0.995,
         blurStart: 0,
         blurEnd: 0,
-        minOpacity: 0.92,
-        staggerFactor: 0.01
+        minOpacity: 0.94,
+        staggerFactor: 0
       };
     }
 
     if (isMedia) {
       return {
-        yStart: 30,
+        yStart: 34,
         yEnd: -8,
         scaleStart: 0.982,
         scaleEnd: 1,
         blurStart: 3,
         blurEnd: 0,
-        minOpacity: 0,
+        minOpacity: 0.04,
         staggerFactor: 0.025
       };
     }
 
     if (isTitle) {
       return {
-        yStart: 38,
+        yStart: 42,
         yEnd: 0,
         scaleStart: 0.99,
         scaleEnd: 1,
         blurStart: 4,
         blurEnd: 0,
-        minOpacity: 0,
-        staggerFactor: 0.025
-      };
-    }
-
-    if (isCta) {
-      return {
-        yStart: 18,
-        yEnd: 0,
-        scaleStart: 0.996,
-        scaleEnd: 1,
-        blurStart: 1.5,
-        blurEnd: 0,
-        minOpacity: 0,
-        staggerFactor: 0.018
-      };
-    }
-
-    if (isSection) {
-      return {
-        yStart: 18,
-        yEnd: 0,
-        scaleStart: 0.996,
-        scaleEnd: 1,
-        blurStart: 1.5,
-        blurEnd: 0,
-        minOpacity: 0.12,
-        staggerFactor: 0.015
+        minOpacity: 0.04,
+        staggerFactor: 0.02
       };
     }
 
     return {
-      yStart: 28,
+      yStart: 30,
       yEnd: 0,
       scaleStart: 0.994,
       scaleEnd: 1,
       blurStart: 2.5,
       blurEnd: 0,
-      minOpacity: 0,
+      minOpacity: 0.04,
       staggerFactor: 0.025
     };
   }
@@ -136,8 +108,9 @@
     const index = Math.max(getRevealIndex(element), 0);
     const stagger = Math.min(index * settings.staggerFactor, 0.12);
 
-    const startPoint = viewportHeight * 0.96;
-    const endPoint = viewportHeight * 0.28;
+    const startPoint = viewportHeight * 0.98;
+    const endPoint = viewportHeight * 0.30;
+
     const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
     const progress = clamp((rawProgress - stagger) / 0.92, 0, 1);
 
@@ -165,6 +138,7 @@
 
     const startPoint = viewportHeight * 0.98;
     const endPoint = viewportHeight * 0.34;
+
     const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
     const serviceProgress = clamp((rawProgress - stagger) / 0.92, 0, 1);
 
@@ -213,47 +187,23 @@
 
   function requestUpdate() {
     if (ticking) return;
+
     ticking = true;
     window.requestAnimationFrame(updateAll);
   }
 
-  if (reduceMotion) {
+  function setInitialState() {
     scrollRevealItems.forEach(setFinalRevealState);
     serviceCards.forEach(setFinalServiceState);
+  }
+
+  if (reduceMotion) {
+    setInitialState();
     root.classList.add('reveal-ready');
     return;
   }
 
-  scrollRevealItems.forEach((element) => {
-    const isHero = Boolean(element.closest('.hero'));
-
-    element.style.setProperty('--reveal-progress', '1');
-    element.style.setProperty('--reveal-opacity', isHero ? '0.92' : '1');
-    element.style.setProperty('--reveal-y', '0px');
-    element.style.setProperty('--reveal-scale', '1');
-    element.style.setProperty('--reveal-blur', '0px');
-  });
-
-  serviceCards.forEach((card, index) => {
-    const row = Math.floor(index / 2);
-    const column = index % 2;
-
-    card.style.setProperty('--service-index', index);
-    card.style.setProperty('--service-row', row);
-    card.style.setProperty('--service-column', column);
-    card.style.setProperty('--service-progress', '1');
-    card.style.setProperty('--image-progress', '1');
-    card.style.setProperty('--panel-progress', '1');
-    card.style.setProperty('--content-progress', '1');
-    card.style.setProperty('--card-y', '0px');
-    card.style.setProperty('--image-y', '0px');
-    card.style.setProperty('--image-scale', '1');
-    card.style.setProperty('--panel-y', '0px');
-    card.style.setProperty('--panel-opacity', '1');
-    card.style.setProperty('--content-y', '0px');
-    card.style.setProperty('--content-opacity', '1');
-  });
-
+  setInitialState();
   updateAll();
   root.classList.add('reveal-ready');
 
