@@ -718,107 +718,89 @@ a:focus-visible {
 
 .contatti {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
-  gap: clamp(34px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
+  gap: clamp(42px, 6vw, 86px);
   align-items: start;
   background: var(--paper-light);
 }
 
 .contatti-testo {
-  grid-column: 1;
-  grid-row: 1 / span 2;
   padding: 0;
   background: transparent;
   box-shadow: none;
 }
 
 .contatti-testo::before {
-  content: "";
-  display: block;
-  width: 92px;
-  height: 3px;
-  margin-bottom: 26px;
-  background: var(--accent);
+  content: none;
 }
 
-.contatti-dati {
-  grid-column: 2;
-  grid-row: 1;
-  padding-left: clamp(28px, 4vw, 54px);
-  border-left: 1px solid var(--line-strong);
-  background: transparent;
-  box-shadow: none;
+.contatti-testo h2 {
+  max-width: 760px;
 }
 
-.contatti-dati p {
-  max-width: none;
-  padding-bottom: 18px;
-  margin: 0 0 18px;
+.contatti-testo > p:not(.eyebrow):not(.zona-operativa) {
+  max-width: 760px;
+}
+
+.zona-operativa {
+  margin-top: 22px;
   color: var(--muted);
-  border-bottom: 1px solid var(--line);
+  font-size: 0.96rem;
 }
 
-.contatti-dati p:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.contatti-dati strong {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--ink);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.contatti-dati a {
-  color: var(--ink);
-  font-weight: 800;
-  text-decoration: underline;
-  text-decoration-color: rgba(184, 121, 69, 0.55);
-  text-underline-offset: 4px;
-}
-
-.contatti-extra {
-  grid-column: 2;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  margin-top: 26px;
-  padding-left: clamp(28px, 4vw, 54px);
-  padding-top: 24px;
+.contatti-sidebar {
+  padding-left: clamp(30px, 4vw, 56px);
   border-left: 1px solid var(--line-strong);
-  border-top: 1px solid var(--line);
 }
 
-.contatti-extra h3 {
-  margin-bottom: 10px;
+.contatti-sidebar-blocco + .contatti-sidebar-blocco {
+  margin-top: clamp(42px, 5vw, 58px);
+}
+
+.contatti-sidebar h3 {
+  margin-bottom: 14px;
   color: var(--ink);
   font-family: var(--font-title);
-  font-size: clamp(1.25rem, 1.8vw, 1.62rem);
-  line-height: 1.08;
+  font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+  line-height: 1.05;
   letter-spacing: -0.04em;
 }
 
-.contatti-province {
+.contatti-sidebar ul {
   display: grid;
-  gap: 7px;
+  border-top: 1px solid var(--line);
 }
 
-.contatti-province p,
-.contatti-servizi-testo {
-  max-width: none;
-  color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.55;
+.contatti-sidebar li {
+  border-bottom: 1px solid var(--line);
 }
 
-.contatti-province strong {
-  color: var(--ink);
+.contatti-sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: color var(--speed), padding-left var(--speed);
+}
+
+.contatti-sidebar a::after {
+  content: "→";
+  color: var(--accent);
   font-weight: 800;
+  transition: transform var(--speed);
+}
+
+.contatti-sidebar a:hover {
+  color: var(--ink);
+  padding-left: 8px;
+}
+
+.contatti-sidebar a:hover::after {
+  transform: translateX(6px);
 }
 /* =========================================================
 10. FOOTER
@@ -1015,24 +997,11 @@ a:focus-visible {
     order: 1;
   }
 
-  .contatti-testo,
-  .contatti-dati,
-  .contatti-extra {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .contatti-dati {
+  .contatti-sidebar {
     padding-left: 0;
-    padding-top: 28px;
+    padding-top: 34px;
     border-left: 0;
     border-top: 1px solid var(--line-strong);
-  }
-
-  .contatti-extra {
-    margin-top: 0;
-    padding-left: 0;
-    border-left: 0;
   }
 }
 
@@ -1121,18 +1090,12 @@ a:focus-visible {
     padding-left: 0;
   }
 
-  .contatti-extra {
-    padding-top: 20px;
-    gap: 18px;
+  .contatti-sidebar-blocco + .contatti-sidebar-blocco {
+    margin-top: 38px;
   }
 
-  .contatti-extra h3 {
-    margin-bottom: 8px;
-  }
-
-  .contatti-province p,
-  .contatti-servizi-testo {
-    font-size: 0.91rem;
+  .contatti-sidebar a {
+    padding: 14px 0;
   }
 
   .footer {
@@ -1173,6 +1136,14 @@ a:focus-visible {
 
   .servizio-panel p {
     font-size: 0.91rem;
+  }
+
+  .contatti-sidebar h3 {
+    font-size: clamp(1.5rem, 9vw, 2rem);
+  }
+
+  .contatti-sidebar a {
+    font-size: 0.95rem;
   }
 }
 /* =========================================================
