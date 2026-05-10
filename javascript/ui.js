@@ -1,6 +1,7 @@
 (function () {
   const root = document.documentElement;
   root.classList.remove('no-js');
+  root.classList.add('js');
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollRevealItems = Array.from(document.querySelectorAll('.scroll-reveal'));
@@ -54,52 +55,52 @@
     if (isHero) {
       return {
         yStart: 0,
-        yEnd: -18,
+        yEnd: -16,
         scaleStart: 1,
-        scaleEnd: 0.992,
+        scaleEnd: 0.994,
         blurStart: 0,
         blurEnd: 0,
-        minOpacity: 0.88,
-        staggerFactor: 0.02
+        minOpacity: 0.92,
+        staggerFactor: 0.01
       };
     }
 
     if (isMedia) {
       return {
-        yStart: 34,
+        yStart: 30,
         yEnd: -8,
-        scaleStart: 0.975,
+        scaleStart: 0.982,
         scaleEnd: 1,
-        blurStart: 4,
+        blurStart: 3,
         blurEnd: 0,
         minOpacity: 0,
-        staggerFactor: 0.035
+        staggerFactor: 0.025
       };
     }
 
     if (isTitle) {
       return {
-        yStart: 44,
+        yStart: 38,
         yEnd: 0,
-        scaleStart: 0.988,
+        scaleStart: 0.99,
         scaleEnd: 1,
-        blurStart: 5,
+        blurStart: 4,
         blurEnd: 0,
         minOpacity: 0,
-        staggerFactor: 0.035
+        staggerFactor: 0.025
       };
     }
 
     if (isCta) {
       return {
-        yStart: 22,
+        yStart: 18,
         yEnd: 0,
-        scaleStart: 0.995,
+        scaleStart: 0.996,
         scaleEnd: 1,
-        blurStart: 2,
+        blurStart: 1.5,
         blurEnd: 0,
         minOpacity: 0,
-        staggerFactor: 0.025
+        staggerFactor: 0.018
       };
     }
 
@@ -111,20 +112,20 @@
         scaleEnd: 1,
         blurStart: 1.5,
         blurEnd: 0,
-        minOpacity: 0.18,
-        staggerFactor: 0.02
+        minOpacity: 0.12,
+        staggerFactor: 0.015
       };
     }
 
     return {
-      yStart: 32,
+      yStart: 28,
       yEnd: 0,
-      scaleStart: 0.992,
+      scaleStart: 0.994,
       scaleEnd: 1,
-      blurStart: 3,
+      blurStart: 2.5,
       blurEnd: 0,
       minOpacity: 0,
-      staggerFactor: 0.035
+      staggerFactor: 0.025
     };
   }
 
@@ -133,10 +134,10 @@
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const settings = getRevealSettings(element);
     const index = Math.max(getRevealIndex(element), 0);
-    const stagger = Math.min(index * settings.staggerFactor, 0.16);
+    const stagger = Math.min(index * settings.staggerFactor, 0.12);
 
     const startPoint = viewportHeight * 0.96;
-    const endPoint = viewportHeight * 0.24;
+    const endPoint = viewportHeight * 0.28;
     const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
     const progress = clamp((rawProgress - stagger) / 0.92, 0, 1);
 
@@ -164,7 +165,6 @@
 
     const startPoint = viewportHeight * 0.98;
     const endPoint = viewportHeight * 0.34;
-
     const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
     const serviceProgress = clamp((rawProgress - stagger) / 0.92, 0, 1);
 
@@ -220,15 +220,18 @@
   if (reduceMotion) {
     scrollRevealItems.forEach(setFinalRevealState);
     serviceCards.forEach(setFinalServiceState);
+    root.classList.add('reveal-ready');
     return;
   }
 
   scrollRevealItems.forEach((element) => {
-    element.style.setProperty('--reveal-progress', '0');
-    element.style.setProperty('--reveal-opacity', element.closest('.hero') ? '0.88' : '0');
-    element.style.setProperty('--reveal-y', '32px');
-    element.style.setProperty('--reveal-scale', '0.992');
-    element.style.setProperty('--reveal-blur', '3px');
+    const isHero = Boolean(element.closest('.hero'));
+
+    element.style.setProperty('--reveal-progress', '1');
+    element.style.setProperty('--reveal-opacity', isHero ? '0.92' : '1');
+    element.style.setProperty('--reveal-y', '0px');
+    element.style.setProperty('--reveal-scale', '1');
+    element.style.setProperty('--reveal-blur', '0px');
   });
 
   serviceCards.forEach((card, index) => {
@@ -238,22 +241,23 @@
     card.style.setProperty('--service-index', index);
     card.style.setProperty('--service-row', row);
     card.style.setProperty('--service-column', column);
-    card.style.setProperty('--service-progress', '0');
-    card.style.setProperty('--image-progress', '0');
-    card.style.setProperty('--panel-progress', '0');
-    card.style.setProperty('--content-progress', '0');
-    card.style.setProperty('--card-y', '84px');
-    card.style.setProperty('--image-y', '28px');
-    card.style.setProperty('--image-scale', '1.08');
-    card.style.setProperty('--panel-y', '54px');
-    card.style.setProperty('--panel-opacity', '0');
-    card.style.setProperty('--content-y', '22px');
-    card.style.setProperty('--content-opacity', '0');
+    card.style.setProperty('--service-progress', '1');
+    card.style.setProperty('--image-progress', '1');
+    card.style.setProperty('--panel-progress', '1');
+    card.style.setProperty('--content-progress', '1');
+    card.style.setProperty('--card-y', '0px');
+    card.style.setProperty('--image-y', '0px');
+    card.style.setProperty('--image-scale', '1');
+    card.style.setProperty('--panel-y', '0px');
+    card.style.setProperty('--panel-opacity', '1');
+    card.style.setProperty('--content-y', '0px');
+    card.style.setProperty('--content-opacity', '1');
   });
+
+  updateAll();
+  root.classList.add('reveal-ready');
 
   window.addEventListener('scroll', requestUpdate, { passive: true });
   window.addEventListener('resize', requestUpdate);
   window.addEventListener('load', requestUpdate);
-
-  requestUpdate();
 }());
