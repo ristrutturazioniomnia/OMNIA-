@@ -1105,3 +1105,23 @@ a:focus-visible {
     font-size: 0.91rem;
   }
 }
+/* =========================================================
+FIX FOOTER VISIBILE - NO BLUR SU DESKTOP E MOBILE
+========================================================= */
+
+.footer .scroll-reveal,
+.footer .scroll-reveal-text,
+.footer .footer-colonna {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  --reveal-opacity: 1 !important;
+  --reveal-y: 0px !important;
+  --reveal-scale: 1 !important;
+  --reveal-blur: 0px !important;
+}
+
+.footer {
+  overflow: visible !important;
+  filter: none !important;
+}
