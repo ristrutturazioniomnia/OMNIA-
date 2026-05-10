@@ -3,13 +3,22 @@
   root.classList.remove('no-js');
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealItems = Array.from(document.querySelectorAll('.reveal-item'));
+  const scrollRevealItems = Array.from(document.querySelectorAll('.scroll-reveal'));
   const serviceCards = Array.from(document.querySelectorAll('.servizio-card'));
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
   const lerp = (start, end, progress) => start + (end - start) * progress;
 
   let ticking = false;
+
+  function setFinalRevealState(element) {
+    element.classList.add('is-visible');
+    element.style.setProperty('--reveal-progress', '1');
+    element.style.setProperty('--reveal-opacity', '1');
+    element.style.setProperty('--reveal-y', '0px');
+    element.style.setProperty('--reveal-scale', '1');
+    element.style.setProperty('--reveal-blur', '0px');
+  }
 
   function setFinalServiceState(card) {
     card.classList.add('is-visible', 'image-visible', 'panel-visible', 'content-visible');
@@ -27,13 +36,130 @@
     card.style.setProperty('--content-opacity', '1');
   }
 
+  function getRevealIndex(element) {
+    if (!element.parentElement) return 0;
+
+    return Array.from(element.parentElement.children)
+      .filter((child) => child.classList && child.classList.contains('scroll-reveal'))
+      .indexOf(element);
+  }
+
+  function getRevealSettings(element) {
+    const isHero = Boolean(element.closest('.hero'));
+    const isMedia = element.classList.contains('scroll-reveal-media');
+    const isTitle = element.classList.contains('scroll-reveal-title');
+    const isCta = element.classList.contains('scroll-reveal-cta');
+    const isSection = element.classList.contains('scroll-reveal-section');
+
+    if (isHero) {
+      return {
+        yStart: 0,
+        yEnd: -18,
+        scaleStart: 1,
+        scaleEnd: 0.992,
+        blurStart: 0,
+        blurEnd: 0,
+        minOpacity: 0.88,
+        staggerFactor: 0.02
+      };
+    }
+
+    if (isMedia) {
+      return {
+        yStart: 34,
+        yEnd: -8,
+        scaleStart: 0.975,
+        scaleEnd: 1,
+        blurStart: 4,
+        blurEnd: 0,
+        minOpacity: 0,
+        staggerFactor: 0.035
+      };
+    }
+
+    if (isTitle) {
+      return {
+        yStart: 44,
+        yEnd: 0,
+        scaleStart: 0.988,
+        scaleEnd: 1,
+        blurStart: 5,
+        blurEnd: 0,
+        minOpacity: 0,
+        staggerFactor: 0.035
+      };
+    }
+
+    if (isCta) {
+      return {
+        yStart: 22,
+        yEnd: 0,
+        scaleStart: 0.995,
+        scaleEnd: 1,
+        blurStart: 2,
+        blurEnd: 0,
+        minOpacity: 0,
+        staggerFactor: 0.025
+      };
+    }
+
+    if (isSection) {
+      return {
+        yStart: 18,
+        yEnd: 0,
+        scaleStart: 0.996,
+        scaleEnd: 1,
+        blurStart: 1.5,
+        blurEnd: 0,
+        minOpacity: 0.18,
+        staggerFactor: 0.02
+      };
+    }
+
+    return {
+      yStart: 32,
+      yEnd: 0,
+      scaleStart: 0.992,
+      scaleEnd: 1,
+      blurStart: 3,
+      blurEnd: 0,
+      minOpacity: 0,
+      staggerFactor: 0.035
+    };
+  }
+
+  function updateRevealElement(element) {
+    const rect = element.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const settings = getRevealSettings(element);
+    const index = Math.max(getRevealIndex(element), 0);
+    const stagger = Math.min(index * settings.staggerFactor, 0.16);
+
+    const startPoint = viewportHeight * 0.96;
+    const endPoint = viewportHeight * 0.24;
+    const rawProgress = (startPoint - rect.top) / (startPoint - endPoint);
+    const progress = clamp((rawProgress - stagger) / 0.92, 0, 1);
+
+    const opacity = lerp(settings.minOpacity, 1, progress);
+    const y = lerp(settings.yStart, settings.yEnd, progress);
+    const scale = lerp(settings.scaleStart, settings.scaleEnd, progress);
+    const blur = lerp(settings.blurStart, settings.blurEnd, progress);
+
+    element.style.setProperty('--reveal-progress', progress.toFixed(3));
+    element.style.setProperty('--reveal-opacity', opacity.toFixed(3));
+    element.style.setProperty('--reveal-y', `${y.toFixed(2)}px`);
+    element.style.setProperty('--reveal-scale', scale.toFixed(4));
+    element.style.setProperty('--reveal-blur', `${blur.toFixed(2)}px`);
+
+    element.classList.toggle('is-visible', progress > 0.02);
+  }
+
   function updateServiceCard(card, index) {
     const rect = card.getBoundingClientRect();
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
     const row = Math.floor(index / 2);
     const column = index % 2;
-
     const stagger = row * 0.075 + column * 0.035;
 
     const startPoint = viewportHeight * 0.98;
@@ -75,7 +201,9 @@
     card.classList.toggle('content-visible', contentProgress > 0.08);
   }
 
-  function updateServices() {
+  function updateAll() {
+    scrollRevealItems.forEach(updateRevealElement);
+
     serviceCards.forEach((card, index) => {
       updateServiceCard(card, index);
     });
@@ -83,38 +211,25 @@
     ticking = false;
   }
 
-  function requestServiceUpdate() {
+  function requestUpdate() {
     if (ticking) return;
-
     ticking = true;
-    window.requestAnimationFrame(updateServices);
+    window.requestAnimationFrame(updateAll);
   }
 
   if (reduceMotion) {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
+    scrollRevealItems.forEach(setFinalRevealState);
     serviceCards.forEach(setFinalServiceState);
     return;
   }
 
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      });
-    }, {
-      threshold: 0.16,
-      rootMargin: '0px 0px -8% 0px'
-    });
-
-    revealItems.forEach((item) => {
-      revealObserver.observe(item);
-    });
-  } else {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
-  }
+  scrollRevealItems.forEach((element) => {
+    element.style.setProperty('--reveal-progress', '0');
+    element.style.setProperty('--reveal-opacity', element.closest('.hero') ? '0.88' : '0');
+    element.style.setProperty('--reveal-y', '32px');
+    element.style.setProperty('--reveal-scale', '0.992');
+    element.style.setProperty('--reveal-blur', '3px');
+  });
 
   serviceCards.forEach((card, index) => {
     const row = Math.floor(index / 2);
@@ -123,7 +238,6 @@
     card.style.setProperty('--service-index', index);
     card.style.setProperty('--service-row', row);
     card.style.setProperty('--service-column', column);
-
     card.style.setProperty('--service-progress', '0');
     card.style.setProperty('--image-progress', '0');
     card.style.setProperty('--panel-progress', '0');
@@ -137,8 +251,9 @@
     card.style.setProperty('--content-opacity', '0');
   });
 
-  window.addEventListener('scroll', requestServiceUpdate, { passive: true });
-  window.addEventListener('resize', requestServiceUpdate);
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', requestUpdate);
 
-  requestServiceUpdate();
+  requestUpdate();
 }());
