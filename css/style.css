@@ -407,13 +407,13 @@ button:focus-visible {
 }
 
 /* =========================================================
-7. SERVIZI - ANIMAZIONE SCROLL-DRIVEN
+7. SERVIZI
 ========================================================= */
 
 .servizi {
   overflow: hidden;
   background:
-    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.12), transparent 34rem),
+    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.13), transparent 34rem),
     linear-gradient(180deg, var(--paper), #fbf8f3);
 }
 
@@ -426,7 +426,7 @@ button:focus-visible {
   column-gap: clamp(34px, 5vw, 78px);
   row-gap: 14px;
   align-items: end;
-  margin-bottom: clamp(56px, 7vw, 96px);
+  margin-bottom: clamp(64px, 8vw, 110px);
 }
 
 .servizi-introduzione .eyebrow {
@@ -454,7 +454,7 @@ button:focus-visible {
 .servizi-lista {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(42px, 6vw, 86px) clamp(30px, 5vw, 64px);
+  gap: clamp(82px, 9vw, 132px) clamp(34px, 5vw, 72px);
   align-items: start;
 }
 
@@ -463,134 +463,110 @@ button:focus-visible {
   --image-progress: 0;
   --panel-progress: 0;
   --content-progress: 0;
-  --card-y: 110px;
-  --image-y: 42px;
-  --image-scale: 1.12;
-  --panel-y: 96px;
+  --card-y: 84px;
+  --image-y: 28px;
+  --image-scale: 1.08;
+  --panel-y: 54px;
   --panel-opacity: 0;
-  --content-y: 34px;
+  --content-y: 22px;
   --content-opacity: 0;
 
   position: relative;
-  min-height: clamp(520px, 52vw, 660px);
-  padding: 0 0 clamp(34px, 4vw, 48px);
-  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
   background: transparent;
+  border: 0;
   box-shadow: none;
-  opacity: calc(0.16 + (var(--service-progress) * 0.84));
+  opacity: calc(0.22 + (var(--service-progress) * 0.78));
   transform: translate3d(0, var(--card-y), 0);
   transition:
-    opacity 180ms linear,
-    transform 180ms linear;
+    opacity 160ms linear,
+    transform 160ms linear;
   will-change: transform, opacity;
 }
 
 .servizio-card:nth-child(even) {
-  margin-top: clamp(42px, 7vw, 92px);
+  margin-top: clamp(56px, 7vw, 104px);
 }
 
-.servizio-card::before {
-  content: "";
-  position: absolute;
-  z-index: 4;
-  left: clamp(28px, 4vw, 52px);
-  top: clamp(300px, 31vw, 390px);
-  width: clamp(54px, 5vw, 74px);
-  height: clamp(54px, 5vw, 74px);
-  border-radius: 50%;
-  background:
-    linear-gradient(135deg, var(--accent), #d26135);
-  box-shadow: 0 18px 42px rgba(184, 81, 49, 0.34);
-  opacity: var(--panel-opacity);
-  transform:
-    translate3d(0, calc(var(--panel-y) - 34px), 0)
-    scale(calc(0.74 + (var(--panel-progress) * 0.26)));
-  transition:
-    transform 180ms linear,
-    opacity 180ms linear,
-    box-shadow 260ms ease;
-  will-change: transform, opacity;
-}
-
+.servizio-card::before,
 .servizio-card::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: clamp(22px, 3vw, 38px);
-  right: 0;
-  bottom: clamp(16px, 2vw, 24px);
-  height: clamp(230px, 22vw, 300px);
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(12, 18, 23, 0.98), rgba(20, 30, 38, 0.96));
-  box-shadow: 0 30px 80px rgba(10, 16, 22, 0.30);
-  opacity: var(--panel-opacity);
-  transform: translate3d(0, var(--panel-y), 0);
-  transition:
-    transform 180ms linear,
-    opacity 180ms linear,
-    background 260ms ease,
-    box-shadow 260ms ease;
-  will-change: transform, opacity;
+  content: none;
 }
 
 .servizio-card img {
   position: relative;
   z-index: 1;
-  width: calc(100% - clamp(18px, 3vw, 46px));
-  height: clamp(360px, 39vw, 500px);
-  margin: 0 0 0 auto;
+  display: block;
+  width: 100%;
+  height: clamp(520px, 46vw, 620px);
   object-fit: cover;
-  border-radius: 32px;
-  box-shadow: 0 26px 70px rgba(23, 34, 45, 0.18);
+  border-radius: 34px;
+  box-shadow: 0 30px 78px rgba(23, 34, 45, 0.20);
   transform:
     translate3d(0, var(--image-y), 0)
     scale(var(--image-scale));
   transform-origin: center;
   filter:
-    saturate(calc(0.86 + (var(--image-progress) * 0.18)))
-    contrast(calc(0.96 + (var(--image-progress) * 0.08)));
+    saturate(calc(0.9 + (var(--image-progress) * 0.16)))
+    contrast(calc(0.96 + (var(--image-progress) * 0.07)));
   transition:
-    transform 180ms linear,
-    filter 180ms linear,
+    transform 160ms linear,
+    filter 160ms linear,
     box-shadow 260ms ease;
   will-change: transform, filter;
 }
 
-.servizio-card h3,
-.servizio-card p,
-.servizio-card > a {
+.servizio-panel {
   position: relative;
-  z-index: 5;
-  max-width: calc(100% - clamp(74px, 8vw, 112px));
-  margin-left: clamp(46px, 5vw, 78px);
-  margin-right: clamp(24px, 4vw, 46px);
+  z-index: 3;
+  width: calc(100% - clamp(36px, 5vw, 74px));
+  margin: clamp(-138px, -9vw, -108px) auto 0;
+  padding: clamp(28px, 3.2vw, 42px);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(10, 16, 22, 0.98), rgba(23, 34, 45, 0.97));
+  box-shadow: 0 34px 86px rgba(9, 14, 19, 0.32);
+  opacity: var(--panel-opacity);
+  transform: translate3d(0, var(--panel-y), 0);
+  transition:
+    opacity 160ms linear,
+    transform 160ms linear,
+    background 260ms ease,
+    box-shadow 260ms ease;
+  will-change: transform, opacity;
+}
+
+.servizio-panel h3,
+.servizio-panel p,
+.servizio-panel a {
   opacity: var(--content-opacity);
   transform: translate3d(0, var(--content-y), 0);
   transition:
-    transform 180ms linear,
-    opacity 180ms linear,
+    opacity 160ms linear,
+    transform 160ms linear,
     color 260ms ease;
   will-change: transform, opacity;
 }
 
-.servizio-card h3 {
-  margin-top: clamp(-220px, -17vw, -168px);
-  margin-bottom: 16px;
+.servizio-panel h3 {
+  margin: 0 0 16px;
   color: var(--white);
-  font-size: clamp(1.42rem, 2.5vw, 2.25rem);
+  font-size: clamp(1.48rem, 2.6vw, 2.28rem);
   line-height: 1.02;
   letter-spacing: -0.045em;
 }
 
-.servizio-card p {
-  margin-bottom: 22px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: clamp(0.94rem, 1.05vw, 1.02rem);
+.servizio-panel p {
+  max-width: none;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(0.95rem, 1.05vw, 1.02rem);
   line-height: 1.62;
 }
 
-.servizio-card > a {
+.servizio-panel a {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -600,7 +576,7 @@ button:focus-visible {
   letter-spacing: 0.01em;
 }
 
-.servizio-card > a::after {
+.servizio-panel a::after {
   content: "→";
   margin-left: 10px;
   transition: transform 240ms ease;
@@ -608,42 +584,39 @@ button:focus-visible {
 
 .servizio-card:hover img {
   transform:
-    translate3d(0, calc(var(--image-y) - 10px), 0)
-    scale(calc(var(--image-scale) + 0.035));
-  box-shadow: 0 34px 88px rgba(23, 34, 45, 0.26);
+    translate3d(0, calc(var(--image-y) - 8px), 0)
+    scale(calc(var(--image-scale) + 0.025));
+  box-shadow: 0 38px 94px rgba(23, 34, 45, 0.27);
 }
 
-.servizio-card:hover::after {
-  transform: translate3d(0, calc(var(--panel-y) - 16px), 0);
+.servizio-card:hover .servizio-panel {
+  transform: translate3d(0, calc(var(--panel-y) - 12px), 0);
   background:
-    linear-gradient(145deg, rgba(9, 14, 19, 0.99), rgba(23, 34, 45, 0.98));
-  box-shadow: 0 38px 96px rgba(10, 16, 22, 0.38);
+    linear-gradient(145deg, rgba(7, 12, 17, 0.99), rgba(25, 36, 45, 0.98));
+  box-shadow: 0 42px 104px rgba(9, 14, 19, 0.40);
 }
 
-.servizio-card:hover::before {
-  transform:
-    translate3d(0, calc(var(--panel-y) - 52px), 0)
-    scale(1.08);
-  box-shadow: 0 24px 58px rgba(184, 81, 49, 0.46);
+.servizio-card:hover .servizio-panel h3,
+.servizio-card:hover .servizio-panel p,
+.servizio-card:hover .servizio-panel a {
+  transform: translate3d(0, calc(var(--content-y) - 6px), 0);
 }
 
-.servizio-card:hover h3,
-.servizio-card:hover p,
-.servizio-card:hover > a {
-  transform: translate3d(0, calc(var(--content-y) - 10px), 0);
-}
-
-.servizio-card:hover > a {
+.servizio-card:hover .servizio-panel a {
   color: #f1c49b;
 }
 
-.servizio-card:hover > a::after {
+.servizio-card:hover .servizio-panel a::after {
   transform: translateX(7px);
 }
 
 .no-js .servizio-card,
-.servizio-card.is-visible {
-  visibility: visible;
+.no-js .servizio-panel,
+.no-js .servizio-panel h3,
+.no-js .servizio-panel p,
+.no-js .servizio-panel a {
+  opacity: 1;
+  transform: none;
 }
 /* =========================================================
 8. AREE
@@ -902,11 +875,10 @@ button:focus-visible {
   .reveal-item,
   .servizio-card,
   .servizio-card img,
-  .servizio-card::before,
-  .servizio-card::after,
-  .servizio-card h3,
-  .servizio-card p,
-  .servizio-card > a {
+  .servizio-panel,
+  .servizio-panel h3,
+  .servizio-panel p,
+  .servizio-panel a {
     opacity: 1;
     transform: none;
   }
@@ -933,6 +905,11 @@ button:focus-visible {
 @media (max-width: 1180px) {
   .servizi-lista {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 82px 34px;
+  }
+
+  .servizio-card img {
+    height: 500px;
   }
 
   .footer {
@@ -947,13 +924,13 @@ button:focus-visible {
 
   .chi-siamo-blocco,
   .chi-siamo-metodo,
-  .servizi-introduzione,
   .aree,
   .contatti {
     grid-template-columns: 1fr;
   }
 
   .servizi-introduzione {
+    grid-template-columns: 1fr;
     grid-template-areas:
       "eyebrow"
       "titolo"
@@ -967,14 +944,27 @@ button:focus-visible {
 
   .servizi-lista {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .servizio-card {
-    min-height: clamp(500px, 70vw, 620px);
+    gap: 72px 26px;
   }
 
   .servizio-card:nth-child(even) {
     margin-top: 0;
+  }
+
+  .servizio-card img {
+    height: 440px;
+    border-radius: 28px;
+  }
+
+  .servizio-panel {
+    width: calc(100% - 32px);
+    margin-top: -108px;
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .servizio-panel h3 {
+    font-size: clamp(1.34rem, 3vw, 1.82rem);
   }
 
   .chi-siamo-metodo .chi-siamo-immagine {
@@ -1044,45 +1034,35 @@ button:focus-visible {
 
   .servizi-lista {
     grid-template-columns: 1fr;
-    gap: 58px;
+    gap: 64px;
   }
 
   .servizio-card {
-    min-height: 500px;
-    transform: translate3d(0, calc(var(--card-y) * 0.55), 0);
+    transform: translate3d(0, calc(var(--card-y) * 0.6), 0);
+  }
+
+  .servizio-card:nth-child(even) {
+    margin-top: 0;
   }
 
   .servizio-card img {
-    width: 100%;
-    height: 340px;
+    height: 390px;
     border-radius: 24px;
   }
 
-  .servizio-card::after {
-    left: 16px;
-    right: 16px;
-    bottom: 8px;
-    height: 235px;
+  .servizio-panel {
+    width: calc(100% - 28px);
+    margin-top: -96px;
+    padding: 26px;
     border-radius: 22px;
   }
 
-  .servizio-card::before {
-    left: 34px;
-    top: 262px;
-    width: 54px;
-    height: 54px;
+  .servizio-panel h3 {
+    font-size: clamp(1.32rem, 8vw, 1.9rem);
   }
 
-  .servizio-card h3,
-  .servizio-card p,
-  .servizio-card > a {
-    max-width: calc(100% - 64px);
-    margin-left: 38px;
-    margin-right: 28px;
-  }
-
-  .servizio-card h3 {
-    margin-top: -176px;
+  .servizio-panel p {
+    font-size: 0.94rem;
   }
 
   .area-card:hover {
@@ -1111,36 +1091,21 @@ button:focus-visible {
     letter-spacing: 0.10em;
   }
 
-  .servizio-card {
-    min-height: 470px;
-  }
-
   .servizio-card img {
-    height: 310px;
+    height: 340px;
   }
 
-  .servizio-card::after {
-    height: 230px;
+  .servizio-panel {
+    width: calc(100% - 22px);
+    margin-top: -86px;
+    padding: 22px;
   }
 
-  .servizio-card::before {
-    top: 236px;
+  .servizio-panel h3 {
+    font-size: clamp(1.26rem, 8.6vw, 1.72rem);
   }
 
-  .servizio-card h3,
-  .servizio-card p,
-  .servizio-card > a {
-    max-width: calc(100% - 56px);
-    margin-left: 32px;
-    margin-right: 24px;
-  }
-
-  .servizio-card h3 {
-    margin-top: -170px;
-    font-size: clamp(1.32rem, 8vw, 1.85rem);
-  }
-
-  .servizio-card p {
-    font-size: 0.92rem;
+  .servizio-panel p {
+    font-size: 0.91rem;
   }
 }
