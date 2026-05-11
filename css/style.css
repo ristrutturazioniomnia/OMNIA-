@@ -1195,6 +1195,7 @@ body {
   background: #050505;
   color: #ffffff;
   padding: 38px 50px 55px;
+  font-family: inherit;
 }
 
 .footer__inner {
@@ -1207,6 +1208,7 @@ body {
 }
 
 .footer h3 {
+  font-family: inherit;
   font-size: 22px;
   line-height: 1.2;
   font-weight: 800;
@@ -1223,6 +1225,7 @@ body {
 }
 
 .footer__links a {
+  font-family: inherit;
   color: #9fa0a0;
   text-decoration: none;
   font-size: 20px;
@@ -1232,7 +1235,7 @@ body {
 }
 
 .footer__links a:hover {
-  color: #ff5722;
+  color: #b87945;
 }
 
 .office {
@@ -1241,6 +1244,7 @@ body {
 
 .office h4,
 .appointment__box h4 {
+  font-family: inherit;
   color: #ffffff;
   font-size: 22px;
   line-height: 1.2;
@@ -1257,13 +1261,14 @@ body {
 }
 
 .office__row i {
-  color: #ff5722;
+  color: #b87945;
   font-size: 23px;
   line-height: 1;
   margin-top: 4px;
 }
 
 .office__row p {
+  font-family: inherit;
   color: #9fa0a0;
   font-size: 20px;
   line-height: 1.45;
@@ -1271,6 +1276,7 @@ body {
 }
 
 .appointment__text {
+  font-family: inherit;
   color: #9fa0a0;
   font-size: 20px;
   line-height: 1.52;
@@ -1290,7 +1296,7 @@ body {
 .appointment__icon {
   width: 66px;
   height: 66px;
-  background: #ff5722;
+  background: #b87945;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1306,6 +1312,7 @@ body {
 }
 
 .appointment__box a {
+  font-family: inherit;
   color: #9fa0a0;
   text-decoration: none;
   font-size: 20px;
@@ -1315,8 +1322,9 @@ body {
 }
 
 .appointment__box a:hover {
-  color: #ff5722;
+  color: #b87945;
 }
+
 .office--map {
   margin-top: 26px;
 }
@@ -1336,6 +1344,7 @@ body {
   display: block;
   border: 0;
 }
+
 @media (max-width: 1100px) {
   .footer__inner {
     grid-template-columns: repeat(2, 1fr);
