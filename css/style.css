@@ -698,6 +698,225 @@ a:focus-visible {
   filter: saturate(1.06) contrast(1.04);
 }
 /* =========================================================
+7. SERVIZI
+========================================================= */
+
+.servizi {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.13), transparent 34rem),
+    linear-gradient(180deg, var(--paper), #fbf8f3);
+}
+
+.servizi-introduzione {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  grid-template-areas:
+    "eyebrow testo"
+    "titolo testo";
+  column-gap: clamp(34px, 5vw, 78px);
+  row-gap: 14px;
+  align-items: end;
+  margin-bottom: clamp(64px, 8vw, 110px);
+}
+
+.servizi-introduzione .eyebrow {
+  grid-area: eyebrow;
+  margin-bottom: 0;
+}
+
+.servizi-introduzione h2 {
+  grid-area: titolo;
+  max-width: 860px;
+  margin-bottom: 0;
+}
+
+.servizi-introduzione p:not(.eyebrow) {
+  grid-area: testo;
+  justify-self: end;
+  align-self: end;
+  max-width: 500px;
+  margin: 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-strong);
+  background: transparent;
+}
+
+.servizi-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(82px, 9vw, 132px) clamp(34px, 5vw, 72px);
+  align-items: start;
+}
+
+.servizio-card {
+  --service-progress: 1;
+  --image-progress: 1;
+  --panel-progress: 1;
+  --content-progress: 1;
+  --card-y: 0px;
+  --image-y: 0px;
+  --image-scale: 1;
+  --panel-y: 0px;
+  --panel-opacity: 1;
+  --content-y: 0px;
+  --content-opacity: 1;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  opacity: calc(0.22 + (var(--service-progress) * 0.78));
+  transform: translate3d(0, var(--card-y), 0);
+  transition:
+    opacity 160ms linear,
+    transform 160ms linear;
+  will-change: transform, opacity;
+}
+
+.servizio-card:nth-child(even) {
+  margin-top: clamp(56px, 7vw, 104px);
+}
+
+.servizio-card::before,
+.servizio-card::after {
+  content: none;
+}
+
+.servizio-card img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: calc(100% - clamp(28px, 4vw, 52px));
+  height: clamp(440px, 38vw, 540px);
+  object-fit: cover;
+  border-radius: 34px;
+  box-shadow: 0 30px 78px rgba(23, 34, 45, 0.20);
+  transform:
+    translate3d(0, var(--image-y), 0)
+    scale(var(--image-scale));
+  transform-origin: center;
+  filter:
+    saturate(calc(0.9 + (var(--image-progress) * 0.16)))
+    contrast(calc(0.96 + (var(--image-progress) * 0.07)));
+  transition:
+    transform 160ms linear,
+    filter 160ms linear,
+    box-shadow 260ms ease;
+  will-change: transform, filter;
+}
+
+.servizio-card:nth-child(odd) img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.servizio-card:nth-child(even) img {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.servizio-panel {
+  position: relative;
+  z-index: 3;
+  width: min(68%, 455px);
+  margin: clamp(-92px, -6.2vw, -72px) 0 0 clamp(38px, 5vw, 72px);
+  padding: clamp(36px, 4vw, 54px) clamp(28px, 3.2vw, 42px);
+  border: 2px solid rgba(217, 183, 142, 0.62);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(10, 16, 22, 0.78), rgba(23, 34, 45, 0.77));
+  box-shadow: 0 34px 86px rgba(9, 14, 19, 0.32);
+  opacity: var(--panel-opacity);
+  transform: translate3d(0, var(--panel-y), 0);
+  transition:
+    opacity 160ms linear,
+    transform 160ms linear,
+    background 260ms ease,
+    box-shadow 260ms ease;
+  will-change: transform, opacity;
+}
+
+.servizio-card:nth-child(even) .servizio-panel {
+  margin-left: auto;
+  margin-right: clamp(38px, 5vw, 72px);
+}
+
+.servizio-panel h3,
+.servizio-panel p,
+.servizio-panel a {
+  opacity: var(--content-opacity);
+  transform: translate3d(0, var(--content-y), 0);
+  transition:
+    opacity 160ms linear,
+    transform 160ms linear,
+    color 260ms ease;
+  will-change: transform, opacity;
+}
+
+.servizio-panel h3 {
+  margin: 0 0 16px;
+  color: var(--white);
+  font-size: clamp(1.48rem, 2.6vw, 2.28rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.servizio-panel p {
+  max-width: none;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: clamp(0.95rem, 1.05vw, 1.02rem);
+  line-height: 1.62;
+}
+
+.servizio-panel a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  color: var(--accent-soft);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.servizio-panel a::after {
+  content: "→";
+  margin-left: 10px;
+  transition: transform 240ms ease;
+}
+
+.servizio-card:hover img {
+  transform:
+    translate3d(0, calc(var(--image-y) - 8px), 0)
+    scale(calc(var(--image-scale) + 0.025));
+  box-shadow: 0 38px 94px rgba(23, 34, 45, 0.27);
+}
+
+.servizio-card:hover .servizio-panel {
+  transform: translate3d(0, calc(var(--panel-y) - 12px), 0);
+  background:
+    linear-gradient(145deg, rgba(7, 12, 17, 0.79), rgba(25, 36, 45, 0.78));
+  box-shadow: 0 42px 104px rgba(9, 14, 19, 0.40);
+}
+
+.servizio-card:hover .servizio-panel h3,
+.servizio-card:hover .servizio-panel p,
+.servizio-card:hover .servizio-panel a {
+  transform: translate3d(0, calc(var(--content-y) - 6px), 0);
+}
+
+.servizio-card:hover .servizio-panel a {
+  color: #f1c49b;
+}
+
+.servizio-card:hover .servizio-panel a::after {
+  transform: translateX(7px);
+}
+/* =========================================================
 8. AREE
 ========================================================= */
 
