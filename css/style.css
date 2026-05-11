@@ -1185,7 +1185,7 @@ a:focus-visible {
 
 .footer {
   display: grid;
-  grid-template-columns: minmax(170px, 0.7fr) minmax(170px, 0.7fr) minmax(320px, 1.15fr) minmax(360px, 1.35fr);
+  grid-template-columns: minmax(240px, 1fr) minmax(220px, 0.75fr) minmax(260px, 0.9fr) minmax(340px, 1.15fr);
   gap: clamp(34px, 5vw, 72px);
   padding-top: clamp(62px, 7vw, 92px);
   padding-bottom: clamp(54px, 6vw, 76px);
@@ -1194,19 +1194,23 @@ a:focus-visible {
 }
 
 .footer-colonna {
-  padding-top: 0;
-  border-top: 0;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .footer h2,
 .footer h3 {
-  margin-bottom: clamp(24px, 3vw, 38px);
+  margin-bottom: clamp(22px, 2.4vw, 34px);
   color: var(--white);
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.4vw, 1.18rem);
   font-weight: 900;
   line-height: 1.15;
   letter-spacing: -0.02em;
+}
+
+.footer h2 {
+  font-size: clamp(1.65rem, 2.2vw, 2.15rem);
 }
 
 .footer p,
@@ -1217,12 +1221,20 @@ a:focus-visible {
   line-height: 1.55;
 }
 
+.footer p {
+  max-width: 380px;
+}
+
 .footer ul {
   display: grid;
   gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .footer a {
+  text-decoration: none;
   transition: color var(--speed), transform var(--speed);
 }
 
@@ -1230,57 +1242,21 @@ a:focus-visible {
   color: var(--accent-soft);
 }
 
-.footer-brand h2 {
-  margin-bottom: 22px;
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-}
-
-.footer-brand p {
-  max-width: 360px;
-}
-
-.footer-contatto-blocco {
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-  margin-bottom: 18px;
-}
-
-.footer-icona {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  min-width: 22px;
-  height: 22px;
-  margin-top: 3px;
-  color: var(--accent);
-  font-size: 1.15rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.footer-contatto-blocco strong {
-  display: block;
-  margin-bottom: 4px;
+.footer-colonna:nth-child(2) a {
   color: var(--white);
-  font-size: 1rem;
   font-weight: 900;
-}
-
-.footer-contatto-blocco a {
-  color: rgba(255, 255, 255, 0.72);
 }
 
 .footer-mappa {
   display: block;
   overflow: hidden;
-  height: 150px;
-  margin-top: 26px;
+  width: 100%;
+  height: 210px;
+  margin-top: 24px;
   border: 1px solid rgba(217, 183, 142, 0.34);
-  border-radius: 18px;
+  border-radius: 22px;
   background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.26);
 }
 
 .footer-mappa iframe {
@@ -1290,81 +1266,6 @@ a:focus-visible {
   border: 0;
   filter: grayscale(1) contrast(1.08) brightness(0.78);
 }
-
-.footer-cta-testo {
-  max-width: 500px;
-  margin-bottom: 28px;
-}
-
-.footer-azione {
-  display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.footer-azione-icona {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  font-size: 1.35rem;
-  font-weight: 900;
-}
-
-.footer-azione strong {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--white);
-  font-size: 1.05rem;
-  font-weight: 900;
-}
-
-.footer-azione a {
-  color: rgba(255, 255, 255, 0.68);
-}
-
-.footer-bottone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  min-height: 52px;
-  margin-top: 28px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  color: var(--white) !important;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  font-weight: 900;
-  line-height: 1;
-  box-shadow: 0 16px 34px rgba(184, 121, 69, 0.24);
-}
-
-.footer-bottone:hover {
-  transform: translateY(-3px);
-  color: var(--white) !important;
-}
-
-@media (max-width: 1180px) {
-  .footer {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 720px) {
-  .footer {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-mappa {
-    height: 220px;
-  }
-}
-
 /* =========================================================
 11. ANIMAZIONI GLOBALI
 ========================================================= */
@@ -1446,6 +1347,10 @@ a:focus-visible {
 
   .footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-mappa {
+    height: 240px;
   }
 }
 
@@ -1533,6 +1438,7 @@ a:focus-visible {
     border-top: 1px solid var(--line-strong);
   }
 }
+
 @media (max-width: 720px) {
   :root {
     --pad-x: 18px;
@@ -1649,6 +1555,15 @@ a:focus-visible {
 
   .footer {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-colonna {
+    padding-top: 26px;
+  }
+
+  .footer-mappa {
+    height: 260px;
   }
 }
 
@@ -1706,6 +1621,11 @@ a:focus-visible {
 
   .contatti-sidebar a {
     font-size: 0.95rem;
+  }
+
+  .footer-mappa {
+    height: 230px;
+    border-radius: 18px;
   }
 }
 /* =========================================================
