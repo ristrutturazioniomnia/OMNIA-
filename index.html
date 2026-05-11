@@ -18,11 +18,11 @@
   </a>
 
   <nav class="site-nav-menu" aria-label="Navigazione principale">
-    <a href="#hero">Home</a>
-    <a href="#chi-siamo">Chi siamo</a>
+    <a href="#hero" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Home</a>
+    <a href="#chi-siamo" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Chi siamo</a>
 
-    <details class="site-nav-dropdown">
-      <summary>Servizi</summary>
+    <details class="site-nav-dropdown" name="site-nav-dropdown">
+      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Servizi</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-servizi">
         <a href="/servizi/ristrutturazione-casa.html">Ristrutturazione casa</a>
@@ -32,8 +32,8 @@
       </div>
     </details>
 
-    <details class="site-nav-dropdown">
-      <summary>Aree</summary>
+    <details class="site-nav-dropdown" name="site-nav-dropdown">
+      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Aree</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-aree">
         <div>
@@ -61,7 +61,7 @@
       </div>
     </details>
 
-    <a href="#contatti">Contatti</a>
+    <a href="#contatti" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Contatti</a>
   </nav>
 
   <div class="site-nav-cta">
