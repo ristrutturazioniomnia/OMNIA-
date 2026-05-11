@@ -10,20 +10,19 @@
   >
 
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/servizi-rank.css">
-  <script src="/javascript/ui.js" defer></script>
+  <link rel="stylesheet" href="/css/service-rank.css">
+  <script src="javascript/ui.js" defer></script>
 
-  <title>Ristrutturazione interna casa | Pavimenti, tinteggiatura e opere murarie</title>
-  <meta name="description" content="Ristrutturazione casa: pavimenti, tinteggiatura e opere murarie interne a Milano, Pavia e Novara. Sopralluogo chiaro per ambienti più sani e funzionali.">
+  <title>Ristrutturazione casa e lavori interni | Omnia Ristrutturazioni</title>
+  <meta name="description" content="Ristrutturazione casa con pavimenti, tinteggiatura e opere murarie interne a Milano, Pavia e Novara. Sopralluogo e lavori su misura.">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "[Nome attività]",
-    "image": "https://www.esempio.it/img/logo-omnia.png",
-    "url": "https://www.esempio.it/servizi/ristrutturazione-interna-casa.html",
-    "telephone": "+393898416691",
+    "name": "Omnia Ristrutturazioni",
+    "image": "/img/logo-omnia.png",
+    "telephone": "3898416691",
     "email": "info.omniaristrutturazioni@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -34,30 +33,27 @@
       "addressCountry": "IT"
     },
     "areaServed": [
-      "Milano",
-      "Pavia",
-      "Novara",
-      "Vigevano",
-      "Abbiategrasso",
       "Magenta",
-      "Trecate",
-      "Galliate"
+      "Abbiategrasso",
+      "Vigevano",
+      "Novara",
+      "Trecate"
     ],
-    "description": "Impresa edile specializzata in ristrutturazione casa, pavimentazione, tinteggiatura e opere murarie interne per abitazioni private."
+    "url": "https://www.example.com",
+    "priceRange": "€€"
   }
   </script>
 </head>
 
 <body>
-
 <header class="site-nav">
-  <a href="/#hero" class="site-nav-logo" aria-label="Torna alla home">
+  <a href="#hero" class="site-nav-logo" aria-label="Torna alla home">
     <img src="/img/logo-omnia.png" alt="Omnia ristrutturazioni">
   </a>
 
   <nav class="site-nav-menu" aria-label="Navigazione principale">
-    <a href="/#hero" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Home</a>
-    <a href="/#chi-siamo" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Chi siamo</a>
+    <a href="#hero" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Home</a>
+    <a href="#chi-siamo" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Chi siamo</a>
 
     <details class="site-nav-dropdown" name="site-nav-dropdown">
       <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Servizi</summary>
@@ -99,538 +95,335 @@
       </div>
     </details>
 
-    <a href="/#contatti" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Contatti</a>
+    <a href="#contatti" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Contatti</a>
   </nav>
 
   <div class="site-nav-cta">
     <a href="/contatti.html">Richiedi un preventivo</a>
-    <a href="tel:+393898416691">Chiama</a>
+    <a href="tel:+390000000000">Chiama</a>
   </div>
 </header>
 
-<main class="service-rank-page">
+<main class="service-rank">
 
-  <section class="rank-hero">
-    <div class="rank-hero__content scroll-reveal scroll-reveal-title">
+  <section id="hero" class="service-hero">
+    <div class="service-hero__content scroll-reveal scroll-reveal-title">
       <p class="eyebrow">Ristrutturazioni interne per abitazioni private</p>
-
       <h1>Ristrutturazione casa: pavimenti, tinteggiatura e opere murarie interne</h1>
-
       <p>
-        Hai pavimenti rovinati, muri segnati, muffa in casa o stanze che non rispondono più alle tue esigenze?
-        Vuoi sistemare gli ambienti senza ritrovarti con lavori confusi, tempi incerti e decisioni prese all’ultimo?
-        Questa pagina ti aiuta a capire cosa serve davvero per ristrutturare gli interni di casa con ordine.
+        Stai cercando un professionista per rinnovare gli interni senza dover coordinare muratore, piastrellista e imbianchino separatamente? Vuoi capire quali lavori servono davvero prima di sostituire un pavimento, eliminare muffa in casa o intervenire su perdite nelle pareti?
       </p>
-
-      <div class="rank-hero__actions">
+      <div class="hero-buttons">
         <a href="/contatti.html">Richiedi un sopralluogo</a>
-        <a href="tel:+393898416691">Chiama 389 841 6691</a>
+        <a href="tel:3898416691">Chiama 389 841 6691</a>
       </div>
     </div>
   </section>
 
-  <section class="rank-section rank-intro">
-    <div class="rank-section__heading scroll-reveal scroll-reveal-text">
-      <p class="eyebrow">Introduzione</p>
-      <h2>Una ristrutturazione interna deve migliorare la casa, non complicarla</h2>
+  <section class="service-section service-intro">
+    <div class="service-text scroll-reveal scroll-reveal-text">
+      <p class="eyebrow">Servizio completo</p>
+      <h2>Quando una ristrutturazione interna è il modo giusto per migliorare casa</h2>
+      <p>
+        La ristrutturazione casa non riguarda solo l’estetica. In molti casi serve a rendere gli ambienti più comodi, sicuri e coerenti con il modo in cui la famiglia vive ogni giorno. Un pavimento rovinato, pareti umide, stanze poco funzionali, finiture datate o tracce lasciate da vecchi impianti possono ridurre il valore dell’abitazione e creare problemi continui.
+      </p>
+      <p>
+        Un intervento interno ben organizzato permette di lavorare su pavimentazione, tinteggiatura e opere murarie con un ordine logico. Prima si valuta lo stato delle superfici, poi si gestiscono demolizioni, ripristini, rasature, posa dei materiali e finiture. Questo evita sovrapposizioni, ritardi e rifacimenti inutili.
+      </p>
+      <p>
+        Omnia Ristrutturazioni segue lavori interni per privati nelle zone di Milano, Magenta, Abbiategrasso, Vigevano, Novara e Trecate, adattando l’intervento alle condizioni reali dell’immobile. Per chi cerca una <a href="/aree/magenta.html">ristrutturazione casa a Magenta</a> o un intervento completo in provincia, il primo passaggio resta sempre il sopralluogo.
+      </p>
     </div>
 
-    <div class="rank-text scroll-reveal scroll-reveal-text">
-      <p>
-        La ristrutturazione interna della casa comprende tutti quei lavori che rendono gli ambienti più pratici,
-        sani e coerenti con il modo in cui vengono vissuti ogni giorno. Non riguarda solo l’estetica. Dietro una
-        sostituzione pavimento, una nuova tinteggiatura o una modifica delle pareti interne ci sono scelte tecniche
-        che incidono su durata, comfort e manutenzione futura.
-      </p>
+    <div class="service-media scroll-reveal scroll-reveal-media">
+      <img src="/img/ristrutturazione-interna-casa.jpg" alt="Ristrutturazione interna casa con pavimenti pareti e finiture">
+    </div>
+  </section>
 
-      <p>
-        Un intervento ben organizzato parte sempre da una valutazione dell’abitazione. Prima di scegliere colori,
-        materiali o finiture, bisogna capire lo stato dei sottofondi, la presenza di umidità, eventuali perdite nelle
-        pareti, la tenuta degli intonaci e la distribuzione degli spazi. Questo vale per un appartamento a
-        <a href="/aree/milano.html">Milano</a>, per una villetta a <a href="/aree/vigevano.html">Vigevano</a> o per una casa da aggiornare
-        in zona <a href="/aree/trecate.html">Trecate</a>.
-      </p>
+  <section class="service-section service-dark">
+    <div class="service-media scroll-reveal scroll-reveal-media">
+      <img src="/img/lavori-edili-interni.jpg" alt="Lavori edili interni durante una ristrutturazione casa">
+    </div>
 
+    <div class="service-text scroll-reveal scroll-reveal-text">
+      <p class="eyebrow">Cosa comprende</p>
+      <h2>Lavorazioni interne coordinate in un unico intervento</h2>
       <p>
-        L’obiettivo è semplice: intervenire dove serve, evitare lavori inutili e creare ambienti più funzionali.
-        Pavimenti, tinteggiature e opere murarie interne devono dialogare tra loro. Se si cambia il pavimento ma
-        non si valuta il battiscopa, il livello delle porte o la planarità del fondo, il risultato può sembrare
-        incompleto. Se si tinteggia senza trattare la muffa in casa, il problema torna. Se si sposta una parete
-        senza ragionare su passaggi, luce e arredi, lo spazio peggiora invece di migliorare.
+        Una ristrutturazione interna può essere parziale o completa. Può interessare una sola stanza, un piano dell’abitazione o tutta la casa. Le lavorazioni più frequenti includono rimozione e sostituzione pavimento, demolizione di tramezzi, creazione di nuove aperture, ripristino dell’intonaco, rasatura, tinteggiatura e sistemazione delle pareti danneggiate da umidità o infiltrazioni.
+      </p>
+      <p>
+        Quando sono presenti muffa in casa o perdite nelle pareti, non conviene coprire il problema con una semplice pittura. Serve capire se l’origine è condensa, risalita, infiltrazione, tubazione danneggiata o ponte termico. Solo dopo ha senso procedere con ripristini e finiture.
+      </p>
+      <p>
+        Se il lavoro riguarda anche servizi collegati, può essere utile valutare la pagina dedicata alla <a href="/servizi/ristrutturazione-bagno.html">ristrutturazione bagno</a>, soprattutto quando pavimenti, rivestimenti e impianti devono essere coordinati con il resto della casa.
       </p>
     </div>
   </section>
 
-  <section class="rank-section rank-outline">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Scaletta della pagina</p>
-      <h2>Cosa trovi in questa guida</h2>
-    </div>
-
-    <div class="rank-grid rank-grid--three">
-      <article>
-        <h3>1. Concetti chiave</h3>
-        <p>Pavimenti, pareti, tinteggiatura, umidità, demolizioni interne e piccole modifiche murarie.</p>
-      </article>
-
-      <article>
-        <h3>2. Lavori stanza per stanza</h3>
-        <p>Cucina, soggiorno, camere, bagno, corridoi, ingresso, lavanderia e ripostigli.</p>
-      </article>
-
-      <article>
-        <h3>3. Consigli pratici</h3>
-        <p>Checklist, errori da evitare, collegamenti interni e FAQ per decidere con più sicurezza.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="rank-section">
-    <div class="rank-section__heading">
+  <section class="service-section service-wide">
+    <div class="service-heading scroll-reveal scroll-reveal-title">
       <p class="eyebrow">Concetti chiave</p>
-      <h2>Prima di ristrutturare gli interni, vanno chiarite le lavorazioni</h2>
+      <h2>Prima di iniziare: cosa valutare davvero</h2>
     </div>
 
-    <div class="rank-columns">
-      <div class="rank-text">
-        <h3>Pavimentazione e sostituzione pavimento</h3>
+    <div class="service-columns">
+      <div class="service-column scroll-reveal scroll-reveal-text">
+        <h3>Stato delle superfici</h3>
         <p>
-          La pavimentazione incide sulla percezione di tutta la casa. La sostituzione pavimento può prevedere la
-          rimozione del rivestimento esistente, la verifica del massetto, la posa del nuovo materiale e la gestione
-          dei raccordi con soglie, porte e battiscopa. In alcuni casi si può valutare la posa sopra il pavimento
-          esistente, ma solo se la superficie è stabile, asciutta e adatta.
-        </p>
-
-        <h3>Tinteggiatura e trattamento delle pareti</h3>
-        <p>
-          La tinteggiatura non dovrebbe coprire i problemi, ma chiudere un lavoro fatto bene. Prima di pitturare
-          occorre verificare crepe, vecchie pitture, distacchi, tracce di umidità e muffa in casa. Dove serve,
-          si procede con rasature, fissativi, prodotti traspiranti o trattamenti specifici. Una parete preparata
-          bene mantiene meglio il colore e riduce gli interventi successivi.
+          Pareti, sottofondi e intonaci vanno controllati prima di scegliere materiali e colori. Un fondo instabile può compromettere la posa del pavimento o la durata della tinteggiatura.
         </p>
       </div>
 
-      <div class="rank-text">
-        <h3>Opere murarie interne</h3>
+      <div class="service-column scroll-reveal scroll-reveal-text">
+        <h3>Ordine delle lavorazioni</h3>
         <p>
-          Le opere murarie interne comprendono demolizioni leggere, chiusura o apertura di vani, ripristino di
-          intonaci, tracce, muretti, contropareti e modifiche alla distribuzione degli spazi. Sono lavori che
-          richiedono ordine perché spesso coinvolgono pavimenti, porte, impianti e finiture.
+          Demolizioni, opere murarie, rasature, posa e pittura devono seguire una sequenza precisa. Cambiare ordine può sporcare finiture già concluse o costringere a correggere lavori appena eseguiti.
         </p>
+      </div>
 
-        <h3>Problemi nascosti: muffa e perdite</h3>
+      <div class="service-column scroll-reveal scroll-reveal-text">
+        <h3>Uso reale degli ambienti</h3>
         <p>
-          Muffa in casa e perdite nelle pareti non vanno trattate come semplici difetti estetici. Possono dipendere
-          da ponti termici, infiltrazioni, condensa, tubazioni o vecchi intonaci degradati. Prima di tinteggiare,
-          è utile capire l’origine del problema. Solo così la ristrutturazione interna diventa stabile.
+          Ogni stanza ha esigenze diverse. Ingresso, cucina, bagno, camera e soggiorno non richiedono le stesse soluzioni per resistenza, pulizia, isolamento e resa estetica.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="rank-section rank-rooms">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Stanze e lavorazioni</p>
-      <h2>Ristrutturazione interna stanza per stanza</h2>
-    </div>
-
-    <article class="room-block">
-      <h2>Cucina</h2>
-
-      <div class="room-block__grid">
-        <div>
-          <h3>Pavimenti e rivestimenti della cucina</h3>
-          <p>
-            In cucina il pavimento deve resistere a macchie, pulizia frequente, acqua e passaggio quotidiano.
-            Durante la ristrutturazione si valutano materiali facili da gestire, raccordi con il soggiorno e
-            altezze rispetto agli altri ambienti. Se la cucina è collegata alla zona giorno, la scelta del pavimento
-            deve evitare stacchi casuali e creare continuità visiva.
-          </p>
-        </div>
-
-        <div>
-          <h3>Pareti, tinteggiatura e modifiche interne</h3>
-          <p>
-            Le pareti della cucina possono richiedere rasature, pitture lavabili, sistemazione delle tracce e
-            piccoli interventi murari per adattare mobili, elettrodomestici e passaggi. Se sono presenti segni
-            di umidità o muffa, il trattamento va fatto prima della pittura. Una cucina ristrutturata bene deve
-            essere pratica prima ancora che bella.
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="room-block">
-      <h2>Soggiorno</h2>
-
-      <div class="room-block__grid">
-        <div>
-          <h3>Sostituzione pavimento nella zona giorno</h3>
-          <p>
-            Il soggiorno è spesso la stanza più visibile della casa. La sostituzione pavimento deve tenere conto
-            della luce naturale, degli arredi, delle porte e degli accessi alle altre stanze. In una casa di
-            <a href="/aree/abbiategrasso.html">Abbiategrasso</a> o <a href="/aree/magenta.html">Magenta</a>, ad esempio, può essere utile
-            scegliere soluzioni resistenti se la zona giorno collega ingresso, cucina e scale.
-          </p>
-        </div>
-
-        <div>
-          <h3>Pareti, nicchie e opere murarie decorative</h3>
-          <p>
-            In soggiorno le opere murarie interne possono servire per creare una parete TV, chiudere una vecchia
-            nicchia, rifinire un camino, regolarizzare una parete storta o migliorare il passaggio verso la cucina.
-            La tinteggiatura finale deve valorizzare la stanza senza appesantirla. Colori neutri e superfici ben
-            preparate aiutano a ottenere un risultato più duraturo.
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="room-block">
-      <h2>Camere da letto</h2>
-
-      <div class="room-block__grid">
-        <div>
-          <h3>Pavimenti confortevoli e silenziosi</h3>
-          <p>
-            Nelle camere il pavimento deve essere comodo, stabile e adatto a un ambiente di riposo. Si possono
-            valutare materiali caldi al tatto, superfici facili da pulire e soluzioni che riducono la sensazione
-            di freddo. Prima della posa si controllano dislivelli, battiscopa e passaggi con bagno o corridoio.
-          </p>
-        </div>
-
-        <div>
-          <h3>Pareti sane e tinteggiatura traspirante</h3>
-          <p>
-            Le camere sono tra gli ambienti in cui muffa in casa e condensa possono diventare più fastidiose.
-            Armadi, angoli freddi e pareti esposte vanno controllati con attenzione. Una semplice pittura può
-            non bastare. Quando serve, si lavora su pulizia del supporto, trattamento antimuffa, rasatura e finitura
-            traspirante.
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="room-block">
-      <h2>Bagno</h2>
-
-      <div class="room-block__grid">
-        <div>
-          <h3>Pavimenti, rivestimenti e raccordi</h3>
-          <p>
-            Anche quando non si rifà completamente il bagno, pavimenti e rivestimenti devono essere valutati con
-            cura. Acqua, umidità e pulizia frequente richiedono materiali adatti e posa precisa. Se l’intervento
-            comprende anche sanitari o doccia, è utile coordinare le lavorazioni con una pagina dedicata alla
-            <a href="/servizi/ristrutturazione-bagno.html">ristrutturazione bagno</a>.
-          </p>
-        </div>
-
-        <div>
-          <h3>Perdite nelle pareti e ripristini murari</h3>
-          <p>
-            In bagno, le perdite nelle pareti possono manifestarsi con macchie, intonaco gonfio, cattivo odore
-            o distacchi della pittura nelle stanze vicine. Prima di chiudere o tinteggiare, bisogna capire se il
-            problema nasce da tubazioni, scarichi, giunti o vecchie sigillature. Il ripristino deve seguire la
-            causa, non solo coprire il segno.
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="room-block">
-      <h2>Ingresso e corridoi</h2>
-
-      <div class="room-block__grid">
-        <div>
-          <h3>Pavimenti resistenti al passaggio</h3>
-          <p>
-            Ingresso e corridoi sono aree di passaggio continuo. Qui il pavimento deve sopportare sporco, scarpe,
-            urti e collegamenti tra stanze. Durante la sostituzione pavimento è importante gestire soglie, porte,
-            battiscopa e continuità con la zona giorno. Un corridoio stretto può sembrare più ordinato con materiali
-            chiari e posa coerente.
-          </p>
-        </div>
-
-        <div>
-          <h3>Pareti, spigoli e piccole modifiche murarie</h3>
-          <p>
-            Nei corridoi si notano facilmente spigoli rovinati, crepe e vecchie riparazioni. Le opere murarie
-            interne possono includere ripristino degli angoli, chiusura di vecchie aperture, regolarizzazione
-            delle pareti e preparazione alla tinteggiatura. Sono interventi piccoli, ma cambiano molto la percezione
-            della casa.
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <article class="room-block">
-      <h2>Lavanderia, ripostigli e locali di servizio</h2>
-
-      <div class="room-block__grid">
-        <div>
-          <h3>Pavimenti pratici e facili da pulire</h3>
-          <p>
-            Lavanderie e ripostigli richiedono soluzioni funzionali. Il pavimento deve essere resistente, semplice
-            da pulire e adatto a umidità, prodotti per la casa e carichi concentrati. Anche in locali piccoli,
-            una posa ordinata evita problemi di ristagno e rende lo spazio più utilizzabile.
-          </p>
-        </div>
-
-        <div>
-          <h3>Pareti, ventilazione e umidità</h3>
-          <p>
-            Nei locali di servizio è frequente trovare umidità, macchie o tinteggiature rovinate. Prima di intervenire,
-            si controllano ventilazione, pareti confinanti e possibili perdite nelle pareti. La finitura deve essere
-            scelta in base all’uso reale della stanza, non solo al colore desiderato.
-          </p>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <section class="rank-section rank-local">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Contesto locale</p>
-      <h2>Ristrutturare casa tra Milano, Pavia e Novara</h2>
-    </div>
-
-    <div class="rank-text">
+  <section class="service-section service-benefits">
+    <div class="service-text scroll-reveal scroll-reveal-text">
+      <p class="eyebrow">Vantaggi</p>
+      <h2>Perché scegliere un intervento coordinato</h2>
       <p>
-        Gli interni delle abitazioni cambiano molto in base alla zona, all’età dell’immobile e al tipo di edificio.
-        In centro a Milano si trovano spesso appartamenti con pavimenti da conservare o sostituire con attenzione,
-        muri da regolarizzare e spazi da rendere più funzionali. Nella zona di Vigevano, Mortara e Garlasco sono
-        frequenti case più ampie, dove la ristrutturazione interna può coinvolgere più stanze nello stesso intervento.
+        Affidare le lavorazioni interne a un’unica impresa riduce i passaggi da gestire e rende più chiaro il risultato finale. Il cliente non deve incastrare disponibilità diverse, confrontare soluzioni incompatibili o risolvere discussioni tra artigiani.
       </p>
 
-      <p>
-        In provincia di Novara, tra <a href="/aree/novara.html">Novara</a>, Galliate e Trecate, capita di lavorare su abitazioni
-        che richiedono aggiornamento delle finiture, ripristini murari e tinteggiature dopo anni di uso. Ogni zona
-        ha caratteristiche diverse, ma il metodo resta lo stesso: sopralluogo, valutazione delle priorità, preventivo
-        chiaro e organizzazione delle fasi.
-      </p>
-
-      <p>
-        Quando una casa presenta muffa, vecchi pavimenti, crepe, pareti umide o distribuzione poco pratica, conviene
-        evitare interventi isolati senza una visione generale. Anche un lavoro apparentemente semplice può coinvolgere
-        più elementi: se si cambia pavimento, bisogna valutare porte e zoccolini; se si tinteggia, bisogna preparare
-        il fondo; se si modifica una parete, bisogna coordinare finiture e passaggi.
-      </p>
-    </div>
-  </section>
-
-  <section class="rank-section rank-recommendations">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Raccomandazioni</p>
-      <h2>Come scegliere gli interventi giusti</h2>
-    </div>
-
-    <div class="rank-table-wrap">
-      <table class="rank-table">
+      <table>
         <thead>
           <tr>
-            <th>Problema</th>
-            <th>Intervento consigliato</th>
-            <th>Nota pratica</th>
+            <th>Esigenza</th>
+            <th>Soluzione corretta</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Pavimento rovinato</td>
-            <td>Sostituzione pavimento o posa su esistente</td>
-            <td>Verificare stabilità, quote e porte.</td>
+            <td>Pavimento vecchio o irregolare</td>
+            <td>Verifica del sottofondo, demolizione o posa idonea, nuova finitura</td>
           </tr>
           <tr>
-            <td>Muffa in casa</td>
-            <td>Trattamento del supporto e finitura adatta</td>
-            <td>Capire prima la causa.</td>
+            <td>Pareti rovinate o con umidità</td>
+            <td>Analisi della causa, ripristino, rasatura e tinteggiatura traspirante</td>
           </tr>
           <tr>
-            <td>Perdite nelle pareti</td>
-            <td>Ricerca origine, ripristino e asciugatura</td>
-            <td>Non tinteggiare subito sopra la macchia.</td>
-          </tr>
-          <tr>
-            <td>Stanze poco pratiche</td>
-            <td>Opere murarie interne e nuova distribuzione</td>
-            <td>Valutare luce, passaggi e arredi.</td>
+            <td>Stanze poco funzionali</td>
+            <td>Opere murarie interne, spostamenti mirati e nuova distribuzione</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="rank-text">
-      <p>
-        Il consiglio principale è non partire dal colore o dal materiale, ma dal problema reale. Una casa può aver
-        bisogno di pavimenti nuovi, ma anche di sottofondi corretti. Può richiedere una tinteggiatura, ma prima una
-        rasatura. Può sembrare da rinnovare solo esteticamente, ma nascondere perdite nelle pareti o vecchie riparazioni
-        fatte male.
-      </p>
-
-      <p>
-        Per lavori collegati all’esterno, come intonaci danneggiati o problemi che arrivano dalla facciata, può essere
-        utile consultare anche la pagina sul <a href="/servizi/rifacimento-facciate.html">rifacimento facciate</a>. Se invece
-        le macchie interne dipendono da infiltrazioni dall’alto, il collegamento naturale è con la pagina sui
-        <a href="/servizi/sistemi-copertura-tetti.html">sistemi di copertura e tetti</a>.
-      </p>
-    </div>
-  </section>
-
-  <section class="rank-section rank-areas-note">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Aree frequenti</p>
-      <h2>Dove eseguiamo più spesso questo servizio</h2>
-    </div>
-
-    <div class="rank-grid rank-grid--five">
-      <a href="/aree/milano.html">Milano</a>
-      <a href="/aree/abbiategrasso.html">Abbiategrasso</a>
-      <a href="/aree/vigevano.html">Vigevano</a>
-      <a href="/aree/novara.html">Novara</a>
-      <a href="/aree/trecate.html">Trecate</a>
-    </div>
-  </section>
-
-  <section class="rank-section rank-tips">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Suggerimenti</p>
-      <h2>Checklist prima di iniziare una ristrutturazione interna</h2>
-    </div>
-
-    <div class="rank-checklist">
+    <div class="service-note scroll-reveal scroll-reveal-text">
+      <h3>Checklist prima del sopralluogo</h3>
       <ul>
-        <li>Controlla se ci sono muffa, macchie o pareti fredde.</li>
-        <li>Verifica se il pavimento è stabile o presenta vuoti e dislivelli.</li>
-        <li>Decidi quali stanze sono prioritarie e quali possono aspettare.</li>
-        <li>Valuta porte, battiscopa e soglie prima della sostituzione pavimento.</li>
-        <li>Non tinteggiare sopra umidità o vecchie pitture che si staccano.</li>
-        <li>Chiedi un sopralluogo prima di scegliere materiali e finiture.</li>
+        <li>Segna le stanze da ristrutturare e le priorità.</li>
+        <li>Fotografa muffa, crepe, distacchi e macchie d’acqua.</li>
+        <li>Indica se vuoi mantenere arredi, porte o battiscopa.</li>
+        <li>Definisci se la casa sarà abitata durante i lavori.</li>
+        <li>Prepara eventuali planimetrie o misure disponibili.</li>
       </ul>
     </div>
+  </section>
 
-    <div class="rank-table-wrap">
-      <table class="rank-table">
-        <thead>
-          <tr>
-            <th>Fase</th>
-            <th>Cosa si controlla</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Sopralluogo</td>
-            <td>Stato di pavimenti, pareti, umidità, crepe e distribuzione interna.</td>
-          </tr>
-          <tr>
-            <td>Preparazione</td>
-            <td>Protezione ambienti, demolizioni leggere, rasature e ripristini.</td>
-          </tr>
-          <tr>
-            <td>Esecuzione</td>
-            <td>Posa pavimenti, tinteggiatura, opere murarie interne e finiture.</td>
-          </tr>
-          <tr>
-            <td>Consegna</td>
-            <td>Controllo dettagli, pulizia finale e verifica del risultato.</td>
-          </tr>
-        </tbody>
-      </table>
+  <section class="service-section service-rooms">
+    <div class="service-heading scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Stanze e lavorazioni</p>
+      <h2>Interventi specifici per ogni ambiente della casa</h2>
+      <p>
+        Ogni stanza richiede scelte tecniche diverse. Di seguito trovi le lavorazioni principali da considerare per rinnovare gli interni in modo ordinato.
+      </p>
+    </div>
+
+    <div class="room-grid">
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Soggiorno: pavimenti e pareti principali</h3>
+        <p>
+          Il soggiorno è spesso l’ambiente più visibile. Qui la sostituzione pavimento deve tenere conto di continuità con ingresso e corridoio, resistenza al passaggio e abbinamento con porte, zoccolini e arredi.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Soggiorno: opere murarie e nuove aperture</h3>
+        <p>
+          In soggiorno si interviene spesso su tramezzi, nicchie, controspalle e passaggi verso cucina o disimpegno. Le opere murarie interne aiutano a rendere lo spazio più aperto senza perdere ordine.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Cucina: superfici resistenti e facili da pulire</h3>
+        <p>
+          In cucina pavimenti e pareti devono sopportare umidità, sporco e lavaggi frequenti. La scelta di materiali e pitture va fatta pensando all’uso quotidiano, non solo all’effetto finale.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Cucina: tracce, ripristini e pareti attrezzate</h3>
+        <p>
+          Spostare una cucina può richiedere assistenza muraria per tracce, chiusure, ripristini e preparazione delle superfici. Prima della posa delle finiture è importante controllare allineamenti e quote.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Bagno: pavimenti, rivestimenti e protezione dall’umidità</h3>
+        <p>
+          Il bagno richiede attenzione a impermeabilizzazione, pendenze, rivestimenti e punti critici vicino a doccia e sanitari. Un errore può causare infiltrazioni e perdite nelle pareti adiacenti.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Bagno: demolizioni e ripristini mirati</h3>
+        <p>
+          Quando il bagno viene rinnovato insieme agli altri interni, demolizioni e ripristini devono essere coordinati con corridoio, camera o cucina. Questo aiuta a mantenere uniformità nei pavimenti.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Camera da letto: comfort e pareti sane</h3>
+        <p>
+          In camera la qualità delle pareti incide sul comfort. Muffa in casa, macchie dietro armadi o intonaco rovinato vanno trattati prima di tinteggiare, altrimenti il problema ritorna.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Camera da letto: pavimento e isolamento percepito</h3>
+        <p>
+          La pavimentazione della camera deve essere confortevole e coerente con il resto dell’abitazione. In fase di ristrutturazione si valutano quote, battiscopa e raccordi con corridoio e bagno.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Ingresso e corridoio: continuità visiva</h3>
+        <p>
+          Ingresso e corridoio collegano tutti gli ambienti. Una posa continua del pavimento può far sembrare la casa più ordinata, soprattutto negli appartamenti tra Abbiategrasso, Vigevano e Trecate.
+        </p>
+      </article>
+
+      <article class="room-item scroll-reveal scroll-reveal-text">
+        <h3>Ingresso e corridoio: pareti soggette a urti</h3>
+        <p>
+          Queste zone si segnano facilmente. Una buona rasatura, pitture lavabili e spigoli rifiniti aiutano a mantenere l’aspetto curato più a lungo, specialmente nelle case con passaggio frequente.
+        </p>
+      </article>
     </div>
   </section>
 
-  <section class="rank-section rank-faq">
-    <div class="rank-section__heading">
+  <section class="service-image-break scroll-reveal scroll-reveal-media">
+    <img src="/img/sostituzione-pavimento-casa.jpg" alt="Sostituzione pavimento durante ristrutturazione casa">
+  </section>
+
+  <section class="service-section service-tips">
+    <div class="service-text scroll-reveal scroll-reveal-text">
+      <p class="eyebrow">Consigli pratici</p>
+      <h2>Errori comuni da evitare durante i lavori interni</h2>
+      <ol>
+        <li><strong>Scegliere il pavimento prima di controllare il sottofondo.</strong> Un materiale valido può dare problemi se posato su una base non adatta.</li>
+        <li><strong>Tinteggiare sopra muffa o umidità.</strong> La pittura copre per poco tempo se non viene risolta la causa.</li>
+        <li><strong>Demolire senza un piano.</strong> Anche un tramezzo interno può nascondere impianti, vincoli o raccordi da gestire.</li>
+        <li><strong>Separare troppo le lavorazioni.</strong> Pavimenti, pareti e muratura devono dialogare tra loro per evitare differenze di quota e finiture incoerenti.</li>
+      </ol>
+      <p>
+        Se il progetto comprende anche parti esterne collegate, come balconi, muri perimetrali o facciate, può essere utile valutare anche il servizio di <a href="/servizi/rifacimento-facciate.html">rifacimento facciate</a>. In alcune abitazioni l’umidità interna dipende anche da problemi esterni non risolti.
+      </p>
+    </div>
+
+    <div class="service-media scroll-reveal scroll-reveal-media">
+      <img src="/img/tinteggiatura-interna-pareti.jpg" alt="Tinteggiatura interna pareti dopo rasatura e ripristino">
+    </div>
+  </section>
+
+  <section class="service-section service-local">
+    <div class="service-text scroll-reveal scroll-reveal-text">
+      <p class="eyebrow">Contesto locale</p>
+      <h2>Ristrutturazioni interne tra Milano, Pavia e Novara</h2>
+      <p>
+        Le case nelle zone tra Milano, Pavia e Novara possono avere caratteristiche molto diverse: appartamenti in condominio, villette, abitazioni datate, immobili ristrutturati solo in parte o case acquistate da poco. Per questo una <a href="/aree/abbiategrasso.html">ristrutturazione casa ad Abbiategrasso</a> non va impostata nello stesso modo di un intervento in centro a Novara o in una villetta vicino a Vigevano.
+      </p>
+      <p>
+        Negli appartamenti spesso il tema principale è organizzare i lavori riducendo disagi a vicini e condominio. Nelle case indipendenti si valutano meglio umidità, collegamenti tra interno ed esterno, pavimenti continui e stato delle pareti perimetrali.
+      </p>
+      <p class="service-postilla">
+        Aree servite in modo ricorrente: Magenta, Abbiategrasso, Vigevano, Novara e Trecate.
+      </p>
+    </div>
+
+    <div class="service-note scroll-reveal scroll-reveal-text">
+      <h3>Collegamenti utili</h3>
+      <p>
+        Per lavori in zona puoi consultare le pagine dedicate alla <a href="/aree/vigevano.html">ristrutturazione casa a Vigevano</a>, agli interventi in <a href="/aree/novara.html">provincia di Novara</a> e ai lavori di <a href="/aree/trecate.html">ristrutturazione a Trecate</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="service-section service-faq">
+    <div class="service-heading scroll-reveal scroll-reveal-title">
       <p class="eyebrow">FAQ</p>
-      <h2>Domande frequenti sulla ristrutturazione interna della casa</h2>
+      <h2>Domande frequenti sulla ristrutturazione interna</h2>
     </div>
 
     <div class="faq-list">
-      <article>
+      <article class="faq-item scroll-reveal scroll-reveal-text">
         <h3>Quanto dura una ristrutturazione interna?</h3>
         <p>
-          Dipende dal numero di stanze, dal tipo di pavimento, dalle opere murarie interne e dallo stato delle pareti.
-          Un sopralluogo serve proprio a stimare tempi realistici.
+          Dipende dal numero di stanze, dalle demolizioni e dai materiali scelti. Un intervento parziale può richiedere pochi giorni, mentre una ristrutturazione completa richiede una programmazione più ampia.
         </p>
       </article>
 
-      <article>
-        <h3>Si può posare un nuovo pavimento sopra quello esistente?</h3>
+      <article class="faq-item scroll-reveal scroll-reveal-text">
+        <h3>Si può vivere in casa durante i lavori?</h3>
         <p>
-          Sì, ma solo se il pavimento attuale è stabile, asciutto e senza distacchi. Vanno controllate anche porte,
-          soglie e altezze finali.
+          In alcuni casi sì, ma non sempre è consigliabile. Se si interviene su pavimenti, bagno, cucina o più stanze contemporaneamente, conviene valutare tempi e disagi prima dell’avvio.
         </p>
       </article>
 
-      <article>
-        <h3>La muffa in casa si risolve con una semplice pittura?</h3>
+      <article class="faq-item scroll-reveal scroll-reveal-text">
+        <h3>Come capire se la muffa in casa è solo superficiale?</h3>
         <p>
-          Non sempre. Se la causa è condensa, infiltrazione o ponte termico, bisogna intervenire sul problema prima
-          della tinteggiatura.
+          Serve osservare posizione, ricorrenza e condizioni della parete. Muffa dietro armadi, angoli freddi o zone vicine a infiltrazioni richiede valutazioni diverse prima della tinteggiatura.
         </p>
       </article>
 
-      <article>
-        <h3>Cosa rientra nelle opere murarie interne?</h3>
+      <article class="faq-item scroll-reveal scroll-reveal-text">
+        <h3>Quando conviene la sostituzione pavimento?</h3>
         <p>
-          Demolizioni leggere, ripristino intonaci, chiusura o apertura di vani, tracce, rasature, muretti e modifiche
-          alla distribuzione interna.
+          Conviene quando il pavimento è rovinato, instabile, fuori quota o non coerente con la nuova distribuzione degli spazi. La scelta dipende anche dal sottofondo esistente.
         </p>
       </article>
 
-      <article>
-        <h3>Posso ristrutturare una stanza alla volta?</h3>
+      <article class="faq-item scroll-reveal scroll-reveal-text">
+        <h3>Operate anche tra Magenta, Vigevano e Novara?</h3>
         <p>
-          Sì, ma conviene valutare prima i collegamenti tra le stanze. Pavimenti, soglie e tinteggiature devono restare
-          coerenti.
+          Sì, gli interventi vengono valutati nelle aree indicate, tra cui Magenta, Abbiategrasso, Vigevano, Novara e Trecate, in base al tipo di lavoro richiesto.
         </p>
       </article>
 
-      <article>
-        <h3>Come si gestiscono le perdite nelle pareti?</h3>
+      <article class="faq-item scroll-reveal scroll-reveal-text">
+        <h3>Le opere murarie interne sono sempre necessarie?</h3>
         <p>
-          Prima si cerca l’origine della perdita, poi si lascia asciugare la zona e infine si procede con ripristino,
-          rasatura e finitura.
-        </p>
-      </article>
-
-      <article>
-        <h3>Serve un sopralluogo per un preventivo?</h3>
-        <p>
-          Per lavori interni è fortemente consigliato. Senza vedere pavimenti, pareti e condizioni reali, il preventivo
-          rischia di essere impreciso.
-        </p>
-      </article>
-
-      <article>
-        <h3>Quali stanze conviene ristrutturare per prime?</h3>
-        <p>
-          Di solito si parte dagli ambienti più usati o da quelli con problemi tecnici: cucina, bagno, camere con muffa
-          o zone con pavimenti rovinati.
+          No. Servono quando bisogna modificare spazi, ripristinare pareti, chiudere tracce, creare aperture o correggere problemi strutturali leggeri legati agli interni.
         </p>
       </article>
     </div>
   </section>
 
-  <section class="rank-section rank-closing">
-    <div class="rank-section__heading">
-      <p class="eyebrow">Contatti</p>
-      <h2>Vuoi capire da dove partire?</h2>
-    </div>
-
-    <div class="rank-text">
+  <section id="contatti" class="service-cta">
+    <div class="service-cta__content scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Sopralluogo</p>
+      <h2>Rinnova gli interni con un piano chiaro prima di iniziare</h2>
       <p>
-        Raccontaci quali stanze vuoi sistemare, quali problemi hai notato e che risultato vuoi ottenere. Possiamo
-        valutare pavimentazione, tinteggiatura, muffa in casa, perdite nelle pareti e opere murarie interne con un
-        sopralluogo chiaro.
+        Raccontaci quali stanze vuoi sistemare, se hai problemi di muffa, pavimenti da sostituire o pareti da modificare. Valuteremo l’intervento più adatto e le priorità da affrontare.
       </p>
-
-      <p>
-        Che si tratti di una ristrutturazione casa completa o di un intervento mirato su una stanza, il primo passo
-        è capire le condizioni reali dell’abitazione.
-      </p>
-
-      <div class="rank-hero__actions rank-hero__actions--left">
-        <a href="/contatti.html">Richiedi un sopralluogo</a>
-        <a href="tel:+393898416691">Chiama 389 841 6691</a>
+      <div class="hero-buttons">
+        <a href="/contatti.html">Compila il modulo</a>
+        <a href="tel:3898416691">Chiama 389 841 6691</a>
       </div>
     </div>
   </section>
@@ -644,10 +437,10 @@
       <h3>Link rapidi</h3>
 
       <ul class="footer__links">
-        <li><a href="/#hero">Home</a></li>
-        <li><a href="/#chi-siamo">Chi siamo</a></li>
-        <li><a href="/#servizi">Servizi</a></li>
-        <li><a href="/contatti.html">Contatti</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Chi siamo</a></li>
+        <li><a href="#">Servizi</a></li>
+        <li><a href="#">Contatti</a></li>
       </ul>
     </div>
 
@@ -655,8 +448,8 @@
       <h3>Altre pagine</h3>
 
       <ul class="footer__links">
-        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/termini-condizioni.html">Termini e condizioni</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Termini e condizioni</a></li>
       </ul>
     </div>
 
@@ -699,7 +492,8 @@
 
       <p class="appointment__text">
         Organizza il tuo sopralluogo con semplicità. Offriamo servizi professionali
-        per valutazioni, consulenze tecniche, verifiche e interventi su misura.
+        per valutazioni, consulenze tecniche, perizie, verifiche e interventi su misura
+        in base alle esigenze del cliente.
       </p>
 
       <p class="appointment__text">
