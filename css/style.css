@@ -1310,15 +1310,15 @@ a:focus-visible {
   }
 
   .servizio-panel {
-    width: min(70%, 430px);
-    margin: -78px 0 0 42px;
-    padding: 36px 30px;
+    width: calc(100% - 16px);
+    margin: -72px 0 0 16px;
+    padding: 22px 24px;
     border-width: 2px;
   }
 
   .servizio-card:nth-child(even) .servizio-panel {
     margin-left: auto;
-    margin-right: 42px;
+    margin-right: 16px;
   }
 
   .footer {
@@ -1366,16 +1366,16 @@ a:focus-visible {
   }
 
   .servizio-panel {
-    width: min(76%, 420px);
-    margin: -78px 0 0 32px;
-    padding: 32px 28px;
+    width: calc(100% - 20px);
+    margin: -68px 0 0 20px;
+    padding: 20px 22px;
     border-width: 2px;
     border-radius: 24px;
   }
 
   .servizio-card:nth-child(even) .servizio-panel {
     margin-left: auto;
-    margin-right: 32px;
+    margin-right: 20px;
   }
 
   .servizio-panel h3 {
@@ -1410,7 +1410,6 @@ a:focus-visible {
     border-top: 1px solid var(--line-strong);
   }
 }
-
 @media (max-width: 720px) {
   :root {
     --pad-x: 18px;
