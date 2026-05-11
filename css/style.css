@@ -887,6 +887,9 @@ a:focus-visible {
 .contatti-sidebar a:hover::after {
   transform: translateX(6px);
 }
+.contatti-azioni a:only-child {
+  width: min(100%, 636px);
+}
 /* =========================================================
 10. FOOTER
 ========================================================= */
