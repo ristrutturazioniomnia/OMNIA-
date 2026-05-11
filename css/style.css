@@ -822,10 +822,10 @@ a:focus-visible {
 .servizio-panel {
   position: relative;
   z-index: 3;
-  width: min(68%, 455px);
-  margin: clamp(-92px, -6.2vw, -72px) 0 0 clamp(38px, 5vw, 72px);
-  padding: clamp(36px, 4vw, 54px) clamp(28px, 3.2vw, 42px);
-  border: 2px solid rgba(217, 183, 142, 0.62);
+  width: calc(100% - clamp(8px, 1.8vw, 20px));
+  margin: clamp(-108px, -7vw, -84px) 0 0 clamp(14px, 2.4vw, 28px);
+  padding: clamp(22px, 2.2vw, 30px) clamp(24px, 2.6vw, 32px);
+  border: 2px solid rgba(217, 183, 142, 0.46);
   border-radius: 28px;
   background:
     linear-gradient(145deg, rgba(10, 16, 22, 0.78), rgba(23, 34, 45, 0.77));
@@ -842,9 +842,8 @@ a:focus-visible {
 
 .servizio-card:nth-child(even) .servizio-panel {
   margin-left: auto;
-  margin-right: clamp(38px, 5vw, 72px);
+  margin-right: clamp(14px, 2.4vw, 28px);
 }
-
 .servizio-panel h3,
 .servizio-panel p,
 .servizio-panel a {
