@@ -659,3 +659,170 @@ SEZIONE RANK 3 - SERVIZI SECONDARI
     border-radius: 24px;
   }
 }
+/* =========================================================
+ANIMAZIONI E CLICK EFFECT COERENTI CON HOME
+========================================================= */
+
+.rank2-page .scroll-reveal,
+.rank2-page .scroll-reveal-text,
+.rank2-page .scroll-reveal-title,
+.rank2-page .scroll-reveal-media {
+  --reveal-opacity: 1;
+  --reveal-y: 0px;
+  --reveal-scale: 1;
+  --reveal-blur: 0px;
+}
+
+.js.reveal-ready .rank2-page .scroll-reveal {
+  opacity: var(--reveal-opacity);
+  transform: translate3d(0, var(--reveal-y), 0) scale(var(--reveal-scale));
+  filter: blur(var(--reveal-blur));
+  transition:
+    opacity 520ms ease,
+    transform 620ms ease,
+    filter 620ms ease;
+  will-change: opacity, transform, filter;
+}
+
+.rank2-click-effect {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.rank2-click-effect::before {
+  content: "";
+  position: absolute;
+  inset: auto;
+  left: var(--click-x, 50%);
+  top: var(--click-y, 50%);
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-radius: 999px;
+  background: rgba(217, 183, 142, 0.34);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rank2-click-effect.is-clicking::before {
+  animation: rank2-click-wave 520ms ease-out;
+}
+
+@keyframes rank2-click-wave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.65;
+  }
+
+  100% {
+    width: 420px;
+    height: 420px;
+    opacity: 0;
+  }
+}
+
+.rank2-page a,
+.rank2-page button,
+.rank2-faq summary,
+.rank2-rank3__item,
+.rank2-photo,
+.rank2-photo-row figure,
+.rank2-hero__media {
+  transition:
+    transform var(--speed),
+    box-shadow var(--speed),
+    color var(--speed),
+    border-color var(--speed),
+    background var(--speed),
+    filter var(--speed);
+}
+
+.rank2-page a:active,
+.rank2-faq summary:active {
+  transform: scale(0.97);
+}
+
+.rank2-rank3__item {
+  cursor: pointer;
+}
+
+.rank2-rank3__item:active {
+  transform: scale(0.985);
+}
+
+.rank2-rank3__item:hover {
+  border-color: rgba(184, 121, 69, 0.52);
+}
+
+.rank2-photo:active,
+.rank2-photo-row figure:active,
+.rank2-hero__media:active {
+  transform: scale(0.985);
+}
+
+.rank2-faq details {
+  transition:
+    background var(--speed),
+    padding-left var(--speed),
+    border-color var(--speed);
+}
+
+.rank2-faq details:hover {
+  padding-left: 16px;
+  border-color: rgba(184, 121, 69, 0.38);
+}
+
+.rank2-faq details[open] {
+  padding-left: 18px;
+  background: rgba(184, 121, 69, 0.055);
+  border-color: rgba(184, 121, 69, 0.42);
+}
+
+.rank2-faq details[open] summary {
+  color: var(--accent-dark);
+}
+
+.rank2-area-lines a,
+.rank2-contatti__links a,
+.rank2-rank3__content a {
+  position: relative;
+}
+
+.rank2-area-lines a::before,
+.rank2-contatti__links a::before,
+.rank2-rank3__content a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--speed);
+}
+
+.rank2-area-lines a:hover::before,
+.rank2-contatti__links a:hover::before,
+.rank2-rank3__content a:hover::before {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js.reveal-ready .rank2-page .scroll-reveal,
+  .rank2-click-effect::before,
+  .rank2-page a,
+  .rank2-page button,
+  .rank2-faq summary,
+  .rank2-rank3__item,
+  .rank2-photo,
+  .rank2-photo-row figure,
+  .rank2-hero__media {
+    animation: none !important;
+    transition-duration: 0.001ms !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
