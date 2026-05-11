@@ -917,6 +917,7 @@ a:focus-visible {
 .servizio-card:hover .servizio-panel a::after {
   transform: translateX(7px);
 }
+
 /* =========================================================
 8. AREE
 ========================================================= */
@@ -1787,4 +1788,10 @@ FIX FOOTER VISIBILE - NO BLUR SU DESKTOP E MOBILE
 .footer {
   overflow: visible !important;
   filter: none !important;
+}
+/* Titoli servizi bianchi */
+.servizi h2,
+.servizio-card h2,
+.servizio-panel h2 {
+  color: var(--white);
 }
