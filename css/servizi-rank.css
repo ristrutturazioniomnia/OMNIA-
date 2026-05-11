@@ -1,156 +1,227 @@
 /* =========================================================
-SERVICE RANK - PAGINE SERVIZIO RANK 2 / RANK 3
+PAGINA RANK 2 - RISTRUTTURAZIONE CASA
+CSS integrativo: usa variabili, font, bottoni, navbar e footer del sito
 ========================================================= */
 
-.service-rank {
-  overflow: hidden;
-  background: var(--paper);
+.rank2-page {
+  background:
+    radial-gradient(circle at 88% 6%, rgba(184, 121, 69, 0.12), transparent 34rem),
+    linear-gradient(180deg, var(--paper-light), var(--paper));
 }
 
-.service-rank section {
+.rank2-page a {
+  color: var(--accent-dark);
+  font-weight: 800;
+  transition: color var(--speed), padding-left var(--speed);
+}
+
+.rank2-page a:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+
+.rank2-hero {
+  min-height: 94svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
+  gap: clamp(34px, 6vw, 86px);
+  align-items: center;
+  padding:
+    clamp(118px, 11vw, 168px)
+    var(--pad-x)
+    clamp(74px, 8vw, 116px);
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(8, 13, 18, 0.94), rgba(23, 34, 45, 0.72)),
+    url("../img/ristrutturazione-casa.jpg") center center / cover no-repeat;
+}
+
+.rank2-hero h1 {
+  margin: 0;
+  max-width: 980px;
+  color: var(--white);
+  text-align: left;
+  font-size: clamp(2.82rem, 6.6vw, 6.1rem);
+}
+
+.rank2-hero .eyebrow {
+  color: var(--accent-soft);
+}
+
+.rank2-hero__content p:not(.eyebrow) {
+  max-width: 720px;
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.04rem, 1.45vw, 1.26rem);
+}
+
+.rank2-hero .hero-buttons {
+  justify-content: flex-start;
+}
+
+.rank2-hero__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-image) var(--radius-image) 120px var(--radius-image);
+  box-shadow: var(--shadow-image);
+}
+
+.rank2-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 22px 22px 92px 22px;
+  pointer-events: none;
+}
+
+.rank2-hero__media img {
+  height: clamp(460px, 48vw, 690px);
+  object-fit: cover;
+}
+
+/* BASE SEZIONI */
+
+.rank2-section {
+  padding: var(--section-y) var(--pad-x);
   position: relative;
 }
 
-.service-rank__hero,
-.service-rank__intro,
-.service-rank__content,
-.service-rank__rooms,
-.service-rank__benefits,
-.service-rank__checklist,
-.service-rank__table-section,
-.service-rank__gallery-section,
-.service-rank__local,
-.service-rank__advice,
-.service-rank__faq,
-.service-rank__cta,
-.service-rank__wide-section,
-.service-rank__visual-break {
-  width: 100%;
-  padding-left: var(--pad-x);
-  padding-right: var(--pad-x);
-}
-
-.service-rank__intro,
-.service-rank__content,
-.service-rank__rooms,
-.service-rank__benefits,
-.service-rank__checklist,
-.service-rank__table-section,
-.service-rank__gallery-section,
-.service-rank__local,
-.service-rank__advice,
-.service-rank__faq,
-.service-rank__cta {
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
-}
-
-.service-rank__content::before,
-.service-rank__rooms::before,
-.service-rank__benefits::before,
-.service-rank__table-section::before,
-.service-rank__gallery-section::before,
-.service-rank__advice::before,
-.service-rank__faq::before {
+.rank2-section::before {
   content: "";
   position: absolute;
   left: var(--pad-x);
   right: var(--pad-x);
-  top: var(--section-y);
+  top: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
 }
 
-/* =========================================================
-HERO
-========================================================= */
-
-.service-rank__hero {
-  min-height: 96svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: clamp(108px, 10vw, 156px);
-  padding-bottom: clamp(90px, 9vw, 138px);
-  isolation: isolate;
-  text-align: center;
-  background:
-    radial-gradient(circle at 50% 32%, rgba(184, 121, 69, 0.28), transparent 34rem),
-    linear-gradient(180deg, rgba(8, 13, 18, 0.18), rgba(8, 13, 18, 0.48)),
-    url("../img/ristrutturazione-interna-hero.jpg") center center / cover no-repeat;
+.rank2-section__head {
+  max-width: 960px;
+  margin-bottom: clamp(34px, 5vw, 66px);
 }
 
-.service-rank__hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.58), rgba(23, 34, 45, 0.26)),
-    radial-gradient(circle at 78% 20%, rgba(217, 183, 142, 0.16), transparent 30rem);
-  backdrop-filter: blur(1px);
+.rank2-section__head h2 {
+  margin-bottom: 0;
 }
 
-.service-rank__hero::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 48px;
-  z-index: 2;
-  width: min(760px, calc(100% - 44px));
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-  transform: translateX(-50%);
+.rank2-text-flow {
+  max-width: 960px;
 }
 
-.service-rank__hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 1080px;
-  margin: 0 auto;
+.rank2-text-flow p {
+  max-width: 860px;
 }
 
-.service-rank__hero-content .eyebrow {
-  justify-content: center;
-  color: var(--accent-soft);
+.rank2-text-flow p + p {
+  margin-top: 18px;
 }
 
-.service-rank__hero-content .eyebrow::after {
-  content: "";
-  width: 42px;
-  height: 1px;
-  background: currentColor;
+/* IMMAGINI IN FORMATI DIVERSI */
+
+.rank2-wide-photo {
+  width: 100%;
+  padding: 0 var(--pad-x) var(--section-y);
+  overflow: hidden;
+  background: var(--paper-light);
 }
 
-.service-rank__hero-content p:not(.eyebrow) {
-  max-width: 850px;
-  margin: 26px auto 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: clamp(1.05rem, 1.45vw, 1.28rem);
-  text-align: center;
+.rank2-wide-photo img {
+  height: clamp(360px, 42vw, 610px);
+  object-fit: cover;
+  border-radius: 34px;
+  box-shadow: var(--shadow-image);
 }
 
-/* =========================================================
-LAYOUT TESTO / IMMAGINI
-========================================================= */
+.rank2-photo {
+  overflow: hidden;
+  box-shadow: var(--shadow-image);
+}
 
-.service-rank__split {
+.rank2-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--speed-slow), filter var(--speed-slow);
+}
+
+.rank2-photo:hover img,
+.rank2-wide-photo:hover img,
+.rank2-photo-row figure:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.rank2-photo--vertical {
+  height: clamp(480px, 48vw, 680px);
+  border-radius: var(--radius-image) 120px var(--radius-image) var(--radius-image);
+}
+
+.rank2-photo--square {
+  height: clamp(390px, 42vw, 560px);
+  border-radius: 110px var(--radius-image) var(--radius-image) var(--radius-image);
+}
+
+.rank2-photo--horizontal {
+  height: clamp(360px, 36vw, 520px);
+  border-radius: var(--radius-image);
+}
+
+.rank2-photo-row {
   display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
-  gap: clamp(34px, 5vw, 76px);
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: clamp(18px, 3vw, 34px);
+  padding: 0 var(--pad-x) var(--section-y);
+  background: linear-gradient(180deg, var(--paper), #fbf8f3);
+}
+
+.rank2-photo-row figure {
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: var(--shadow-soft);
+}
+
+.rank2-photo-row figure:first-child {
+  border-radius: 34px 100px 34px 34px;
+}
+
+.rank2-photo-row figure:nth-child(2) {
+  border-radius: 34px;
+  transform: translateY(38px);
+}
+
+.rank2-photo-row figure:nth-child(3) {
+  border-radius: 100px 34px 34px 34px;
+}
+
+.rank2-photo-row img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--speed-slow), filter var(--speed-slow);
+}
+
+/* SPLIT E TESTI */
+
+.rank2-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
+  gap: clamp(34px, 6vw, 82px);
   align-items: center;
 }
 
-.service-rank__split--reverse {
-  grid-template-columns: minmax(360px, 1.06fr) minmax(0, 0.94fr);
+.rank2-split--reverse {
+  grid-template-columns: minmax(340px, 1.02fr) minmax(0, 0.98fr);
 }
 
-.service-rank__text {
-  position: relative;
-  padding: clamp(18px, 2.4vw, 30px) 0;
+.rank2-split__text {
   border-top: 1px solid var(--line-strong);
+  padding-top: clamp(22px, 3vw, 34px);
 }
 
-.service-rank__text::before {
+.rank2-split__text::before {
   content: "";
   display: block;
   width: 88px;
@@ -159,1217 +230,292 @@ LAYOUT TESTO / IMMAGINI
   background: var(--accent);
 }
 
-.service-rank__text p {
-  max-width: 700px;
+.rank2-split__text p {
+  max-width: 680px;
 }
 
-.service-rank__text ul,
-.service-rank__numbered ol {
-  display: grid;
-  gap: 14px;
-  margin: 22px 0 0;
-  padding-left: 20px;
-}
+/* FASCE SERVIZIO */
 
-.service-rank__text li,
-.service-rank__numbered li {
-  color: var(--muted);
-  font-size: clamp(0.98rem, 1.1vw, 1.06rem);
-  line-height: 1.65;
-}
-
-.service-rank__text ul {
-  list-style: disc;
-}
-
-.service-rank__numbered ol {
-  list-style: decimal;
-}
-
-.service-rank__image {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-image);
-  box-shadow: var(--shadow-image);
-}
-
-.service-rank__image--framed {
-  border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
-}
-
-.service-rank__image--soft {
-  border-radius: var(--radius-image) var(--radius-image) var(--radius-image) 110px;
-}
-
-.service-rank__image::after,
-.service-rank__wide-image::after,
-.service-rank__media-full::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: 22px;
-  pointer-events: none;
-}
-
-.service-rank__image img {
-  height: clamp(360px, 38vw, 560px);
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.service-rank__image:hover img {
-  transform: scale(1.045);
-  filter: saturate(1.06) contrast(1.04);
-}
-
-/* =========================================================
-IMMAGINI FULL WIDTH
-========================================================= */
-
-.service-rank__wide-section {
-  padding-top: clamp(44px, 6vw, 78px);
-  padding-bottom: clamp(44px, 6vw, 78px);
+.rank2-service-band {
   background:
-    radial-gradient(circle at 18% 20%, rgba(184, 121, 69, 0.12), transparent 32rem),
-    linear-gradient(180deg, var(--paper), var(--paper-light));
-}
-
-.service-rank__wide-image,
-.service-rank__media-full {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: var(--radius-image);
-  box-shadow: var(--shadow-image);
-}
-
-.service-rank__wide-image img {
-  width: 100%;
-  height: clamp(360px, 45vw, 620px);
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.service-rank__wide-image:hover img,
-.service-rank__media-full:hover img {
-  transform: scale(1.035);
-  filter: saturate(1.06) contrast(1.04);
-}
-
-.service-rank__visual-break {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.22fr);
-  gap: clamp(30px, 4vw, 64px);
-  align-items: center;
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
-  color: var(--white);
-  background:
-    radial-gradient(circle at 8% 16%, rgba(184, 121, 69, 0.26), transparent 28rem),
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.88));
-}
-
-.service-rank__visual-break h2 {
-  color: var(--white);
-}
-
-.service-rank__visual-break p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.service-rank__visual-break .eyebrow {
-  color: var(--accent-soft);
-}
-
-.service-rank__visual-text {
-  position: relative;
-  z-index: 2;
-}
-
-.service-rank__media-full img {
-  height: clamp(330px, 35vw, 520px);
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-/* =========================================================
-HEADINGS E PANNELLI
-========================================================= */
-
-.service-rank__heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
-  grid-template-areas:
-    "eyebrow testo"
-    "titolo testo";
-  column-gap: clamp(34px, 5vw, 78px);
-  row-gap: 14px;
-  align-items: end;
-  margin-bottom: clamp(42px, 6vw, 78px);
-}
-
-.service-rank__heading .eyebrow {
-  grid-area: eyebrow;
-  margin-bottom: 0;
-}
-
-.service-rank__heading h2 {
-  grid-area: titolo;
-  max-width: 880px;
-  margin-bottom: 0;
-}
-
-.service-rank__heading p:not(.eyebrow) {
-  grid-area: testo;
-  justify-self: end;
-  max-width: 520px;
-  margin: 0;
-  padding-top: 26px;
-  border-top: 1px solid var(--line-strong);
-}
-
-.service-rank__grid {
-  display: grid;
-  gap: clamp(24px, 3vw, 38px);
-}
-
-.service-rank__grid--two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.service-rank__panel,
-.service-rank__room {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(24px, 3vw, 34px);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(246, 241, 234, 0.72));
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--speed), box-shadow var(--speed), border-color var(--speed);
-}
-
-.service-rank__panel::before,
-.service-rank__room::before {
-  content: "";
-  position: absolute;
-  right: -80px;
-  top: -80px;
-  width: 180px;
-  height: 180px;
-  border-radius: 999px;
-  background: rgba(184, 121, 69, 0.12);
-  filter: blur(18px);
-  pointer-events: none;
-}
-
-.service-rank__panel:hover,
-.service-rank__room:hover {
-  transform: translateY(-6px);
-  border-color: rgba(184, 121, 69, 0.36);
-  box-shadow: 0 24px 60px rgba(23, 34, 45, 0.14);
-}
-
-.service-rank__panel h3,
-.service-rank__room h3 {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 16px;
-}
-
-.service-rank__panel p,
-.service-rank__room p {
-  position: relative;
-  z-index: 2;
-  max-width: none;
-}
-
-/* =========================================================
-ROOMS
-========================================================= */
-
-.service-rank__rooms {
-  background:
-    radial-gradient(circle at 86% 14%, rgba(184, 121, 69, 0.13), transparent 34rem),
-    linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.service-rank__rooms-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 38px);
-}
-
-.service-rank__room {
-  min-height: 100%;
-}
-
-/* =========================================================
-BENEFITS / CHECKLIST / LOCAL
-========================================================= */
-
-.service-rank__benefits {
-  background:
+    radial-gradient(circle at 88% 12%, rgba(184, 121, 69, 0.12), transparent 30rem),
     linear-gradient(180deg, var(--paper), #fbf8f3);
 }
 
-.service-rank__list-layout {
+.rank2-two-columns {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(22px, 3vw, 34px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 74px);
+  align-items: start;
 }
 
-.service-rank__areas-note {
-  margin-top: 24px;
-  padding: 18px 22px;
-  border-left: 3px solid var(--accent);
-  background: rgba(255, 255, 255, 0.58);
-  color: var(--ink-soft);
-  font-size: 0.96rem;
-  line-height: 1.55;
+.rank2-two-columns > div {
+  padding-top: clamp(22px, 3vw, 34px);
+  border-top: 1px solid var(--line-strong);
 }
 
-/* =========================================================
-TABELLA
-========================================================= */
-
-.service-rank__table-section {
-  background: var(--paper-light);
-}
-
-.service-rank__table-wrap {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: var(--paper-light);
-  box-shadow: var(--shadow-soft);
-}
-
-.service-rank__table-wrap table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.service-rank__table-wrap th,
-.service-rank__table-wrap td {
-  padding: clamp(16px, 2vw, 24px);
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-  vertical-align: top;
-}
-
-.service-rank__table-wrap th {
-  color: var(--ink);
-  background: rgba(184, 121, 69, 0.10);
-  font-size: 0.9rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.service-rank__table-wrap td {
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.55;
-}
-
-.service-rank__table-wrap tr:last-child td {
-  border-bottom: 0;
-}
-
-/* =========================================================
-SEZIONE RANK 3 - RIUSO STILE SERVIZI HOME
-========================================================= */
-
-.service-rank__related {
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
-}
-
-.service-rank__related .servizi-introduzione h2 {
+.rank2-two-columns h3 {
+  max-width: 520px;
   color: var(--ink);
 }
 
-.service-rank__related-list {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(34px, 4vw, 54px);
+.rank2-two-columns p {
+  max-width: 640px;
 }
 
-.service-rank__related-list .servizio-card:nth-child(even) {
-  margin-top: clamp(28px, 4vw, 56px);
-}
+/* STANZE */
 
-.service-rank__related-list .servizio-card:nth-child(3) {
-  margin-top: clamp(56px, 6vw, 88px);
-}
-
-.service-rank__related-list .servizio-card img {
-  width: calc(100% - clamp(20px, 3vw, 38px));
-  height: clamp(340px, 30vw, 460px);
-}
-
-.service-rank__related-list .servizio-panel {
-  width: calc(100% - 12px);
-  margin-top: clamp(-94px, -7vw, -74px);
-}
-
-.service-rank__related-list .servizio-panel h3 {
-  color: var(--white);
-}
-
-/* =========================================================
-GALLERY
-========================================================= */
-
-.service-rank__gallery-section {
-  background:
-    radial-gradient(circle at 18% 10%, rgba(184, 121, 69, 0.13), transparent 34rem),
-    linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.service-rank__gallery {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr 1fr;
-  gap: clamp(18px, 2.4vw, 30px);
-  align-items: stretch;
-}
-
-.service-rank__gallery figure {
-  position: relative;
-  overflow: hidden;
-  min-height: 380px;
-  border-radius: 28px;
-  box-shadow: var(--shadow-soft);
-}
-
-.service-rank__gallery figure:nth-child(2) {
-  margin-top: clamp(28px, 4vw, 54px);
-}
-
-.service-rank__gallery img {
-  width: 100%;
-  height: 100%;
-  min-height: 380px;
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.service-rank__gallery figure:hover img {
-  transform: scale(1.045);
-  filter: saturate(1.06) contrast(1.04);
-}
-
-/* =========================================================
-CONSIGLI NUMERATI
-========================================================= */
-
-.service-rank__advice {
-  color: var(--white);
-  background:
-    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.18), transparent 34rem),
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.88));
-}
-
-.service-rank__advice h2 {
-  color: var(--white);
-}
-
-.service-rank__advice .eyebrow {
-  color: var(--accent-soft);
-}
-
-.service-rank__advice .service-rank__heading p {
-  color: rgba(255, 255, 255, 0.74);
-  border-color: var(--line-light);
-}
-
-.service-rank__numbered {
-  max-width: 920px;
-}
-
-.service-rank__numbered li {
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line-light);
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.service-rank__numbered strong {
-  color: var(--white);
-}
-
-/* =========================================================
-FAQ
-========================================================= */
-
-.service-rank__faq {
+.rank2-room-section {
   background: var(--paper-light);
 }
 
-.service-rank__faq-list {
-  display: grid;
-  gap: 14px;
-  max-width: 940px;
+.rank2-room {
+  padding: clamp(42px, 5vw, 70px) 0;
+  border-top: 1px solid var(--line);
 }
 
-.service-rank__faq-item {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(246, 241, 234, 0.72));
-  box-shadow: 0 10px 28px rgba(23, 34, 45, 0.07);
-  transition: border-color var(--speed), box-shadow var(--speed);
+.rank2-room:first-of-type {
+  border-top: 0;
+  padding-top: 0;
 }
 
-.service-rank__faq-item[open] {
-  border-color: rgba(184, 121, 69, 0.38);
-  box-shadow: 0 18px 44px rgba(23, 34, 45, 0.12);
+.rank2-room h2 {
+  max-width: 720px;
+  margin-bottom: clamp(24px, 3vw, 36px);
 }
 
-.service-rank__faq-item summary {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 20px 24px;
-  color: var(--ink);
-  font-size: clamp(1rem, 1.18vw, 1.08rem);
-  font-weight: 850;
-  cursor: pointer;
-  list-style: none;
-}
+/* AREE */
 
-.service-rank__faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.service-rank__faq-item summary::after {
-  content: "⌄";
-  color: var(--accent);
-  font-weight: 900;
-  transition: transform var(--speed);
-}
-
-.service-rank__faq-item[open] summary::after {
-  transform: rotate(180deg);
-}
-
-.service-rank__faq-item p {
-  max-width: none;
-  padding: 0 24px 22px;
-}
-
-/* =========================================================
-CTA
-========================================================= */
-
-.service-rank__cta {
-  text-align: center;
+.rank2-areas {
   color: var(--white);
   background:
-    radial-gradient(circle at 50% 20%, rgba(184, 121, 69, 0.28), transparent 32rem),
-    linear-gradient(110deg, rgba(9, 16, 23, 0.98), rgba(23, 34, 45, 0.90));
+    linear-gradient(110deg, rgba(9, 16, 23, 0.94), rgba(23, 34, 45, 0.82)),
+    url("../img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
 }
 
-.service-rank__cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 16%, rgba(217, 183, 142, 0.14), transparent 28rem);
-  backdrop-filter: blur(1px);
-  pointer-events: none;
-}
-
-.service-rank__cta-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 940px;
-  margin: 0 auto;
-}
-
-.service-rank__cta h2 {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+.rank2-areas h2 {
   color: var(--white);
 }
 
-.service-rank__cta p:not(.eyebrow) {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+.rank2-areas p {
   color: rgba(255, 255, 255, 0.78);
 }
 
-.service-rank__cta .eyebrow {
-  justify-content: center;
+.rank2-areas .eyebrow {
   color: var(--accent-soft);
 }
 
-.service-rank__cta .eyebrow::after {
-  content: "";
-  width: 42px;
-  height: 1px;
-  background: currentColor;
+.rank2-area-lines {
+  display: grid;
+  gap: 18px;
+  max-width: 880px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-light);
 }
 
-.service-rank__cta .contatti-azioni {
-  justify-content: center;
+.rank2-area-lines a {
+  color: var(--accent-soft);
 }
 
-/* =========================================================
-EFFETTI SFOCATURA E PROFONDITÀ COERENTI HOME
-========================================================= */
-
-.service-rank__intro::after,
-.service-rank__rooms::after,
-.service-rank__gallery-section::after {
-  content: "";
-  position: absolute;
-  width: clamp(180px, 22vw, 340px);
-  height: clamp(180px, 22vw, 340px);
-  border-radius: 999px;
-  background: rgba(184, 121, 69, 0.12);
-  filter: blur(34px);
-  pointer-events: none;
-  z-index: 0;
+.rank2-area-lines a:hover {
+  color: var(--white);
 }
 
-.service-rank__intro::after {
-  right: -90px;
-  top: 18%;
+/* FAQ */
+
+.rank2-faq {
+  background: linear-gradient(180deg, var(--paper), var(--paper-light));
 }
 
-.service-rank__rooms::after {
-  left: -110px;
-  bottom: 8%;
+.rank2-faq__list {
+  display: grid;
+  max-width: 980px;
+  border-top: 1px solid var(--line-strong);
 }
 
-.service-rank__gallery-section::after {
-  right: -120px;
-  bottom: 12%;
+.rank2-faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
 }
 
-.service-rank__intro > *,
-.service-rank__rooms > *,
-.service-rank__gallery-section > * {
-  position: relative;
-  z-index: 1;
+.rank2-faq summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-size: clamp(1.24rem, 2vw, 1.7rem);
+  font-weight: 760;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
 }
 
-/* =========================================================
-RESPONSIVE
-========================================================= */
-
-@media (max-width: 1180px) {
-  .service-rank__related-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 52px 24px;
-  }
-
-  .service-rank__related-list .servizio-card img {
-    height: 390px;
-  }
-
-  .service-rank__related-list .servizio-panel {
-    padding: 22px 22px;
-  }
+.rank2-faq summary::marker {
+  color: var(--accent);
 }
+
+.rank2-faq details p {
+  max-width: 780px;
+  margin-top: 14px;
+}
+
+/* CONTATTI */
+
+.rank2-contatti {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.56fr);
+  gap: clamp(38px, 6vw, 86px);
+  align-items: start;
+  padding: var(--section-y) var(--pad-x);
+  background: var(--paper-light);
+}
+
+.rank2-contatti__text {
+  border-top: 1px solid var(--line-strong);
+  padding-top: clamp(22px, 3vw, 34px);
+}
+
+.rank2-contatti__text h2 {
+  max-width: 760px;
+}
+
+.rank2-contatti__links {
+  padding-left: clamp(26px, 4vw, 54px);
+  border-left: 1px solid var(--line-strong);
+}
+
+.rank2-contatti__links ul {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.rank2-contatti__links li {
+  border-bottom: 1px solid var(--line);
+}
+
+.rank2-contatti__links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.rank2-contatti__links a::after {
+  content: "→";
+  color: var(--accent);
+  transition: transform var(--speed);
+}
+
+.rank2-contatti__links a:hover {
+  color: var(--ink);
+  padding-left: 8px;
+}
+
+.rank2-contatti__links a:hover::after {
+  transform: translateX(6px);
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 980px) {
-  .service-rank__split,
-  .service-rank__split--reverse,
-  .service-rank__visual-break {
+  .rank2-hero,
+  .rank2-split,
+  .rank2-split--reverse,
+  .rank2-contatti {
     grid-template-columns: 1fr;
   }
 
-  .service-rank__split--reverse .service-rank__image {
-    order: 2;
+  .rank2-hero h1 {
+    text-align: left;
   }
 
-  .service-rank__split--reverse .service-rank__text {
-    order: 1;
+  .rank2-hero__media {
+    max-width: 620px;
   }
 
-  .service-rank__heading {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "eyebrow"
-      "titolo"
-      "testo";
-  }
-
-  .service-rank__heading p:not(.eyebrow) {
-    justify-self: start;
-    max-width: 680px;
-  }
-
-  .service-rank__grid--two,
-  .service-rank__rooms-list,
-  .service-rank__list-layout {
+  .rank2-two-columns,
+  .rank2-photo-row {
     grid-template-columns: 1fr;
   }
 
-  .service-rank__related-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .rank2-photo-row figure:nth-child(2) {
+    transform: none;
   }
 
-  .service-rank__related-list .servizio-card:nth-child(3) {
-    margin-top: 0;
-  }
-
-  .service-rank__gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .service-rank__gallery figure,
-  .service-rank__gallery img {
-    min-height: 340px;
-  }
-
-  .service-rank__gallery figure:nth-child(2) {
-    margin-top: 0;
+  .rank2-contatti__links {
+    padding-left: 0;
+    padding-top: 34px;
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
   }
 }
 
 @media (max-width: 720px) {
-  .service-rank__hero {
-    min-height: 88svh;
-    padding-top: 132px;
-    padding-bottom: 82px;
+  .rank2-hero {
+    min-height: auto;
+    padding-top: 168px;
   }
 
-  .service-rank__hero-content p:not(.eyebrow) {
-    font-size: 1rem;
+  .rank2-hero h1 {
+    font-size: clamp(2.32rem, 12vw, 3.7rem);
   }
 
-  .service-rank__image,
-  .service-rank__image--framed,
-  .service-rank__image--soft,
-  .service-rank__wide-image,
-  .service-rank__media-full {
-    border-radius: 22px;
+  .rank2-hero .hero-buttons {
+    width: 100%;
   }
 
-  .service-rank__image::after,
-  .service-rank__wide-image::after,
-  .service-rank__media-full::after {
+  .rank2-hero__media img,
+  .rank2-photo--vertical,
+  .rank2-photo--square,
+  .rank2-photo--horizontal {
+    height: 360px;
+  }
+
+  .rank2-wide-photo img {
+    height: 340px;
+    border-radius: 24px;
+  }
+
+  .rank2-photo-row figure {
+    min-height: 300px;
+  }
+
+  .rank2-photo-row figure:first-child,
+  .rank2-photo-row figure:nth-child(2),
+  .rank2-photo-row figure:nth-child(3),
+  .rank2-photo,
+  .rank2-hero__media {
+    border-radius: 24px;
+  }
+
+  .rank2-hero__media::after {
     inset: 12px;
-    border-radius: 14px;
+    border-radius: 16px;
   }
 
-  .service-rank__image img {
-    height: 310px;
-  }
-
-  .service-rank__wide-image img,
-  .service-rank__media-full img {
-    height: 330px;
-  }
-
-  .service-rank__panel,
-  .service-rank__room {
-    padding: 22px;
-    border-radius: 22px;
-  }
-
-  .service-rank__table-wrap {
-    overflow-x: auto;
-    border-radius: 20px;
-  }
-
-  .service-rank__table-wrap table {
-    min-width: 680px;
-  }
-
-  .service-rank__related-list {
-    grid-template-columns: 1fr;
-    gap: 64px;
-  }
-
-  .service-rank__related-list .servizio-card:nth-child(even) {
-    margin-top: 0;
-  }
-
-  .service-rank__related-list .servizio-card img {
-    height: 390px;
-  }
-
-  .service-rank__related-list .servizio-panel {
-    margin-top: -96px;
-  }
-
-  .service-rank__faq-item summary {
-    padding: 18px 20px;
-  }
-
-  .service-rank__faq-item p {
-    padding: 0 20px 20px;
+  .rank2-section__head {
+    margin-bottom: 34px;
   }
 }
 
 @media (max-width: 460px) {
-  .service-rank__hero {
-    padding-top: 150px;
+  .rank2-hero {
+    padding-top: 188px;
   }
 
-  .service-rank__image img,
-  .service-rank__wide-image img,
-  .service-rank__media-full img,
-  .service-rank__gallery figure,
-  .service-rank__gallery img {
-    height: 300px;
-    min-height: 300px;
+  .rank2-hero__media img,
+  .rank2-photo--vertical,
+  .rank2-photo--square,
+  .rank2-photo--horizontal,
+  .rank2-wide-photo img {
+    height: 310px;
   }
 
-  .service-rank__related-list .servizio-card img {
-    height: 340px;
+  .rank2-photo-row figure {
+    min-height: 260px;
   }
 
-  .service-rank__text li,
-  .service-rank__numbered li {
-    font-size: 0.95rem;
-  }
-
-  .service-rank__areas-note {
-    padding: 16px 18px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .service-rank *,
-  .service-rank *::before,
-  .service-rank *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
-
-  .service-rank .scroll-reveal,
-  .service-rank .scroll-reveal-text,
-  .service-rank .scroll-reveal-media,
-  .service-rank .scroll-reveal-title,
-  .service-rank .servizio-card,
-  .service-rank .servizio-card img,
-  .service-rank .servizio-panel,
-  .service-rank .servizio-panel h3,
-  .service-rank .servizio-panel p,
-  .service-rank .servizio-panel a {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-}
-/* =========================================================
-PERSONALIZZAZIONE CARD "STANZA PER STANZA"
-========================================================= */
-
-.service-rank__room {
-  isolation: isolate;
-  padding-top: clamp(30px, 3.4vw, 42px);
-}
-
-.service-rank__room::after {
-  content: attr(data-room-number);
-  position: absolute;
-  right: clamp(18px, 2.8vw, 34px);
-  bottom: clamp(10px, 1.8vw, 22px);
-  z-index: 1;
-  color: rgba(184, 121, 69, 0.10);
-  font-family: var(--font-title);
-  font-size: clamp(4.8rem, 8vw, 8.6rem);
-  font-weight: 800;
-  line-height: 0.8;
-  letter-spacing: -0.08em;
-  pointer-events: none;
-}
-
-.service-rank__room-accent {
-  position: absolute;
-  top: 0;
-  left: var(--room-accent-left, 28px);
-  z-index: 4;
-  width: var(--room-accent-width, 96px);
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-  opacity: var(--room-accent-opacity, 0.82);
-}
-
-.service-rank__room-head {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  margin-bottom: 18px;
-}
-
-.service-rank__room-icon {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
-  border: 1px solid rgba(184, 121, 69, 0.28);
-  border-radius: 18px;
-  color: var(--accent);
-  background:
-    radial-gradient(circle at 30% 20%, rgba(217, 183, 142, 0.34), transparent 70%),
-    rgba(255, 255, 255, 0.58);
-  box-shadow: 0 14px 34px rgba(23, 34, 45, 0.10);
-  backdrop-filter: blur(10px);
-}
-
-.service-rank__room-icon i {
-  font-size: 1.34rem;
-  line-height: 1;
-}
-
-.service-rank__room-kicker {
-  display: inline-flex;
-  margin-bottom: 10px;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.service-rank__room h3 {
-  margin-bottom: 0;
-}
-
-.service-rank__room p {
-  z-index: 3;
-}
-
-.service-rank__room--icon-top .service-rank__room-head {
-  display: grid;
-  gap: 16px;
-}
-
-.service-rank__room--icon-top .service-rank__room-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 20px;
-}
-
-.service-rank__room--number-right::after {
-  top: clamp(18px, 2vw, 28px);
-  right: clamp(18px, 2.4vw, 30px);
-  bottom: auto;
-  font-size: clamp(5.2rem, 8.4vw, 9rem);
-}
-
-.service-rank__room--number-right .service-rank__room-head {
-  max-width: calc(100% - 74px);
-}
-
-.service-rank__room--radius-a {
-  --room-accent-width: 114px;
-  --room-accent-left: 30px;
-  border-radius: 28px 72px 28px 28px;
-}
-
-.service-rank__room--radius-b {
-  --room-accent-width: 82px;
-  --room-accent-left: 42px;
-  --room-accent-opacity: 0.72;
-  border-radius: 44px 28px 28px 28px;
-}
-
-.service-rank__room--radius-c {
-  --room-accent-width: 136px;
-  --room-accent-left: 26px;
-  --room-accent-opacity: 0.64;
-  border-radius: 28px 28px 76px 28px;
-}
-
-.service-rank__room--radius-d {
-  --room-accent-width: 92px;
-  --room-accent-left: 54px;
-  --room-accent-opacity: 0.88;
-  border-radius: 28px 56px 28px 44px;
-}
-
-.service-rank__room--radius-e {
-  --room-accent-width: 122px;
-  --room-accent-left: 34px;
-  --room-accent-opacity: 0.70;
-  border-radius: 64px 28px 28px 28px;
-}
-
-.service-rank__room--radius-f {
-  --room-accent-width: 76px;
-  --room-accent-left: 48px;
-  --room-accent-opacity: 0.92;
-  border-radius: 28px 28px 28px 76px;
-}
-
-.service-rank__room:hover .service-rank__room-icon {
-  transform: translateY(-3px);
-  border-color: rgba(184, 121, 69, 0.42);
-  box-shadow: 0 18px 42px rgba(23, 34, 45, 0.14);
-}
-
-.service-rank__room-icon {
-  transition:
-    transform var(--speed),
-    box-shadow var(--speed),
-    border-color var(--speed);
-}
-
-@media (max-width: 720px) {
-  .service-rank__room,
-  .service-rank__room--radius-a,
-  .service-rank__room--radius-b,
-  .service-rank__room--radius-c,
-  .service-rank__room--radius-d,
-  .service-rank__room--radius-e,
-  .service-rank__room--radius-f {
-    border-radius: 24px;
-  }
-
-  .service-rank__room-head,
-  .service-rank__room--icon-top .service-rank__room-head {
-    display: flex;
-    gap: 14px;
-  }
-
-  .service-rank__room-icon,
-  .service-rank__room--icon-top .service-rank__room-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 16px;
-  }
-
-  .service-rank__room-icon i {
-    font-size: 1.12rem;
-  }
-
-  .service-rank__room::after,
-  .service-rank__room--number-right::after {
-    top: auto;
-    right: 16px;
-    bottom: 12px;
-    font-size: 4.4rem;
-  }
-
-  .service-rank__room--number-right .service-rank__room-head {
-    max-width: none;
-  }
-}
-/* =========================================================
-PERSONALIZZAZIONE FAQ - STILE COERENTE CON CARD STANZE
-========================================================= */
-
-.service-rank__faq-list {
-  display: grid;
-  gap: 18px;
-  max-width: 1000px;
-}
-
-.service-rank__faq-item {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.90), rgba(246, 241, 234, 0.74));
-  box-shadow: var(--shadow-soft);
-  transition:
-    transform var(--speed),
-    border-color var(--speed),
-    box-shadow var(--speed);
-}
-
-.service-rank__faq-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: var(--faq-accent-left, 28px);
-  z-index: 3;
-  width: var(--faq-accent-width, 96px);
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-  opacity: var(--faq-accent-opacity, 0.82);
-}
-
-.service-rank__faq-item::after {
-  content: "";
-  position: absolute;
-  right: -80px;
-  top: -80px;
-  z-index: 1;
-  width: 180px;
-  height: 180px;
-  border-radius: 999px;
-  background: rgba(184, 121, 69, 0.10);
-  filter: blur(18px);
-  pointer-events: none;
-}
-
-.service-rank__faq-item:hover {
-  transform: translateY(-5px);
-  border-color: rgba(184, 121, 69, 0.36);
-  box-shadow: 0 24px 60px rgba(23, 34, 45, 0.14);
-}
-
-.service-rank__faq-item[open] {
-  border-color: rgba(184, 121, 69, 0.42);
-  box-shadow: 0 24px 64px rgba(23, 34, 45, 0.15);
-}
-
-.service-rank__faq-item summary {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  padding: clamp(24px, 2.6vw, 32px) clamp(24px, 3vw, 36px);
-  color: var(--ink);
-  font-size: clamp(1.04rem, 1.22vw, 1.16rem);
-  font-weight: 900;
-  line-height: 1.25;
-  cursor: pointer;
-  list-style: none;
-}
-
-.service-rank__faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.service-rank__faq-item summary::after {
-  content: "⌄";
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(184, 121, 69, 0.24);
-  border-radius: 999px;
-  color: var(--accent);
-  background:
-    radial-gradient(circle at 30% 20%, rgba(217, 183, 142, 0.28), transparent 70%),
-    rgba(255, 255, 255, 0.58);
-  font-size: 0.9rem;
-  font-weight: 900;
-  line-height: 1;
-  box-shadow: 0 10px 26px rgba(23, 34, 45, 0.08);
-  backdrop-filter: blur(10px);
-  transition:
-    transform var(--speed),
-    border-color var(--speed),
-    box-shadow var(--speed);
-}
-
-.service-rank__faq-item[open] summary::after {
-  transform: rotate(180deg);
-  border-color: rgba(184, 121, 69, 0.42);
-  box-shadow: 0 14px 34px rgba(23, 34, 45, 0.12);
-}
-
-.service-rank__faq-item p {
-  position: relative;
-  z-index: 2;
-  max-width: none;
-  padding: 0 clamp(24px, 3vw, 36px) clamp(24px, 2.8vw, 34px);
-  color: var(--muted);
-}
-
-.service-rank__faq-item:nth-child(1) {
-  --faq-accent-width: 118px;
-  --faq-accent-left: 30px;
-  border-radius: 28px 72px 28px 28px;
-}
-
-.service-rank__faq-item:nth-child(2) {
-  --faq-accent-width: 86px;
-  --faq-accent-left: 42px;
-  --faq-accent-opacity: 0.72;
-  border-radius: 44px 28px 28px 28px;
-}
-
-.service-rank__faq-item:nth-child(3) {
-  --faq-accent-width: 136px;
-  --faq-accent-left: 26px;
-  --faq-accent-opacity: 0.64;
-  border-radius: 28px 28px 76px 28px;
-}
-
-.service-rank__faq-item:nth-child(4) {
-  --faq-accent-width: 94px;
-  --faq-accent-left: 54px;
-  --faq-accent-opacity: 0.88;
-  border-radius: 28px 56px 28px 44px;
-}
-
-.service-rank__faq-item:nth-child(5) {
-  --faq-accent-width: 124px;
-  --faq-accent-left: 34px;
-  --faq-accent-opacity: 0.70;
-  border-radius: 64px 28px 28px 28px;
-}
-
-.service-rank__faq-item:nth-child(6) {
-  --faq-accent-width: 78px;
-  --faq-accent-left: 48px;
-  --faq-accent-opacity: 0.92;
-  border-radius: 28px 28px 28px 76px;
-}
-
-.service-rank__faq-item:nth-child(7) {
-  --faq-accent-width: 112px;
-  --faq-accent-left: 38px;
-  --faq-accent-opacity: 0.78;
-  border-radius: 28px 70px 28px 42px;
-}
-
-.service-rank__faq-item:nth-child(8) {
-  --faq-accent-width: 90px;
-  --faq-accent-left: 58px;
-  --faq-accent-opacity: 0.84;
-  border-radius: 54px 28px 62px 28px;
-}
-
-@media (max-width: 720px) {
-  .service-rank__faq-list {
-    gap: 14px;
-  }
-
-  .service-rank__faq-item,
-  .service-rank__faq-item:nth-child(1),
-  .service-rank__faq-item:nth-child(2),
-  .service-rank__faq-item:nth-child(3),
-  .service-rank__faq-item:nth-child(4),
-  .service-rank__faq-item:nth-child(5),
-  .service-rank__faq-item:nth-child(6),
-  .service-rank__faq-item:nth-child(7),
-  .service-rank__faq-item:nth-child(8) {
-    border-radius: 24px;
-  }
-
-  .service-rank__faq-item summary {
-    padding: 22px 20px;
-    gap: 16px;
-  }
-
-  .service-rank__faq-item summary::after {
-    width: 30px;
-    height: 30px;
-  }
-
-  .service-rank__faq-item p {
-    padding: 0 20px 22px;
+  .rank2-faq summary {
+    font-size: 1.22rem;
   }
 }
