@@ -752,6 +752,8 @@ a:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(24px, 3vw, 38px);
+  width: calc(100% + clamp(28px, 3vw, 44px));
+  margin-left: clamp(-44px, -3vw, -28px);
   padding-left: clamp(30px, 4vw, 56px);
   border-left: 1px solid var(--line-strong);
 }
@@ -1001,8 +1003,10 @@ a:focus-visible {
     order: 1;
   }
 
-   .contatti-sidebar {
+     .contatti-sidebar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-left: 0;
     padding-left: 0;
     padding-top: 34px;
     border-left: 0;
