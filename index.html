@@ -12,7 +12,63 @@
 </head>
 
 <body>
+<header class="site-nav">
+  <a href="#hero" class="site-nav-logo" aria-label="Torna alla home">
+    <img src="img/logo.png" alt="[Nome attività]">
+  </a>
 
+  <nav class="site-nav-menu" aria-label="Navigazione principale">
+    <a href="#hero">Home</a>
+    <a href="#chi-siamo">Chi siamo</a>
+
+    <details class="site-nav-dropdown">
+      <summary>Servizi</summary>
+
+      <div class="site-nav-dropdown-panel site-nav-dropdown-panel-servizi">
+        <a href="/servizi/ristrutturazione-casa.html">Ristrutturazione casa</a>
+        <a href="/servizi/sistemi-copertura-tetti.html">Sistemi di copertura e tetti</a>
+        <a href="/servizi/rifacimento-facciate.html">Rifacimento facciate</a>
+        <a href="/servizi/ristrutturazione-bagno.html">Ristrutturazione bagno</a>
+      </div>
+    </details>
+
+    <details class="site-nav-dropdown">
+      <summary>Aree</summary>
+
+      <div class="site-nav-dropdown-panel site-nav-dropdown-panel-aree">
+        <div>
+          <strong>Provincia di Milano</strong>
+          <a href="/aree/milano.html">Milano</a>
+          <a href="/aree/cornaredo.html">Cornaredo</a>
+          <a href="/aree/magenta.html">Magenta</a>
+          <a href="/aree/abbiategrasso.html">Abbiategrasso</a>
+        </div>
+
+        <div>
+          <strong>Provincia di Pavia</strong>
+          <a href="/aree/pavia.html">Pavia</a>
+          <a href="/aree/vigevano.html">Vigevano</a>
+          <a href="/aree/garlasco.html">Garlasco</a>
+          <a href="/aree/mortara.html">Mortara</a>
+        </div>
+
+        <div>
+          <strong>Provincia di Novara</strong>
+          <a href="/aree/novara.html">Novara</a>
+          <a href="/aree/trecate.html">Trecate</a>
+          <a href="/aree/galliate.html">Galliate</a>
+        </div>
+      </div>
+    </details>
+
+    <a href="#contatti">Contatti</a>
+  </nav>
+
+  <div class="site-nav-cta">
+    <a href="/contatti.html">Richiedi un preventivo</a>
+    <a href="tel:+390000000000">Chiama</a>
+  </div>
+</header>
   <section id="hero" class="hero">
     <div class="hero-content scroll-reveal scroll-reveal-title">
       <p class="eyebrow">Ristrutturazioni interne, facciate e coperture</p>
@@ -132,7 +188,7 @@
       </article>
 
       <article class="servizio-card">
-        <img src="img/rifacimento-facciate.jpg" alt="Rifacimento facciata di edificio residenziale">
+        <img src="/img/building2.jpeg" alt="Rifacimento facciata di edificio residenziale">
 
         <div class="servizio-panel">
           <h3>Rifacimento facciate</h3>
