@@ -1032,7 +1032,6 @@ a:focus-visible {
 
   .chi-siamo-blocco,
   .chi-siamo-metodo,
-  .aree,
   .contatti {
     grid-template-columns: 1fr;
   }
@@ -1083,7 +1082,17 @@ a:focus-visible {
     order: 1;
   }
 
-     .contatti-sidebar {
+  .area-riga {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .aree-citta-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 0;
+  }
+
+  .contatti-sidebar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
     margin-left: 0;
@@ -1091,9 +1100,6 @@ a:focus-visible {
     padding-top: 34px;
     border-left: 0;
     border-top: 1px solid var(--line-strong);
-  }
-  .aree-citta-lista {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1120,7 +1126,6 @@ a:focus-visible {
 
   .hero-buttons a,
   .contatti-azioni a,
-  .aree-introduzione > a,
   .footer a[target="_blank"] {
     width: 100%;
   }
@@ -1178,8 +1183,25 @@ a:focus-visible {
     font-size: 0.94rem;
   }
 
-  .area-card:hover {
+  .area-card:hover,
+  .aree-citta-lista a:hover {
     padding-left: 0;
+  }
+
+  .aree-citta-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .aree-citta-lista a:nth-child(-n + 2) {
+    border-top: 0;
+  }
+
+  .aree-citta-lista a:first-child {
+    border-top: 1px solid var(--line-light);
+  }
+
+  .contatti-sidebar {
+    grid-template-columns: 1fr;
   }
 
   .contatti-sidebar-blocco + .contatti-sidebar-blocco {
@@ -1189,18 +1211,9 @@ a:focus-visible {
   .contatti-sidebar a {
     padding: 14px 0;
   }
-  .contatti-sidebar {
-    grid-template-columns: 1fr;
-  }
+
   .footer {
     grid-template-columns: 1fr;
-  }
-    .aree-citta-lista {
-    grid-template-columns: 1fr;
-  }
-
-  .aree-citta-lista a:hover {
-    padding-left: 0;
   }
 }
 
@@ -1237,6 +1250,19 @@ a:focus-visible {
 
   .servizio-panel p {
     font-size: 0.91rem;
+  }
+
+  .area-card {
+    padding: 28px 0;
+  }
+
+  .aree-citta-lista {
+    padding-bottom: 28px;
+  }
+
+  .aree-citta-lista a {
+    padding: 16px 0;
+    font-size: 0.98rem;
   }
 
   .contatti-sidebar h3 {
