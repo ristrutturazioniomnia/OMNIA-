@@ -1,67 +1,96 @@
 /* =========================================================
-SERVICE RANK - PAGINE SERVIZIO INTERNE
+SERVICE RANK - PAGINE SERVIZIO RANK 2 / RANK 3
 ========================================================= */
 
-.service-page {
-  position: relative;
+.service-rank {
   overflow: hidden;
   background: var(--paper);
 }
 
-.service-page::before {
-  content: "";
-  position: fixed;
-  inset: auto -18vw 8vh auto;
-  z-index: -1;
-  width: 38vw;
-  height: 38vw;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(184, 121, 69, 0.18), transparent 68%);
-  filter: blur(18px);
-  pointer-events: none;
+.service-rank section {
+  position: relative;
 }
 
-.service-hero,
-.service-intro,
-.service-section,
-.service-split,
-.service-gallery,
-.service-image-band {
+.service-rank__hero,
+.service-rank__intro,
+.service-rank__content,
+.service-rank__rooms,
+.service-rank__benefits,
+.service-rank__checklist,
+.service-rank__table-section,
+.service-rank__gallery-section,
+.service-rank__local,
+.service-rank__advice,
+.service-rank__faq,
+.service-rank__cta,
+.service-rank__wide-section,
+.service-rank__visual-break {
   width: 100%;
   padding-left: var(--pad-x);
   padding-right: var(--pad-x);
 }
 
-.service-hero {
-  position: relative;
+.service-rank__intro,
+.service-rank__content,
+.service-rank__rooms,
+.service-rank__benefits,
+.service-rank__checklist,
+.service-rank__table-section,
+.service-rank__gallery-section,
+.service-rank__local,
+.service-rank__advice,
+.service-rank__faq,
+.service-rank__cta {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+.service-rank__content::before,
+.service-rank__rooms::before,
+.service-rank__benefits::before,
+.service-rank__table-section::before,
+.service-rank__gallery-section::before,
+.service-rank__advice::before,
+.service-rank__faq::before {
+  content: "";
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  top: var(--section-y);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.service-rank__hero {
   min-height: 96svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  padding-top: clamp(106px, 11vw, 164px);
-  padding-bottom: clamp(88px, 9vw, 140px);
+  padding-top: clamp(108px, 10vw, 156px);
+  padding-bottom: clamp(90px, 9vw, 138px);
   isolation: isolate;
   text-align: center;
-  color: var(--white);
   background:
-    radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
-    linear-gradient(180deg, rgba(8, 13, 18, 0.22), rgba(8, 13, 18, 0.46)),
-    url("/img/ristrutturazione-casa-interni-hero.jpg") center center / cover no-repeat;
+    radial-gradient(circle at 50% 32%, rgba(184, 121, 69, 0.28), transparent 34rem),
+    linear-gradient(180deg, rgba(8, 13, 18, 0.18), rgba(8, 13, 18, 0.48)),
+    url("../img/ristrutturazione-interna-hero.jpg") center center / cover no-repeat;
 }
 
-.service-hero::before {
-  content: "";
+.service-rank__hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(circle at 18% 22%, rgba(217, 183, 142, 0.16), transparent 28rem),
-    linear-gradient(120deg, rgba(8, 13, 18, 0.66), rgba(23, 34, 45, 0.34));
+    linear-gradient(110deg, rgba(9, 16, 23, 0.58), rgba(23, 34, 45, 0.26)),
+    radial-gradient(circle at 78% 20%, rgba(217, 183, 142, 0.16), transparent 30rem);
   backdrop-filter: blur(1px);
 }
 
-.service-hero::after {
+.service-rank__hero::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -73,70 +102,55 @@ SERVICE RANK - PAGINE SERVIZIO INTERNE
   transform: translateX(-50%);
 }
 
-.service-hero__content {
+.service-rank__hero-content {
   position: relative;
   z-index: 3;
   max-width: 1080px;
   margin: 0 auto;
 }
 
-.service-hero .eyebrow {
+.service-rank__hero-content .eyebrow {
   justify-content: center;
   color: var(--accent-soft);
 }
 
-.service-hero .eyebrow::after {
+.service-rank__hero-content .eyebrow::after {
   content: "";
   width: 42px;
   height: 1px;
   background: currentColor;
 }
 
-.service-hero p:not(.eyebrow) {
-  max-width: 860px;
+.service-rank__hero-content p:not(.eyebrow) {
+  max-width: 850px;
   margin: 26px auto 0;
   color: rgba(255, 255, 255, 0.86);
-  font-size: clamp(1.03rem, 1.5vw, 1.26rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.28rem);
   text-align: center;
 }
 
-.service-intro,
-.service-section,
-.service-split {
-  position: relative;
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
-}
+/* =========================================================
+LAYOUT TESTO / IMMAGINI
+========================================================= */
 
-.service-intro::before,
-.service-section::before,
-.service-split::before {
-  content: "";
-  position: absolute;
-  left: var(--pad-x);
-  right: var(--pad-x);
-  top: var(--section-y);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
-}
-
-.service-intro {
+.service-rank__split {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  grid-template-columns: minmax(0, 0.94fr) minmax(360px, 1.06fr);
   gap: clamp(34px, 5vw, 76px);
   align-items: center;
-  background:
-    radial-gradient(circle at 88% 12%, rgba(184, 121, 69, 0.11), transparent 32rem),
-    linear-gradient(180deg, var(--paper-light), var(--paper));
 }
 
-.service-intro__text {
+.service-rank__split--reverse {
+  grid-template-columns: minmax(360px, 1.06fr) minmax(0, 0.94fr);
+}
+
+.service-rank__text {
   position: relative;
   padding: clamp(18px, 2.4vw, 30px) 0;
   border-top: 1px solid var(--line-strong);
 }
 
-.service-intro__text::before {
+.service-rank__text::before {
   content: "";
   display: block;
   width: 88px;
@@ -145,31 +159,51 @@ SERVICE RANK - PAGINE SERVIZIO INTERNE
   background: var(--accent);
 }
 
-.service-intro__media,
-.service-split__media,
-.service-gallery__item,
-.service-image-band {
+.service-rank__text p {
+  max-width: 700px;
+}
+
+.service-rank__text ul,
+.service-rank__numbered ol {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0 0;
+  padding-left: 20px;
+}
+
+.service-rank__text li,
+.service-rank__numbered li {
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.1vw, 1.06rem);
+  line-height: 1.65;
+}
+
+.service-rank__text ul {
+  list-style: disc;
+}
+
+.service-rank__numbered ol {
+  list-style: decimal;
+}
+
+.service-rank__image {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-image);
   box-shadow: var(--shadow-image);
 }
 
-.service-intro__media {
+.service-rank__image--framed {
   border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
 }
 
-.service-split__media {
+.service-rank__image--soft {
   border-radius: var(--radius-image) var(--radius-image) var(--radius-image) 110px;
 }
 
-.service-split--reverse .service-split__media {
-  border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
-}
-
-.service-intro__media::after,
-.service-split__media::after,
-.service-image-band::after {
+.service-rank__image::after,
+.service-rank__wide-image::after,
+.service-rank__media-full::after {
   content: "";
   position: absolute;
   inset: 18px;
@@ -178,609 +212,754 @@ SERVICE RANK - PAGINE SERVIZIO INTERNE
   pointer-events: none;
 }
 
-.service-intro__media img,
-.service-split__media img {
-  height: clamp(380px, 38vw, 560px);
+.service-rank__image img {
+  height: clamp(360px, 38vw, 560px);
   object-fit: cover;
   transition: transform var(--speed-slow), filter var(--speed-slow);
 }
 
-.service-intro__media:hover img,
-.service-split__media:hover img,
-.service-gallery__item:hover img,
-.service-image-band:hover img {
+.service-rank__image:hover img {
   transform: scale(1.045);
   filter: saturate(1.06) contrast(1.04);
 }
 
-.service-section {
-  overflow: hidden;
+/* =========================================================
+IMMAGINI FULL WIDTH
+========================================================= */
+
+.service-rank__wide-section {
+  padding-top: clamp(44px, 6vw, 78px);
+  padding-bottom: clamp(44px, 6vw, 78px);
   background:
-    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.13), transparent 34rem),
-    linear-gradient(180deg, var(--paper), #fbf8f3);
-}
-
-.service-section--light {
-  background: linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.service-section--dark,
-.service-section--local {
-  color: var(--white);
-  background:
-    radial-gradient(circle at 12% 18%, rgba(184, 121, 69, 0.17), transparent 30rem),
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.88)),
-    url("/img/ristrutturazione-interna-texture.jpg") center center / cover no-repeat;
-}
-
-.service-section--dark h2,
-.service-section--dark h3,
-.service-section--local h2,
-.service-section--local h3 {
-  color: var(--white);
-}
-
-.service-section--dark p,
-.service-section--local p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.service-section--dark .eyebrow,
-.service-section--local .eyebrow {
-  color: var(--accent-soft);
-}
-
-.service-section__heading {
-  max-width: 920px;
-  margin-bottom: clamp(42px, 6vw, 76px);
-}
-
-.service-section__heading p:not(.eyebrow) {
-  max-width: 820px;
-}
-
-.service-feature-grid,
-.service-columns {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(22px, 3vw, 34px);
-}
-
-.service-feature,
-.service-column,
-.service-step,
-.room-card {
-  position: relative;
-  padding: clamp(24px, 2.6vw, 34px) 0;
-  border-top: 1px solid var(--line-strong);
-  background: transparent;
-}
-
-.service-feature::before,
-.service-column::before,
-.service-step::before,
-.room-card::before {
-  content: "";
-  display: block;
-  width: 54px;
-  height: 2px;
-  margin-bottom: 20px;
-  background: var(--accent);
-  transition: width var(--speed);
-}
-
-.service-feature:hover::before,
-.service-column:hover::before,
-.service-step:hover::before,
-.room-card:hover::before {
-  width: 88px;
-}
-
-.service-feature h3,
-.service-column h3,
-.service-step h3,
-.room-card h3 {
-  margin-bottom: 16px;
-}
-
-.service-feature p,
-.service-column p,
-.service-step p,
-.room-card p {
-  max-width: none;
-}
-
-.service-image-band {
-  margin-top: clamp(38px, 5vw, 64px);
-  margin-bottom: clamp(38px, 5vw, 64px);
-  padding-left: 0;
-  padding-right: 0;
-  width: min(100% - (var(--pad-x) * 2), var(--container));
-  height: clamp(300px, 42vw, 520px);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.service-image-band img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.service-timeline {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.service-step {
-  padding-right: clamp(18px, 2.4vw, 28px);
-  border-top: 0;
-}
-
-.service-step + .service-step {
-  padding-left: clamp(18px, 2.4vw, 28px);
-  border-left: 1px solid var(--line);
-}
-
-.service-step span {
-  display: inline-flex;
-  margin-bottom: 18px;
-  color: var(--accent);
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  font-family: var(--font-title);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.06em;
-}
-
-.service-split {
-  display: grid;
-  grid-template-columns: minmax(360px, 1.04fr) minmax(0, 0.96fr);
-  gap: clamp(34px, 5vw, 76px);
-  align-items: center;
-  background: linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.service-split--reverse {
-  grid-template-columns: minmax(0, 0.96fr) minmax(360px, 1.04fr);
-  background:
-    radial-gradient(circle at 14% 14%, rgba(184, 121, 69, 0.11), transparent 32rem),
+    radial-gradient(circle at 18% 20%, rgba(184, 121, 69, 0.12), transparent 32rem),
     linear-gradient(180deg, var(--paper), var(--paper-light));
 }
 
-.service-split__text {
+.service-rank__wide-image,
+.service-rank__media-full {
   position: relative;
-  padding: clamp(18px, 2.4vw, 30px) 0;
-  border-top: 1px solid var(--line-strong);
-}
-
-.service-split__text::before {
-  content: "";
-  display: block;
-  width: 88px;
-  height: 3px;
-  margin-bottom: 26px;
-  background: var(--accent);
-}
-
-.service-split__text a,
-.room-card a,
-.service-section--local a {
-  color: var(--accent);
-  font-weight: 800;
-  border-bottom: 1px solid rgba(184, 121, 69, 0.42);
-  transition: color var(--speed), border-color var(--speed);
-}
-
-.service-split__text a:hover,
-.room-card a:hover,
-.service-section--local a:hover {
-  color: var(--accent-dark);
-  border-color: currentColor;
-}
-
-.service-section--dark .room-card a,
-.service-section--local a {
-  color: var(--accent-soft);
-  border-color: rgba(217, 183, 142, 0.42);
-}
-
-.service-section--dark .room-card a:hover,
-.service-section--local a:hover {
-  color: #f1c49b;
-}
-
-.room-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(28px, 4vw, 48px) clamp(24px, 3vw, 38px);
-}
-
-.room-card {
-  border-color: var(--line-light);
-}
-
-.room-card p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.room-card p + p {
-  margin-top: 12px;
-}
-
-.service-gallery {
-  display: grid;
-  grid-template-columns: 1.2fr 0.9fr 0.9fr;
-  gap: clamp(18px, 2.8vw, 34px);
-  padding-top: clamp(52px, 6vw, 86px);
-  padding-bottom: clamp(52px, 6vw, 86px);
-  background: var(--paper);
-}
-
-.service-gallery__item {
-  min-height: clamp(260px, 32vw, 460px);
-  border-radius: 28px;
-}
-
-.service-gallery__item:first-child {
-  border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
-}
-
-.service-gallery__item img {
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-image);
+}
+
+.service-rank__wide-image img {
+  width: 100%;
+  height: clamp(360px, 45vw, 620px);
   object-fit: cover;
   transition: transform var(--speed-slow), filter var(--speed-slow);
 }
 
-.service-gallery__item::after {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.36);
-  border-radius: 20px;
-  pointer-events: none;
+.service-rank__wide-image:hover img,
+.service-rank__media-full:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.06) contrast(1.04);
 }
 
-.service-table-wrap {
-  margin-top: clamp(42px, 5vw, 68px);
-  overflow-x: auto;
+.service-rank__visual-break {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.22fr);
+  gap: clamp(30px, 4vw, 64px);
+  align-items: center;
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  color: var(--white);
+  background:
+    radial-gradient(circle at 8% 16%, rgba(184, 121, 69, 0.26), transparent 28rem),
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.88));
+}
+
+.service-rank__visual-break h2 {
+  color: var(--white);
+}
+
+.service-rank__visual-break p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.service-rank__visual-break .eyebrow {
+  color: var(--accent-soft);
+}
+
+.service-rank__visual-text {
+  position: relative;
+  z-index: 2;
+}
+
+.service-rank__media-full img {
+  height: clamp(330px, 35vw, 520px);
+  object-fit: cover;
+  transition: transform var(--speed-slow), filter var(--speed-slow);
+}
+
+/* =========================================================
+HEADINGS E PANNELLI
+========================================================= */
+
+.service-rank__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  grid-template-areas:
+    "eyebrow testo"
+    "titolo testo";
+  column-gap: clamp(34px, 5vw, 78px);
+  row-gap: 14px;
+  align-items: end;
+  margin-bottom: clamp(42px, 6vw, 78px);
+}
+
+.service-rank__heading .eyebrow {
+  grid-area: eyebrow;
+  margin-bottom: 0;
+}
+
+.service-rank__heading h2 {
+  grid-area: titolo;
+  max-width: 880px;
+  margin-bottom: 0;
+}
+
+.service-rank__heading p:not(.eyebrow) {
+  grid-area: testo;
+  justify-self: end;
+  max-width: 520px;
+  margin: 0;
+  padding-top: 26px;
   border-top: 1px solid var(--line-strong);
 }
 
-.service-table {
+.service-rank__grid {
+  display: grid;
+  gap: clamp(24px, 3vw, 38px);
+}
+
+.service-rank__grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-rank__panel,
+.service-rank__room {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(246, 241, 234, 0.72));
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--speed), box-shadow var(--speed), border-color var(--speed);
+}
+
+.service-rank__panel::before,
+.service-rank__room::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: rgba(184, 121, 69, 0.12);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.service-rank__panel:hover,
+.service-rank__room:hover {
+  transform: translateY(-6px);
+  border-color: rgba(184, 121, 69, 0.36);
+  box-shadow: 0 24px 60px rgba(23, 34, 45, 0.14);
+}
+
+.service-rank__panel h3,
+.service-rank__room h3 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 16px;
+}
+
+.service-rank__panel p,
+.service-rank__room p {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+}
+
+/* =========================================================
+ROOMS
+========================================================= */
+
+.service-rank__rooms {
+  background:
+    radial-gradient(circle at 86% 14%, rgba(184, 121, 69, 0.13), transparent 34rem),
+    linear-gradient(180deg, var(--paper-light), var(--paper));
+}
+
+.service-rank__rooms-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 38px);
+}
+
+.service-rank__room {
+  min-height: 100%;
+}
+
+/* =========================================================
+BENEFITS / CHECKLIST / LOCAL
+========================================================= */
+
+.service-rank__benefits {
+  background:
+    linear-gradient(180deg, var(--paper), #fbf8f3);
+}
+
+.service-rank__list-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 34px);
+}
+
+.service-rank__areas-note {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+/* =========================================================
+TABELLA
+========================================================= */
+
+.service-rank__table-section {
+  background: var(--paper-light);
+}
+
+.service-rank__table-wrap {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--paper-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-rank__table-wrap table {
   width: 100%;
-  min-width: 720px;
   border-collapse: collapse;
 }
 
-.service-table th,
-.service-table td {
-  padding: 20px 22px;
+.service-rank__table-wrap th,
+.service-rank__table-wrap td {
+  padding: clamp(16px, 2vw, 24px);
   border-bottom: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.98rem;
-  line-height: 1.45;
   text-align: left;
   vertical-align: top;
 }
 
-.service-table th {
+.service-rank__table-wrap th {
   color: var(--ink);
+  background: rgba(184, 121, 69, 0.10);
+  font-size: 0.9rem;
   font-weight: 900;
-  background: rgba(255, 255, 255, 0.34);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.service-checklist {
-  display: grid;
-  gap: 12px;
-  margin: 24px 0 26px;
-}
-
-.service-checklist li {
-  position: relative;
-  padding-left: 30px;
+.service-rank__table-wrap td {
   color: var(--muted);
-  font-size: clamp(0.98rem, 1.1vw, 1.05rem);
+  font-size: 0.98rem;
   line-height: 1.55;
 }
 
-.service-checklist li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--accent);
-  font-weight: 900;
+.service-rank__table-wrap tr:last-child td {
+  border-bottom: 0;
 }
 
-.service-area-note {
-  width: fit-content;
-  max-width: 100%;
-  margin-top: 28px;
-  padding: 18px 22px;
-  border: 1px solid rgba(217, 183, 142, 0.38);
-  border-radius: 18px;
-  color: rgba(255, 255, 255, 0.82);
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 18px 44px rgba(8, 13, 18, 0.20);
+/* =========================================================
+SEZIONE RANK 3 - RIUSO STILE SERVIZI HOME
+========================================================= */
+
+.service-rank__related {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
 }
 
-.service-area-note strong {
+.service-rank__related .servizi-introduzione h2 {
+  color: var(--ink);
+}
+
+.service-rank__related-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(34px, 4vw, 54px);
+}
+
+.service-rank__related-list .servizio-card:nth-child(even) {
+  margin-top: clamp(28px, 4vw, 56px);
+}
+
+.service-rank__related-list .servizio-card:nth-child(3) {
+  margin-top: clamp(56px, 6vw, 88px);
+}
+
+.service-rank__related-list .servizio-card img {
+  width: calc(100% - clamp(20px, 3vw, 38px));
+  height: clamp(340px, 30vw, 460px);
+}
+
+.service-rank__related-list .servizio-panel {
+  width: calc(100% - 12px);
+  margin-top: clamp(-94px, -7vw, -74px);
+}
+
+.service-rank__related-list .servizio-panel h3 {
+  color: var(--white);
+}
+
+/* =========================================================
+GALLERY
+========================================================= */
+
+.service-rank__gallery-section {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(184, 121, 69, 0.13), transparent 34rem),
+    linear-gradient(180deg, var(--paper-light), var(--paper));
+}
+
+.service-rank__gallery {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
+  gap: clamp(18px, 2.4vw, 30px);
+  align-items: stretch;
+}
+
+.service-rank__gallery figure {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.service-rank__gallery figure:nth-child(2) {
+  margin-top: clamp(28px, 4vw, 54px);
+}
+
+.service-rank__gallery img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  transition: transform var(--speed-slow), filter var(--speed-slow);
+}
+
+.service-rank__gallery figure:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.06) contrast(1.04);
+}
+
+/* =========================================================
+CONSIGLI NUMERATI
+========================================================= */
+
+.service-rank__advice {
+  color: var(--white);
+  background:
+    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.18), transparent 34rem),
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.88));
+}
+
+.service-rank__advice h2 {
+  color: var(--white);
+}
+
+.service-rank__advice .eyebrow {
   color: var(--accent-soft);
 }
 
-.service-section--faq {
-  background: linear-gradient(180deg, var(--paper-light), var(--paper));
+.service-rank__advice .service-rank__heading p {
+  color: rgba(255, 255, 255, 0.74);
+  border-color: var(--line-light);
 }
 
-.faq-list {
+.service-rank__numbered {
+  max-width: 920px;
+}
+
+.service-rank__numbered li {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-light);
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.service-rank__numbered strong {
+  color: var(--white);
+}
+
+/* =========================================================
+FAQ
+========================================================= */
+
+.service-rank__faq {
+  background: var(--paper-light);
+}
+
+.service-rank__faq-list {
   display: grid;
   gap: 14px;
-  max-width: 980px;
+  max-width: 940px;
 }
 
-.faq-item {
-  border-top: 1px solid var(--line-strong);
-  border-bottom: 1px solid var(--line);
-  background: transparent;
+.service-rank__faq-item {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(246, 241, 234, 0.72));
+  box-shadow: 0 10px 28px rgba(23, 34, 45, 0.07);
+  transition: border-color var(--speed), box-shadow var(--speed);
 }
 
-.faq-item summary {
+.service-rank__faq-item[open] {
+  border-color: rgba(184, 121, 69, 0.38);
+  box-shadow: 0 18px 44px rgba(23, 34, 45, 0.12);
+}
+
+.service-rank__faq-item summary {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  min-height: 72px;
-  padding: 18px 0;
+  padding: 20px 24px;
   color: var(--ink);
-  font-family: var(--font-title);
-  font-size: clamp(1.18rem, 2vw, 1.58rem);
-  font-weight: 760;
-  line-height: 1.16;
-  letter-spacing: -0.035em;
+  font-size: clamp(1rem, 1.18vw, 1.08rem);
+  font-weight: 850;
   cursor: pointer;
   list-style: none;
-  transition: color var(--speed), padding-left var(--speed);
 }
 
-.faq-item summary::-webkit-details-marker {
+.service-rank__faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-item summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
+.service-rank__faq-item summary::after {
+  content: "⌄";
   color: var(--accent);
-  font-family: var(--font-body);
-  font-size: 1.3rem;
-  font-weight: 700;
-  transition: transform var(--speed), border-color var(--speed), background var(--speed);
+  font-weight: 900;
+  transition: transform var(--speed);
 }
 
-.faq-item[open] summary {
-  color: var(--accent-dark);
-}
-
-.faq-item[open] summary::after {
-  content: "−";
+.service-rank__faq-item[open] summary::after {
   transform: rotate(180deg);
-  border-color: rgba(184, 121, 69, 0.42);
-  background: rgba(184, 121, 69, 0.08);
 }
 
-.faq-item summary:hover {
-  padding-left: 10px;
-  color: var(--accent-dark);
+.service-rank__faq-item p {
+  max-width: none;
+  padding: 0 24px 22px;
 }
 
-.faq-item p {
-  max-width: 820px;
-  padding: 0 0 24px;
+/* =========================================================
+CTA
+========================================================= */
+
+.service-rank__cta {
+  text-align: center;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(184, 121, 69, 0.28), transparent 32rem),
+    linear-gradient(110deg, rgba(9, 16, 23, 0.98), rgba(23, 34, 45, 0.90));
 }
 
-.service-page .scroll-reveal {
-  --reveal-progress: 1;
-  --reveal-opacity: 1;
-  --reveal-y: 0px;
-  --reveal-scale: 1;
-  --reveal-blur: 0px;
+.service-rank__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 16%, rgba(217, 183, 142, 0.14), transparent 28rem);
+  backdrop-filter: blur(1px);
+  pointer-events: none;
 }
 
-.js.reveal-ready .service-page .scroll-reveal {
-  opacity: var(--reveal-opacity);
-  transform: translate3d(0, var(--reveal-y), 0) scale(var(--reveal-scale));
-  filter: blur(var(--reveal-blur));
-  will-change: opacity, transform, filter;
+.service-rank__cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 940px;
+  margin: 0 auto;
 }
 
-.no-js .service-page .scroll-reveal,
-.js:not(.reveal-ready) .service-page .scroll-reveal {
-  opacity: 1;
-  transform: none;
-  filter: none;
+.service-rank__cta h2 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white);
 }
+
+.service-rank__cta p:not(.eyebrow) {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.service-rank__cta .eyebrow {
+  justify-content: center;
+  color: var(--accent-soft);
+}
+
+.service-rank__cta .eyebrow::after {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: currentColor;
+}
+
+.service-rank__cta .contatti-azioni {
+  justify-content: center;
+}
+
+/* =========================================================
+EFFETTI SFOCATURA E PROFONDITÀ COERENTI HOME
+========================================================= */
+
+.service-rank__intro::after,
+.service-rank__rooms::after,
+.service-rank__gallery-section::after {
+  content: "";
+  position: absolute;
+  width: clamp(180px, 22vw, 340px);
+  height: clamp(180px, 22vw, 340px);
+  border-radius: 999px;
+  background: rgba(184, 121, 69, 0.12);
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-rank__intro::after {
+  right: -90px;
+  top: 18%;
+}
+
+.service-rank__rooms::after {
+  left: -110px;
+  bottom: 8%;
+}
+
+.service-rank__gallery-section::after {
+  right: -120px;
+  bottom: 12%;
+}
+
+.service-rank__intro > *,
+.service-rank__rooms > *,
+.service-rank__gallery-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
 
 @media (max-width: 1180px) {
-  .service-feature-grid,
-  .service-columns,
-  .service-timeline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .service-step:nth-child(3) {
-    border-left: 0;
-  }
-
-  .service-step:nth-child(n + 3) {
-    border-top: 1px solid var(--line);
-  }
-
-  .room-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .service-gallery {
+  .service-rank__related-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 52px 24px;
+  }
+
+  .service-rank__related-list .servizio-card img {
+    height: 390px;
+  }
+
+  .service-rank__related-list .servizio-panel {
+    padding: 22px 22px;
   }
 }
 
 @media (max-width: 980px) {
-  .service-intro,
-  .service-split,
-  .service-split--reverse {
+  .service-rank__split,
+  .service-rank__split--reverse,
+  .service-rank__visual-break {
     grid-template-columns: 1fr;
   }
 
-  .service-split--reverse .service-split__media {
+  .service-rank__split--reverse .service-rank__image {
     order: 2;
   }
 
-  .service-split--reverse .service-split__text {
+  .service-rank__split--reverse .service-rank__text {
     order: 1;
   }
 
-  .service-intro__media img,
-  .service-split__media img {
-    height: 420px;
+  .service-rank__heading {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "titolo"
+      "testo";
   }
 
-  .service-gallery {
+  .service-rank__heading p:not(.eyebrow) {
+    justify-self: start;
+    max-width: 680px;
+  }
+
+  .service-rank__grid--two,
+  .service-rank__rooms-list,
+  .service-rank__list-layout {
     grid-template-columns: 1fr;
   }
 
-  .service-gallery__item {
-    min-height: 330px;
+  .service-rank__related-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-rank__related-list .servizio-card:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .service-rank__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .service-rank__gallery figure,
+  .service-rank__gallery img {
+    min-height: 340px;
+  }
+
+  .service-rank__gallery figure:nth-child(2) {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 720px) {
-  .service-hero {
-    min-height: 86svh;
-    padding-top: 146px;
-    padding-bottom: 78px;
+  .service-rank__hero {
+    min-height: 88svh;
+    padding-top: 132px;
+    padding-bottom: 82px;
   }
 
-  .service-hero .eyebrow::after {
-    width: 24px;
+  .service-rank__hero-content p:not(.eyebrow) {
+    font-size: 1rem;
   }
 
-  .service-intro__media,
-  .service-split__media,
-  .service-intro__media::after,
-  .service-split__media::after,
-  .service-image-band::after,
-  .service-gallery__item::after {
-    border-radius: 18px;
-  }
-
-  .service-intro__media,
-  .service-split__media,
-  .service-gallery__item,
-  .service-image-band {
+  .service-rank__image,
+  .service-rank__image--framed,
+  .service-rank__image--soft,
+  .service-rank__wide-image,
+  .service-rank__media-full {
     border-radius: 22px;
   }
 
-  .service-intro__media img,
-  .service-split__media img {
-    height: 320px;
+  .service-rank__image::after,
+  .service-rank__wide-image::after,
+  .service-rank__media-full::after {
+    inset: 12px;
+    border-radius: 14px;
   }
 
-  .service-feature-grid,
-  .service-columns,
-  .service-timeline,
-  .room-grid {
+  .service-rank__image img {
+    height: 310px;
+  }
+
+  .service-rank__wide-image img,
+  .service-rank__media-full img {
+    height: 330px;
+  }
+
+  .service-rank__panel,
+  .service-rank__room {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .service-rank__table-wrap {
+    overflow-x: auto;
+    border-radius: 20px;
+  }
+
+  .service-rank__table-wrap table {
+    min-width: 680px;
+  }
+
+  .service-rank__related-list {
     grid-template-columns: 1fr;
+    gap: 64px;
   }
 
-  .service-step + .service-step,
-  .service-step:nth-child(3) {
-    padding-left: 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
+  .service-rank__related-list .servizio-card:nth-child(even) {
+    margin-top: 0;
   }
 
-  .service-image-band {
-    height: 300px;
-    width: calc(100% - (var(--pad-x) * 2));
+  .service-rank__related-list .servizio-card img {
+    height: 390px;
   }
 
-  .service-table th,
-  .service-table td {
-    padding: 16px 18px;
-    font-size: 0.94rem;
+  .service-rank__related-list .servizio-panel {
+    margin-top: -96px;
   }
 
-  .faq-item summary:hover {
-    padding-left: 0;
+  .service-rank__faq-item summary {
+    padding: 18px 20px;
   }
 
-  .service-area-note {
-    width: 100%;
+  .service-rank__faq-item p {
+    padding: 0 20px 20px;
   }
 }
 
 @media (max-width: 460px) {
-  .service-hero {
-    padding-top: 164px;
+  .service-rank__hero {
+    padding-top: 150px;
   }
 
-  .service-hero p:not(.eyebrow) {
-    font-size: 1rem;
+  .service-rank__image img,
+  .service-rank__wide-image img,
+  .service-rank__media-full img,
+  .service-rank__gallery figure,
+  .service-rank__gallery img {
+    height: 300px;
+    min-height: 300px;
   }
 
-  .service-intro__media img,
-  .service-split__media img,
-  .service-gallery__item {
-    height: 280px;
-    min-height: 280px;
+  .service-rank__related-list .servizio-card img {
+    height: 340px;
   }
 
-  .service-image-band {
-    height: 250px;
+  .service-rank__text li,
+  .service-rank__numbered li {
+    font-size: 0.95rem;
   }
 
-  .service-feature,
-  .service-column,
-  .service-step,
-  .room-card {
-    padding: 24px 0;
-  }
-
-  .faq-item summary {
-    min-height: 64px;
+  .service-rank__areas-note {
+    padding: 16px 18px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .service-page *,
-  .service-page *::before,
-  .service-page *::after {
+  .service-rank *,
+  .service-rank *::before,
+  .service-rank *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
 
-  .service-page .scroll-reveal,
-  .service-intro__media img,
-  .service-split__media img,
-  .service-gallery__item img,
-  .service-image-band img {
-    opacity: 1;
-    transform: none;
-    filter: none;
+  .service-rank .scroll-reveal,
+  .service-rank .scroll-reveal-text,
+  .service-rank .scroll-reveal-media,
+  .service-rank .scroll-reveal-title,
+  .service-rank .servizio-card,
+  .service-rank .servizio-card img,
+  .service-rank .servizio-panel,
+  .service-rank .servizio-panel h3,
+  .service-rank .servizio-panel p,
+  .service-rank .servizio-panel a {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
