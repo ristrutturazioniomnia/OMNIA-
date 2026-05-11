@@ -1306,8 +1306,9 @@ a:focus-visible {
   }
 
   .servizio-card img {
-    height: 500px;
-  }
+  width: calc(100% - clamp(24px, 4vw, 44px));
+  height: 460px;
+}
 
   .footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1347,17 +1348,23 @@ a:focus-visible {
     margin-top: 0;
   }
 
-  .servizio-card img {
-    height: 440px;
-    border-radius: 28px;
-  }
+ .servizio-card img {
+  width: calc(100% - 34px);
+  height: 420px;
+  border-radius: 28px;
+}
 
-  .servizio-panel {
-    width: calc(100% - 32px);
-    margin-top: -108px;
-    padding: 28px;
-    border-radius: 24px;
-  }
+.servizio-panel {
+  width: min(82%, 440px);
+  margin: -96px 0 0 28px;
+  padding: 28px;
+  border-radius: 24px;
+}
+
+.servizio-card:nth-child(even) .servizio-panel {
+  margin-left: auto;
+  margin-right: 28px;
+}
 
   .servizio-panel h3 {
     font-size: clamp(1.34rem, 3vw, 1.82rem);
@@ -1453,16 +1460,22 @@ a:focus-visible {
   }
 
   .servizio-card img {
-    height: 390px;
-    border-radius: 24px;
-  }
+  width: calc(100% - 22px);
+  height: 360px;
+  border-radius: 24px;
+}
 
-  .servizio-panel {
-    width: calc(100% - 28px);
-    margin-top: -96px;
-    padding: 26px;
-    border-radius: 22px;
-  }
+.servizio-panel {
+  width: calc(100% - 34px);
+  margin: -86px auto 0;
+  padding: 26px;
+  border-radius: 22px;
+}
+
+.servizio-card:nth-child(even) .servizio-panel {
+  margin-left: auto;
+  margin-right: auto;
+}
 
   .servizio-panel h3 {
     font-size: clamp(1.32rem, 8vw, 1.9rem);
@@ -1524,14 +1537,15 @@ a:focus-visible {
   }
 
   .servizio-card img {
-    height: 340px;
-  }
+  width: calc(100% - 18px);
+  height: 310px;
+}
 
-  .servizio-panel {
-    width: calc(100% - 22px);
-    margin-top: -86px;
-    padding: 22px;
-  }
+.servizio-panel {
+  width: calc(100% - 26px);
+  margin: -76px auto 0;
+  padding: 22px;
+}
 
   .servizio-panel h3 {
     font-size: clamp(1.26rem, 8.6vw, 1.72rem);
