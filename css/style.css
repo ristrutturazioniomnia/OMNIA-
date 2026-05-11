@@ -745,12 +745,11 @@ a:focus-visible {
 .aree-citta-lista a::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: clamp(16px, 1.9vw, 22px);
   left: 0;
   width: 0;
   height: 2px;
   background: var(--accent-soft);
-  transform: translateY(-50%);
   transition: width var(--speed);
 }
 
