@@ -697,7 +697,6 @@ a:focus-visible {
   transform: scale(1.045);
   filter: saturate(1.06) contrast(1.04);
 }
-
 /* =========================================================
 7. SERVIZI
 ========================================================= */
@@ -791,8 +790,8 @@ a:focus-visible {
   position: relative;
   z-index: 1;
   display: block;
-  width: 100%;
-  height: clamp(520px, 46vw, 620px);
+  width: calc(100% - clamp(28px, 4vw, 52px));
+  height: clamp(440px, 38vw, 540px);
   object-fit: cover;
   border-radius: 34px;
   box-shadow: 0 30px 78px rgba(23, 34, 45, 0.20);
@@ -810,15 +809,26 @@ a:focus-visible {
   will-change: transform, filter;
 }
 
+.servizio-card:nth-child(odd) img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.servizio-card:nth-child(even) img {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 .servizio-panel {
   position: relative;
   z-index: 3;
-  width: calc(100% - clamp(36px, 5vw, 74px));
-  margin: clamp(-138px, -9vw, -108px) auto 0;
+  width: min(78%, 520px);
+  margin: clamp(-122px, -8vw, -92px) 0 0 clamp(22px, 4vw, 52px);
   padding: clamp(28px, 3.2vw, 42px);
+  border: 1px solid rgba(217, 183, 142, 0.46);
   border-radius: 28px;
   background:
-    linear-gradient(145deg, rgba(10, 16, 22, 0.98), rgba(23, 34, 45, 0.97));
+    linear-gradient(145deg, rgba(10, 16, 22, 0.78), rgba(23, 34, 45, 0.77));
   box-shadow: 0 34px 86px rgba(9, 14, 19, 0.32);
   opacity: var(--panel-opacity);
   transform: translate3d(0, var(--panel-y), 0);
@@ -828,6 +838,11 @@ a:focus-visible {
     background 260ms ease,
     box-shadow 260ms ease;
   will-change: transform, opacity;
+}
+
+.servizio-card:nth-child(even) .servizio-panel {
+  margin-left: auto;
+  margin-right: clamp(22px, 4vw, 52px);
 }
 
 .servizio-panel h3,
@@ -884,7 +899,7 @@ a:focus-visible {
 .servizio-card:hover .servizio-panel {
   transform: translate3d(0, calc(var(--panel-y) - 12px), 0);
   background:
-    linear-gradient(145deg, rgba(7, 12, 17, 0.99), rgba(25, 36, 45, 0.98));
+    linear-gradient(145deg, rgba(7, 12, 17, 0.79), rgba(25, 36, 45, 0.78));
   box-shadow: 0 42px 104px rgba(9, 14, 19, 0.40);
 }
 
@@ -901,7 +916,6 @@ a:focus-visible {
 .servizio-card:hover .servizio-panel a::after {
   transform: translateX(7px);
 }
-
 /* =========================================================
 8. AREE
 ========================================================= */
