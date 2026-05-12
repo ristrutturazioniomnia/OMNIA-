@@ -1,105 +1,40 @@
-/* =========================================================
-PAGINA RANK 2 - RIPARAZIONE TETTO
-CSS integrativo: usa variabili, font, bottoni, navbar e footer del sito
-========================================================= */
-
-.tetto-page {
+.service-hero {
   background:
-    radial-gradient(circle at 88% 6%, rgba(184, 121, 69, 0.12), transparent 34rem),
-    linear-gradient(180deg, var(--paper-light), var(--paper));
+    radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
+    linear-gradient(180deg, rgba(8, 13, 18, 0.38), rgba(8, 13, 18, 0.58)),
+    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
 }
 
-.tetto-page a {
-  color: var(--accent-dark);
-  font-weight: 800;
-  transition: color var(--speed), padding-left var(--speed), transform var(--speed);
+.service-page {
+  background: var(--paper);
 }
 
-.tetto-page a:hover {
-  color: var(--accent);
+.service-page a:not(.hero-buttons a):not(.contatti-azioni a):not(.contatti-sidebar a) {
+  transition: color var(--speed), transform var(--speed), border-color var(--speed), background var(--speed), box-shadow var(--speed);
 }
 
-.tetto-page a:active,
-.tetto-faq summary:active {
-  transform: scale(0.97);
-}
-
-/* HERO */
-
-.tetto-hero {
-  min-height: 94svh;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
-  gap: clamp(34px, 6vw, 86px);
-  align-items: center;
-  padding:
-    clamp(118px, 11vw, 168px)
-    var(--pad-x)
-    clamp(74px, 8vw, 116px);
-  overflow: hidden;
-  color: var(--white);
-  background:
-    linear-gradient(110deg, rgba(8, 13, 18, 0.94), rgba(23, 34, 45, 0.72)),
-    url("../img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
-}
-
-.tetto-hero h1 {
-  margin: 0;
-  max-width: 980px;
-  color: var(--white);
-  text-align: left;
-  font-size: clamp(2.82rem, 6.6vw, 6.1rem);
-}
-
-.tetto-hero .eyebrow {
-  color: var(--accent-soft);
-}
-
-.tetto-hero__content p:not(.eyebrow) {
-  max-width: 720px;
-  margin-top: 26px;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(1.04rem, 1.45vw, 1.26rem);
-}
-
-.tetto-hero .hero-buttons {
-  justify-content: flex-start;
-}
-
-.tetto-hero__media {
+.service-intro,
+.linked-services,
+.service-feature,
+.wide-detail,
+.process-section,
+.local-section,
+.faq-section {
   position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-image) var(--radius-image) 120px var(--radius-image);
-  box-shadow: var(--shadow-image);
-  transition: transform var(--speed), box-shadow var(--speed), filter var(--speed);
+  width: 100%;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
 }
 
-.tetto-hero__media:active {
-  transform: scale(0.985);
-}
-
-.tetto-hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  border-radius: 22px 22px 92px 22px;
-  pointer-events: none;
-}
-
-.tetto-hero__media img {
-  height: clamp(460px, 48vw, 690px);
-  object-fit: cover;
-}
-
-/* SEZIONI BASE */
-
-.tetto-section {
-  position: relative;
-  padding: var(--section-y) var(--pad-x);
-}
-
-.tetto-section::before {
+.service-intro::before,
+.linked-services::before,
+.service-feature::before,
+.wide-detail::before,
+.process-section::before,
+.local-section::before,
+.faq-section::before {
   content: "";
   position: absolute;
   left: var(--pad-x);
@@ -109,144 +44,27 @@ CSS integrativo: usa variabili, font, bottoni, navbar e footer del sito
   background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
 }
 
-.tetto-section__head {
-  max-width: 960px;
-  margin-bottom: clamp(34px, 5vw, 66px);
+.service-intro {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(184, 121, 69, 0.10), transparent 34rem),
+    linear-gradient(180deg, var(--paper-light), var(--paper));
 }
 
-.tetto-section__head h2 {
-  margin-bottom: 0;
-}
-
-.tetto-text-flow {
-  max-width: 960px;
-}
-
-.tetto-text-flow p {
-  max-width: 860px;
-}
-
-.tetto-text-flow p + p {
-  margin-top: 18px;
-}
-
-/* IMMAGINI */
-
-.tetto-wide-photo {
-  width: 100%;
-  padding: 0 var(--pad-x) var(--section-y);
-  overflow: hidden;
-  background: var(--paper-light);
-}
-
-.tetto-wide-photo img {
-  height: clamp(360px, 42vw, 610px);
-  object-fit: cover;
-  border-radius: 34px;
-  box-shadow: var(--shadow-image);
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.tetto-photo {
-  overflow: hidden;
-  box-shadow: var(--shadow-image);
-  transition: transform var(--speed), box-shadow var(--speed), filter var(--speed);
-}
-
-.tetto-photo:active {
-  transform: scale(0.985);
-}
-
-.tetto-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.tetto-photo:hover img,
-.tetto-wide-photo:hover img,
-.tetto-photo-row figure:hover img {
-  transform: scale(1.035);
-  filter: saturate(1.05) contrast(1.03);
-}
-
-.tetto-photo--vertical {
-  height: clamp(480px, 48vw, 680px);
-  border-radius: var(--radius-image) 120px var(--radius-image) var(--radius-image);
-}
-
-.tetto-photo--square {
-  height: clamp(390px, 42vw, 560px);
-  border-radius: 110px var(--radius-image) var(--radius-image) var(--radius-image);
-}
-
-.tetto-photo--horizontal {
-  height: clamp(360px, 36vw, 520px);
-  border-radius: var(--radius-image);
-}
-
-.tetto-photo-row {
+.service-intro-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr 1fr;
-  gap: clamp(18px, 3vw, 34px);
-  padding: 0 var(--pad-x) var(--section-y);
-  background: linear-gradient(180deg, var(--paper), #fbf8f3);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: clamp(36px, 6vw, 88px);
+  align-items: start;
 }
 
-.tetto-photo-row figure {
-  overflow: hidden;
-  min-height: 320px;
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--speed), box-shadow var(--speed), filter var(--speed);
-}
-
-.tetto-photo-row figure:active {
-  transform: scale(0.985);
-}
-
-.tetto-photo-row figure:first-child {
-  border-radius: 34px 100px 34px 34px;
-}
-
-.tetto-photo-row figure:nth-child(2) {
-  border-radius: 34px;
-  transform: translateY(38px);
-}
-
-.tetto-photo-row figure:nth-child(2):active {
-  transform: translateY(38px) scale(0.985);
-}
-
-.tetto-photo-row figure:nth-child(3) {
-  border-radius: 100px 34px 34px 34px;
-}
-
-.tetto-photo-row img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-/* SPLIT */
-
-.tetto-split {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
-  gap: clamp(34px, 6vw, 82px);
-  align-items: center;
-}
-
-.tetto-split--reverse {
-  grid-template-columns: minmax(340px, 1.02fr) minmax(0, 0.98fr);
-}
-
-.tetto-split__text {
+.service-intro-title {
+  position: sticky;
+  top: 96px;
+  padding-top: clamp(18px, 2.4vw, 30px);
   border-top: 1px solid var(--line-strong);
-  padding-top: clamp(22px, 3vw, 34px);
 }
 
-.tetto-split__text::before {
+.service-intro-title::before {
   content: "";
   display: block;
   width: 88px;
@@ -255,523 +73,547 @@ CSS integrativo: usa variabili, font, bottoni, navbar e footer del sito
   background: var(--accent);
 }
 
-.tetto-split__text p {
-  max-width: 680px;
+.service-intro-text {
+  display: grid;
+  gap: 18px;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: var(--shadow-soft);
 }
 
-/* FASCE TECNICHE */
+.service-intro-text p {
+  max-width: none;
+}
 
-.tetto-service-band {
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  grid-template-areas:
+    "eyebrow testo"
+    "titolo testo";
+  column-gap: clamp(34px, 5vw, 78px);
+  row-gap: 14px;
+  align-items: end;
+  margin-bottom: clamp(46px, 6vw, 80px);
+}
+
+.section-heading .eyebrow {
+  grid-area: eyebrow;
+  margin-bottom: 0;
+}
+
+.section-heading h2 {
+  grid-area: titolo;
+  margin-bottom: 0;
+}
+
+.section-heading p:not(.eyebrow) {
+  grid-area: testo;
+  justify-self: end;
+  max-width: 520px;
+  margin: 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.linked-services {
   background:
-    radial-gradient(circle at 88% 12%, rgba(184, 121, 69, 0.12), transparent 30rem),
+    radial-gradient(circle at 86% 0%, rgba(184, 121, 69, 0.12), transparent 34rem),
     linear-gradient(180deg, var(--paper), #fbf8f3);
 }
 
-.tetto-two-columns {
+.linked-services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(28px, 5vw, 74px);
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 38px);
 }
 
-.tetto-two-columns > div {
-  padding-top: clamp(22px, 3vw, 34px);
-  border-top: 1px solid var(--line-strong);
-}
-
-.tetto-two-columns h3 {
-  max-width: 520px;
-  color: var(--ink);
-}
-
-.tetto-two-columns p {
-  max-width: 640px;
-}
-
-/* RANK 3 */
-
-.tetto-rank3 {
-  background:
-    radial-gradient(circle at 88% 14%, rgba(184, 121, 69, 0.12), transparent 32rem),
-    linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.tetto-rank3__intro {
-  max-width: 860px;
-  margin-bottom: clamp(46px, 6vw, 82px);
-}
-
-.tetto-rank3__intro p {
-  max-width: 820px;
-}
-
-.tetto-rank3__list {
-  display: grid;
-  gap: clamp(58px, 7vw, 96px);
-}
-
-.tetto-rank3__item {
-  display: grid;
-  grid-template-columns: 90px minmax(0, 0.92fr) minmax(340px, 1.08fr);
-  gap: clamp(26px, 5vw, 68px);
-  align-items: center;
-  padding-top: clamp(34px, 5vw, 58px);
-  border-top: 1px solid var(--line-strong);
-  transition: transform var(--speed), border-color var(--speed);
-}
-
-.tetto-rank3__item:hover {
-  border-color: rgba(184, 121, 69, 0.52);
-}
-
-.tetto-rank3__item:active {
-  transform: scale(0.985);
-}
-
-.tetto-rank3__item--reverse {
-  grid-template-columns: 90px minmax(340px, 1.08fr) minmax(0, 0.92fr);
-}
-
-.tetto-rank3__item--reverse .tetto-rank3__content {
-  order: 3;
-}
-
-.tetto-rank3__item--reverse .tetto-rank3__media {
-  order: 2;
-}
-
-.tetto-rank3__number {
-  align-self: start;
-  color: var(--accent);
-  font-family: var(--font-title);
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-}
-
-.tetto-rank3__content {
-  align-self: center;
-}
-
-.tetto-rank3__content h3 {
-  max-width: 640px;
-  margin-bottom: 18px;
-  font-size: clamp(1.82rem, 3.8vw, 3.45rem);
-}
-
-.tetto-rank3__content p {
-  max-width: 620px;
-  margin-bottom: 26px;
-}
-
-.tetto-rank3__content a {
+.linked-service-card {
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  color: var(--accent-dark);
-  font-size: 0.96rem;
-  font-weight: 900;
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  color: var(--white);
+  background:
+    linear-gradient(145deg, rgba(8, 13, 18, 0.84), rgba(23, 34, 45, 0.78)),
+    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+  box-shadow: 0 28px 74px rgba(23, 34, 45, 0.20);
+  isolation: isolate;
 }
 
-.tetto-rank3__content a::after {
+.linked-service-card::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  z-index: -1;
+  border: 1px solid rgba(217, 183, 142, 0.34);
+  border-radius: 22px;
+  opacity: 0.62;
+  transition: inset var(--speed), opacity var(--speed), border-color var(--speed);
+}
+
+.linked-service-card::after {
+  content: "→";
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  color: var(--accent-soft);
+  font-size: 1.5rem;
+  font-weight: 900;
+  transition: transform var(--speed);
+}
+
+.linked-service-card span {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: auto;
+  color: var(--accent-soft);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.linked-service-card h3 {
+  color: var(--white);
+  font-size: clamp(1.5rem, 2.5vw, 2.12rem);
+}
+
+.linked-service-card p {
+  max-width: none;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.linked-service-card strong {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  color: var(--accent-soft);
+  font-size: 0.92rem;
+}
+
+.linked-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 38px 94px rgba(23, 34, 45, 0.28);
+}
+
+.linked-service-card:hover::before {
+  inset: 12px;
+  opacity: 1;
+  border-color: rgba(217, 183, 142, 0.64);
+}
+
+.linked-service-card:hover::after {
+  transform: translateX(7px);
+}
+
+.service-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  gap: clamp(36px, 6vw, 84px);
+  align-items: center;
+  background: var(--paper-light);
+}
+
+.service-feature:nth-of-type(even) {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(184, 121, 69, 0.10), transparent 32rem),
+    var(--paper);
+}
+
+.service-feature-reverse {
+  grid-template-columns: minmax(360px, 1.05fr) minmax(0, 0.95fr);
+}
+
+.service-feature-text {
+  padding: clamp(18px, 2.4vw, 30px) 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.service-feature-text::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 3px;
+  margin-bottom: 26px;
+  background: var(--accent);
+}
+
+.service-feature-text p {
+  max-width: 680px;
+}
+
+.service-feature-text a:not(.service-inline-link) {
+  color: var(--accent-dark);
+  font-weight: 800;
+  border-bottom: 1px solid rgba(184, 121, 69, 0.34);
+}
+
+.service-feature-text a:not(.service-inline-link):hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.service-feature-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-image);
+}
+
+.service-feature-media::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+.service-feature-media img {
+  height: clamp(360px, 38vw, 560px);
+  object-fit: cover;
+  transition: transform var(--speed-slow), filter var(--speed-slow);
+}
+
+.service-feature-media:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.06) contrast(1.04);
+}
+
+.service-inline-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-top: 28px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 16px 34px rgba(184, 121, 69, 0.24);
+  font-size: 0.94rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.service-inline-link::after {
   content: "→";
   margin-left: 10px;
   transition: transform var(--speed);
 }
 
-.tetto-rank3__content a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width var(--speed);
+.service-inline-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 46px rgba(23, 34, 45, 0.18);
 }
 
-.tetto-rank3__content a:hover::before {
-  width: 100%;
-}
-
-.tetto-rank3__content a:hover::after {
-  transform: translateX(7px);
-}
-
-.tetto-rank3__media {
-  overflow: hidden;
-  min-height: clamp(340px, 36vw, 520px);
-  border-radius: var(--radius-image);
-  box-shadow: var(--shadow-image);
-}
-
-.tetto-rank3__item:first-child .tetto-rank3__media {
-  border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
-}
-
-.tetto-rank3__item:nth-child(2) .tetto-rank3__media {
-  border-radius: 110px var(--radius-image) var(--radius-image) var(--radius-image);
-}
-
-.tetto-rank3__item:nth-child(3) .tetto-rank3__media {
-  border-radius: var(--radius-image) var(--radius-image) 110px var(--radius-image);
-}
-
-.tetto-rank3__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.tetto-rank3__item:hover .tetto-rank3__media img {
-  transform: scale(1.04);
-  filter: saturate(1.06) contrast(1.04);
-}
-
-/* AREE */
-
-.tetto-areas {
-  color: var(--white);
-  background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.94), rgba(23, 34, 45, 0.82)),
-    url("../img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
-}
-
-.tetto-areas h2 {
-  color: var(--white);
-}
-
-.tetto-areas p {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.tetto-areas .eyebrow {
-  color: var(--accent-soft);
-}
-
-.tetto-area-lines {
-  display: grid;
-  gap: 18px;
-  max-width: 980px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line-light);
-}
-
-.tetto-area-lines a {
-  position: relative;
-  color: var(--accent-soft);
-}
-
-.tetto-area-lines a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width var(--speed);
-}
-
-.tetto-area-lines a:hover {
-  color: var(--white);
-}
-
-.tetto-area-lines a:hover::before {
-  width: 100%;
-}
-
-/* FAQ */
-
-.tetto-faq {
-  background: linear-gradient(180deg, var(--paper), var(--paper-light));
-}
-
-.tetto-faq__list {
-  display: grid;
-  max-width: 980px;
-  border-top: 1px solid var(--line-strong);
-}
-
-.tetto-faq details {
-  border-bottom: 1px solid var(--line);
-  padding: 22px 0;
-  transition:
-    background var(--speed),
-    padding-left var(--speed),
-    border-color var(--speed);
-}
-
-.tetto-faq details:hover {
-  padding-left: 16px;
-  border-color: rgba(184, 121, 69, 0.38);
-}
-
-.tetto-faq details[open] {
-  padding-left: 18px;
-  background: rgba(184, 121, 69, 0.055);
-  border-color: rgba(184, 121, 69, 0.42);
-}
-
-.tetto-faq summary {
-  cursor: pointer;
-  color: var(--ink);
-  font-family: var(--font-title);
-  font-size: clamp(1.24rem, 2vw, 1.7rem);
-  font-weight: 760;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
-  transition: color var(--speed), transform var(--speed);
-}
-
-.tetto-faq details[open] summary {
-  color: var(--accent-dark);
-}
-
-.tetto-faq summary::marker {
-  color: var(--accent);
-}
-
-.tetto-faq details p {
-  max-width: 780px;
-  margin-top: 14px;
-}
-
-/* CONTATTI */
-
-.tetto-contatti {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.56fr);
-  gap: clamp(38px, 6vw, 86px);
-  align-items: start;
-  padding: var(--section-y) var(--pad-x);
-  background: var(--paper-light);
-}
-
-.tetto-contatti__text {
-  border-top: 1px solid var(--line-strong);
-  padding-top: clamp(22px, 3vw, 34px);
-}
-
-.tetto-contatti__text h2 {
-  max-width: 760px;
-}
-
-.tetto-contatti__links {
-  padding-left: clamp(26px, 4vw, 54px);
-  border-left: 1px solid var(--line-strong);
-}
-
-.tetto-contatti__links ul {
-  display: grid;
-  border-top: 1px solid var(--line);
-}
-
-.tetto-contatti__links li {
-  border-bottom: 1px solid var(--line);
-}
-
-.tetto-contatti__links a {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 14px 0;
-  color: var(--ink-soft);
-  font-weight: 700;
-}
-
-.tetto-contatti__links a::after {
-  content: "→";
-  color: var(--accent);
-  transition: transform var(--speed);
-}
-
-.tetto-contatti__links a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 8px;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width var(--speed);
-}
-
-.tetto-contatti__links a:hover {
-  color: var(--ink);
-  padding-left: 8px;
-}
-
-.tetto-contatti__links a:hover::before {
-  width: 100%;
-}
-
-.tetto-contatti__links a:hover::after {
+.service-inline-link:hover::after {
   transform: translateX(6px);
 }
 
-/* ANIMAZIONI COERENTI CON HOME */
-
-.tetto-page .scroll-reveal,
-.tetto-page .scroll-reveal-text,
-.tetto-page .scroll-reveal-title,
-.tetto-page .scroll-reveal-media {
-  --reveal-opacity: 1;
-  --reveal-y: 0px;
-  --reveal-scale: 1;
-  --reveal-blur: 0px;
+.wide-detail {
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
+    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
 }
 
-.js.reveal-ready .tetto-page .scroll-reveal {
-  opacity: var(--reveal-opacity);
-  transform: translate3d(0, var(--reveal-y), 0) scale(var(--reveal-scale));
-  filter: blur(var(--reveal-blur));
-  transition:
-    opacity 520ms ease,
-    transform 620ms ease,
-    filter 620ms ease;
-  will-change: opacity, transform, filter;
+.wide-detail h2,
+.wide-detail h3 {
+  color: var(--white);
 }
 
-/* RESPONSIVE */
+.wide-detail p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.wide-detail .eyebrow {
+  color: var(--accent-soft);
+}
+
+.wide-detail-inner {
+  max-width: 920px;
+  padding: clamp(28px, 4vw, 48px) 0;
+  border-top: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.process-section {
+  background: linear-gradient(180deg, var(--paper-light), var(--paper));
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 30px);
+}
+
+.process-card {
+  min-height: 280px;
+  padding: clamp(22px, 2.6vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--speed), box-shadow var(--speed), border-color var(--speed), background var(--speed);
+}
+
+.process-card span {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.process-card h3 {
+  font-size: clamp(1.28rem, 2vw, 1.72rem);
+}
+
+.process-card p {
+  max-width: none;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(184, 121, 69, 0.42);
+  background: var(--paper-light);
+  box-shadow: 0 22px 52px rgba(23, 34, 45, 0.14);
+}
+
+.local-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.62fr);
+  gap: clamp(36px, 6vw, 84px);
+  align-items: start;
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(9, 16, 23, 0.95), rgba(23, 34, 45, 0.82)),
+    url("/img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
+}
+
+.local-section h2,
+.local-section h3 {
+  color: var(--white);
+}
+
+.local-section p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.local-section .eyebrow {
+  color: var(--accent-soft);
+}
+
+.local-content {
+  padding-top: clamp(18px, 2.4vw, 30px);
+  border-top: 1px solid var(--line-light);
+}
+
+.local-content a {
+  color: var(--accent-soft);
+  font-weight: 800;
+  border-bottom: 1px solid rgba(217, 183, 142, 0.38);
+}
+
+.local-content a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.local-note {
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid var(--line-light);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.local-note ul {
+  display: grid;
+  gap: 12px;
+}
+
+.local-note li {
+  position: relative;
+  padding-left: 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(0.98rem, 1.14vw, 1.07rem);
+}
+
+.local-note li::before {
+  content: "";
+  position: absolute;
+  top: 0.78em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+
+.faq-section {
+  background:
+    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.11), transparent 34rem),
+    var(--paper-light);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 34px);
+}
+
+.faq-item {
+  padding: clamp(24px, 3vw, 34px);
+  border-top: 1px solid var(--line-strong);
+  background: transparent;
+  transition: transform var(--speed), border-color var(--speed);
+}
+
+.faq-item h3 {
+  max-width: 640px;
+  font-size: clamp(1.25rem, 2vw, 1.72rem);
+}
+
+.faq-item p {
+  max-width: none;
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.roof-page .contatti {
+  border-top: 1px solid var(--line-strong);
+}
+
+@media (max-width: 1100px) {
+  .linked-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .linked-service-card {
+    min-height: 300px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 980px) {
-  .tetto-hero,
-  .tetto-split,
-  .tetto-split--reverse,
-  .tetto-contatti {
+  .service-intro-grid,
+  .service-feature,
+  .service-feature-reverse,
+  .local-section {
     grid-template-columns: 1fr;
   }
 
-  .tetto-hero h1 {
-    text-align: left;
+  .service-intro-title {
+    position: relative;
+    top: auto;
   }
 
-  .tetto-hero__media {
-    max-width: 620px;
+  .service-feature-reverse .service-feature-media {
+    order: 2;
   }
 
-  .tetto-two-columns,
-  .tetto-photo-row,
-  .tetto-rank3__item,
-  .tetto-rank3__item--reverse {
+  .service-feature-reverse .service-feature-text {
+    order: 1;
+  }
+
+  .section-heading {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "titolo"
+      "testo";
   }
 
-  .tetto-rank3__item--reverse .tetto-rank3__content,
-  .tetto-rank3__item--reverse .tetto-rank3__media {
-    order: initial;
+  .section-heading p:not(.eyebrow) {
+    justify-self: start;
+    max-width: 720px;
   }
 
-  .tetto-rank3__number {
-    margin-bottom: -18px;
-  }
-
-  .tetto-photo-row figure:nth-child(2) {
-    transform: none;
-  }
-
-  .tetto-photo-row figure:nth-child(2):active {
-    transform: scale(0.985);
-  }
-
-  .tetto-contatti__links {
-    padding-left: 0;
-    padding-top: 34px;
-    border-left: 0;
-    border-top: 1px solid var(--line-strong);
+  .faq-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px) {
-  .tetto-hero {
-    min-height: auto;
-    padding-top: 168px;
+  .service-intro,
+  .linked-services,
+  .service-feature,
+  .wide-detail,
+  .process-section,
+  .local-section,
+  .faq-section {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
   }
 
-  .tetto-hero h1 {
-    font-size: clamp(2.32rem, 12vw, 3.7rem);
+  .service-intro-text,
+  .local-note,
+  .faq-item {
+    padding: 24px;
+    border-radius: 22px;
   }
 
-  .tetto-hero .hero-buttons {
-    width: 100%;
+  .service-feature-media,
+  .service-feature-media img {
+    border-radius: 22px;
   }
 
-  .tetto-hero__media img,
-  .tetto-photo--vertical,
-  .tetto-photo--square,
-  .tetto-photo--horizontal {
-    height: 360px;
+  .service-feature-media img {
+    height: 320px;
   }
 
-  .tetto-wide-photo img {
-    height: 340px;
-    border-radius: 24px;
-  }
-
-  .tetto-photo-row figure {
-    min-height: 300px;
-  }
-
-  .tetto-photo-row figure:first-child,
-  .tetto-photo-row figure:nth-child(2),
-  .tetto-photo-row figure:nth-child(3),
-  .tetto-photo,
-  .tetto-hero__media,
-  .tetto-rank3__media,
-  .tetto-rank3__item:first-child .tetto-rank3__media,
-  .tetto-rank3__item:nth-child(2) .tetto-rank3__media,
-  .tetto-rank3__item:nth-child(3) .tetto-rank3__media {
-    border-radius: 24px;
-  }
-
-  .tetto-hero__media::after {
+  .service-feature-media::after {
     inset: 12px;
-    border-radius: 16px;
+    border-radius: 14px;
   }
 
-  .tetto-section__head {
-    margin-bottom: 34px;
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    min-height: auto;
+  }
+
+  .process-card span {
+    margin-bottom: 24px;
+  }
+
+  .linked-service-card {
+    min-height: 320px;
+    border-radius: 24px;
+  }
+
+  .linked-service-card::before {
+    border-radius: 18px;
   }
 }
 
 @media (max-width: 460px) {
-  .tetto-hero {
-    padding-top: 188px;
+  .service-feature-media img {
+    height: 280px;
   }
 
-  .tetto-hero__media img,
-  .tetto-photo--vertical,
-  .tetto-photo--square,
-  .tetto-photo--horizontal,
-  .tetto-wide-photo img {
-    height: 310px;
+  .linked-service-card {
+    min-height: 340px;
   }
 
-  .tetto-photo-row figure {
-    min-height: 260px;
-  }
-
-  .tetto-faq summary {
-    font-size: 1.22rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .js.reveal-ready .tetto-page .scroll-reveal,
-  .tetto-page a,
-  .tetto-faq summary,
-  .tetto-rank3__item,
-  .tetto-photo,
-  .tetto-photo-row figure,
-  .tetto-hero__media {
-    animation: none !important;
-    transition-duration: 0.001ms !important;
-    transform: none !important;
-    filter: none !important;
+  .service-inline-link {
+    width: 100%;
+    justify-content: center;
   }
 }
