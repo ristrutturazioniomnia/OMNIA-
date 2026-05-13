@@ -689,30 +689,41 @@
   }
 }
 
-/* === Uniformazione UI da facciate.css + blur basso scroll === */
+/* === Uniformazione UI da facciate.css + blur basso scroll corretto === */
 :root {
   --service-scroll-blur: 4px;
   --service-panel-blur: 6px;
 }
 
-.facciate-page .scroll-reveal:not(.is-visible),
-.facciate-page .reveal-on-scroll:not(.is-visible),
-.facciate-page .reveal:not(.is-visible),
-.facciate-page [data-scroll-reveal]:not(.is-visible),
-.facciate-page [data-reveal]:not(.is-visible),
-.facciate-page [data-animate]:not(.is-visible) {
+/* Blur SOLO sulle sezioni dentro il main, non sulla hero */
+.facciate-page main .scroll-reveal:not(.is-visible),
+.facciate-page main .reveal-on-scroll:not(.is-visible),
+.facciate-page main .reveal:not(.is-visible),
+.facciate-page main [data-scroll-reveal]:not(.is-visible),
+.facciate-page main [data-reveal]:not(.is-visible),
+.facciate-page main [data-animate]:not(.is-visible) {
   filter: blur(var(--service-scroll-blur)) !important;
 }
 
-.facciate-page .scroll-reveal.is-visible,
-.facciate-page .reveal-on-scroll.is-visible,
-.facciate-page .reveal.is-visible,
-.facciate-page [data-scroll-reveal].is-visible,
-.facciate-page [data-reveal].is-visible,
-.facciate-page [data-animate].is-visible {
+/* Quando diventano visibili, togli il blur */
+.facciate-page main .scroll-reveal.is-visible,
+.facciate-page main .reveal-on-scroll.is-visible,
+.facciate-page main .reveal.is-visible,
+.facciate-page main [data-scroll-reveal].is-visible,
+.facciate-page main [data-reveal].is-visible,
+.facciate-page main [data-animate].is-visible {
   filter: blur(0) !important;
 }
 
+/* La hero deve sempre restare nitida */
+.facciate-page .facciate-hero,
+.facciate-page .facciate-hero *,
+.facciate-page .hero,
+.facciate-page .hero * {
+  filter: none !important;
+}
+
+/* Anche contatti e footer sempre nitidi */
 .facciate-page .contatti,
 .facciate-page .service-contact,
 .facciate-page .service-contatti,
