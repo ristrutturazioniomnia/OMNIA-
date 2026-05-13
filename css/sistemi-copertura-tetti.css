@@ -120,6 +120,8 @@
 
 /* === Sezione servizi collegati corretta: stile facciate === */
 
+/* === Servizi collegati: stile come facciate, usando SOLO classi del primo CSS === */
+
 .linked-services {
   overflow: hidden;
   color: var(--white);
@@ -173,27 +175,6 @@
   transition: transform var(--speed), box-shadow var(--speed), background-size var(--speed-slow), filter var(--speed-slow);
 }
 
-.linked-service-card:nth-child(1) {
-  background:
-    linear-gradient(180deg, rgba(8, 13, 18, 0.08), rgba(8, 13, 18, 0.72)),
-    radial-gradient(circle at 50% 100%, rgba(184, 121, 69, 0.30), transparent 28rem),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
-}
-
-.linked-service-card:nth-child(2) {
-  background:
-    linear-gradient(180deg, rgba(8, 13, 18, 0.08), rgba(8, 13, 18, 0.72)),
-    radial-gradient(circle at 50% 100%, rgba(184, 121, 69, 0.30), transparent 28rem),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
-}
-
-.linked-service-card:nth-child(3) {
-  background:
-    linear-gradient(180deg, rgba(8, 13, 18, 0.08), rgba(8, 13, 18, 0.72)),
-    radial-gradient(circle at 50% 100%, rgba(184, 121, 69, 0.30), transparent 28rem),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
-}
-
 .linked-service-card::before {
   content: "";
   position: absolute;
@@ -211,7 +192,9 @@
 .linked-service-card::after {
   content: "";
   position: absolute;
-  inset: auto 15px 15px 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
   z-index: 2;
   min-height: 180px;
   border: 2px solid rgba(217, 183, 142, 0.44);
@@ -223,7 +206,16 @@
 }
 
 .linked-service-card span {
-  display: none;
+  position: absolute;
+  top: 28px;
+  left: 30px;
+  z-index: 3;
+  display: inline-flex;
+  width: fit-content;
+  margin: 0;
+  color: var(--accent-soft);
+  font-weight: 900;
+  letter-spacing: 0.14em;
 }
 
 .linked-service-card h3,
@@ -263,6 +255,10 @@
   font-weight: 800;
 }
 
+.linked-service-card strong::after {
+  content: " →";
+}
+
 .linked-service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 42px 104px rgba(8, 13, 18, 0.46);
@@ -287,8 +283,15 @@
   }
 
   .linked-service-card::after {
-    inset: auto 12px 12px 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
     border-radius: 22px;
+  }
+
+  .linked-service-card span {
+    top: 24px;
+    left: 24px;
   }
 
   .linked-service-card h3,
@@ -301,6 +304,12 @@
 
   .linked-service-card strong {
     margin-bottom: 34px;
+  }
+}
+
+@media (max-width: 460px) {
+  .linked-service-card {
+    min-height: 390px;
   }
 }
 
