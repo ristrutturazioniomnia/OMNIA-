@@ -689,13 +689,49 @@
   }
 }
 
-/* === Uniformazione UI da facciate.css + blur basso scroll corretto === */
+/* === Uniformazione UI + blur basso scroll corretto === */
 :root {
-  --service-scroll-blur: 4px;
+  --service-scroll-blur: 3px;
   --service-panel-blur: 6px;
 }
 
-/* Blur SOLO sulle sezioni dentro il main, non sulla hero */
+/* La pagina non deve mai ricevere blur globale */
+.facciate-page {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+/* Header / hero sempre visibili e nitidi */
+.facciate-page .facciate-hero,
+.facciate-page .facciate-hero *,
+.facciate-page .hero,
+.facciate-page .hero * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+/* Blocca eventuali reveal applicati per errore dentro la hero */
+.facciate-page .facciate-hero.scroll-reveal,
+.facciate-page .facciate-hero.reveal-on-scroll,
+.facciate-page .facciate-hero.reveal,
+.facciate-page .facciate-hero[data-scroll-reveal],
+.facciate-page .facciate-hero[data-reveal],
+.facciate-page .facciate-hero[data-animate],
+.facciate-page .facciate-hero .scroll-reveal,
+.facciate-page .facciate-hero .reveal-on-scroll,
+.facciate-page .facciate-hero .reveal,
+.facciate-page .facciate-hero [data-scroll-reveal],
+.facciate-page .facciate-hero [data-reveal],
+.facciate-page .facciate-hero [data-animate] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Sfocatura bassa SOLO sulle sezioni animate sotto la hero */
 .facciate-page main .scroll-reveal:not(.is-visible),
 .facciate-page main .reveal-on-scroll:not(.is-visible),
 .facciate-page main .reveal:not(.is-visible),
@@ -705,7 +741,7 @@
   filter: blur(var(--service-scroll-blur)) !important;
 }
 
-/* Quando diventano visibili, togli il blur */
+/* Quando la sezione entra in viewport torna nitida */
 .facciate-page main .scroll-reveal.is-visible,
 .facciate-page main .reveal-on-scroll.is-visible,
 .facciate-page main .reveal.is-visible,
@@ -715,23 +751,27 @@
   filter: blur(0) !important;
 }
 
-/* La hero deve sempre restare nitida */
-.facciate-page .facciate-hero,
-.facciate-page .facciate-hero *,
-.facciate-page .hero,
-.facciate-page .hero * {
-  filter: none !important;
-}
-
-/* Anche contatti e footer sempre nitidi */
+/* Contatti e footer sempre nitidi */
 .facciate-page .contatti,
+.facciate-page .contatti *,
 .facciate-page .service-contact,
+.facciate-page .service-contact *,
 .facciate-page .service-contatti,
+.facciate-page .service-contatti *,
 .facciate-page footer,
-.facciate-page .site-footer {
+.facciate-page footer *,
+.facciate-page .site-footer,
+.facciate-page .site-footer * {
   filter: none !important;
 }
 
+/* Blur corretto solo nei pannelli delle card servizio */
+.facciate-page .servizio-link-card__panel {
+  backdrop-filter: blur(var(--service-panel-blur));
+  -webkit-backdrop-filter: blur(var(--service-panel-blur));
+}
+
+/* Accessibilità: niente blur se l’utente riduce le animazioni */
 @media (prefers-reduced-motion: reduce) {
   .facciate-page .scroll-reveal,
   .facciate-page .reveal-on-scroll,
@@ -739,12 +779,10 @@
   .facciate-page [data-scroll-reveal],
   .facciate-page [data-reveal],
   .facciate-page [data-animate] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
     filter: none !important;
   }
-}
-
-.facciate-page .servizio-link-card__panel {
-  backdrop-filter: blur(var(--service-panel-blur));
-  -webkit-backdrop-filter: blur(var(--service-panel-blur));
 }
 /* === Fine uniformazione UI === */
