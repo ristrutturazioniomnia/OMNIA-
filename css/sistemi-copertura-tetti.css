@@ -432,7 +432,8 @@
   border: 1px solid var(--line-light);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .local-note ul {
@@ -617,3 +618,276 @@
     justify-content: center;
   }
 }
+
+/* === Uniformazione UI da facciate.css + blur basso scroll === */
+:root {
+  --service-scroll-blur: 4px;
+  --service-panel-blur: 6px;
+}
+
+.roof-page .scroll-reveal:not(.is-visible),
+.roof-page .reveal-on-scroll:not(.is-visible),
+.roof-page .reveal:not(.is-visible),
+.roof-page [data-scroll-reveal]:not(.is-visible),
+.roof-page [data-reveal]:not(.is-visible),
+.roof-page [data-animate]:not(.is-visible),
+.service-page .scroll-reveal:not(.is-visible),
+.service-page .reveal-on-scroll:not(.is-visible),
+.service-page .reveal:not(.is-visible),
+.service-page [data-scroll-reveal]:not(.is-visible),
+.service-page [data-reveal]:not(.is-visible),
+.service-page [data-animate]:not(.is-visible) {
+  filter: blur(var(--service-scroll-blur)) !important;
+}
+
+.roof-page .scroll-reveal.is-visible,
+.roof-page .reveal-on-scroll.is-visible,
+.roof-page .reveal.is-visible,
+.roof-page [data-scroll-reveal].is-visible,
+.roof-page [data-reveal].is-visible,
+.roof-page [data-animate].is-visible,
+.service-page .scroll-reveal.is-visible,
+.service-page .reveal-on-scroll.is-visible,
+.service-page .reveal.is-visible,
+.service-page [data-scroll-reveal].is-visible,
+.service-page [data-reveal].is-visible,
+.service-page [data-animate].is-visible {
+  filter: blur(0) !important;
+}
+
+.roof-page .contatti,
+.roof-page .service-contact,
+.roof-page .service-contatti,
+.roof-page footer,
+.roof-page .site-footer,
+.service-page .contatti,
+.service-page .service-contact,
+.service-page .service-contatti,
+.service-page footer,
+.service-page .site-footer {
+  filter: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roof-page .scroll-reveal,
+  .roof-page .reveal-on-scroll,
+  .roof-page .reveal,
+  .roof-page [data-scroll-reveal],
+  .roof-page [data-reveal],
+  .roof-page [data-animate],
+  .service-page .scroll-reveal,
+  .service-page .reveal-on-scroll,
+  .service-page .reveal,
+  .service-page [data-scroll-reveal],
+  .service-page [data-reveal],
+  .service-page [data-animate] {
+    filter: none !important;
+  }
+}
+
+.roof-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a),
+.service-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a) {
+  color: var(--accent-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(184, 121, 69, 0.34);
+  transition: color var(--speed), text-decoration-color var(--speed), transform var(--speed), border-color var(--speed), background var(--speed), box-shadow var(--speed);
+}
+
+.roof-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a):hover,
+.service-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a):hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.service-intro::before,
+.linked-services::before,
+.service-feature::before,
+.wide-detail::before,
+.process-section::before,
+.local-section::before,
+.faq-section::before {
+  top: var(--section-y);
+}
+
+.service-feature,
+.service-feature-reverse {
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  gap: clamp(38px, 5.6vw, 86px);
+}
+
+.service-feature-reverse {
+  grid-template-columns: minmax(360px, 1.04fr) minmax(0, 0.96fr);
+}
+
+.service-feature-media {
+  isolation: isolate;
+}
+
+.service-feature-media img {
+  height: clamp(390px, 40vw, 590px);
+}
+
+.service-inline-link {
+  min-height: 52px;
+  padding: 14px 24px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  box-shadow: 0 16px 34px rgba(184, 121, 69, 0.30);
+}
+
+.linked-services {
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
+    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+}
+
+.linked-services::before {
+  background: linear-gradient(90deg, transparent, var(--line-light), transparent);
+}
+
+.linked-services h2,
+.linked-services h3 {
+  color: var(--white);
+}
+
+.linked-services p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.linked-services .eyebrow,
+.linked-service-card span,
+.linked-service-card strong {
+  color: var(--accent-soft);
+}
+
+.linked-services-grid {
+  gap: clamp(24px, 3vw, 42px);
+}
+
+.linked-service-card {
+  min-height: clamp(420px, 40vw, 560px);
+  border-radius: 34px;
+  box-shadow: 0 30px 78px rgba(8, 13, 18, 0.34);
+  transition: transform var(--speed), box-shadow var(--speed), border-color var(--speed), background var(--speed);
+}
+
+.linked-service-card::before {
+  inset: 15px;
+  border: 2px solid rgba(217, 183, 142, 0.44);
+  border-radius: 26px;
+  opacity: 1;
+  backdrop-filter: blur(var(--service-panel-blur));
+  -webkit-backdrop-filter: blur(var(--service-panel-blur));
+}
+
+.linked-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 42px 104px rgba(8, 13, 18, 0.46);
+}
+
+.linked-service-card:hover::before {
+  inset: 12px;
+  border-color: rgba(217, 183, 142, 0.70);
+}
+
+.process-grid {
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.process-card {
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: none;
+}
+
+.process-card:last-child {
+  border-right: 0;
+}
+
+.process-card span {
+  display: inline-flex;
+  margin-bottom: 24px;
+  font-size: 0.82rem;
+}
+
+.process-card:hover {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: var(--shadow-soft);
+}
+
+.local-note {
+  border-radius: 30px;
+  backdrop-filter: blur(var(--service-panel-blur));
+  -webkit-backdrop-filter: blur(var(--service-panel-blur));
+}
+
+.faq-grid {
+  gap: 14px;
+  max-width: 980px;
+}
+
+.faq-item {
+  padding: 20px 0 24px;
+  border-top: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.30);
+  transition: background var(--speed), box-shadow var(--speed), transform var(--speed);
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.54);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1180px) {
+  .process-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .process-card:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 980px) {
+  .service-feature,
+  .service-feature-reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card,
+  .process-card:nth-child(2),
+  .process-card:nth-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-card:last-child {
+    border-bottom: 0;
+  }
+
+  .linked-service-card {
+    min-height: 430px;
+    border-radius: 24px;
+  }
+}
+/* === Fine uniformazione UI === */
