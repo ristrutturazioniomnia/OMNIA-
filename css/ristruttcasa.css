@@ -619,3 +619,336 @@
     box-shadow: none;
   }
 }
+
+/* === Uniformazione UI da facciate.css + blur basso scroll === */
+:root {
+  --service-scroll-blur: 4px;
+  --service-panel-blur: 6px;
+}
+
+.service-page .scroll-reveal:not(.is-visible),
+.service-page .reveal-on-scroll:not(.is-visible),
+.service-page .reveal:not(.is-visible),
+.service-page [data-scroll-reveal]:not(.is-visible),
+.service-page [data-reveal]:not(.is-visible),
+.service-page [data-animate]:not(.is-visible) {
+  filter: blur(var(--service-scroll-blur)) !important;
+}
+
+.service-page .scroll-reveal.is-visible,
+.service-page .reveal-on-scroll.is-visible,
+.service-page .reveal.is-visible,
+.service-page [data-scroll-reveal].is-visible,
+.service-page [data-reveal].is-visible,
+.service-page [data-animate].is-visible {
+  filter: blur(0) !important;
+}
+
+.service-page .contatti,
+.service-page .service-contact,
+.service-page .service-contatti,
+.service-page footer,
+.service-page .site-footer {
+  filter: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-page .scroll-reveal,
+  .service-page .reveal-on-scroll,
+  .service-page .reveal,
+  .service-page [data-scroll-reveal],
+  .service-page [data-reveal],
+  .service-page [data-animate] {
+    filter: none !important;
+  }
+}
+
+.service-page a:not(.hero-buttons a):not(.inline-action):not(.contatti-azioni a) {
+  color: var(--accent-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(184, 121, 69, 0.34);
+  transition: color var(--speed), text-decoration-color var(--speed), transform var(--speed), border-color var(--speed), background var(--speed), box-shadow var(--speed);
+}
+
+.service-page a:not(.hero-buttons a):not(.inline-action):not(.contatti-azioni a):hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.service-section::before {
+  top: var(--section-y);
+}
+
+.service-split,
+.service-split-reverse {
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  gap: clamp(38px, 5.6vw, 86px);
+}
+
+.service-split-reverse {
+  grid-template-columns: minmax(360px, 1.04fr) minmax(0, 0.96fr);
+}
+
+.service-media {
+  isolation: isolate;
+}
+
+.service-media img {
+  height: clamp(390px, 40vw, 590px);
+}
+
+.inline-action {
+  min-height: 52px;
+  padding: 14px 24px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  box-shadow: 0 16px 34px rgba(184, 121, 69, 0.30);
+}
+
+.linked-services {
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
+    url("../img/ristrutturazione-casa.jpg") center center / cover no-repeat;
+}
+
+.linked-services::before {
+  background: linear-gradient(90deg, transparent, var(--line-light), transparent);
+}
+
+.linked-services h2,
+.linked-services h3 {
+  color: var(--white);
+}
+
+.linked-services p,
+.linked-services .section-heading p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.linked-services .eyebrow {
+  color: var(--accent-soft);
+}
+
+.linked-services .section-heading p:not(.eyebrow) {
+  border-color: var(--line-light);
+}
+
+.rank-card {
+  border-radius: 34px;
+  background: transparent;
+  box-shadow: 0 30px 78px rgba(8, 13, 18, 0.34);
+  isolation: isolate;
+}
+
+.rank-card img {
+  height: clamp(360px, 34vw, 500px);
+}
+
+.rank-card > div {
+  margin: -88px 15px 15px;
+  border: 2px solid rgba(217, 183, 142, 0.44);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(10, 16, 22, 0.82), rgba(23, 34, 45, 0.76));
+  backdrop-filter: blur(var(--service-panel-blur));
+  -webkit-backdrop-filter: blur(var(--service-panel-blur));
+}
+
+.rank-card:hover {
+  box-shadow: 0 42px 104px rgba(8, 13, 18, 0.46);
+}
+
+.rank-card:hover > div {
+  border-color: rgba(217, 183, 142, 0.70);
+}
+
+.process-section {
+  background:
+    radial-gradient(circle at 15% 12%, rgba(184, 121, 69, 0.13), transparent 34rem),
+    linear-gradient(180deg, var(--paper), #fbf8f3);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.process-card,
+.process-step {
+  position: relative;
+  padding: clamp(26px, 3vw, 38px) clamp(18px, 2.2vw, 30px);
+  border-right: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.28);
+  transition: background var(--speed), transform var(--speed), box-shadow var(--speed);
+}
+
+.process-card:last-child,
+.process-step:last-child {
+  border-right: 0;
+}
+
+.process-card span,
+.process-step span {
+  display: inline-flex;
+  margin-bottom: 24px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.process-card h3,
+.process-step h3 {
+  font-size: clamp(1.28rem, 2vw, 1.72rem);
+}
+
+.process-card p,
+.process-step p {
+  max-width: none;
+  font-size: 0.95rem;
+}
+
+.process-card:hover,
+.process-step:hover {
+  background: rgba(255, 255, 255, 0.54);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+}
+
+.room-card,
+.room-content {
+  backdrop-filter: blur(var(--service-panel-blur));
+  -webkit-backdrop-filter: blur(var(--service-panel-blur));
+}
+
+.tips-section {
+  background:
+    radial-gradient(circle at 90% 6%, rgba(184, 121, 69, 0.12), transparent 32rem),
+    linear-gradient(180deg, var(--paper), #fbf8f3);
+}
+
+.tip-card {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.faq-section {
+  background: linear-gradient(180deg, var(--paper-light), var(--paper));
+}
+
+.faq-list {
+  max-width: 980px;
+  margin: 0;
+}
+
+.faq-item {
+  border-top: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.30);
+  transition: background var(--speed), box-shadow var(--speed), transform var(--speed);
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.faq-item summary {
+  min-height: 76px;
+  padding: 20px 0;
+}
+
+.faq-item summary::after {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 1.3rem;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+  color: var(--white);
+  background: var(--accent);
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  padding: 0 62px 24px 0;
+}
+
+.faq-item:hover {
+  padding-left: 0;
+  background: rgba(255, 255, 255, 0.54);
+  transform: translateY(-2px);
+}
+
+.service-contact {
+  background:
+    radial-gradient(circle at 92% 20%, rgba(184, 121, 69, 0.11), transparent 30rem),
+    var(--paper-light);
+}
+
+@media (max-width: 1180px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-card:nth-child(2),
+  .process-step:nth-child(2) {
+    border-right: 0;
+  }
+
+  .process-card:nth-child(-n + 2),
+  .process-step:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 980px) {
+  .service-split,
+  .service-split-reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card,
+  .process-card:nth-child(2),
+  .process-card:nth-child(-n + 2),
+  .process-step,
+  .process-step:nth-child(2),
+  .process-step:nth-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-card:last-child,
+  .process-step:last-child {
+    border-bottom: 0;
+  }
+
+  .rank-card {
+    border-radius: 24px;
+  }
+
+  .rank-card > div {
+    margin: -72px 12px 12px;
+    border-radius: 22px;
+  }
+
+  .faq-item p {
+    padding-right: 0;
+  }
+}
+/* === Fine uniformazione UI === */
