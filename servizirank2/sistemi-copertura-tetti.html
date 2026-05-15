@@ -267,8 +267,20 @@
     </div>
   </section>
 
-  <section class="wide-detail">
-    <div class="wide-detail-inner scroll-reveal scroll-reveal-text">
+ <section class="wide-detail" style="padding: 0;">
+  <div
+    class="wide-detail-inner scroll-reveal scroll-reveal-text"
+    style="
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 42%);
+      gap: clamp(32px, 5vw, 72px);
+      align-items: stretch;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(70px, 8vw, 120px) clamp(22px, 5vw, 72px);
+    "
+  >
+    <div style="max-width: 820px;">
       <p class="eyebrow">Sistemi di grondaie</p>
       <h2>Riparazione grondaie e gestione dell’acqua piovana</h2>
 
@@ -283,15 +295,33 @@
       <p>
         Questo intervento viene spesso collegato alla riparazione tegole e alla revisione delle scossaline, perché un tetto funziona solo se l’acqua viene raccolta e allontanata senza ostacoli. Una grondaia trascurata può trasformare una piccola manutenzione in un problema più costoso, soprattutto quando l’umidità raggiunge le pareti interne e rende necessario intervenire anche dentro casa.
       </p>
-      <figure style="width: 100%; max-width: 420px; margin: 34px 0 0; border-radius: 24px; overflow: hidden; box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);">
+    </div>
+
+    <figure
+      style="
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 620px;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+      "
+    >
       <img
         src="/img/sistemi-copertura-tetti.jpg"
         alt="Dettaglio di grondaie e sistema di copertura"
-        style="display: block; width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover;"
+        style="
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        "
       >
     </figure>
-    </div>
-  </section>
+  </div>
+</section>
 
   <section class="process-section">
     <div class="section-heading scroll-reveal scroll-reveal-title">
