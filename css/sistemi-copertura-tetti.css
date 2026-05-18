@@ -2,7 +2,7 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.38), rgba(8, 13, 18, 0.58)),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+    url("/img/brochure.png") center center / cover no-repeat;
 }
 
 .service-page {
