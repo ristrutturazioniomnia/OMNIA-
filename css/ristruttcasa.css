@@ -4,7 +4,7 @@
   background:
     radial-gradient(circle at 52% 30%, rgba(184, 121, 69, 0.24), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.34), rgba(8, 13, 18, 0.58)),
-    url("../img/ristrutturazione-casa.jpg") center center / cover no-repeat;
+    url("../img/brochure.png") center center / cover no-repeat;
 }
 
 .service-hero .hero-content p:not(.eyebrow) {
