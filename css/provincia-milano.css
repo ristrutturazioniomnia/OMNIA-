@@ -562,17 +562,11 @@
   grid-template-columns: 54px minmax(0, 1fr);
   column-gap: clamp(18px, 2.4vw, 28px);
   align-items: start;
-  min-height: auto;
   padding: clamp(26px, 3vw, 34px) 0;
-  border: 0;
   border-bottom: 1px solid var(--line);
-  border-radius: 0;
   background: transparent;
   box-shadow: none;
   overflow: visible;
-  opacity: 1;
-  transform: none;
-  filter: none;
   transition: border-color 220ms ease;
 }
 
@@ -582,10 +576,11 @@
 }
 
 .area-rank2-service-number {
+  grid-column: 1;
+  grid-row: 1 / span 3;
   display: inline-flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 0;
   padding-top: 5px;
   color: var(--accent-dark);
   font-size: 0.78rem;
@@ -594,6 +589,8 @@
 }
 
 .area-rank2-service-card h3 {
+  grid-column: 2;
+  grid-row: 1;
   max-width: 420px;
   margin-bottom: 12px;
   color: var(--ink);
@@ -602,6 +599,8 @@
 }
 
 .area-rank2-service-card p {
+  grid-column: 2;
+  grid-row: 2;
   max-width: 520px;
   color: var(--muted);
   font-size: 0.96rem;
@@ -609,6 +608,8 @@
 }
 
 .area-rank2-service-card a {
+  grid-column: 2;
+  grid-row: 3;
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -638,7 +639,6 @@
 .area-rank2-service-card:hover a::after {
   transform: translateX(4px);
 }
-
 /* =========================================================
    11. SEZIONE OBBLIGATORIA DEDICATA A MILANO
 ========================================================= */
