@@ -1,868 +1,595 @@
-
-.service-page {
-  background: var(--paper);
-}
-
-.service-hero {
-  background:
-    radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.22), transparent 34rem),
-    linear-gradient(180deg, rgba(8, 13, 18, 0.18), rgba(8, 13, 18, 0.52)),
-    url("../img/ristrutturazione-bagno.jpg") center center / cover no-repeat;
-}
-
-.service-page .service-section {
-  position: relative;
-  width: 100%;
-  padding: var(--section-y) var(--pad-x);
-}
-
-.service-page .service-section::before {
-  content: "";
-  position: absolute;
-  left: var(--pad-x);
-  right: var(--pad-x);
-  top: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
-}
-
-.service-section {
-  display: grid;
-  grid-template-columns: minmax(0, 0.96fr) minmax(360px, 1.04fr);
-  gap: clamp(34px, 5vw, 76px);
-  align-items: center;
-  background: linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.service-section-reverse {
-  grid-template-columns: minmax(360px, 1.04fr) minmax(0, 0.96fr);
-}
-
-.service-section-dark {
-  display: block;
-  color: var(--white);
-  background:
-    radial-gradient(circle at 86% 12%, rgba(184, 121, 69, 0.16), transparent 34rem),
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.90));
-}
-
-.service-section-dark h2,
-.service-section-dark h3 {
-  color: var(--white);
-}
-
-.service-section-dark p {
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.service-section-dark .eyebrow {
-  color: var(--accent-soft);
-}
-
-.service-section-text {
-  position: relative;
-  padding: clamp(18px, 2.4vw, 30px) 0;
-  border-top: 1px solid var(--line-strong);
-}
-
-.service-section-dark .service-section-text {
-  border-color: var(--line-light);
-}
-
-.service-section-text::before {
-  content: "";
-  display: block;
-  width: 88px;
-  height: 3px;
-  margin-bottom: 26px;
-  background: var(--accent);
-}
-
-.service-section-text p {
-  max-width: 700px;
-}
-
-.service-section-text a:not(.service-inline-link) {
-  color: var(--accent-dark);
-  font-weight: 800;
-  border-bottom: 1px solid currentColor;
-  transition: color var(--speed), border-color var(--speed);
-}
-
-.service-section-text a:not(.service-inline-link):hover {
-  color: var(--accent);
-  border-color: transparent;
-}
-
-.service-section-media {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-image);
-  box-shadow: var(--shadow-image);
-}
-
-.service-section-media::after {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: 22px;
-  pointer-events: none;
-}
-
-.service-section-media img {
-  height: clamp(360px, 38vw, 560px);
-  object-fit: cover;
-  transition: transform var(--speed-slow), filter var(--speed-slow);
-}
-
-.service-section-media:hover img {
-  transform: scale(1.045);
-  filter: saturate(1.06) contrast(1.04);
-}
-
-.service-inline-link {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  margin-top: 26px;
-  padding: 14px 22px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  color: var(--ink);
-  font-size: 0.94rem;
-  font-weight: 900;
-  line-height: 1;
-  transition: transform var(--speed), box-shadow var(--speed), color var(--speed), border-color var(--speed), background var(--speed);
-}
-
-.service-inline-link::after {
-  content: "→";
-  margin-left: 10px;
-  color: var(--accent);
-  transition: transform var(--speed);
-}
-
-.service-inline-link:hover {
-  color: var(--white);
-  border-color: transparent;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  box-shadow: 0 18px 38px rgba(184, 121, 69, 0.22);
-  transform: translateY(-3px);
-}
-
-.service-inline-link:hover::after {
-  color: var(--white);
-  transform: translateX(6px);
-}
-
-.rank3-heading,
-.impianti-heading,
-.tips-heading,
-.faq-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
-  grid-template-areas:
-    "eyebrow testo"
-    "titolo testo";
-  column-gap: clamp(34px, 5vw, 78px);
-  row-gap: 14px;
-  align-items: end;
-  margin-bottom: clamp(48px, 7vw, 84px);
-}
-
-.rank3-heading .eyebrow,
-.impianti-heading .eyebrow,
-.tips-heading .eyebrow,
-.faq-heading .eyebrow {
-  grid-area: eyebrow;
-  margin-bottom: 0;
-}
-
-.rank3-heading h2,
-.impianti-heading h2,
-.tips-heading h2,
-.faq-heading h2 {
-  grid-area: titolo;
-  max-width: 860px;
-  margin-bottom: 0;
-}
-
-.rank3-heading p:not(.eyebrow),
-.impianti-heading p:not(.eyebrow),
-.tips-heading p:not(.eyebrow) {
-  grid-area: testo;
-  justify-self: end;
-  align-self: end;
-  max-width: 500px;
-  margin: 0;
-  padding-top: 26px;
-  border-top: 1px solid var(--line-light);
-}
-
-.tips-heading p:not(.eyebrow) {
-  border-color: var(--line-strong);
-}
-
-.rank3-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(22px, 3vw, 36px);
-}
-
-.rank3-card {
-  position: relative;
-  display: flex;
-  min-height: 390px;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  padding: clamp(24px, 3vw, 34px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 30px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
-  box-shadow: 0 30px 78px rgba(9, 14, 19, 0.24);
-  transition: transform var(--speed), border-color var(--speed), background var(--speed), box-shadow var(--speed);
-}
-
-.rank3-card::before {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--speed);
-}
-
-.rank3-card span {
-  position: absolute;
-  top: 26px;
-  left: 28px;
-  color: rgba(255, 255, 255, 0.22);
-  font-family: var(--font-title);
-  font-size: clamp(3rem, 5vw, 5rem);
-  font-weight: 800;
-  line-height: 1;
-}
-
-.rank3-card h3 {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 16px;
-  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
-}
-
-.rank3-card p {
-  position: relative;
-  z-index: 2;
-  max-width: none;
-  margin-bottom: 24px;
-}
-
-.rank3-card strong {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  color: var(--accent-soft);
-  font-size: 0.92rem;
-  font-weight: 900;
-}
-
-.rank3-card strong::after {
-  content: "→";
-  margin-left: 10px;
-  transition: transform var(--speed);
-}
-
-.rank3-card:hover {
-  border-color: rgba(217, 183, 142, 0.56);
-  background:
-    linear-gradient(145deg, rgba(184, 121, 69, 0.18), rgba(255, 255, 255, 0.05));
-  box-shadow: 0 42px 104px rgba(9, 14, 19, 0.36);
-  transform: translateY(-8px);
-}
-
-.rank3-card:hover::before {
-  transform: scaleX(1);
-}
-
-.rank3-card:hover strong::after {
-  transform: translateX(7px);
-}
-
-.impianti-gallery {
-  display: grid;
-  grid-template-columns: 1.25fr 0.85fr 0.85fr;
-  gap: clamp(18px, 2.6vw, 34px);
-  margin-bottom: clamp(42px, 6vw, 74px);
-}
-
-.impianti-gallery img {
-  height: clamp(260px, 30vw, 420px);
-  object-fit: cover;
-  border-radius: 30px;
-  box-shadow: 0 30px 78px rgba(9, 14, 19, 0.30);
-}
-
-.impianti-gallery img:first-child {
-  height: clamp(360px, 38vw, 560px);
-}
-
-.impianti-copy {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 clamp(34px, 5vw, 72px);
-  border-top: 1px solid var(--line-light);
-}
-
-.impianti-copy article {
-  padding: clamp(28px, 4vw, 44px) 0;
-  border-bottom: 1px solid var(--line-light);
-}
-
-.impianti-copy h3 {
-  margin-bottom: 16px;
-}
-
-.impianti-copy p {
-  max-width: 620px;
-}
-
-.processo-bagno {
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.74fr);
-}
-
-.process-list {
-  padding: clamp(28px, 3.4vw, 42px);
-  border: 1px solid var(--line-strong);
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.48);
-  box-shadow: var(--shadow-soft);
-}
-
-.process-list h3 {
-  margin-bottom: 22px;
-}
-
-.process-list ol {
-  display: grid;
-  gap: 14px;
-  padding-left: 22px;
-  color: var(--ink-soft);
-}
-
-.process-list li {
-  padding-left: 8px;
-  font-size: clamp(0.98rem, 1.06vw, 1.04rem);
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.tips-section {
-  display: block;
-  background:
-    radial-gradient(circle at 8% 18%, rgba(184, 121, 69, 0.12), transparent 28rem),
-    linear-gradient(180deg, var(--paper), #fbf8f3);
-}
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(20px, 2.6vw, 32px);
-}
-
-.tip-card {
-  position: relative;
-  min-height: 270px;
-  padding: clamp(24px, 2.6vw, 32px);
-  border-top: 1px solid var(--line-strong);
-  background: transparent;
-  transition: transform var(--speed), border-color var(--speed);
-}
-
-.tip-card::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--accent);
-  transition: width var(--speed);
-}
-
-.tip-card h3 {
-  margin-bottom: 18px;
-}
-
-.tip-card p {
-  max-width: none;
-}
-
-.tip-card:hover {
-  border-color: var(--accent-soft);
-  transform: translateY(-6px);
-}
-
-.tip-card:hover::before {
-  width: 88px;
-}
-
-.faq-section {
-  display: block;
-}
-
-.faq-heading {
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "eyebrow"
-    "titolo";
-}
-
-.faq-list {
-  display: grid;
-  border-top: 1px solid var(--line-light);
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--line-light);
-}
-
-.faq-item summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: clamp(22px, 2.8vw, 34px) 0;
-  color: var(--white);
-  font-family: var(--font-title);
-  font-size: clamp(1.24rem, 2vw, 1.76rem);
-  font-weight: 760;
-  line-height: 1.1;
-  letter-spacing: -0.035em;
-  cursor: pointer;
-  transition: color var(--speed), padding-left var(--speed);
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  color: var(--accent-soft);
-  font-family: var(--font-body);
-  font-size: 1.6rem;
-  font-weight: 800;
-  transition: transform var(--speed);
-}
-
-.faq-item[open] summary {
-  color: var(--accent-soft);
-}
-
-.faq-item[open] summary::after {
-  transform: rotate(45deg);
-}
-
-.faq-item p {
-  max-width: 900px;
-  padding: 0 0 clamp(24px, 3vw, 34px);
-}
-
-.faq-item:hover summary {
-  padding-left: 16px;
-}
-
-.service-contatti {
-  background: var(--paper-light);
-}
-
-.service-contatti::before {
-  top: 0;
-}
-
-.service-contatti .contatti-testo p {
-  max-width: 760px;
-}
-
-@media (max-width: 1180px) {
-  .rank3-grid,
-  .tips-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .impianti-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .impianti-gallery img:first-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 980px) {
-  .service-section,
-  .service-section-reverse,
-  .processo-bagno {
-    grid-template-columns: 1fr;
-  }
-
-  .service-section-reverse .service-section-media {
-    order: 2;
-  }
-
-  .service-section-reverse .service-section-text {
-    order: 1;
-  }
-
-  .rank3-heading,
-  .impianti-heading,
-  .tips-heading {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "eyebrow"
-      "titolo"
-      "testo";
-  }
-
-  .rank3-heading p:not(.eyebrow),
-  .impianti-heading p:not(.eyebrow),
-  .tips-heading p:not(.eyebrow) {
-    justify-self: start;
-    max-width: 700px;
-  }
-
-  .impianti-copy {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 720px) {
-  .service-section-media img {
-    height: 320px;
-  }
-
-  .rank3-grid,
-  .tips-grid,
-  .impianti-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .rank3-card {
-    min-height: 320px;
-  }
-
-  .impianti-gallery img,
-  .impianti-gallery img:first-child {
-    height: 300px;
-  }
-
-  .process-list {
-    padding: 24px;
-    border-radius: 24px;
-  }
-
-  .tip-card {
-    min-height: 0;
-    padding: 24px 0;
-  }
-
-  .faq-item summary {
-    gap: 18px;
-  }
-}
-
-@media (max-width: 460px) {
-  .service-inline-link {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .rank3-card {
-    padding: 24px;
-    border-radius: 24px;
-  }
-
-  .rank3-card span {
-    top: 20px;
-    left: 22px;
-  }
-
-  .impianti-gallery img,
-  .impianti-gallery img:first-child,
-  .service-section-media img {
-    height: 280px;
-  }
-}
-
-/* === Uniformazione UI da facciate.css + blur basso scroll === */
-:root {
-  --service-scroll-blur: 4px;
-  --service-panel-blur: 6px;
-}
-
-.service-page .scroll-reveal:not(.is-visible),
-.service-page .reveal-on-scroll:not(.is-visible),
-.service-page .reveal:not(.is-visible),
-.service-page [data-scroll-reveal]:not(.is-visible),
-.service-page [data-reveal]:not(.is-visible),
-.service-page [data-animate]:not(.is-visible) {
-  filter: blur(var(--service-scroll-blur)) !important;
-}
-
-.service-page .scroll-reveal.is-visible,
-.service-page .reveal-on-scroll.is-visible,
-.service-page .reveal.is-visible,
-.service-page [data-scroll-reveal].is-visible,
-.service-page [data-reveal].is-visible,
-.service-page [data-animate].is-visible {
-  filter: blur(0) !important;
-}
-
-.service-page .contatti,
-.service-page .service-contact,
-.service-page .service-contatti,
-.service-page footer,
-.service-page .site-footer {
-  filter: none !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .service-page .scroll-reveal,
-  .service-page .reveal-on-scroll,
-  .service-page .reveal,
-  .service-page [data-scroll-reveal],
-  .service-page [data-reveal],
-  .service-page [data-animate] {
-    filter: none !important;
-  }
-}
-
-.service-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a) {
-  color: var(--accent-dark);
-  font-weight: 800;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  text-decoration-color: rgba(184, 121, 69, 0.34);
-  transition: color var(--speed), text-decoration-color var(--speed), transform var(--speed), border-color var(--speed), background var(--speed), box-shadow var(--speed);
-}
-
-.service-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):hover {
-  color: var(--accent);
-  text-decoration-color: currentColor;
-}
-
-.service-page .service-section::before {
-  top: var(--section-y);
-}
-
-.service-section,
-.service-section-reverse,
-.processo-bagno {
-  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
-  gap: clamp(38px, 5.6vw, 86px);
-}
-
-.service-section-reverse {
-  grid-template-columns: minmax(360px, 1.04fr) minmax(0, 0.96fr);
-}
-
-.service-section-media {
-  isolation: isolate;
-}
-
-.service-section-media img {
-  height: clamp(390px, 40vw, 590px);
-}
-
-.service-inline-link {
-  min-height: 52px;
-  padding: 14px 24px;
-  border: 0;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  box-shadow: 0 16px 34px rgba(184, 121, 69, 0.30);
-  font-size: 0.96rem;
-  font-weight: 800;
-}
-
-.service-inline-link::after {
-  color: currentColor;
-}
-
-.service-section-dark {
-  overflow: hidden;
-  color: var(--white);
-  background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("../img/ristrutturazione-bagno.jpg") center center / cover no-repeat;
-}
-
-.service-section-dark::before {
-  background: linear-gradient(90deg, transparent, var(--line-light), transparent);
-}
-
-.rank3-grid {
-  gap: clamp(24px, 3vw, 42px);
-}
-
-.rank3-card {
-  min-height: clamp(420px, 40vw, 560px);
-  border: 2px solid rgba(217, 183, 142, 0.44);
-  border-radius: 34px;
-  background: linear-gradient(145deg, rgba(10, 16, 22, 0.82), rgba(23, 34, 45, 0.76));
-  box-shadow: 0 30px 78px rgba(8, 13, 18, 0.34);
-  backdrop-filter: blur(var(--service-panel-blur));
-  -webkit-backdrop-filter: blur(var(--service-panel-blur));
-}
-
-.rank3-card:hover {
-  border-color: rgba(217, 183, 142, 0.70);
-  box-shadow: 0 42px 104px rgba(8, 13, 18, 0.46);
-}
-
-.impianti-gallery img {
-  border-radius: 34px;
-  box-shadow: 0 30px 78px rgba(8, 13, 18, 0.30);
-}
-
-.process-list {
-  position: sticky;
-  top: 96px;
-  border: 1px solid var(--line-strong);
-  border-radius: 30px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(238, 227, 213, 0.66));
-  box-shadow: var(--shadow-soft);
-}
-
-.tips-section {
-  background:
-    radial-gradient(circle at 90% 6%, rgba(184, 121, 69, 0.12), transparent 32rem),
-    linear-gradient(180deg, var(--paper), #fbf8f3);
-}
-
-.tip-card {
-  background: rgba(255, 255, 255, 0.30);
-}
-
-.faq-section {
-  display: block;
-  color: var(--ink);
-  background: linear-gradient(180deg, var(--paper-light), var(--paper));
-}
-
-.faq-section h2,
-.faq-section h3 {
-  color: var(--ink);
-}
-
-.faq-section p {
-  color: var(--ink-soft);
-}
-
-.faq-section .eyebrow {
-  color: var(--accent);
-}
-
-.faq-list {
-  gap: 14px;
-  max-width: 980px;
-  border-top: 0;
-}
-
-.faq-item {
-  border-top: 1px solid var(--line-strong);
-  border-bottom: 0;
-  background: rgba(255, 255, 255, 0.30);
-  transition: background var(--speed), box-shadow var(--speed), transform var(--speed);
-}
-
-.faq-item:last-child {
-  border-bottom: 1px solid var(--line-strong);
-}
-
-.faq-item summary {
-  min-height: 76px;
-  padding: 20px 0;
-  color: var(--ink);
-}
-
-.faq-item summary::after {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  color: var(--accent);
-  font-size: 1.3rem;
-}
-
-.faq-item[open] summary {
-  color: var(--ink);
-}
-
-.faq-item[open] summary::after {
-  content: "−";
-  color: var(--white);
-  background: var(--accent);
-  transform: rotate(180deg);
-}
-
-.faq-item p {
-  max-width: 820px;
-  padding: 0 62px 24px 0;
-}
-
-.faq-item:hover {
-  background: rgba(255, 255, 255, 0.54);
-  transform: translateY(-2px);
-}
-
-.faq-item:hover summary {
-  padding-left: 0;
-}
-
-.service-contatti {
-  background:
-    radial-gradient(circle at 92% 20%, rgba(184, 121, 69, 0.11), transparent 30rem),
-    var(--paper-light);
-}
-
-@media (max-width: 980px) {
-  .service-section,
-  .service-section-reverse,
-  .processo-bagno {
-    grid-template-columns: 1fr;
-  }
-
-  .process-list {
-    position: relative;
-    top: auto;
-  }
-}
-
-@media (max-width: 720px) {
-  .rank3-card {
-    min-height: 430px;
-    border-radius: 24px;
-  }
-
-  .impianti-gallery img {
-    border-radius: 24px;
-  }
-
-  .faq-item p {
-    padding-right: 0;
-  }
-}
-/* === Fine uniformazione UI === */
+<details class="site-nav-dropdown" name="site-nav-dropdown">
+  <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Servizi</summary>
+
+<div class="site-nav-dropdown-panel site-nav-dropdown-panel-servizi">
+    <a href="/servizirank2/ristrutturazione-casa.html">Ristrutturazione interna della casa</a>
+    <a href="/servizirank2/sistemi-copertura-tetti.html">Riparazione di tetti e coperture</a>
+    <a href="/servizirank2/rifacimento-facciate.html">Specialisti nel ifacimento delle facciate</a>
+    <a href="/servizi/ristrutturazione-bagno.html">Ristrutturazione del bagno</a>
+  </div>
+</details>
+
+<details class="site-nav-dropdown" name="site-nav-dropdown">
+  <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Aree</summary>
+
+  <div class="site-nav-dropdown-panel site-nav-dropdown-panel-aree">
+    <div>
+      <strong>Provincia di Milano</strong>
+      <a href="/aree/milano.html">Milano</a>
+      <a href="/aree/cornaredo.html">Cornaredo</a>
+      <a href="/aree/magenta.html">Magenta</a>
+      <a href="/aree/abbiategrasso.html">Abbiategrasso</a>
+    </div>
+
+    <div>
+      <strong>Provincia di Pavia</strong>
+      <a href="/aree/pavia.html">Pavia</a>
+      <a href="/aree/vigevano.html">Vigevano</a>
+      <a href="/aree/garlasco.html">Garlasco</a>
+      <a href="/aree/mortara.html">Mortara</a>
+    </div>
+
+    <div>
+      <strong>Provincia di Novara</strong>
+      <a href="/aree/novara.html">Novara</a>
+      <a href="/aree/trecate.html">Trecate</a>
+      <a href="/aree/galliate.html">Galliate</a>
+    </div>
+  </div>
+</details>
+
+<a href="#contatti" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Contatti</a>
+
+  <h1>Ristrutturazione del bagno completa o parziale</h1>
+
+  <p>
+    Omnia Ristrutturazioni segue ogni fase della ristrutturazione bagno: verifica iniziale,
+    demolizioni controllate, rifacimento degli impianti, posa di pavimenti e rivestimenti,
+    sostituzione di sanitari, box doccia e finiture. Lavoriamo su bagni piccoli, bagni
+    principali, secondi bagni e ambienti da rendere più comodi, sicuri e moderni.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#contatti">Richiedi un sopralluogo</a>
+    <a href="tel:+390000000000">Chiama +39 000 000 0000</a>
+  </div>
+</div>
+
+<div class="hero-image" aria-hidden="true">
+  <img src="/img/ristrutturazione-bagno.jpg" alt="">
+</div>
+
+  <h2>Una ristrutturazione bagno ordinata, progettata prima di entrare in cantiere</h2>
+
+  <p>
+    Ristrutturare un bagno non significa soltanto cambiare piastrelle, sanitari o doccia.
+    È un intervento che coinvolge spazi ridotti, impianti nascosti, pendenze, scarichi,
+    punti acqua, aerazione, impermeabilizzazioni, posa dei rivestimenti e scelta dei
+    materiali. Per questo il lavoro deve partire da una valutazione chiara dello stato
+    attuale del bagno e da una sequenza operativa precisa.
+  </p>
+
+  <p>
+    Durante il sopralluogo osserviamo le condizioni dei rivestimenti esistenti, la posizione
+    degli scarichi, la disposizione dei sanitari, l’accessibilità del locale, l’età degli
+    impianti e le esigenze del cliente. Un bagno datato può avere tubazioni da sostituire,
+    pendenze non corrette, piastrelle ormai compromesse, sanitari poco pratici o una doccia
+    scomoda rispetto all’uso quotidiano.
+  </p>
+
+  <p>
+    L’obiettivo è proporre una ristrutturazione bagno coerente con l’abitazione, senza
+    trasformare ogni intervento in un progetto inutilmente complesso. In alcuni casi serve
+    un rifacimento completo; in altri può essere sufficiente intervenire su doccia, sanitari,
+    pavimento bagno o rivestimenti, mantenendo una parte della distribuzione esistente.
+  </p>
+</div>
+
+<div class="service-section-media scroll-reveal scroll-reveal-media">
+  <img src="/img/ristrutturazione-bagno.jpg" alt="Ristrutturazione bagno completa con impianti, sanitari e rivestimenti">
+</div>
+
+  <h2>Le lavorazioni principali nella ristrutturazione del bagno</h2>
+
+  <p>
+    Una pagina dedicata alla ristrutturazione bagno deve chiarire anche le lavorazioni
+    specialistiche che compongono l’intervento. Per questo ogni area operativa viene
+    gestita con attenzione: impianti, superfici, sanitari, docce e dettagli finali devono
+    funzionare insieme.
+  </p>
+</div>
+
+<div class="rank3-grid">
+  <a class="rank3-card scroll-reveal scroll-reveal-text" href="/servizirank3/rifacimento-impianti-bagno.html">
+    <img src="/img/metodo-lavoro-cantiere.jpg" alt="" aria-hidden="true">
+    <span>01</span>
+    <div class="rank3-card__panel">
+      <h3>Rifacimento impianti bagno</h3>
+      <p>
+        Verifica e sostituzione delle linee idrauliche, degli scarichi e dei punti acqua,
+        con attenzione a sicurezza, funzionalità e predisposizioni future.
+      </p>
+      <strong>Vai alla pagina dedicata</strong>
+    </div>
+  </a>
+
+  <a class="rank3-card scroll-reveal scroll-reveal-text" href="/servizirank3/pavimenti-e-rivestimenti.html">
+    <img src="/img/ristrutturazione-casa.jpg" alt="" aria-hidden="true">
+    <span>02</span>
+    <div class="rank3-card__panel">
+      <h3>Pavimenti e rivestimenti</h3>
+      <p>
+        Preparazione dei fondi, scelta dei formati, posa delle superfici e cura degli
+        allineamenti per un bagno resistente, ordinato e coerente.
+      </p>
+      <strong>Vai alla pagina dedicata</strong>
+    </div>
+  </a>
+
+  <a class="rank3-card scroll-reveal scroll-reveal-text" href="/servizirank3/sostituzione-sanitari-docce.html">
+    <img src="/img/ristrutturazione-bagno.jpg" alt="" aria-hidden="true">
+    <span>03</span>
+    <div class="rank3-card__panel">
+      <h3>Sostituzione sanitari e docce</h3>
+      <p>
+        Installazione di sanitari, piatti doccia, box doccia e soluzioni pratiche per
+        migliorare comfort, accessibilità e uso quotidiano del bagno.
+      </p>
+      <strong>Vai alla pagina dedicata</strong>
+    </div>
+  </a>
+</div>
+
+<div class="service-section-text scroll-reveal scroll-reveal-text">
+  <p class="eyebrow">Servizio secondario</p>
+
+  <h2>Rifacimento impianti bagno: acqua, scarichi e predisposizioni</h2>
+
+  <p>
+    Il rifacimento degli impianti bagno è una delle parti più importanti dell’intervento,
+    soprattutto quando l’ambiente è datato o quando si vuole modificare la posizione di
+    lavabo, wc, bidet, doccia, vasca o lavatrice. Gli impianti sono nascosti sotto pavimenti
+    e rivestimenti: se vengono trascurati, il bagno può sembrare nuovo ma mantenere problemi
+    vecchi.
+  </p>
+
+  <p>
+    Valutiamo lo stato delle tubazioni, la compatibilità con i nuovi sanitari, la posizione
+    degli scarichi e la possibilità di migliorare la distribuzione. Nei bagni piccoli, anche
+    pochi centimetri possono cambiare la comodità d’uso. Nei bagni principali, invece, spesso
+    si lavora per ottenere una doccia più ampia, un mobile lavabo più funzionale o punti acqua
+    più coerenti con le nuove abitudini della famiglia.
+  </p>
+
+  <p>
+    La parte impiantistica deve essere coordinata con demolizioni, massetti, posa e finiture.
+    Per questo organizziamo le lavorazioni prima dell’avvio, evitando decisioni improvvisate
+    durante il cantiere. Un impianto bagno ben progettato riduce il rischio di perdite,
+    migliora lo scarico dell’acqua e consente una posa più precisa di pavimenti e rivestimenti.
+  </p>
+
+  <a class="service-inline-link" href="/servizirank3/rifacimento-impianti-bagno.html">Approfondisci il rifacimento degli impianti bagno</a>
+</div>
+
+  <h2>Pavimenti e rivestimenti bagno: posa, resistenza e risultato estetico</h2>
+
+  <p>
+    Pavimenti e rivestimenti incidono sia sull’aspetto del bagno sia sulla sua durata.
+    La scelta non riguarda solo colore e formato: bisogna considerare umidità, pulizia,
+    fughe, pendenze, spessori, tagli, allineamenti e continuità con gli altri ambienti
+    della casa. Un rivestimento bello ma posato male può creare dislivelli, fughe irregolari
+    o punti difficili da mantenere puliti.
+  </p>
+
+  <p>
+    Prima della posa prepariamo i supporti, controlliamo la planarità e valutiamo dove
+    concentrare i tagli per ottenere un risultato ordinato. Nei bagni moderni sono frequenti
+    grandi lastre, piastrelle effetto pietra, gres porcellanato, rivestimenti a tutta altezza
+    nella zona doccia e soluzioni più leggere nelle pareti meno esposte all’acqua.
+  </p>
+
+  <p>
+    La pavimentazione bagno deve dialogare con il piatto doccia, con le soglie, con gli
+    scarichi e con gli arredi. Per questo la posa viene coordinata con le altre lavorazioni:
+    prima si stabilisce il progetto, poi si preparano fondi e impianti, infine si passa alla
+    finitura visibile.
+  </p>
+
+  <a class="service-inline-link" href="/servizirank3/pavimenti-e-rivestimenti.html">Vai alla pagina su pavimenti e rivestimenti</a>
+</div>
+
+<div class="service-section-media scroll-reveal scroll-reveal-media">
+  <img src="/img/ristrutturazione-casa.jpg" alt="Pavimenti e rivestimenti bagno durante una ristrutturazione">
+</div>
+
+<div class="service-section-text scroll-reveal scroll-reveal-text">
+  <p class="eyebrow">Servizio secondario</p>
+
+  <h2>Sostituzione sanitari e docce per un bagno più comodo</h2>
+
+  <p>
+    La sostituzione sanitari e la sostituzione doccia sono tra le richieste più frequenti
+    quando il bagno è ancora utilizzabile ma non risponde più alle esigenze quotidiane.
+    Un vecchio box doccia può essere scomodo da pulire, un sanitario può occupare troppo
+    spazio, una vasca può diventare poco pratica o un lavabo può non offrire abbastanza
+    contenimento.
+  </p>
+
+  <p>
+    In fase di valutazione controlliamo misure, attacchi, scarichi, ingombri e possibilità
+    di migliorare l’accesso. Quando possibile, manteniamo alcune predisposizioni esistenti
+    per contenere tempi e lavorazioni. Quando invece serve un risultato più completo,
+    integriamo la sostituzione con nuove tubazioni, rivestimenti, pavimento bagno e finiture.
+  </p>
+
+  <p>
+    Una doccia ben progettata deve avere dimensioni corrette, pendenza adeguata, box stabile,
+    materiali resistenti all’acqua e dettagli facili da pulire. Lo stesso vale per wc, bidet,
+    lavabo e rubinetteria: ogni elemento deve essere scelto in base allo spazio reale, non
+    solo all’aspetto visto in catalogo.
+  </p>
+
+  <a class="service-inline-link" href="/servizirank3/sostituzione-sanitari-docce.html">Scopri il servizio sanitari e docce</a>
+</div>
+
+  <h2>Impianti del bagno: cosa valutare prima di chiudere pavimenti e rivestimenti</h2>
+
+  <p>
+    La parte impiantistica è quella che si vede meno, ma è quella che condiziona di più
+    affidabilità, comfort e durata della ristrutturazione. Prima di coprire tubazioni,
+    scarichi e predisposizioni, ogni passaggio deve essere controllato con attenzione.
+  </p>
+</div>
+
+<div class="impianti-gallery">
+  <img class="scroll-reveal scroll-reveal-media" src="/img/metodo-lavoro-cantiere.jpg" alt="Controllo degli impianti durante la ristrutturazione del bagno">
+  <img class="scroll-reveal scroll-reveal-media" src="/img/impresa-ristrutturazione-casa.jpg" alt="Impresa al lavoro su impianti e finiture del bagno">
+  <img class="scroll-reveal scroll-reveal-media" src="/img/ristrutturazione-bagno.jpg" alt="Bagno in fase di ristrutturazione con impianti e rivestimenti">
+</div>
+
+<div class="impianti-copy">
+  <article class="scroll-reveal scroll-reveal-text">
+    <h3>Impianto idraulico e punti acqua</h3>
+    <p>
+      L’impianto idraulico deve essere valutato in base alla posizione di lavabo, bidet,
+      wc, doccia, vasca e lavatrice. Quando il bagno viene riorganizzato, non basta spostare
+      un elemento: bisogna verificare pendenze, diametri, percorsi delle tubazioni e possibilità
+      reali di collegamento. Questo evita soluzioni forzate che possono creare scarichi lenti,
+      rumori, perdite o manutenzioni difficili.
+    </p>
+  </article>
+
+  <article class="scroll-reveal scroll-reveal-text">
+    <h3>Scarichi, pendenze e zona doccia</h3>
+    <p>
+      La zona doccia richiede particolare attenzione perché concentra acqua, umidità e uso
+      quotidiano. Il piatto doccia deve essere installato correttamente, gli scarichi devono
+      lavorare con la giusta pendenza e il raccordo con pavimento e rivestimento deve essere
+      preciso. Una sostituzione doccia fatta bene non riguarda solo il nuovo box, ma l’intero
+      sistema che permette all’acqua di defluire senza problemi.
+    </p>
+  </article>
+
+  <article class="scroll-reveal scroll-reveal-text">
+    <h3>Impianto elettrico, luci e sicurezza</h3>
+    <p>
+      Anche l’impianto elettrico del bagno deve essere pensato in funzione dell’uso reale:
+      punti luce, prese, specchio, mobile lavabo, aspirazione, eventuali scaldasalviette e
+      apparecchi collegati. In un ambiente umido non si può improvvisare. La disposizione
+      deve essere comoda, ordinata e compatibile con le zone del bagno, così da unire estetica,
+      praticità e sicurezza.
+    </p>
+  </article>
+
+  <article class="scroll-reveal scroll-reveal-text">
+    <h3>Coordinamento con posa e finiture</h3>
+    <p>
+      Gli impianti devono essere completati prima delle finiture, ma vanno progettati tenendo
+      già conto di rivestimenti, arredi, sanitari e accessori. Una quota sbagliata può creare
+      problemi con un mobile lavabo, una predisposizione mal posizionata può rovinare la posa
+      delle piastrelle e uno scarico non valutato può limitare la scelta della doccia. Per
+      questo la fase tecnica viene integrata con tutto il progetto bagno.
+    </p>
+  </article>
+</div>
+
+  <h2>Come gestiamo una ristrutturazione bagno completa</h2>
+
+  <p>
+    Una ristrutturazione bagno ben organizzata parte da un confronto pratico. Il cliente
+    spiega cosa non funziona nel bagno attuale: poco spazio, doccia scomoda, sanitari vecchi,
+    perdite, rivestimenti rovinati, pavimento bagno da sostituire o impianti ormai superati.
+    Da qui si definisce il tipo di intervento più adatto.
+  </p>
+
+  <p>
+    Dopo il sopralluogo vengono valutate le lavorazioni necessarie: protezione degli ambienti
+    di passaggio, demolizione di rivestimenti e massetti, rimozione dei sanitari, modifica o
+    sostituzione degli impianti, preparazione dei fondi, posa delle superfici, montaggio dei
+    nuovi elementi e pulizia finale dell’area di lavoro.
+  </p>
+
+  <p>
+    In abitazioni abitate, la gestione del cantiere è particolarmente importante. Serve
+    ordine, rispetto degli spazi comuni, comunicazione chiara sui passaggi e attenzione a
+    limitare disagi inutili. Questo vale per interventi a <a href="/aree/vigevano.html">Vigevano</a>,
+    dove molte abitazioni hanno bagni da aggiornare, ma anche per lavori in appartamenti e
+    case indipendenti nelle province servite.
+  </p>
+
+  <p>
+    Il risultato finale deve essere un bagno utilizzabile, coerente con lo stile della casa
+    e costruito per durare. Non puntiamo solo a un’immagine rinnovata: lavoriamo perché ogni
+    scelta tecnica abbia senso, dalla posizione degli scarichi alla qualità della posa.
+  </p>
+</div>
+
+<div class="process-list scroll-reveal scroll-reveal-text">
+  <h3>Passaggi principali</h3>
+
+  <ol>
+    <li>Sopralluogo e analisi del bagno esistente.</li>
+    <li>Definizione delle lavorazioni e delle priorità.</li>
+    <li>Rimozione di sanitari, rivestimenti e parti da sostituire.</li>
+    <li>Rifacimento o adeguamento degli impianti.</li>
+    <li>Preparazione dei fondi e posa di pavimenti e rivestimenti.</li>
+    <li>Installazione di sanitari, doccia, rubinetteria e finiture.</li>
+    <li>Controllo finale e consegna del bagno.</li>
+  </ol>
+</div>
+
+  <h2>Ristrutturazione bagno tra Milano, Pavia e Novara</h2>
+
+  <p>
+    Omnia Ristrutturazioni opera su bagni di abitazioni private in provincia di Milano,
+    provincia di Pavia e provincia di Novara. Ogni zona presenta esigenze diverse: appartamenti
+    in condominio, case indipendenti, bagni piccoli, seconde abitazioni, locali da rendere
+    più accessibili o bagni padronali da rinnovare completamente.
+  </p>
+
+  <p>
+    Possiamo intervenire su ristrutturazioni bagno a <a href="/aree/milano.html">Milano</a>,
+    dove spesso servono organizzazione e gestione ordinata degli spazi condominiali, oppure
+    su case private a <a href="/aree/abbiategrasso.html">Abbiategrasso</a> e
+    <a href="/aree/magenta.html">Magenta</a>, dove è frequente aggiornare bagni datati
+    mantenendo coerenza con il resto dell’abitazione.
+  </p>
+
+  <p>
+    In provincia di Pavia lavoriamo anche su bagni da rifare dopo anni di utilizzo, con
+    particolare attenzione a impianti, docce e rivestimenti. In provincia di Novara possiamo
+    seguire interventi a <a href="/aree/novara.html">Novara</a> e
+    <a href="/aree/trecate.html">Trecate</a>, valutando sempre materiali, tempi, accessibilità
+    del cantiere e risultato finale desiderato.
+  </p>
+</div>
+
+<div class="service-section-media scroll-reveal scroll-reveal-media">
+  <img src="/img/aree-servite-milano-pavia.jpg" alt="Ristrutturazione bagno nelle aree servite da Omnia Ristrutturazioni">
+</div>
+
+  <h2>Come evitare errori prima di rifare il bagno</h2>
+
+  <p>
+    Prima di scegliere piastrelle, sanitari o rubinetteria, conviene chiarire uso del bagno,
+    vincoli tecnici e priorità reali. Una ristrutturazione bagno funziona quando estetica e
+    praticità vengono decise insieme.
+  </p>
+</div>
+
+<div class="tips-grid">
+  <article class="tip-card scroll-reveal scroll-reveal-text">
+    <h3>Non partire solo dal rivestimento</h3>
+    <p>
+      Le piastrelle sono importanti, ma arrivano dopo distribuzione, impianti, scarichi,
+      doccia e sanitari. Scegliere prima il lato estetico può creare limiti tecnici inutili.
+    </p>
+  </article>
+
+  <article class="tip-card scroll-reveal scroll-reveal-text">
+    <h3>Controlla bene la zona doccia</h3>
+    <p>
+      La doccia è il punto più sollecitato del bagno. Dimensioni, pendenza, box, rubinetteria
+      e protezione dall’acqua devono essere valutati con precisione.
+    </p>
+  </article>
+
+  <article class="tip-card scroll-reveal scroll-reveal-text">
+    <h3>Valuta il mobile lavabo</h3>
+    <p>
+      Un mobile troppo grande può rendere il bagno scomodo, uno troppo piccolo può non bastare.
+      Misure e aperture vanno considerate prima di definire gli attacchi.
+    </p>
+  </article>
+
+  <article class="tip-card scroll-reveal scroll-reveal-text">
+    <h3>Pensa alla manutenzione</h3>
+    <p>
+      Fughe, vetri doccia, rubinetteria, sanitari sospesi o a terra e materiali scelti devono
+      essere pratici da pulire, non solo belli appena installati.
+    </p>
+  </article>
+</div>
+
+  <h2>Domande frequenti sulla ristrutturazione bagno</h2>
+</div>
+
+<div class="faq-list">
+  <details class="faq-item scroll-reveal scroll-reveal-text">
+    <summary>Quando conviene rifare completamente il bagno?</summary>
+    <p>
+      Conviene rifarlo completamente quando impianti, pavimenti, rivestimenti, sanitari e
+      doccia sono tutti datati o non più funzionali. In questi casi intervenire solo su una
+      parte può rimandare il problema, ma non risolverlo in modo stabile.
+    </p>
+  </details>
+
+  <details class="faq-item scroll-reveal scroll-reveal-text">
+    <summary>Si possono sostituire solo doccia e sanitari?</summary>
+    <p>
+      Sì, quando gli impianti sono in buone condizioni e la disposizione esistente lo consente.
+      Prima di procedere è comunque necessario verificare attacchi, scarichi, misure e stato
+      dei rivestimenti vicini.
+    </p>
+  </details>
+
+  <details class="faq-item scroll-reveal scroll-reveal-text">
+    <summary>Il pavimento bagno va sempre demolito?</summary>
+    <p>
+      Non sempre. Dipende dallo stato del supporto, dagli spessori disponibili, dal tipo di
+      intervento e dalla necessità di rifare gli impianti. Se gli scarichi vengono modificati,
+      spesso è necessario intervenire anche sotto la pavimentazione.
+    </p>
+  </details>
+
+  <details class="faq-item scroll-reveal scroll-reveal-text">
+    <summary>Quanto conta il sopralluogo?</summary>
+    <p>
+      Il sopralluogo è fondamentale perché permette di vedere misure, vincoli, accessi,
+      condizioni degli impianti e problemi nascosti. Senza una verifica diretta è facile
+      sottovalutare lavorazioni importanti.
+    </p>
+  </details>
+
+  <details class="faq-item scroll-reveal scroll-reveal-text">
+    <summary>Operate anche fuori Vigevano?</summary>
+    <p>
+      Sì. Omnia Ristrutturazioni lavora anche in provincia di Milano, provincia di Pavia e
+      provincia di Novara, valutando il tipo di intervento e l’organizzazione necessaria per
+      il cantiere.
+    </p>
+  </details>
+</div>
+
+  <h2>Richiedi un sopralluogo per la ristrutturazione del tuo bagno</h2>
+
+  <p>
+    Contatta Omnia Ristrutturazioni per spiegare che tipo di intervento ti serve:
+    rifacimento completo del bagno, sostituzione doccia, sostituzione sanitari, pavimento
+    bagno, nuovi rivestimenti o verifica degli impianti. Dopo una prima valutazione possiamo
+    organizzare un sopralluogo e capire quali lavorazioni sono più adatte al tuo caso.
+  </p>
+
+  <p>
+    Operiamo su abitazioni private con un metodo ordinato, dalla verifica iniziale alla
+    consegna del lavoro finito. L’obiettivo è aiutarti a ottenere un bagno più funzionale,
+    curato e coerente con l’uso quotidiano della casa.
+  </p>
+
+  <div class="contatti-azioni">
+    <a href="/contatti.html">Compila il modulo e verrai contattato entro 48H</a>
+  </div>
+</div>
+
+<div class="contatti-sidebar scroll-reveal scroll-reveal-text">
+  <div class="contatti-sidebar-blocco">
+    <h3>I nostri servizi principali</h3>
+
+    <ul>
+      <li><a href="/servizi/ristrutturazione-casa.html">Ristrutturazione casa</a></li>
+      <li><a href="/servizi/sistemi-copertura-tetti.html">Sistemi di copertura e tetti</a></li>
+      <li><a href="/servizi/rifacimento-facciate.html">Rifacimento facciate</a></li>
+      <li><a href="/servizi/ristrutturazione-bagno.html">Ristrutturazione del bagno</a></li>
+    </ul>
+  </div>
+
+  <div class="contatti-sidebar-blocco">
+    <h3>Aree servite</h3>
+
+    <ul>
+      <li><a href="/aree/milano.html">Provincia di Milano</a></li>
+      <li><a href="/aree/magenta.html">Provincia di Pavia</a></li>
+      <li><a href="/aree/novara.html">Provincia di Novara</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer__column">
+  <h3>Link rapidi</h3>
+
+  <ul class="footer__links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Chi siamo</a></li>
+    <li><a href="#">Servizi</a></li>
+    <li><a href="#">Contatti</a></li>
+  </ul>
+</div>
+
+<div class="footer__column">
+  <h3>Altre pagine</h3>
+
+  <ul class="footer__links">
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Termini e condizioni</a></li>
+  </ul>
+</div>
+
+<div class="footer__column footer__contact">
+  <h3>Informazioni di contatto</h3>
+
+  <div class="office">
+    <h4>Sede principale</h4>
+
+    <div class="office__row">
+      <i class="fa-solid fa-location-dot"></i>
+      <p>Via Giuseppe Giusti 3<br>Vigevano, 27029, PV</p>
+    </div>
+
+    <div class="office__row">
+      <i class="fa-solid fa-phone"></i>
+      <p>389 841 6691</p>
+    </div>
+  </div>
+
+  <div class="office office--map">
+    <h4>Google Maps</h4>
+
+    <div class="footer__map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.181542268155!2d8.8743138!3d45.324956400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x895d6688edc37a19%3A0xd49197057fbf8bbb!2sOmnia%20Ristrutturazioni!5e0!3m2!1sit!2sit!4v1778512384590!5m2!1sit!2sit"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<div class="footer__column footer__appointment">
+  <h3>Richiedi un appuntamento</h3>
+
+  <p class="appointment__text">
+    Organizza il tuo sopralluogo con semplicità. Offriamo servizi professionali
+    per valutazioni, consulenze tecniche, perizie, verifiche e interventi su misura
+    in base alle esigenze del cliente.
+  </p>
+
+  <p class="appointment__text">
+    Contattaci oggi per verificare la disponibilità e confermare la tua richiesta.
+  </p>
+
+  <div class="appointment__box">
+    <div class="appointment__icon">
+      <i class="fa-solid fa-phone-volume"></i>
+    </div>
+
+    <div>
+      <h4>Chiamaci oggi</h4>
+      <a href="tel:3898416691">389 841 6691</a>
+    </div>
+  </div>
+
+  <div class="appointment__box">
+    <div class="appointment__icon">
+      <i class="fa-regular fa-envelope"></i>
+    </div>
+
+    <div>
+      <h4>Email</h4>
+      <a href="mailto:info.omniaristrutturazioni@gmail.com">info.omniaristrutturazioni@gmail.com</a>
+    </div>
+  </div>
+</div>
