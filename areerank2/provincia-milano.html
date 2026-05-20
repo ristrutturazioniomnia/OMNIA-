@@ -4,45 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/provincia-milano.css">
   <script src="/javascript/ui.js" defer></script>
 
-  <title>Aree servite da Omnia Ristrutturazioni in provincia di Milano</title>
-  <meta name="description" content="Scopri le aree servite da Omnia Ristrutturazioni in provincia di Milano. Zone operative, città collegate, servizi e sopralluoghi.">
+  <title>Ristrutturazioni in provincia di Milano | Omnia Ristrutturazioni</title>
+  <meta name="description" content="Omnia Ristrutturazioni opera in provincia di Milano con sopralluoghi per casa, bagno, facciate, tetti e coperture. Verifica la tua zona servita.">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Aree servite",
-            "item": "/aree.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Provincia di Milano",
-            "item": "/areerank2/provincia-milano.html"
-          }
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
+        "@type": "HomeAndConstructionBusiness",
+        "@id": "/#omnia-ristrutturazioni",
         "name": "Omnia Ristrutturazioni",
-        "image": "/img/logo-omnia.png",
+        "url": "/",
+        "image": "/img/brochure.png",
         "telephone": "+393898416691",
         "email": "info.omniaristrutturazioni@gmail.com",
         "address": {
@@ -75,32 +58,85 @@
             "name": "Cornaredo"
           }
         ],
-        "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.181542268155!2d8.8743138!3d45.324956400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x895d6688edc37a19%3A0xd49197057fbf8bbb!2sOmnia%20Ristrutturazioni!5e0!3m2!1sit!2sit!4v1778512384590!5m2!1sit!2sit"
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ristrutturazione interna della casa",
+              "url": "/servizi/ristrutturazione-casa.html"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sistemi di copertura e tetti",
+              "url": "/servizi/sistemi-copertura-tetti.html"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Rifacimento delle facciate",
+              "url": "/servizi/rifacimento-facciate.html"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ristrutturazione del bagno",
+              "url": "/servizi/ristrutturazione-bagno.html"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "/aree/provincia-milano.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ristrutturazioni in provincia di Milano",
+            "item": "/aree/provincia-milano.html"
+          }
+        ]
       },
       {
         "@type": "CollectionPage",
-        "name": "Aree servite da Omnia Ristrutturazioni in provincia di Milano",
-        "url": "/areerank2/provincia-milano.html",
+        "@id": "/aree/provincia-milano.html",
+        "name": "Aree servite in provincia di Milano",
+        "description": "Pagina dedicata alle zone della provincia di Milano servite da Omnia Ristrutturazioni.",
         "mainEntity": {
           "@type": "ItemList",
+          "name": "Città servite in provincia di Milano",
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "Milano",
-              "url": "/aree/milano.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
               "name": "Abbiategrasso",
               "url": "/aree/abbiategrasso.html"
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 2,
               "name": "Magenta",
               "url": "/aree/magenta.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Milano",
+              "url": "/aree/milano.html"
             },
             {
               "@type": "ListItem",
@@ -113,53 +149,62 @@
       },
       {
         "@type": "FAQPage",
+        "@id": "/aree/provincia-milano.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "In quali zone della provincia di Milano operate?",
+            "name": "Lavorate in tutta la provincia di Milano?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Omnia Ristrutturazioni opera nelle aree indicate nella pagina, con pagine dedicate per Milano, Abbiategrasso, Magenta e Cornaredo. Per zone vicine è possibile chiedere conferma prima del sopralluogo."
+              "text": "Operiamo in provincia di Milano valutando ogni richiesta in base alla zona, al tipo di intervento e alla logistica del cantiere. Le aree più ricorrenti hanno una pagina dedicata, mentre per le zone vicine è meglio chiedere conferma."
             }
           },
           {
             "@type": "Question",
-            "name": "Fate sopralluoghi ad Abbiategrasso e Magenta?",
+            "name": "Abbiategrasso e Magenta sono zone coperte?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sì. Abbiategrasso e Magenta sono trattate come aree prioritarie nella pagina, perché rientrano tra le zone da mettere in evidenza per l’organizzazione degli interventi."
+              "text": "Sì, Abbiategrasso e Magenta sono tra le città principali servite. Per entrambe è prevista una pagina dedicata con informazioni più specifiche sul territorio."
             }
           },
           {
             "@type": "Question",
-            "name": "Le città elencate hanno pagine dedicate?",
+            "name": "Posso chiedere un sopralluogo anche se non sono a Milano città?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le città principali presenti nella sezione Rank 3 sono collegate alle pagine dedicate già presenti nella struttura del sito."
+              "text": "Sì. Il sopralluogo può essere richiesto anche nei comuni della provincia. Prima vengono raccolte le informazioni essenziali, poi viene valutata la fattibilità dello spostamento e dell’intervento."
             }
           },
           {
             "@type": "Question",
-            "name": "Posso contattarvi se sono fuori dalla zona principale?",
+            "name": "I servizi cambiano in base alla città?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sì. Se l’immobile si trova vicino alle aree operative indicate, è possibile chiedere conferma della copertura e valutare la fattibilità dell’intervento."
+              "text": "I servizi principali restano gli stessi, ma organizzazione e tempi possono cambiare in base ad accessi, distanza, disponibilità del cantiere e tipo di immobile."
             }
           },
           {
             "@type": "Question",
-            "name": "I servizi sono disponibili in tutte le aree?",
+            "name": "Dichiarate sedi locali nelle città servite?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "I servizi principali vengono valutati in base alla zona, al tipo di immobile e alla complessità del lavoro. La conferma avviene dopo il primo contatto."
+              "text": "No. La sede principale indicata è a Vigevano. Le città della provincia di Milano sono aree operative raggiunte per sopralluoghi e lavori, non sedi locali dichiarate."
             }
           },
           {
             "@type": "Question",
-            "name": "Quanto incide la distanza sull’organizzazione del lavoro?",
+            "name": "Come capisco se la mia zona è coperta?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "La distanza può incidere sulla pianificazione del sopralluogo e sulla gestione del cantiere. Per questo la copertura viene verificata prima di fissare l’intervento."
+              "text": "È sufficiente indicare la città, spiegare il tipo di immobile e descrivere il lavoro richiesto. In questo modo è possibile verificare se l’intervento può essere organizzato nella tua zona."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Che informazioni servono per il preventivo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Servono zona dell’immobile, tipo di lavoro richiesto e una prima descrizione dello stato attuale. Se disponibili, foto e misure aiutano a preparare un sopralluogo più preciso."
             }
           }
         ]
@@ -169,29 +214,30 @@
   </script>
 </head>
 
-<body class="aree-rank-page">
+<body class="area-page">
+
 <header class="site-nav">
-  <a href="/#hero" class="site-nav-logo" aria-label="Torna alla home">
+  <a href="/index.html#hero" class="site-nav-logo" aria-label="Torna alla home">
     <img src="/img/logo-omnia.png" alt="Omnia ristrutturazioni">
   </a>
 
   <nav class="site-nav-menu" aria-label="Navigazione principale">
-    <a href="/#hero" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Home</a>
-    <a href="/#chi-siamo" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Chi siamo</a>
+    <a href="/index.html#hero">Home</a>
+    <a href="/index.html#chi-siamo">Chi siamo</a>
 
     <details class="site-nav-dropdown" name="site-nav-dropdown">
-      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Servizi</summary>
+      <summary>Servizi</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-servizi">
-        <a href="/servizirank2/ristrutturazione-casa.html">Ristrutturazione interna della casa</a>
-        <a href="/servizirank2/sistemi-copertura-tetti.html">Assistenza su sistemi di copertura e tetti</a>
-        <a href="/servizirank2/rifacimento-facciate.html">Specialisti nel rifacimento delle facciate</a>
-        <a href="/servizirank2/ristrutturazione-bagno.html">Ristrutturazione del bagno</a>
+        <a href="/servizi/ristrutturazione-casa.html">Ristrutturazione interna della casa</a>
+        <a href="/servizi/sistemi-copertura-tetti.html">Assistenza su sistemi di copertura e tetti</a>
+        <a href="/servizi/rifacimento-facciate.html">Specialisti nel rifacimento delle facciate</a>
+        <a href="/servizi/ristrutturazione-bagno.html">Ristrutturazione del bagno</a>
       </div>
     </details>
 
     <details class="site-nav-dropdown" name="site-nav-dropdown">
-      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Dove Lavoriamo</summary>
+      <summary>Dove Lavoriamo</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-aree">
         <div>
@@ -219,7 +265,7 @@
       </div>
     </details>
 
-    <a href="#contatti" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Contatti</a>
+    <a href="#contatti">Contatti</a>
   </nav>
 
   <div class="site-nav-cta">
@@ -228,507 +274,450 @@
   </div>
 </header>
 
+<section id="hero" class="hero area-hero">
+  <div class="hero-content scroll-reveal scroll-reveal-title">
+    <p class="eyebrow">Aree servite</p>
+
+    <h1>Ristrutturazioni in provincia di Milano</h1>
+
+    <p>
+      Interventi interni ed esterni organizzati da Omnia Ristrutturazioni nelle città principali della provincia di Milano, con sopralluoghi da valutare in base alla zona e al tipo di lavoro.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contatti">Richiedi un sopralluogo</a>
+      <a href="tel:+393898416691">Chiama +39 389 841 6691</a>
+    </div>
+  </div>
+
+  <div class="hero-image" aria-hidden="true">
+    <img src="/img/brochure.png" alt="">
+  </div>
+</section>
+
 <main>
-  <section id="hero" class="hero aree-rank-hero">
-    <div class="hero-content scroll-reveal scroll-reveal-title">
-      <p class="eyebrow">Aree servite</p>
 
-      <h1>Aree servite da Omnia Ristrutturazioni in provincia di Milano</h1>
-
-      <p>
-        Una pagina per orientarsi tra le zone operative, capire quali città hanno una pagina dedicata e richiedere un sopralluogo senza dichiarare sedi locali non reali.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#contatti">Richiedi un sopralluogo</a>
-        <a href="tel:+393898416691">Chiama +39 389 841 6691</a>
-      </div>
-    </div>
-
-    <div class="hero-image" aria-hidden="true">
-      <img src="/img/brochure.png" alt="">
-    </div>
-  </section>
-
-  <nav class="area-breadcrumb" aria-label="Percorso">
+  <nav class="breadcrumb" aria-label="Percorso">
     <ol>
-      <li><a href="/">Home</a></li>
-      <li><a href="/aree.html">Aree servite</a></li>
+      <li><a href="/index.html">Home</a></li>
       <li aria-current="page">Provincia di Milano</li>
     </ol>
   </nav>
 
-  <section id="introduzione" class="area-section area-section-light area-intro">
-    <div class="area-split area-split-intro">
+  <section class="area-section area-section-light area-intro">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Provincia di Milano</p>
+      <h2>Una pagina per capire dove possiamo intervenire</h2>
+    </div>
+
+    <div class="area-intro-grid">
       <div class="area-copy scroll-reveal scroll-reveal-text">
-        <p class="eyebrow">Introduzione</p>
-        <h2>Una pagina per capire dove interveniamo davvero</h2>
-
         <p>
-          Questa pagina raccoglie le aree della provincia di Milano in cui Omnia Ristrutturazioni può organizzare sopralluoghi e interventi. Non è una pagina dedicata a una sola città: serve come hub locale per aiutare il cliente a partire dalla propria zona e raggiungere le informazioni più utili.
+          Omnia Ristrutturazioni lavora su abitazioni, condomini e immobili che richiedono una gestione ordinata del cantiere. Questa sezione raccoglie le zone della provincia di Milano già presenti nel sito e aiuta il cliente a orientarsi prima del contatto.
         </p>
 
         <p>
-          Le città principali hanno una pagina dedicata, mentre le zone vicine vengono trattate come aree operative da verificare in fase di contatto. Questo approccio evita pagine duplicate e mantiene più chiara la struttura del sito.
+          Le città con una pagina dedicata sono Milano, Abbiategrasso, Magenta e Cornaredo. Abbiategrasso e Magenta hanno più peso operativo perché rientrano tra le aree in cui la distanza dalla sede rende più semplice organizzare sopralluoghi, trasferte e fasi di lavoro.
         </p>
 
         <p>
-          La sede reale resta quella indicata nel sito, in Via Giuseppe Giusti 3 a Vigevano. La copertura della provincia di Milano viene presentata in modo coerente con l’organizzazione del lavoro, senza indicare sedi locali che non sono state fornite.
+          Le altre zone intorno a Milano possono essere valutate caso per caso. Non vengono indicate sedi locali dove non esistono: la sede principale resta quella di Vigevano, in Via Giuseppe Giusti 3, e da lì vengono organizzati contatti, verifiche e interventi.
         </p>
       </div>
 
-      <figure class="area-media area-media-tall scroll-reveal scroll-reveal-media">
-        <img src="/img/chisiamo.png" alt="Team di ristrutturazione durante una valutazione operativa">
+      <figure class="area-media area-media-portrait scroll-reveal scroll-reveal-media">
+        <img src="/img/chisiamo.png" alt="Impresa di ristrutturazioni durante un intervento in abitazione">
       </figure>
     </div>
   </section>
 
-  <section id="dove-operiamo" class="area-section area-section-dark area-operiamo">
-    <div class="area-section-heading scroll-reveal scroll-reveal-title">
+  <section class="area-section area-section-dark area-where">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
       <p class="eyebrow">Dove operiamo</p>
-      <h2>Interventi organizzati nella provincia di Milano</h2>
-      <p>
-        L’area principale di questa pagina è la provincia di Milano. La struttura serve a distinguere le città già collegate dalle zone vicine in cui la copertura va confermata in base al tipo di lavoro.
-      </p>
+      <h2>Ristrutturazioni nella provincia di Milano, con copertura valutata sul lavoro reale</h2>
     </div>
 
-    <div class="area-operiamo-grid">
-      <article class="area-operiamo-item scroll-reveal scroll-reveal-text">
-        <span>01</span>
-        <h3>Area principale</h3>
+    <div class="area-two-columns">
+      <div class="area-copy area-copy-light scroll-reveal scroll-reveal-text">
         <p>
-          La pagina lavora sulla provincia di Milano e collega le città più importanti già presenti nella navigazione del sito.
+          La provincia di Milano richiede attenzione alla logistica. In alcune zone il problema principale è l’accesso al cantiere, mentre in altri casi contano di più i tempi di arrivo dei materiali e la gestione degli spazi comuni. Per questo la zona viene sempre valutata insieme al tipo di intervento richiesto.
         </p>
-      </article>
 
-      <article class="area-operiamo-item scroll-reveal scroll-reveal-text">
-        <span>02</span>
-        <h3>Zone prioritarie</h3>
         <p>
-          Abbiategrasso e Magenta vengono messe più in evidenza perché sono aree operative centrali per la pianificazione.
+          Su Abbiategrasso e Magenta il collegamento con la sede di Vigevano permette una gestione più lineare dei sopralluoghi. Questo è utile quando il lavoro riguarda una ristrutturazione interna, un bagno da rifare o una facciata da controllare prima di predisporre ponteggi e lavorazioni esterne.
         </p>
-      </article>
+      </div>
 
-      <article class="area-operiamo-item scroll-reveal scroll-reveal-text">
-        <span>03</span>
-        <h3>Aree vicine</h3>
+      <div class="area-copy area-copy-light scroll-reveal scroll-reveal-text">
         <p>
-          Zone come San Siro e Rho possono essere nominate come riferimenti operativi, senza creare pagine dedicate non ancora previste.
+          Milano città e Cornaredo vengono trattate con la stessa attenzione, ma possono richiedere una pianificazione più precisa. Prima di fissare date o preventivi definitivi, è importante capire se l’immobile ha cortili interni, scale strette o vincoli condominiali da considerare.
         </p>
-      </article>
-    </div>
 
-    <div class="area-inline-links scroll-reveal scroll-reveal-text" aria-label="Link rapidi alle città principali">
-      <a href="/aree/milano.html">Milano</a>
-      <a href="/aree/abbiategrasso.html">Abbiategrasso</a>
-      <a href="/aree/magenta.html">Magenta</a>
-      <a href="/aree/cornaredo.html">Cornaredo</a>
+        <p>
+          Le zone intorno a Milano non vengono escluse a priori. Se l’intervento è compatibile con distanza, tempi e organizzazione del cantiere, è possibile valutare la richiesta e capire se conviene procedere con un sopralluogo.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section id="macro-aree" class="area-section area-section-light area-macro">
-    <div class="area-section-heading scroll-reveal scroll-reveal-title">
-      <p class="eyebrow">Macro-aree</p>
-      <h2>Come sono organizzate le zone della provincia</h2>
-      <p>
-        Le aree non vengono presentate come una lista casuale. Ogni gruppo aiuta l’utente a capire se la propria zona rientra nel raggio operativo e quale pagina consultare.
-      </p>
+  <section class="area-section area-section-light area-macro">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Zone operative</p>
+      <h2>Come leggere le aree della provincia di Milano</h2>
     </div>
 
-    <div class="area-macro-layout">
+    <div class="macro-grid">
+      <article class="macro-block scroll-reveal scroll-reveal-text">
+        <h3>Milano città</h3>
+        <p>
+          Milano richiede una gestione attenta degli accessi e dei tempi. Prima di muovere persone o materiali, è utile capire se il lavoro riguarda un appartamento, uno stabile condominiale o una facciata con spazi esterni limitati.
+        </p>
+        <a href="/aree/milano.html">Vai alla pagina Milano</a>
+      </article>
+
+      <article class="macro-block macro-block-featured scroll-reveal scroll-reveal-text">
+        <h3>Asse Abbiategrasso e Magenta</h3>
+        <p>
+          Questa fascia è tra le più pratiche da seguire per sopralluoghi e interventi programmati. La distanza contenuta aiuta a controllare meglio le fasi del lavoro, soprattutto quando servono più passaggi prima dell’avvio.
+        </p>
+        <div class="macro-links">
+          <a href="/aree/abbiategrasso.html">Abbiategrasso</a>
+          <a href="/aree/magenta.html">Magenta</a>
+        </div>
+      </article>
+
+      <article class="macro-block scroll-reveal scroll-reveal-text">
+        <h3>Cornaredo e cintura urbana</h3>
+        <p>
+          Cornaredo rientra tra le città già presenti nel sito. Le zone vicine vengono valutate in base a accesso, distanza e tipo di lavoro, evitando promesse generiche prima di vedere il caso concreto.
+        </p>
+        <a href="/aree/cornaredo.html">Vai alla pagina Cornaredo</a>
+      </article>
+    </div>
+
+    <div class="area-details-list scroll-reveal scroll-reveal-text">
+      <details>
+        <summary>Zone intorno a Milano da verificare</summary>
+        <div>
+          <p>
+            Le aree vicine alla città possono essere prese in considerazione quando il lavoro è organizzabile senza creare ritardi inutili. Nel primo contatto basta indicare il comune e spiegare l’intervento richiesto.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quando serve un sopralluogo prima del preventivo</summary>
+        <div>
+          <p>
+            Il sopralluogo è consigliato quando bisogna valutare impianti, facciate, coperture o spazi interni con vincoli pratici. Foto e misure aiutano, ma non sempre bastano per stimare correttamente il lavoro.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quando la distanza può incidere sull’organizzazione</summary>
+        <div>
+          <p>
+            La distanza può incidere quando il lavoro richiede più passaggi o consegne distribuite nel tempo. Per interventi semplici la valutazione può essere più rapida, mentre lavori complessi richiedono una pianificazione più precisa.
+          </p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="area-section area-section-warm area-cities">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Città principali</p>
+      <h2>Le città con pagina dedicata nella provincia di Milano</h2>
+    </div>
+
+    <div class="city-grid">
+      <article class="city-card city-card-featured scroll-reveal scroll-reveal-text">
+        <span>Prioritaria</span>
+        <h3>Abbiategrasso</h3>
+        <p>
+          Abbiategrasso è una delle zone più comode da seguire dalla sede di Vigevano. È adatta a sopralluoghi per abitazioni private, lavori interni e verifiche su immobili che richiedono organizzazione prima dell’avvio.
+        </p>
+        <a href="/aree/abbiategrasso.html">Scopri gli interventi ad Abbiategrasso</a>
+      </article>
+
+      <article class="city-card city-card-featured scroll-reveal scroll-reveal-text">
+        <span>Prioritaria</span>
+        <h3>Magenta</h3>
+        <p>
+          Magenta permette una buona gestione degli spostamenti e delle verifiche preliminari. È una zona utile per lavori su case, bagni e parti esterne dove serve coordinare materiali e tempi senza improvvisare.
+        </p>
+        <a href="/aree/magenta.html">Scopri gli interventi a Magenta</a>
+      </article>
+
+      <article class="city-card scroll-reveal scroll-reveal-text">
+        <h3>Milano</h3>
+        <p>
+          Milano richiede valutazioni più attente su accessi, orari e spazi condominiali. Per questo ogni richiesta viene letta prima dal punto di vista pratico, poi da quello tecnico.
+        </p>
+        <a href="/aree/milano.html">Vai alla pagina Milano</a>
+      </article>
+
+      <article class="city-card scroll-reveal scroll-reveal-text">
+        <h3>Cornaredo</h3>
+        <p>
+          Cornaredo rientra tra le aree già collegate nel sito. La copertura viene valutata in modo concreto, soprattutto quando il lavoro richiede sopralluoghi o forniture programmate.
+        </p>
+        <a href="/aree/cornaredo.html">Vai alla pagina Cornaredo</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="area-section area-section-light area-services">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Servizi disponibili</p>
+      <h2>I principali interventi che possiamo valutare nelle aree servite</h2>
+    </div>
+
+    <div class="service-line-grid">
+      <article class="service-line scroll-reveal scroll-reveal-text">
+        <h3>Ristrutturazione interna della casa</h3>
+        <p>
+          Interventi su ambienti interni, distribuzione degli spazi e finiture. La valutazione cambia se l’immobile è abitato o se il cantiere può essere gestito a locali liberi.
+        </p>
+        <a href="/servizi/ristrutturazione-casa.html">Vedi il servizio</a>
+      </article>
+
+      <article class="service-line scroll-reveal scroll-reveal-text">
+        <h3>Sistemi di copertura e tetti</h3>
+        <p>
+          Controlli e lavori su coperture esistenti, con attenzione a sicurezza, accesso al tetto e condizioni reali prima di proporre un intervento.
+        </p>
+        <a href="/servizi/sistemi-copertura-tetti.html">Vedi il servizio</a>
+      </article>
+
+      <article class="service-line scroll-reveal scroll-reveal-text">
+        <h3>Rifacimento delle facciate</h3>
+        <p>
+          Lavori su facciate datate o rovinate, da pianificare tenendo conto di ponteggi, spazi esterni e gestione del contesto condominiale.
+        </p>
+        <a href="/servizi/rifacimento-facciate.html">Vedi il servizio</a>
+      </article>
+
+      <article class="service-line scroll-reveal scroll-reveal-text">
+        <h3>Ristrutturazione del bagno</h3>
+        <p>
+          Rifacimenti completi o parziali del bagno, con attenzione agli impianti e alla sequenza delle lavorazioni per ridurre tempi morti.
+        </p>
+        <a href="/servizi/ristrutturazione-bagno.html">Vedi il servizio</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="area-section area-section-dark area-situations">
+    <div class="area-situation-grid">
+      <div class="area-copy area-copy-light scroll-reveal scroll-reveal-text">
+        <p class="eyebrow">Casi concreti</p>
+        <h2>Servizi raccontati in base alle richieste più frequenti</h2>
+
+        <p>
+          In provincia di Milano capita spesso di partire da un’esigenza pratica: una casa da rendere più funzionale, un bagno ormai datato o una facciata che mostra segni di usura. Prima di proporre un intervento, conviene capire cosa è urgente e cosa può essere organizzato in una fase successiva.
+        </p>
+
+        <p>
+          Una ristrutturazione interna richiede attenzione agli spazi disponibili. Se il cliente vive ancora nell’abitazione, le lavorazioni devono essere ordinate e spiegate in modo chiaro. Per un bagno, invece, il punto più delicato è spesso la sequenza tra impianti e posa dei rivestimenti.
+        </p>
+
+        <p>
+          Su tetti e coperture serve prima capire se il problema è localizzato o se riguarda una parte più ampia. Per le facciate, invece, la valutazione parte quasi sempre da accesso, condizioni della superficie e possibilità di lavorare in sicurezza.
+        </p>
+      </div>
+
       <figure class="area-media area-media-wide scroll-reveal scroll-reveal-media">
-        <img src="/img/aree-servite-milano-pavia.jpg" alt="Area urbana e collegamenti tra Milano e zone limitrofe">
-      </figure>
-
-      <div class="area-accordion-list scroll-reveal scroll-reveal-text">
-        <details open>
-          <summary>Milano e cintura urbana</summary>
-          <div>
-            <p>
-              Milano è il riferimento principale per chi cerca una pagina città dedicata. Le aree vicine vengono valutate in base alla posizione dell’immobile e alla complessità dell’intervento.
-            </p>
-            <a href="/aree/milano.html">Apri la pagina di Milano</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>Abbiategrasso e sud-ovest milanese</summary>
-          <div>
-            <p>
-              Abbiategrasso viene trattata come città prioritaria perché permette di organizzare richieste locali in modo più preciso, soprattutto per abitazioni private e interventi programmati.
-            </p>
-            <a href="/aree/abbiategrasso.html">Apri la pagina di Abbiategrasso</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>Magenta e asse ovest</summary>
-          <div>
-            <p>
-              Magenta è una zona utile per collegare richieste residenziali e lavori su immobili indipendenti. La pagina dedicata permette di dare più contesto locale al cliente.
-            </p>
-            <a href="/aree/magenta.html">Apri la pagina di Magenta</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>Cornaredo e aree verso Rho</summary>
-          <div>
-            <p>
-              Cornaredo aiuta a coprire una parte della cintura milanese senza trasformare ogni quartiere vicino in una pagina separata. Le zone limitrofe possono essere valutate al primo contatto.
-            </p>
-            <a href="/aree/cornaredo.html">Apri la pagina di Cornaredo</a>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section id="citta-rank3" class="area-section area-section-soft area-citta">
-    <div class="area-section-heading scroll-reveal scroll-reveal-title">
-      <p class="eyebrow">Pagine città Rank 3</p>
-      <h2>Città collegate alla pagina generale delle aree</h2>
-      <p>
-        Le pagine città servono a dare informazioni più precise senza appesantire questa pagina generale. Ogni collegamento porta a una scheda locale distinta.
-      </p>
-    </div>
-
-    <div class="area-city-grid">
-      <article class="area-city-card area-city-card-featured scroll-reveal scroll-reveal-text">
-        <a href="/aree/abbiategrasso.html" aria-label="Vai alla pagina di Abbiategrasso">
-          <span>Prioritaria</span>
-          <h3>Abbiategrasso</h3>
-          <p>
-            Una città utile per richieste legate ad abitazioni private, lavori interni e interventi da programmare con un sopralluogo ordinato.
-          </p>
-          <strong>Vai alla pagina dedicata</strong>
-        </a>
-      </article>
-
-      <article class="area-city-card area-city-card-featured scroll-reveal scroll-reveal-text">
-        <a href="/aree/magenta.html" aria-label="Vai alla pagina di Magenta">
-          <span>Prioritaria</span>
-          <h3>Magenta</h3>
-          <p>
-            Un riferimento operativo per chi deve valutare lavori su case, facciate o coperture nella parte ovest della provincia.
-          </p>
-          <strong>Vai alla pagina dedicata</strong>
-        </a>
-      </article>
-
-      <article class="area-city-card scroll-reveal scroll-reveal-text">
-        <a href="/aree/milano.html" aria-label="Vai alla pagina di Milano">
-          <span>Area urbana</span>
-          <h3>Milano</h3>
-          <p>
-            La pagina dedicata aiuta a distinguere richieste in contesto urbano, con attenzione alla logistica e alla fattibilità del cantiere.
-          </p>
-          <strong>Vai alla pagina dedicata</strong>
-        </a>
-      </article>
-
-      <article class="area-city-card scroll-reveal scroll-reveal-text">
-        <a href="/aree/cornaredo.html" aria-label="Vai alla pagina di Cornaredo">
-          <span>Cintura milanese</span>
-          <h3>Cornaredo</h3>
-          <p>
-            Un collegamento utile per richieste in aree residenziali vicine a Milano, da confermare in base al lavoro richiesto.
-          </p>
-          <strong>Vai alla pagina dedicata</strong>
-        </a>
-      </article>
-    </div>
-  </section>
-
-  <section id="servizi-aree" class="area-section area-section-dark area-servizi">
-    <div class="area-section-heading scroll-reveal scroll-reveal-title">
-      <p class="eyebrow">Servizi nelle aree servite</p>
-      <h2>Gli interventi principali collegati alla provincia di Milano</h2>
-      <p>
-        I servizi sono quelli presenti nella home. In questa pagina vengono collegati all’area servita, così l’utente può passare dalla zona al tipo di lavoro senza perdere il contesto.
-      </p>
-    </div>
-
-    <div class="area-service-grid">
-      <article class="area-service-card scroll-reveal scroll-reveal-text">
-        <img src="/img/internohome.png" alt="Ristrutturazione interna della casa in abitazione privata">
-        <div>
-          <h3>Ristrutturazione interna della casa</h3>
-          <p>
-            Per chi deve rivedere gli spazi interni, aggiornare finiture o organizzare una ristrutturazione completa.
-          </p>
-          <a href="/servizirank2/ristrutturazione-casa.html">Approfondisci il servizio</a>
-        </div>
-      </article>
-
-      <article class="area-service-card scroll-reveal scroll-reveal-text">
-        <img src="/img/tetto2.jpeg" alt="Controllo su tetti e sistemi di copertura">
-        <div>
-          <h3>Riparazioni di tetti e coperture</h3>
-          <p>
-            Per immobili che richiedono controlli sulla copertura, interventi di ripristino o valutazioni dopo problemi visibili.
-          </p>
-          <a href="/servizirank2/sistemi-copertura-tetti.html">Vedi come lavoriamo</a>
-        </div>
-      </article>
-
-      <article class="area-service-card scroll-reveal scroll-reveal-text">
-        <img src="/img/ponteggio.jpeg" alt="Rifacimento facciata con ponteggio su edificio residenziale">
-        <div>
-          <h3>Specialisti nel rifacimento delle facciate</h3>
-          <p>
-            Per edifici con facciate rovinate, finiture esterne datate o necessità di ripristino estetico e protettivo.
-          </p>
-          <a href="/servizirank2/rifacimento-facciate.html">Leggi la pagina dedicata</a>
-        </div>
-      </article>
-
-      <article class="area-service-card scroll-reveal scroll-reveal-text">
-        <img src="/img/bagno3.jpg" alt="Ristrutturazione del bagno con finiture moderne">
-        <div>
-          <h3>Ristrutturazione del bagno</h3>
-          <p>
-            Per chi vuole rifare un bagno datato e capire prima del sopralluogo quali passaggi vengono valutati.
-          </p>
-          <a href="/servizirank2/ristrutturazione-bagno.html">Scopri il servizio</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="servizi-raccontati" class="area-section area-section-light area-storie">
-    <div class="area-split area-split-story">
-      <div class="area-copy scroll-reveal scroll-reveal-text">
-        <p class="eyebrow">Esempi concreti</p>
-        <h2>Dal bisogno locale al servizio giusto</h2>
-
-        <p>
-          In alcune zone residenziali il primo contatto nasce da un’esigenza molto concreta: sistemare un bagno datato prima di intervenire sul resto della casa. In questi casi può essere utile partire dalla pagina dedicata alla <a href="/servizirank2/ristrutturazione-bagno.html">ristrutturazione del bagno</a>, così il cliente capisce quali aspetti vengono valutati prima del sopralluogo.
-        </p>
-
-        <p>
-          Quando l’intervento riguarda villette o immobili indipendenti, spesso il tema iniziale riguarda la protezione dell’edificio. Per questo, nelle aree dove questa esigenza è frequente, ha senso approfondire anche la pagina sulle <a href="/servizirank2/sistemi-copertura-tetti.html">riparazioni di tetti e coperture</a>.
-        </p>
-
-        <p>
-          Per chi possiede un appartamento o una casa da aggiornare, il punto di partenza può essere diverso. A volte serve riorganizzare gli ambienti interni, altre volte occorre intervenire prima su una facciata rovinata. Per orientarsi meglio, il cliente può consultare la pagina sulla <a href="/servizirank2/ristrutturazione-casa.html">ristrutturazione interna della casa</a> oppure quella dedicata al <a href="/servizirank2/rifacimento-facciate.html">rifacimento delle facciate</a>.
-        </p>
-      </div>
-
-      <figure class="area-media area-media-offset scroll-reveal scroll-reveal-media">
-        <img src="/img/metododilavorohome.png" alt="Metodo di lavoro durante una ristrutturazione">
+        <img src="/img/ponteggio.jpeg" alt="Ponteggio per rifacimento facciata in edificio residenziale">
       </figure>
     </div>
   </section>
 
-  <section id="metodo" class="area-section area-section-soft area-metodo">
-    <div class="area-section-heading scroll-reveal scroll-reveal-title">
+  <section class="area-section area-section-light area-method">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
       <p class="eyebrow">Metodo di lavoro</p>
       <h2>Come organizziamo sopralluoghi e interventi nelle diverse zone</h2>
-      <p>
-        Ogni richiesta parte dalla posizione dell’immobile e dal tipo di lavoro. Questo permette di capire se l’intervento è gestibile, quali passaggi servono e come organizzare il cantiere.
-      </p>
     </div>
 
-    <div class="area-method-grid">
-      <article class="area-method-step scroll-reveal scroll-reveal-text">
+    <div class="method-steps">
+      <article class="method-step scroll-reveal scroll-reveal-text">
         <span>01</span>
         <h3>Primo contatto</h3>
         <p>
-          Il cliente indica la zona e il tipo di esigenza. Da qui si valuta se l’area rientra nella copertura operativa.
+          Il primo passaggio serve a capire dove si trova l’immobile e quale intervento viene richiesto. In questa fase è utile ricevere foto, misure indicative e una breve descrizione dello stato attuale.
         </p>
       </article>
 
-      <article class="area-method-step scroll-reveal scroll-reveal-text">
+      <article class="method-step scroll-reveal scroll-reveal-text">
         <span>02</span>
-        <h3>Valutazione</h3>
+        <h3>Valutazione della zona</h3>
         <p>
-          Prima di fissare un sopralluogo si raccolgono le informazioni utili, evitando passaggi inutili quando il lavoro non è fattibile.
+          Prima di fissare un sopralluogo si controllano distanza, accesso e compatibilità con il lavoro. Una zona vicina può essere semplice da seguire, ma non sempre è automatica se l’immobile ha vincoli particolari.
         </p>
       </article>
 
-      <article class="area-method-step scroll-reveal scroll-reveal-text">
+      <article class="method-step scroll-reveal scroll-reveal-text">
         <span>03</span>
-        <h3>Organizzazione</h3>
+        <h3>Sopralluogo e fattibilità</h3>
         <p>
-          La distanza incide sulla pianificazione, soprattutto quando servono più passaggi o materiali da coordinare.
+          Durante il sopralluogo vengono osservati spazi, materiali esistenti e condizioni tecniche. Questo evita preventivi poco realistici e aiuta a definire una proposta più coerente con il lavoro richiesto.
         </p>
       </article>
-    </div>
 
-    <div class="area-accordion-list area-accordion-compact scroll-reveal scroll-reveal-text">
-      <details>
-        <summary>Come viene valutata una zona vicina a Milano?</summary>
-        <div>
-          <p>
-            Si parte dalla posizione dell’immobile e dalla tipologia di lavoro. Una richiesta semplice può essere gestita in modo diverso rispetto a un intervento che richiede più giornate di cantiere.
-          </p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Cosa cambia tra una città prioritaria e una zona solo operativa?</summary>
-        <div>
-          <p>
-            Una città prioritaria ha una pagina dedicata e un ruolo più chiaro nella struttura del sito. Una zona operativa viene invece citata per orientare il cliente, senza creare pagine locali non necessarie.
-          </p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Perché non creare una pagina per ogni quartiere?</summary>
-        <div>
-          <p>
-            Perché una pagina locale deve essere utile e diversa dalle altre. Se non ci sono informazioni reali da aggiungere, è meglio mantenere la zona dentro un hub generale.
-          </p>
-        </div>
-      </details>
+      <article class="method-step scroll-reveal scroll-reveal-text">
+        <span>04</span>
+        <h3>Organizzazione del cantiere</h3>
+        <p>
+          Dopo la valutazione si ragiona su tempi, forniture e passaggi operativi. Nelle zone più distanti è ancora più importante evitare viaggi inutili e coordinare bene le fasi principali.
+        </p>
+      </article>
     </div>
   </section>
 
-  <section id="prova-locale" class="area-section area-section-dark area-prova-locale">
-    <div class="area-split area-split-map">
+  <section class="area-section area-section-warm area-local-proof">
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Sede e mappa</p>
+      <h2>Da dove parte l’attività</h2>
+    </div>
+
+    <div class="local-proof-grid">
       <div class="area-copy scroll-reveal scroll-reveal-text">
-        <p class="eyebrow">Sede e prova locale</p>
-        <h2>Sede reale a Vigevano, interventi valutati anche verso Milano</h2>
-
         <p>
-          Omnia Ristrutturazioni indica come sede principale Via Giuseppe Giusti 3, a Vigevano. La provincia di Milano viene trattata come area servita, non come sede fisica separata.
+          La sede principale di Omnia Ristrutturazioni si trova in Via Giuseppe Giusti 3, a Vigevano. La copertura della provincia di Milano viene organizzata da questa sede, senza dichiarare sedi locali non presenti nelle città servite.
         </p>
 
         <p>
-          Questa distinzione è importante sia per il cliente sia per la SEO locale: la pagina spiega dove l’attività può lavorare, senza creare riferimenti territoriali non verificabili.
+          Questa informazione è utile anche per capire i tempi di sopralluogo. Abbiategrasso e Magenta sono più semplici da raggiungere, mentre Milano città può richiedere una pianificazione più attenta per traffico, accessi e disponibilità del cantiere.
         </p>
 
-        <div class="area-local-box">
-          <strong>Omnia Ristrutturazioni</strong>
-          <span>Via Giuseppe Giusti 3, Vigevano, 27029, PV</span>
-          <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.181542268155!2d8.8743138!3d45.324956400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x895d6688edc37a19%3A0xd49197057fbf8bbb!2sOmnia%20Ristrutturazioni!5e0!3m2!1sit!2sit!4v1778512384590!5m2!1sit!2sit" target="_blank" rel="noopener">Apri Google Maps</a>
+        <p>
+          Se la tua zona non compare tra le città con pagina dedicata, puoi comunque chiedere conferma della copertura. La risposta dipende dal tipo di lavoro e dalla possibilità di organizzarlo in modo corretto.
+        </p>
+
+        <div class="local-proof-data">
+          <p><strong>Sede principale:</strong> Via Giuseppe Giusti 3, Vigevano, 27029, PV</p>
+          <p><strong>Telefono:</strong> <a href="tel:+393898416691">+39 389 841 6691</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info.omniaristrutturazioni@gmail.com">info.omniaristrutturazioni@gmail.com</a></p>
         </div>
       </div>
 
-      <div class="area-map-frame scroll-reveal scroll-reveal-media">
+      <div class="map-frame scroll-reveal scroll-reveal-media">
         <iframe
+          title="Mappa Google di Omnia Ristrutturazioni a Vigevano"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.181542268155!2d8.8743138!3d45.324956400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x895d6688edc37a19%3A0xd49197057fbf8bbb!2sOmnia%20Ristrutturazioni!5e0!3m2!1sit!2sit!4v1778512384590!5m2!1sit!2sit"
           width="600"
           height="450"
           allowfullscreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mappa Omnia Ristrutturazioni">
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </div>
   </section>
 
   <section id="faq" class="area-section area-section-light area-faq">
-    <div class="area-section-heading scroll-reveal scroll-reveal-title">
-      <p class="eyebrow">FAQ</p>
-      <h2>Domande frequenti sulle aree servite</h2>
-      <p>
-        Alcune risposte aiutano a capire come funziona la copertura locale prima di richiedere un sopralluogo.
-      </p>
+    <div class="area-section-head scroll-reveal scroll-reveal-title">
+      <p class="eyebrow">Domande frequenti</p>
+      <h2>Dubbi comuni sulle zone servite</h2>
     </div>
 
-    <div class="area-accordion-list area-faq-list scroll-reveal scroll-reveal-text">
+    <div class="faq-list scroll-reveal scroll-reveal-text">
       <details>
-        <summary>In quali zone della provincia di Milano operate?</summary>
+        <summary>Lavorate in tutta la provincia di Milano?</summary>
         <div>
           <p>
-            Operiamo nelle aree indicate in questa pagina. Le città principali hanno un collegamento dedicato, mentre le zone vicine vengono verificate in base alla richiesta.
+            Operiamo in provincia di Milano valutando ogni richiesta in base alla zona, al tipo di intervento e alla logistica del cantiere. Le aree più ricorrenti hanno una pagina dedicata, mentre per le zone vicine è meglio chiedere conferma.
           </p>
         </div>
       </details>
 
       <details>
-        <summary>Fate sopralluoghi ad Abbiategrasso e Magenta?</summary>
+        <summary>Abbiategrasso e Magenta sono zone coperte?</summary>
         <div>
           <p>
-            Sì, Abbiategrasso e Magenta sono aree prioritarie in questa pagina. Il sopralluogo viene comunque confermato dopo il primo contatto.
+            Sì, Abbiategrasso e Magenta sono tra le città principali servite. Per entrambe è prevista una pagina dedicata con informazioni più specifiche sul territorio.
           </p>
         </div>
       </details>
 
       <details>
-        <summary>Le città elencate hanno una pagina dedicata?</summary>
+        <summary>Posso chiedere un sopralluogo anche se non sono a Milano città?</summary>
         <div>
           <p>
-            Le città principali presenti nella griglia Rank 3 sono collegate alle rispettive pagine locali già previste nella struttura del sito.
+            Sì. Il sopralluogo può essere richiesto anche nei comuni della provincia. Prima vengono raccolte le informazioni essenziali, poi viene valutata la fattibilità dello spostamento e dell’intervento.
           </p>
         </div>
       </details>
 
       <details>
-        <summary>Posso richiedere un preventivo se sono vicino a Rho o San Siro?</summary>
+        <summary>I servizi cambiano in base alla città?</summary>
         <div>
           <p>
-            Puoi richiedere informazioni indicando la zona esatta. Se l’area è compatibile con l’intervento, si passa alla valutazione successiva.
+            I servizi principali restano gli stessi, ma organizzazione e tempi possono cambiare in base ad accessi, distanza, disponibilità del cantiere e tipo di immobile.
           </p>
         </div>
       </details>
 
       <details>
-        <summary>I servizi sono disponibili in tutte le aree?</summary>
+        <summary>Dichiarate sedi locali nelle città servite?</summary>
         <div>
           <p>
-            Dipende dal lavoro richiesto e dalla posizione dell’immobile. Alcuni interventi richiedono più organizzazione, quindi vengono valutati caso per caso.
+            No. La sede principale indicata è a Vigevano. Le città della provincia di Milano sono aree operative raggiunte per sopralluoghi e lavori, non sedi locali dichiarate.
           </p>
         </div>
       </details>
 
       <details>
-        <summary>Quanto incide la distanza sull’organizzazione del lavoro?</summary>
+        <summary>Come capisco se la mia zona è coperta?</summary>
         <div>
           <p>
-            Incide sulla pianificazione del sopralluogo e sulla gestione del cantiere. Per questo è utile indicare subito città e tipo di intervento.
+            È sufficiente indicare la città, spiegare il tipo di immobile e descrivere il lavoro richiesto. In questo modo è possibile verificare se l’intervento può essere organizzato nella tua zona.
           </p>
         </div>
       </details>
 
       <details>
-        <summary>Come faccio a capire se la mia zona è coperta?</summary>
+        <summary>Che informazioni servono per il preventivo?</summary>
         <div>
           <p>
-            Puoi chiamare o inviare una richiesta. Verrà verificata la zona e, se possibile, verrà organizzato il passaggio successivo.
-          </p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Perché alcune zone non hanno una pagina dedicata?</summary>
-        <div>
-          <p>
-            Per evitare pagine locali deboli o ripetitive. Le zone senza pagina vengono citate solo quando aiutano davvero l’utente a orientarsi.
+            Servono zona dell’immobile, tipo di lavoro richiesto e una prima descrizione dello stato attuale. Se disponibili, foto e misure aiutano a preparare un sopralluogo più preciso.
           </p>
         </div>
       </details>
     </div>
   </section>
 
-  <section id="contatti" class="contatti area-contatti">
-    <div class="contatti-introduzione scroll-reveal scroll-reveal-title">
-      <p class="eyebrow">Contatti</p>
-      <h2>Verifica la copertura nella tua zona</h2>
+  <section id="contatti" class="area-section area-section-dark area-contact">
+    <div class="contact-grid">
+      <div class="area-copy area-copy-light scroll-reveal scroll-reveal-text">
+        <p class="eyebrow">Contatti</p>
+        <h2>Chiedi conferma della copertura nella tua zona</h2>
 
-      <p>
-        Se devi organizzare un lavoro in provincia di Milano, indica la città e il tipo di intervento richiesto. Omnia Ristrutturazioni può valutare la fattibilità, confermare se la zona è coperta e spiegare quali informazioni servono prima del sopralluogo.
-      </p>
+        <p>
+          Per capire se Omnia Ristrutturazioni può intervenire nella tua zona della provincia di Milano, invia una richiesta indicando prima il comune. Aggiungi poi il tipo di immobile e il lavoro che vorresti valutare.
+        </p>
 
-      <p>
-        La sede principale è a Vigevano, in Via Giuseppe Giusti 3. Per le aree della provincia di Milano la disponibilità viene confermata in base alla posizione dell’immobile e al lavoro da svolgere.
-      </p>
+        <p>
+          Se hai foto o misure, puoi prepararle prima del contatto. Aiutano a capire se conviene fissare subito un sopralluogo o fare una prima verifica telefonica.
+        </p>
 
-      <div class="contatti-azioni">
-        <a href="mailto:info.omniaristrutturazioni@gmail.com">Richiedi un sopralluogo</a>
-        <a href="tel:+393898416691">Chiama +39 389 841 6691</a>
+        <div class="contatti-azioni">
+          <a href="mailto:info.omniaristrutturazioni@gmail.com">Richiedi un sopralluogo</a>
+          <a href="tel:+393898416691">Chiama +39 389 841 6691</a>
+        </div>
       </div>
 
-      <div class="area-contact-links">
-        <a href="/contatti.html">Vai alla pagina contatti</a>
-        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.181542268155!2d8.8743138!3d45.324956400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x895d6688edc37a19%3A0xd49197057fbf8bbb!2sOmnia%20Ristrutturazioni!5e0!3m2!1sit!2sit!4v1778512384590!5m2!1sit!2sit" target="_blank" rel="noopener">Apri Google Maps</a>
-      </div>
+      <aside class="contact-side scroll-reveal scroll-reveal-text">
+        <h3>Riferimenti</h3>
+
+        <p><strong>Telefono</strong><br><a href="tel:+393898416691">+39 389 841 6691</a></p>
+        <p><strong>Email</strong><br><a href="mailto:info.omniaristrutturazioni@gmail.com">info.omniaristrutturazioni@gmail.com</a></p>
+        <p><strong>Sede principale</strong><br>Via Giuseppe Giusti 3<br>Vigevano, 27029, PV</p>
+      </aside>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -738,10 +727,10 @@
       <h3>Link rapidi</h3>
 
       <ul class="footer__links">
-        <li><a href="/#hero">Home</a></li>
-        <li><a href="/#chi-siamo">Chi siamo</a></li>
-        <li><a href="/#servizi">Servizi</a></li>
-        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="/index.html#hero">Home</a></li>
+        <li><a href="/index.html#chi-siamo">Chi siamo</a></li>
+        <li><a href="/index.html#servizi">Servizi</a></li>
+        <li><a href="/index.html#contatti">Contatti</a></li>
       </ul>
     </div>
 
@@ -749,8 +738,10 @@
       <h3>Altre pagine</h3>
 
       <ul class="footer__links">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Termini e condizioni</a></li>
+        <li><a href="/aree/milano.html">Milano</a></li>
+        <li><a href="/aree/abbiategrasso.html">Abbiategrasso</a></li>
+        <li><a href="/aree/magenta.html">Magenta</a></li>
+        <li><a href="/servizi/ristrutturazione-casa.html">Ristrutturazione casa</a></li>
       </ul>
     </div>
 
@@ -776,13 +767,13 @@
 
         <div class="footer__map">
           <iframe
+            title="Mappa Google di Omnia Ristrutturazioni"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.181542268155!2d8.8743138!3d45.324956400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x895d6688edc37a19%3A0xd49197057fbf8bbb!2sOmnia%20Ristrutturazioni!5e0!3m2!1sit!2sit!4v1778512384590!5m2!1sit!2sit"
             width="600"
             height="450"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mappa Omnia Ristrutturazioni">
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
       </div>
@@ -792,13 +783,11 @@
       <h3>Richiedi un appuntamento</h3>
 
       <p class="appointment__text">
-        Organizza il tuo sopralluogo con semplicità. Offriamo servizi professionali
-        per consulenze tecniche, perizie, verifiche e interventi su misura
-        in base alle esigenze del cliente.
+        Organizza il tuo sopralluogo con semplicità. Valutiamo interventi su abitazioni, bagni, coperture e facciate in base alle condizioni reali dell’immobile.
       </p>
 
       <p class="appointment__text">
-        Contattaci oggi per verificare la disponibilità e confermare la tua richiesta.
+        Contattaci per verificare disponibilità e copertura della tua zona.
       </p>
 
       <div class="appointment__box">
@@ -808,7 +797,7 @@
 
         <div>
           <h4>Chiamaci oggi</h4>
-          <a href="tel:3898416691">389 841 6691</a>
+          <a href="tel:+393898416691">389 841 6691</a>
         </div>
       </div>
 
@@ -826,5 +815,6 @@
 
   </div>
 </footer>
+
 </body>
 </html>
