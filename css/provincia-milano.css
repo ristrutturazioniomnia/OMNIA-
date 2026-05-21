@@ -318,124 +318,235 @@
 
 /* =========================================================
    7. PAGINE RANK 3 DELLE CITTÀ
-   Sezione visivamente più importante dei servizi
+   Sezione principale della pagina Rank 2: più importante dei servizi,
+   ma con stile delicato, editoriale e non pesante.
 ========================================================= */
 
 .area-rank2-cities {
   background:
-    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.11), transparent 34rem),
+    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.09), transparent 34rem),
     linear-gradient(180deg, var(--paper), #fbf8f3);
 }
 
 .area-rank2-city-feature {
   display: grid;
-  grid-template-columns: minmax(360px, 1.12fr) minmax(0, 0.88fr);
+  grid-template-columns: minmax(360px, 1.02fr) minmax(0, 0.98fr);
   gap: clamp(34px, 5vw, 76px);
-  align-items: stretch;
-  margin-bottom: clamp(42px, 6vw, 76px);
+  align-items: center;
+  margin-bottom: clamp(46px, 6vw, 82px);
 }
 
 .area-rank2-city-media {
   position: relative;
-  min-height: 460px;
   overflow: hidden;
   border-radius: var(--radius-image);
   box-shadow: var(--shadow-image);
 }
 
+.area-rank2-city-media::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
 .area-rank2-city-media img {
-  height: 100%;
-  min-height: 460px;
+  height: clamp(360px, 37vw, 520px);
   object-fit: cover;
   transition: transform var(--speed-slow), filter var(--speed-slow);
 }
 
-.area-rank2-city-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--line-strong);
+.area-rank2-city-media:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.04) contrast(1.03);
 }
 
-.area-rank2-city-card {
+.area-rank2-city-main {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding: clamp(26px, 3vw, 38px);
-  border-bottom: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.36);
-  transition: transform var(--speed), background var(--speed), box-shadow var(--speed);
+  padding: clamp(22px, 3vw, 34px) 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
 }
 
-.area-rank2-city-list .area-rank2-city-card {
-  border-right: 1px solid var(--line);
-}
-
-.area-rank2-city-list .area-rank2-city-card:last-child {
-  border-right: 0;
-}
-
-.area-rank2-city-card-featured {
-  justify-content: center;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-image);
-  background: var(--paper-light);
-  box-shadow: var(--shadow-soft);
-}
-
-.area-rank2-city-card::before {
+.area-rank2-city-main::before {
   content: "";
-  width: 72px;
+  display: block;
+  width: 88px;
   height: 3px;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
   background: var(--accent);
-  transform-origin: left;
-  transition: width var(--speed);
 }
 
-.area-rank2-city-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: var(--shadow-soft);
+.area-rank2-city-main > span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: var(--accent-dark);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.area-rank2-city-card:hover::before {
-  width: 108px;
-}
-
-.area-rank2-city-card p {
+.area-rank2-city-main h3 {
   max-width: 620px;
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
 }
 
-.area-rank2-city-card a,
-.area-rank2-service-card a {
+.area-rank2-city-main p {
+  max-width: 660px;
+}
+
+.area-rank2-city-main a {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  margin-top: auto;
-  padding-top: 22px;
+  margin-top: 26px;
   color: var(--accent-dark);
-  font-weight: 800;
+  font-weight: 850;
   transition: color var(--speed), transform var(--speed);
 }
 
-.area-rank2-city-card a::after,
-.area-rank2-service-card a::after {
+.area-rank2-city-main a::after {
   content: "→";
   margin-left: 10px;
   transition: transform var(--speed);
 }
 
-.area-rank2-city-card a:hover,
-.area-rank2-service-card a:hover {
+.area-rank2-city-main a:hover {
   color: var(--accent);
+  transform: translateX(3px);
 }
 
-.area-rank2-city-card a:hover::after,
-.area-rank2-service-card a:hover::after {
-  transform: translateX(6px);
+.area-rank2-city-main a:hover::after {
+  transform: translateX(5px);
 }
 
+.area-rank2-city-index {
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-city-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+  padding: clamp(26px, 3vw, 36px) 0;
+  border-bottom: 1px solid var(--line);
+  transition: border-color var(--speed), padding-left var(--speed);
+}
+
+.area-rank2-city-row > span {
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.area-rank2-city-row h3 {
+  margin-bottom: 8px;
+  font-size: clamp(1.42rem, 2.4vw, 2.18rem);
+}
+
+.area-rank2-city-row p {
+  max-width: 680px;
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.area-rank2-city-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  color: var(--accent-dark);
+  font-size: 0.94rem;
+  font-weight: 850;
+  white-space: nowrap;
+  transition: color var(--speed), transform var(--speed);
+}
+
+.area-rank2-city-row a::after {
+  content: "→";
+  margin-left: 9px;
+  transition: transform var(--speed);
+}
+
+.area-rank2-city-row:hover {
+  border-color: var(--line-strong);
+  padding-left: 10px;
+}
+
+.area-rank2-city-row:hover a {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.area-rank2-city-row:hover a::after {
+  transform: translateX(5px);
+}
+
+.area-rank2-cities .scroll-reveal,
+.area-rank2-cities .scroll-reveal-text,
+.area-rank2-cities .scroll-reveal-media {
+  filter: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE SEZIONE PAGINE RANK 3
+========================================================= */
+
+@media (max-width: 980px) {
+  .area-rank2-city-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .area-rank2-city-row {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .area-rank2-city-row a {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  .area-rank2-city-media {
+    border-radius: 22px;
+  }
+
+  .area-rank2-city-media::after {
+    inset: 12px;
+    border-radius: 14px;
+  }
+
+  .area-rank2-city-media img {
+    height: 320px;
+  }
+
+  .area-rank2-city-main {
+    padding: 28px 0;
+  }
+
+  .area-rank2-city-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .area-rank2-city-row:hover {
+    padding-left: 0;
+  }
+
+  .area-rank2-city-row:hover a {
+    transform: none;
+  }
+}
 
 /* =========================================================
    8. IMMAGINE AMPIA EDITORIALE
