@@ -315,19 +315,44 @@
   border-top: 1px solid var(--line-strong);
 }
 
-
 /* =========================================================
    7. PAGINE RANK 3 DELLE CITTÀ
-   Sezione principale della pagina Rank 2: più importante dei servizi,
-   ma con stile delicato, editoriale e non pesante.
+   Sezione principale della pagina Rank 2:
+   editoriale, chiara, più importante dei servizi
 ========================================================= */
 
 .area-rank2-cities {
   background:
-    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.09), transparent 34rem),
+    radial-gradient(circle at 86% 10%, rgba(184, 121, 69, 0.08), transparent 34rem),
     linear-gradient(180deg, var(--paper), #fbf8f3);
 }
 
+/* Testata dedicata alla sezione Rank 3 */
+.area-rank2-cities .area-rank2-section-head {
+  display: block;
+  max-width: 980px;
+  margin-bottom: clamp(48px, 7vw, 86px);
+}
+
+.area-rank2-cities .area-rank2-section-head .eyebrow {
+  margin-bottom: 18px;
+}
+
+.area-rank2-cities .area-rank2-section-head h2 {
+  max-width: 860px;
+  margin-bottom: 24px;
+  font-size: clamp(2.35rem, 5vw, 5rem);
+  line-height: 0.98;
+}
+
+.area-rank2-cities .area-rank2-section-head p:not(.eyebrow) {
+  max-width: 640px;
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-strong);
+}
+
+/* Milano in evidenza */
 .area-rank2-city-feature {
   display: grid;
   grid-template-columns: minmax(360px, 1.02fr) minmax(0, 0.98fr);
@@ -424,6 +449,7 @@
   transform: translateX(5px);
 }
 
+/* Lista città Rank 3 */
 .area-rank2-city-index {
   display: grid;
   border-top: 1px solid var(--line-strong);
@@ -516,6 +542,10 @@
 }
 
 @media (max-width: 720px) {
+  .area-rank2-cities .area-rank2-section-head h2 {
+    font-size: clamp(2rem, 11vw, 3.2rem);
+  }
+
   .area-rank2-city-media {
     border-radius: 22px;
   }
@@ -547,7 +577,6 @@
     transform: none;
   }
 }
-
 /* =========================================================
    8. IMMAGINE AMPIA EDITORIALE
 ========================================================= */
