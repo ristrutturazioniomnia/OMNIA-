@@ -275,36 +275,7 @@
     radial-gradient(circle at 12% 8%, rgba(184, 121, 69, 0.12), transparent 32rem),
     linear-gradient(180deg, #fbf8f3, var(--paper));
 }
-.area-rank2-cities {
-  position: relative;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(184, 121, 69, 0.12), transparent 32rem),
-    linear-gradient(180deg, #fbf8f3, var(--paper));
-}
 
-.area-rank2-cities::before {
-  content: "";
-  position: absolute;
-  left: var(--pad-x);
-  right: var(--pad-x);
-  top: var(--section-y);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
-}
-
-.area-rank2-cities .area-rank2-section-head {
-  position: relative;
-  padding-top: clamp(18px, 2.4vw, 30px);
-}
-
-.area-rank2-cities .area-rank2-section-head::before {
-  content: "";
-  display: block;
-  width: 88px;
-  height: 3px;
-  margin-bottom: 26px;
-  background: var(--accent);
-}
 .area-rank2-feature-city {
   display: grid;
   grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1fr);
@@ -398,7 +369,6 @@
 .area-rank2-city-row:hover {
   border-color: var(--line-strong);
 }
-
 /* =========================================================
 8. Immagine ampia editoriale
 ========================================================= */
