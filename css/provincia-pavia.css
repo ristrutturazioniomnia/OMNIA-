@@ -971,3 +971,15 @@
     transform: none;
   }
 }
+/* Titoli città grandi come Milano */
+.area-rank2-cities .area-rank2-city-row h2,
+.area-rank2-cities .area-rank2-city-row h3,
+.area-rank2-cities .area-rank2-feature-copy h2,
+.area-rank2-cities .area-rank2-feature-copy h3,
+.area-rank2-cities .area-rank2-city-main h2,
+.area-rank2-cities .area-rank2-city-main h3 {
+  font-size: clamp(2.9rem, 5.2vw, 4.35rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  margin-bottom: 18px;
+}
