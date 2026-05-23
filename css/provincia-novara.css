@@ -1,0 +1,620 @@
+/* =========================================================
+Pagina Rank 2 - Provincia di Novara
+CSS dedicato, da caricare dopo /css/style.css
+========================================================= */
+
+.service-page {
+  background: var(--paper);
+}
+
+.area-rank2-page {
+  overflow: hidden;
+}
+
+.area-rank2-page .service-section,
+.area-rank2-breadcrumb {
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.area-rank2-page .service-section {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+.area-rank2-page .section-heading {
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-page .section-heading::before,
+.area-rank2-presence-copy::before,
+.area-rank2-cities-heading::before,
+.area-rank2-services-heading::before,
+.evaluation-copy::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 3px;
+  margin-bottom: 26px;
+  background: var(--accent);
+}
+
+.area-rank2-page a:not(.hero-buttons a):not(.site-nav a):not(.footer a):not(.contatti-azioni a) {
+  color: var(--accent);
+  font-weight: 850;
+  transition: color var(--speed), transform var(--speed), border-color var(--speed);
+}
+
+.area-rank2-page a:not(.hero-buttons a):not(.site-nav a):not(.footer a):not(.contatti-azioni a):hover {
+  color: var(--accent-dark);
+}
+
+/* =========================================================
+Hero
+========================================================= */
+
+.area-rank2-hero {
+  min-height: 88svh;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(184, 121, 69, 0.24), transparent 34rem),
+    linear-gradient(180deg, rgba(8, 13, 18, 0.22), rgba(8, 13, 18, 0.50)),
+    url("../img/brochure.png") center center / cover no-repeat;
+}
+
+.area-rank2-hero h1 {
+  max-width: 980px;
+}
+
+.area-rank2-hero .hero-content p:not(.eyebrow) {
+  max-width: 800px;
+}
+
+/* =========================================================
+Breadcrumb
+========================================================= */
+
+.area-rank2-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-light);
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.area-rank2-breadcrumb a {
+  color: var(--ink-soft);
+}
+
+.area-rank2-breadcrumb strong {
+  color: var(--accent-dark);
+}
+
+/* =========================================================
+Introduzione locale
+========================================================= */
+
+.area-rank2-intro {
+  background: linear-gradient(180deg, var(--paper-light), var(--paper));
+}
+
+.area-rank2-intro-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(380px, 1fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: start;
+}
+
+.area-rank2-intro-copy {
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-intro-copy p {
+  max-width: 760px;
+}
+
+/* =========================================================
+Presenza reale
+========================================================= */
+
+.area-rank2-presence {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(184, 121, 69, 0.10), transparent 30rem),
+    var(--paper);
+}
+
+.area-rank2-presence-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: start;
+}
+
+.area-rank2-presence-copy {
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-presence-copy p {
+  max-width: 760px;
+}
+
+.area-rank2-presence-aside {
+  display: grid;
+  gap: 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.presence-point {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.presence-point:first-child {
+  padding-top: 0;
+}
+
+.presence-point span,
+.city-number,
+.area-service-item span {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.presence-point p {
+  max-width: none;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+/* =========================================================
+Città Rank 3
+========================================================= */
+
+.area-rank2-cities {
+  background: linear-gradient(180deg, var(--paper), #fbf8f3);
+}
+
+.area-rank2-cities-heading {
+  max-width: 920px;
+  margin-bottom: clamp(48px, 6vw, 86px);
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-cities-heading p:not(.eyebrow) {
+  max-width: 720px;
+}
+
+.area-rank2-city-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  gap: clamp(34px, 5vw, 76px);
+  align-items: stretch;
+  margin-bottom: clamp(46px, 6vw, 80px);
+}
+
+.city-feature-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(26px, 3vw, 38px) 0;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+}
+
+.city-feature-copy .city-number {
+  margin-bottom: 22px;
+}
+
+.city-feature-copy h3 {
+  font-size: clamp(2.1rem, 4vw, 3.7rem);
+}
+
+.city-feature-copy a,
+.city-row a,
+.area-service-item a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.city-feature-copy a::after,
+.city-row a::after,
+.area-service-item a::after {
+  content: "→";
+  margin-left: 9px;
+  transition: transform var(--speed);
+}
+
+.city-feature-copy a:hover::after,
+.city-row a:hover::after,
+.area-service-item a:hover::after {
+  transform: translateX(5px);
+}
+
+.city-feature-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
+  box-shadow: var(--shadow-image);
+}
+
+.city-feature-image::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+.city-feature-image img {
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+}
+
+.area-rank2-city-rows {
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+}
+
+.city-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 42px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.city-row h3 {
+  margin-bottom: 8px;
+}
+
+.city-row p {
+  max-width: 720px;
+  margin: 0;
+}
+
+.city-row a {
+  white-space: nowrap;
+}
+
+/* =========================================================
+Immagine editoriale
+========================================================= */
+
+.area-rank2-editorial {
+  min-height: clamp(620px, 70vw, 820px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--white);
+  background: #111b24;
+}
+
+.area-rank2-editorial-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, rgba(9, 16, 23, 0.74), rgba(9, 16, 23, 0.32)),
+    url("../img/ponteggio.jpeg") center center / cover no-repeat;
+  transform: scale(1.03);
+}
+
+.area-rank2-editorial-panel {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 100%);
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(8, 13, 18, 0.72), rgba(23, 34, 45, 0.72));
+  box-shadow: 0 34px 86px rgba(9, 14, 19, 0.34);
+  backdrop-filter: blur(10px);
+}
+
+.area-rank2-editorial h2,
+.area-rank2-editorial h3 {
+  color: var(--white);
+}
+
+.area-rank2-editorial p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.area-rank2-editorial .eyebrow {
+  color: var(--accent-soft);
+}
+
+/* =========================================================
+Zone limitrofe
+========================================================= */
+
+.area-rank2-nearby {
+  background: var(--paper-light);
+}
+
+.area-rank2-nearby-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(380px, 1fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: start;
+}
+
+.nearby-copy {
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.nearby-copy p {
+  max-width: 760px;
+}
+
+/* =========================================================
+Prima valutazione
+========================================================= */
+
+.area-rank2-evaluation {
+  background: linear-gradient(180deg, var(--paper-light), var(--paper));
+}
+
+.area-rank2-evaluation-inner {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.84fr) minmax(0, 1fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: center;
+}
+
+.evaluation-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-image) var(--radius-image) var(--radius-image) 110px;
+  box-shadow: var(--shadow-image);
+}
+
+.evaluation-image::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+.evaluation-image img {
+  height: clamp(410px, 40vw, 580px);
+  object-fit: cover;
+}
+
+.evaluation-copy {
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.evaluation-copy p {
+  max-width: 760px;
+}
+
+/* =========================================================
+Servizi disponibili
+========================================================= */
+
+.area-rank2-services {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(184, 121, 69, 0.09), transparent 28rem),
+    var(--paper);
+}
+
+.area-rank2-services-heading {
+  max-width: 920px;
+  margin-bottom: clamp(42px, 6vw, 74px);
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-service-item {
+  position: relative;
+  min-width: 0;
+  padding: clamp(26px, 3vw, 38px) clamp(24px, 3vw, 40px) clamp(30px, 3vw, 44px) 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  transition: transform var(--speed), border-color var(--speed);
+}
+
+.area-service-item:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.area-service-item:nth-child(even) {
+  padding-left: clamp(24px, 3vw, 40px);
+}
+
+.area-service-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+}
+
+.area-service-item span {
+  display: inline-flex;
+  margin-bottom: 18px;
+}
+
+.area-service-item p {
+  max-width: 600px;
+}
+
+/* =========================================================
+FAQ
+========================================================= */
+
+.area-rank2-faq {
+  background: linear-gradient(180deg, #fbf8f3, var(--paper-light));
+}
+
+.area-rank2-faq-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(380px, 1fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: start;
+}
+
+.faq-list {
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 24px 0;
+  color: var(--ink);
+  font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.faq-list details[open] summary::after {
+  content: "–";
+}
+
+.faq-list details p {
+  max-width: 760px;
+  padding: 0 0 24px;
+}
+
+/* =========================================================
+Contatti
+========================================================= */
+
+.area-rank2-contact {
+  background: var(--paper);
+}
+
+.area-rank2-contact .contatti-sidebar-blocco a {
+  color: var(--ink-soft);
+}
+
+.area-rank2-contact .contatti-sidebar-blocco a:hover {
+  color: var(--accent-dark);
+}
+
+/* =========================================================
+Responsive
+========================================================= */
+
+@media (max-width: 980px) {
+  .area-rank2-intro-inner,
+  .area-rank2-presence-inner,
+  .area-rank2-city-feature,
+  .area-rank2-evaluation-inner,
+  .area-rank2-nearby-inner,
+  .area-rank2-faq-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .city-feature-image,
+  .evaluation-image {
+    min-height: 360px;
+  }
+
+  .city-row {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .city-row a {
+    grid-column: 2;
+    white-space: normal;
+  }
+
+  .area-rank2-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-service-item,
+  .area-service-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .area-service-item:nth-child(odd) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .area-rank2-breadcrumb {
+    font-size: 0.8rem;
+  }
+
+  .area-rank2-hero {
+    min-height: 82svh;
+  }
+
+  .area-rank2-editorial-panel {
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  .city-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .city-row a {
+    grid-column: auto;
+  }
+
+  .presence-point {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .city-feature-image,
+  .evaluation-image {
+    border-radius: 24px;
+  }
+}
