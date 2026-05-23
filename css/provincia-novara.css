@@ -549,22 +549,26 @@ Città Rank 3
   background: linear-gradient(180deg, var(--paper), var(--paper-light));
 }
 
-.area-rank2-services .area-rank2-section-head {
+.area-rank2-services .area-rank2-section-head,
+.area-rank2-services-head {
   display: block;
   max-width: 100%;
   margin-bottom: clamp(42px, 6vw, 76px);
 }
 
-.area-rank2-services .area-rank2-section-head .eyebrow {
+.area-rank2-services .area-rank2-section-head .eyebrow,
+.area-rank2-services-head .eyebrow {
   margin-bottom: 18px;
 }
 
-.area-rank2-services .area-rank2-section-head h2 {
+.area-rank2-services .area-rank2-section-head h2,
+.area-rank2-services-head h2 {
   max-width: 980px;
   margin-bottom: clamp(22px, 3vw, 34px);
 }
 
-.area-rank2-services .area-rank2-section-head p:not(.eyebrow) {
+.area-rank2-services .area-rank2-section-head p:not(.eyebrow),
+.area-rank2-services-head p:not(.eyebrow) {
   max-width: 860px;
   margin: 0;
   padding-top: 0;
@@ -572,14 +576,14 @@ Città Rank 3
   justify-self: auto;
 }
 
-.area-rank2-service-grid {
+.area-rank2-services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 clamp(42px, 5vw, 78px);
   border-top: 1px solid var(--line-strong);
 }
 
-.area-rank2-service-card {
+.area-service-item {
   position: relative;
   display: grid;
   grid-template-columns: 54px minmax(0, 1fr);
@@ -596,12 +600,12 @@ Città Rank 3
   transition: border-color var(--speed);
 }
 
-.area-rank2-service-card::before,
-.area-rank2-service-card::after {
+.area-service-item::before,
+.area-service-item::after {
   content: none;
 }
 
-.area-rank2-service-number {
+.area-service-item > span {
   grid-column: 1;
   grid-row: 1 / span 3;
   display: inline-flex;
@@ -614,7 +618,7 @@ Città Rank 3
   letter-spacing: 0.14em;
 }
 
-.area-rank2-service-card h3 {
+.area-service-item h3 {
   grid-column: 2;
   grid-row: 1;
   max-width: 460px;
@@ -624,7 +628,7 @@ Città Rank 3
   line-height: 1.04;
 }
 
-.area-rank2-service-card p {
+.area-service-item p {
   grid-column: 2;
   grid-row: 2;
   max-width: 560px;
@@ -634,7 +638,7 @@ Città Rank 3
   line-height: 1.58;
 }
 
-.area-rank2-service-card a {
+.area-service-item a {
   grid-column: 2;
   grid-row: 3;
   display: inline-flex;
@@ -648,32 +652,37 @@ Città Rank 3
   transition: color var(--speed), transform var(--speed);
 }
 
-.area-rank2-service-card a::after {
+.area-service-item a::after {
   content: "→";
   margin-left: 9px;
   transition: transform var(--speed);
 }
 
-.area-rank2-service-card:hover {
+.area-service-item:hover {
   border-color: var(--line-strong);
 }
 
-.area-rank2-service-card:hover a {
+.area-service-item:hover a {
   color: var(--accent);
   transform: translateX(3px);
 }
 
-.area-rank2-service-card:hover a::after {
+.area-service-item:hover a::after {
   transform: translateX(5px);
 }
 
+.area-rank2-services .scroll-reveal,
+.area-rank2-services .scroll-reveal-text {
+  filter: none !important;
+}
+
 @media (max-width: 720px) {
-  .area-rank2-service-grid {
+  .area-rank2-services-grid {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
-  .area-rank2-service-card {
+  .area-service-item {
     grid-template-columns: 46px minmax(0, 1fr);
     min-height: 0;
     padding: 28px 0;
@@ -681,7 +690,7 @@ Città Rank 3
     background: transparent;
   }
 
-  .area-rank2-service-card:hover {
+  .area-service-item:hover {
     transform: none;
   }
 }
