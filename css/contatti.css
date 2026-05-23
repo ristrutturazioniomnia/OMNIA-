@@ -51,6 +51,7 @@ COLONNA SINISTRA SCURA
   box-shadow: none;
   isolation: isolate;
 }
+
 .contact-card::before,
 .contact-card::after {
   content: "";
@@ -87,8 +88,10 @@ COLONNA SINISTRA SCURA
 }
 
 .contact-card-heading h2 {
-  max-width: 100%;
-  margin-bottom: 18px;
+  position: relative;
+  max-width: 420px;
+  margin-bottom: 34px;
+  padding-bottom: 24px;
   color: var(--white);
   font-size: clamp(2.15rem, 2.35vw, 2.8rem);
   line-height: 1.03;
@@ -97,12 +100,21 @@ COLONNA SINISTRA SCURA
   word-break: normal;
 }
 
-.contact-card-heading p {
-  max-width: 430px;
-  color: rgba(255, 255, 255, 0.76);
-  font-size: clamp(1rem, 1.12vw, 1.1rem);
+.contact-card-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 86px;
+  height: 2px;
+  background: var(--accent);
 }
 
+.contact-card-heading p {
+  max-width: 430px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(1rem, 1.12vw, 1.1rem);
+}
 /* =========================================================
 DATI CONTATTO
 ========================================================= */
