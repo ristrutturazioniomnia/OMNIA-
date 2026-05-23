@@ -374,16 +374,15 @@
 ========================================================= */
 
 .area-rank2-wide-image {
-  min-height: clamp(460px, 54vw, 680px);
+  min-height: clamp(520px, 62vw, 760px);
   display: flex;
-  align-items: end;
+  align-items: center;
   padding: var(--section-y) var(--pad-x);
   color: var(--white);
   background:
     linear-gradient(110deg, rgba(9, 16, 23, 0.88), rgba(23, 34, 45, 0.42)),
     url("../img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
 }
-
 .area-rank2-wide-content {
   max-width: 850px;
 }
