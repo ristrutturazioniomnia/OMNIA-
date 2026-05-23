@@ -709,18 +709,22 @@ RESPONSIVE
 /* FIX H3 SERVIZI COLONNA SCURA */
 .contact-card .contact-link-grid a h3 {
   display: block;
+  max-width: 100%;
   margin: 0;
-  padding-right: 18px;
+  padding-right: 22px;
   color: var(--white);
   font-family: var(--font-body);
-  font-size: clamp(0.9rem, 0.95vw, 1rem);
+  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
   font-weight: 900;
-  line-height: 1.14;
-  letter-spacing: -0.01em;
-  overflow-wrap: break-word;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .contact-card .contact-link-grid a h3 + small {
+  display: block;
   margin-top: 7px;
 }
 
