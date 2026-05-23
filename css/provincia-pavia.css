@@ -121,12 +121,9 @@
   margin-bottom: 14px;
 }
 .area-rank2-text-grid-with-image {
-  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.65fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.62fr);
+  gap: clamp(34px, 5vw, 76px);
   align-items: center;
-}
-
-.area-rank2-text-grid-with-image .area-rank2-note {
-  display: none;
 }
 
 .area-rank2-intro-image {
