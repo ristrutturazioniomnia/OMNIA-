@@ -120,7 +120,35 @@
 .area-rank2-note h3 {
   margin-bottom: 14px;
 }
+.area-rank2-text-grid-with-image {
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.65fr);
+  align-items: center;
+}
 
+.area-rank2-text-grid-with-image .area-rank2-note {
+  display: none;
+}
+
+.area-rank2-intro-image {
+  overflow: hidden;
+  border-radius: var(--radius-image) 110px var(--radius-image) var(--radius-image);
+  box-shadow: var(--shadow-image);
+}
+
+.area-rank2-intro-image img {
+  height: clamp(420px, 42vw, 620px);
+  object-fit: cover;
+}
+
+@media (max-width: 980px) {
+  .area-rank2-text-grid-with-image {
+    grid-template-columns: 1fr;
+  }
+
+  .area-rank2-intro-image img {
+    height: 340px;
+  }
+}
 /* =========================================================
 5. Presenza reale nella macro area
 ========================================================= */
