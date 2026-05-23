@@ -568,23 +568,23 @@ Città Rank 3
 .area-rank2-services-head {
   display: block;
   max-width: 100%;
-  margin-bottom: clamp(42px, 6vw, 76px);
+  margin-bottom: clamp(24px, 3.2vw, 42px);
 }
 
 .area-rank2-services .area-rank2-section-head .eyebrow,
 .area-rank2-services-head .eyebrow {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .area-rank2-services .area-rank2-section-head h2,
 .area-rank2-services-head h2 {
-  max-width: 980px;
-  margin-bottom: clamp(22px, 3vw, 34px);
+  max-width: 1040px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
 }
 
 .area-rank2-services .area-rank2-section-head p:not(.eyebrow),
 .area-rank2-services-head p:not(.eyebrow) {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0;
   padding-top: 0;
   border-top: 0;
@@ -709,61 +709,7 @@ Città Rank 3
     transform: none;
   }
 }
-/* =========================================================
-FAQ
-========================================================= */
 
-.area-rank2-faq {
-  background: linear-gradient(180deg, #fbf8f3, var(--paper-light));
-}
-
-.area-rank2-faq-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(380px, 1fr);
-  gap: clamp(42px, 6vw, 86px);
-  align-items: start;
-}
-
-.faq-list {
-  display: grid;
-  border-top: 1px solid var(--line-strong);
-}
-
-.faq-list details {
-  border-bottom: 1px solid var(--line);
-}
-
-.faq-list summary {
-  display: flex;
-  justify-content: space-between;
-  gap: 22px;
-  padding: 24px 0;
-  color: var(--ink);
-  font-size: clamp(1.02rem, 1.2vw, 1.12rem);
-  font-weight: 850;
-  cursor: pointer;
-  list-style: none;
-}
-
-.faq-list summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-list summary::after {
-  content: "+";
-  flex: 0 0 auto;
-  color: var(--accent);
-  font-weight: 900;
-}
-
-.faq-list details[open] summary::after {
-  content: "–";
-}
-
-.faq-list details p {
-  max-width: 760px;
-  padding: 0 0 24px;
-}
 
 /* =========================================================
 Contatti
