@@ -471,8 +471,18 @@ Città Rank 3
 }
 
 .evaluation-copy {
+  position: relative;
   padding-top: 28px;
   border-top: 1px solid var(--line-strong);
+}
+
+.evaluation-copy::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 3px;
+  margin-bottom: 26px;
+  background: var(--accent);
 }
 
 .evaluation-copy a {
