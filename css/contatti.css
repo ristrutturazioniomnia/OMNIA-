@@ -13,14 +13,14 @@ CSS dedicato completo
 .contact-main {
   width: 100%;
   overflow: hidden;
-  padding: clamp(132px, 12vw, 176px) var(--pad-x) var(--section-y);
+  padding: clamp(128px, 11vw, 164px) var(--pad-x) var(--section-y);
 }
 
 .contact-shell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(340px, 0.88fr) minmax(0, 1.12fr);
-  gap: clamp(48px, 6vw, 96px);
+  grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(54px, 6vw, 98px);
   align-items: center;
   width: min(100%, var(--container));
   margin: 0 auto;
@@ -32,16 +32,17 @@ COLONNA SINISTRA SCURA
 
 .contact-card {
   position: relative;
-  min-height: clamp(620px, 68vw, 760px);
-  padding: clamp(58px, 6vw, 82px) clamp(32px, 4vw, 58px);
+  overflow: hidden;
+  min-height: clamp(620px, 66vw, 760px);
+  padding: clamp(58px, 6vw, 82px) clamp(32px, 4vw, 54px);
   color: var(--white);
   background:
     linear-gradient(
       180deg,
       rgba(23, 34, 45, 0) 0%,
-      rgba(23, 34, 45, 0.96) 13%,
+      rgba(23, 34, 45, 0.92) 13%,
       rgba(23, 34, 45, 0.98) 50%,
-      rgba(23, 34, 45, 0.96) 87%,
+      rgba(23, 34, 45, 0.92) 87%,
       rgba(23, 34, 45, 0) 100%
     );
   border: 0;
@@ -54,16 +55,17 @@ COLONNA SINISTRA SCURA
 .contact-card::after {
   content: "";
   position: absolute;
-  top: clamp(42px, 5vw, 72px);
-  bottom: clamp(42px, 5vw, 72px);
+  top: clamp(58px, 6vw, 86px);
+  bottom: clamp(58px, 6vw, 86px);
   width: 1px;
   background:
     linear-gradient(
       180deg,
-      transparent,
-      rgba(255, 255, 255, 0.30) 18%,
-      rgba(255, 255, 255, 0.30) 82%,
-      transparent
+      transparent 0%,
+      rgba(184, 121, 69, 0.18) 14%,
+      rgba(184, 121, 69, 0.78) 50%,
+      rgba(184, 121, 69, 0.18) 86%,
+      transparent 100%
     );
   pointer-events: none;
 }
@@ -81,17 +83,19 @@ COLONNA SINISTRA SCURA
 }
 
 .contact-card-heading h2 {
-  max-width: 420px;
+  max-width: 100%;
   margin-bottom: 18px;
   color: var(--white);
-  font-size: clamp(2.6rem, 5vw, 4.55rem);
-  line-height: 0.98;
+  font-size: clamp(2.35rem, 3.65vw, 3.85rem);
+  line-height: 1.02;
+  letter-spacing: -0.052em;
+  overflow-wrap: normal;
 }
 
 .contact-card-heading p {
-  max-width: 440px;
+  max-width: 430px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: clamp(1rem, 1.2vw, 1.14rem);
+  font-size: clamp(1rem, 1.12vw, 1.1rem);
 }
 
 /* =========================================================
@@ -154,8 +158,9 @@ a.contact-data-item:hover {
 
 .contact-data-item strong {
   display: block;
+  max-width: 100%;
   color: var(--white);
-  font-size: clamp(0.9rem, 1vw, 1.04rem);
+  font-size: clamp(0.92rem, 1vw, 1.04rem);
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -167,6 +172,7 @@ COLONNA DESTRA
 .contact-content {
   position: relative;
   align-self: center;
+  min-width: 0;
   padding-top: clamp(28px, 4vw, 46px);
   border-top: 1px solid var(--line-strong);
 }
@@ -185,22 +191,23 @@ COLONNA DESTRA
 }
 
 .contact-content h1 {
-  max-width: 820px;
-  margin: 0 0 clamp(26px, 3vw, 34px);
+  max-width: 780px;
+  margin: 0 0 clamp(24px, 3vw, 32px);
   color: var(--ink);
-  font-size: clamp(3rem, 6vw, 6.2rem);
-  line-height: 0.98;
+  font-size: clamp(2.7rem, 5.1vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
   text-align: left;
 }
 
 .contact-copy p {
-  max-width: 760px;
+  max-width: 720px;
   color: var(--ink-soft);
-  font-size: clamp(1rem, 1.18vw, 1.12rem);
+  font-size: clamp(1rem, 1.14vw, 1.1rem);
 }
 
 .contact-copy p + p {
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .contact-actions {
@@ -221,7 +228,7 @@ LINK INTERNI BASE
 .contact-links-group h2 {
   max-width: none;
   margin-bottom: 22px;
-  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-size: clamp(1.55rem, 2.45vw, 2.12rem);
   line-height: 1.04;
 }
 
@@ -237,7 +244,7 @@ LINK INTERNI BASE
 
 .contact-link-grid a {
   position: relative;
-  min-height: 116px;
+  min-height: 112px;
   padding: 20px 20px 24px;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -288,7 +295,7 @@ LINK INTERNI BASE
   display: block;
   padding-right: 28px;
   color: var(--ink);
-  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  font-size: clamp(1rem, 1.12vw, 1.08rem);
   font-weight: 900;
   line-height: 1.24;
 }
@@ -316,7 +323,7 @@ LINK SERVIZI NELLA COLONNA SCURA
 .contact-card .contact-links-group h2 {
   margin-bottom: 22px;
   color: var(--white);
-  font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+  font-size: clamp(1.55rem, 2.45vw, 2.08rem);
 }
 
 .contact-card .contact-link-grid {
@@ -324,7 +331,7 @@ LINK SERVIZI NELLA COLONNA SCURA
 }
 
 .contact-card .contact-link-grid a {
-  min-height: 118px;
+  min-height: 116px;
   border-color: rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.08);
   box-shadow: none;
@@ -361,7 +368,7 @@ AREE NELLA COLONNA DESTRA
 }
 
 .contact-content .contact-link-grid-areas a {
-  min-height: 122px;
+  min-height: 118px;
 }
 
 /* =========================================================
@@ -395,11 +402,11 @@ RESPONSIVE
   }
 
   .contact-content h1 {
-    font-size: clamp(2.55rem, 12vw, 4.4rem);
+    font-size: clamp(2.45rem, 11vw, 4.1rem);
   }
 
   .contact-card-heading h2 {
-    font-size: clamp(2.45rem, 11vw, 4rem);
+    font-size: clamp(2.3rem, 10vw, 3.6rem);
   }
 }
 
@@ -412,14 +419,6 @@ RESPONSIVE
   .contact-card {
     padding-left: 22px;
     padding-right: 22px;
-  }
-
-  .contact-card::before {
-    left: 0;
-  }
-
-  .contact-card::after {
-    right: 0;
   }
 
   .contact-data-item {
