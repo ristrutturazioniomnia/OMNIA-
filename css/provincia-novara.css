@@ -754,32 +754,89 @@ Città Rank 3
 Contatti
 ========================================================= */
 
-.area-rank2-contact {
-  background: var(--paper);
+.area-rank2-contact,
+.area-rank2-contact.contatti {
+  background: var(--paper-light);
+}
+
+.area-rank2-contact .contatti-testo h2 {
+  max-width: 760px;
+}
+
+.area-rank2-contact .contatti-testo p:not(.eyebrow) {
+  max-width: 760px;
+}
+
+.area-rank2-contact .contatti-sidebar {
+  border-left: 1px solid var(--line-strong);
+}
+
+.area-rank2-contact .contatti-sidebar-blocco h3 {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-family: var(--font-title);
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  font-weight: 760;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.area-rank2-contact .contatti-sidebar-blocco ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.area-rank2-contact .contatti-sidebar-blocco li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .area-rank2-contact .contatti-sidebar-blocco a,
-.area-rank2-contact .contatti-sidebar a,
-.area-rank2-page .area-rank2-contact .contatti-sidebar-blocco a,
-.area-rank2-page .area-rank2-contact .contatti-sidebar a {
+.area-rank2-page .area-rank2-contact .contatti-sidebar-blocco a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 0;
   color: var(--ink) !important;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
 }
 
-.area-rank2-contact .contatti-sidebar-blocco a::after,
-.area-rank2-contact .contatti-sidebar a::after {
-  color: var(--ink) !important;
+.area-rank2-contact .contatti-sidebar-blocco a::after {
+  content: "→";
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: transform var(--speed);
 }
 
 .area-rank2-contact .contatti-sidebar-blocco a:hover,
-.area-rank2-contact .contatti-sidebar a:hover,
-.area-rank2-page .area-rank2-contact .contatti-sidebar-blocco a:hover,
-.area-rank2-page .area-rank2-contact .contatti-sidebar a:hover {
+.area-rank2-page .area-rank2-contact .contatti-sidebar-blocco a:hover {
   color: var(--ink-soft) !important;
+  transform: none;
 }
 
-.area-rank2-contact .contatti-sidebar-blocco a:hover::after,
-.area-rank2-contact .contatti-sidebar a:hover::after {
-  color: var(--ink-soft) !important;
+.area-rank2-contact .contatti-sidebar-blocco a:hover::after {
+  transform: translateX(6px);
+}
+
+@media (max-width: 980px) {
+  .area-rank2-contact .contatti-sidebar {
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
+  }
 }
 /* =========================================================
 Responsive
