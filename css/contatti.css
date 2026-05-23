@@ -105,11 +105,10 @@ COLONNA SINISTRA SCURA
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 86px;
+  width: 160px;
   height: 2px;
   background: var(--accent);
 }
-
 .contact-card-heading p {
   max-width: 430px;
   color: rgba(255, 255, 255, 0.78);
