@@ -719,14 +719,29 @@ Contatti
   background: var(--paper);
 }
 
-.area-rank2-contact .contatti-sidebar-blocco a {
-  color: var(--ink-soft);
+.area-rank2-contact .contatti-sidebar-blocco a,
+.area-rank2-contact .contatti-sidebar a,
+.area-rank2-page .area-rank2-contact .contatti-sidebar-blocco a,
+.area-rank2-page .area-rank2-contact .contatti-sidebar a {
+  color: var(--ink) !important;
 }
 
-.area-rank2-contact .contatti-sidebar-blocco a:hover {
-  color: var(--accent-dark);
+.area-rank2-contact .contatti-sidebar-blocco a::after,
+.area-rank2-contact .contatti-sidebar a::after {
+  color: var(--ink) !important;
 }
 
+.area-rank2-contact .contatti-sidebar-blocco a:hover,
+.area-rank2-contact .contatti-sidebar a:hover,
+.area-rank2-page .area-rank2-contact .contatti-sidebar-blocco a:hover,
+.area-rank2-page .area-rank2-contact .contatti-sidebar a:hover {
+  color: var(--ink-soft) !important;
+}
+
+.area-rank2-contact .contatti-sidebar-blocco a:hover::after,
+.area-rank2-contact .contatti-sidebar a:hover::after {
+  color: var(--ink-soft) !important;
+}
 /* =========================================================
 Responsive
 ========================================================= */
