@@ -170,7 +170,19 @@
 ========================================================= */
 
 .area-rank2-presence {
+  position: relative;
   background: var(--paper);
+  border-top: 1px solid rgba(23, 34, 45, 0.16);
+}
+
+.area-rank2-presence::before {
+  content: "";
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--line-strong), transparent);
 }
 
 .area-rank2-presence-inner {
