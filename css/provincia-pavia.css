@@ -412,8 +412,18 @@
 }
 
 .area-rank2-evaluation-copy {
+  position: relative;
   padding-top: 28px;
   border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-evaluation-copy::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 3px;
+  margin-bottom: 26px;
+  background: var(--accent);
 }
 
 .area-rank2-evaluation-image {
