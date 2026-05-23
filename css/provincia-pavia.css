@@ -526,6 +526,103 @@
   border-top: 1px solid var(--line-strong);
 }
 
+.area-rank2-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(34px, 5vw, 72px);
+  border-top: 1px solid var(--line-strong);
+}
+
+.area-rank2-service-item {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  column-gap: 18px;
+  padding: clamp(28px, 4vw, 42px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.area-rank2-service-item span {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  padding-top: 6px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.area-rank2-service-item h3,
+.area-rank2-service-item p,
+.area-rank2-service-item a {
+  grid-column: 2;
+}
+
+.area-rank2-service-item h3 {
+  margin-bottom: 12px;
+}
+
+.area-rank2-service-item p {
+  max-width: 560px;
+}
+
+.area-rank2-service-item a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-top: 18px;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.area-rank2-service-item a::after {
+  content: "→";
+  margin-left: 9px;
+  transition: transform var(--speed);
+}
+
+.area-rank2-service-item a:hover::after {
+  transform: translateX(6px);
+}
+
+.area-rank2-service-item:hover {
+  border-color: var(--line-strong);
+}
+
+@media (max-width: 980px) {
+  .area-rank2-services .area-rank2-section-head {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "titolo"
+      "testo";
+  }
+
+  .area-rank2-services .area-rank2-section-head p:not(.eyebrow) {
+    justify-self: start;
+    max-width: 720px;
+  }
+
+  .area-rank2-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-rank2-service-item p {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 720px) {
+  .area-rank2-service-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .area-rank2-service-item h3,
+  .area-rank2-service-item p,
+  .area-rank2-service-item a {
+    grid-column: auto;
+  }
+}
 /* =========================================================
 11. Sezioni obbligatorie
 ========================================================= */
