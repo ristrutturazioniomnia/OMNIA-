@@ -453,29 +453,6 @@ Città Rank 3
     margin-right: 18px;
   }
 }
-/* =========================================================
-Zone limitrofe
-========================================================= */
-
-.area-rank2-nearby {
-  background: var(--paper-light);
-}
-
-.area-rank2-nearby-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(380px, 1fr);
-  gap: clamp(42px, 6vw, 86px);
-  align-items: start;
-}
-
-.nearby-copy {
-  padding-top: 28px;
-  border-top: 1px solid var(--line-strong);
-}
-
-.nearby-copy p {
-  max-width: 760px;
-}
 
 /* =========================================================
 Prima valutazione
@@ -521,7 +498,19 @@ Prima valutazione
 .evaluation-copy p {
   max-width: 760px;
 }
+.area-rank2-evaluation-full {
+  grid-column: 1 / -1;
+  padding-top: clamp(28px, 4vw, 42px);
+  border-top: 1px solid var(--line-strong);
+}
 
+.area-rank2-evaluation-full p {
+  max-width: 980px;
+}
+
+.area-rank2-evaluation-full p + p {
+  margin-top: 18px;
+}
 /* =========================================================
 Servizi disponibili
 ========================================================= */
