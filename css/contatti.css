@@ -4,7 +4,7 @@ CSS dedicato completo
 ========================================================= */
 
 .contact-page {
-  min-height: 100svh;
+  min-height: auto;
   background:
     radial-gradient(circle at 12% 22%, rgba(184, 121, 69, 0.10), transparent 30rem),
     linear-gradient(180deg, var(--paper-light), var(--paper));
@@ -13,16 +13,16 @@ CSS dedicato completo
 .contact-main {
   width: 100%;
   overflow: hidden;
-  padding: clamp(96px, 9vh, 118px) var(--pad-x) clamp(34px, 5vh, 54px);
+  padding: clamp(88px, 8vh, 108px) var(--pad-x) clamp(8px, 1.6vh, 18px);
 }
 
 .contact-shell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1.14fr);
-  gap: clamp(36px, 4.4vw, 68px);
+  grid-template-columns: minmax(600px, 0.94fr) minmax(0, 1.06fr);
+  gap: clamp(52px, 5vw, 86px);
   align-items: start;
-  width: min(100%, var(--container));
+  width: min(calc(100% - 90px), 1680px);
   margin: 0 auto;
 }
 
@@ -34,7 +34,7 @@ COLONNA SINISTRA SCURA
   position: relative;
   overflow: hidden;
   min-height: auto;
-  padding: clamp(34px, 3.8vw, 48px) clamp(38px, 4vw, 56px);
+  padding: clamp(38px, 4vw, 54px) clamp(52px, 4.8vw, 76px);
   color: var(--white);
   background:
     linear-gradient(
@@ -84,16 +84,16 @@ COLONNA SINISTRA SCURA
   position: relative;
   z-index: 2;
   max-width: 100%;
-  margin-bottom: clamp(18px, 2.2vw, 26px);
+  margin-bottom: clamp(20px, 2.4vw, 28px);
 }
 
 .contact-card-heading h2 {
   position: relative;
-  max-width: 390px;
-  margin-bottom: 22px;
+  max-width: 540px;
+  margin-bottom: 24px;
   padding-bottom: 16px;
   color: var(--white);
-  font-size: clamp(1.9rem, 2.12vw, 2.45rem);
+  font-size: clamp(2rem, 2.35vw, 2.75rem);
   line-height: 1.02;
   letter-spacing: -0.052em;
   overflow-wrap: break-word;
@@ -105,15 +105,15 @@ COLONNA SINISTRA SCURA
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 154px;
+  width: 190px;
   height: 2px;
   background: var(--accent);
 }
 
 .contact-card-heading p {
-  max-width: 410px;
+  max-width: 500px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: clamp(0.95rem, 1vw, 1.04rem);
+  font-size: clamp(1rem, 1.08vw, 1.12rem);
   line-height: 1.42;
 }
 
@@ -126,8 +126,8 @@ DATI CONTATTO
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-bottom: clamp(22px, 2.8vw, 30px);
-  padding: clamp(16px, 2vw, 22px) 0;
+  margin-bottom: clamp(24px, 3vw, 34px);
+  padding: clamp(18px, 2.2vw, 24px) 0;
   border-top: 1px solid rgba(217, 183, 142, 0.34);
   border-bottom: 1px solid rgba(217, 183, 142, 0.34);
 }
@@ -157,11 +157,11 @@ DATI CONTATTO
 
 .contact-data-item {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
   min-width: 0;
-  padding: 0 clamp(14px, 2vw, 22px);
+  padding: 0 clamp(16px, 2vw, 24px);
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -187,8 +187,8 @@ a.contact-data-item:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   color: var(--accent-soft);
   background: rgba(217, 183, 142, 0.13);
@@ -209,8 +209,8 @@ a.contact-data-item:hover {
   display: block;
   max-width: 100%;
   color: var(--white);
-  font-size: clamp(0.84rem, 0.92vw, 0.96rem);
-  line-height: 1.28;
+  font-size: clamp(0.98rem, 1.06vw, 1.16rem);
+  line-height: 1.24;
   overflow-wrap: anywhere;
 }
 
@@ -226,28 +226,28 @@ COLONNA DESTRA
   position: relative;
   align-self: start;
   min-width: 0;
-  padding-top: clamp(22px, 3vw, 32px);
+  padding-top: clamp(24px, 3vw, 34px);
   border-top: 1px solid var(--line-strong);
 }
 
 .contact-content::before {
   content: "";
   display: block;
-  width: 86px;
+  width: 108px;
   height: 3px;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
   background: var(--accent);
 }
 
 .contact-content .eyebrow {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .contact-content h1 {
   max-width: none;
-  margin: 0 0 clamp(18px, 2.2vw, 24px);
+  margin: 0 0 clamp(20px, 2.4vw, 28px);
   color: var(--ink);
-  font-size: clamp(2.45rem, 3.85vw, 4.2rem);
+  font-size: clamp(2.9rem, 4.25vw, 4.85rem);
   line-height: 0.98;
   letter-spacing: -0.055em;
   text-align: left;
@@ -255,9 +255,9 @@ COLONNA DESTRA
 }
 
 .contact-copy p {
-  max-width: 690px;
+  max-width: 860px;
   color: var(--ink-soft);
-  font-size: clamp(0.96rem, 1.04vw, 1.06rem);
+  font-size: clamp(1.02rem, 1.14vw, 1.18rem);
   line-height: 1.55;
 }
 
@@ -267,7 +267,7 @@ COLONNA DESTRA
 
 .contact-actions {
   justify-content: flex-start;
-  margin-top: clamp(24px, 3vw, 32px);
+  margin-top: clamp(26px, 3vw, 36px);
 }
 
 /* =========================================================
@@ -275,22 +275,22 @@ LINK INTERNI BASE
 ========================================================= */
 
 .contact-links-group {
-  margin-top: clamp(28px, 3.2vw, 40px);
-  padding-top: 22px;
+  margin-top: clamp(30px, 3.4vw, 44px);
+  padding-top: 24px;
   border-top: 1px solid var(--line);
 }
 
 .contact-links-group h2 {
   max-width: none;
-  margin-bottom: 18px;
-  font-size: clamp(1.45rem, 2.15vw, 1.95rem);
+  margin-bottom: 20px;
+  font-size: clamp(1.75rem, 2.55vw, 2.35rem);
   line-height: 1.04;
 }
 
 .contact-link-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
 .contact-link-grid-areas {
@@ -299,8 +299,8 @@ LINK INTERNI BASE
 
 .contact-link-grid a {
   position: relative;
-  min-height: 96px;
-  padding: 16px 18px 20px;
+  min-height: 112px;
+  padding: 20px 22px 24px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.44);
@@ -314,9 +314,9 @@ LINK INTERNI BASE
 .contact-link-grid a::before {
   content: "";
   display: block;
-  width: 44px;
+  width: 54px;
   height: 2px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   background: var(--accent);
   transition: width var(--speed);
 }
@@ -324,8 +324,8 @@ LINK INTERNI BASE
 .contact-link-grid a::after {
   content: "→";
   position: absolute;
-  right: 18px;
-  bottom: 16px;
+  right: 20px;
+  bottom: 18px;
   color: var(--accent);
   font-weight: 900;
   transition: transform var(--speed);
@@ -339,7 +339,7 @@ LINK INTERNI BASE
 }
 
 .contact-link-grid a:hover::before {
-  width: 62px;
+  width: 72px;
 }
 
 .contact-link-grid a:hover::after {
@@ -350,18 +350,18 @@ LINK INTERNI BASE
   display: block;
   padding-right: 24px;
   color: var(--ink);
-  font-size: clamp(0.95rem, 1.04vw, 1.02rem);
+  font-size: clamp(1.05rem, 1.15vw, 1.18rem);
   font-weight: 900;
-  line-height: 1.18;
+  line-height: 1.16;
 }
 
 .contact-link-grid small {
   display: block;
-  max-width: 230px;
-  margin-top: 7px;
+  max-width: 250px;
+  margin-top: 8px;
   padding-right: 20px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   line-height: 1.36;
 }
 
@@ -372,15 +372,15 @@ LINK SERVIZI NELLA COLONNA SCURA
 .contact-card .contact-links-group {
   position: relative;
   z-index: 2;
-  margin-top: clamp(20px, 2.6vw, 28px);
-  padding-top: clamp(18px, 2.4vw, 24px);
+  margin-top: clamp(24px, 2.8vw, 32px);
+  padding-top: clamp(20px, 2.4vw, 26px);
   border-top: 1px solid rgba(217, 183, 142, 0.34);
 }
 
 .contact-card .contact-links-group h2 {
-  margin-bottom: clamp(14px, 2vw, 18px);
+  margin-bottom: clamp(16px, 2vw, 22px);
   color: var(--white);
-  font-size: clamp(1.32rem, 1.75vw, 1.62rem);
+  font-size: clamp(1.62rem, 2vw, 2rem);
   line-height: 1.04;
 }
 
@@ -394,8 +394,8 @@ LINK SERVIZI NELLA COLONNA SCURA
 
 .contact-card .contact-link-grid a {
   position: relative;
-  min-height: auto;
-  padding: 14px 30px 14px 0;
+  min-height: 122px;
+  padding: 20px 42px 20px 0;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -403,12 +403,12 @@ LINK SERVIZI NELLA COLONNA SCURA
 }
 
 .contact-card .contact-link-grid a:nth-child(odd) {
-  padding-right: 24px;
+  padding-right: 36px;
   border-right: 1px solid rgba(217, 183, 142, 0.28);
 }
 
 .contact-card .contact-link-grid a:nth-child(even) {
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 .contact-card .contact-link-grid a:nth-child(1),
@@ -419,9 +419,9 @@ LINK SERVIZI NELLA COLONNA SCURA
 .contact-card .contact-link-grid a::before {
   content: "";
   display: block;
-  width: 38px;
+  width: 48px;
   height: 2px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   background: var(--accent);
   transition: width var(--speed);
 }
@@ -429,8 +429,8 @@ LINK SERVIZI NELLA COLONNA SCURA
 .contact-card .contact-link-grid a::after {
   content: "→";
   position: absolute;
-  right: 10px;
-  bottom: 14px;
+  right: 16px;
+  bottom: 24px;
   color: var(--accent-soft);
   font-weight: 900;
   transition: transform var(--speed);
@@ -444,7 +444,7 @@ LINK SERVIZI NELLA COLONNA SCURA
 }
 
 .contact-card .contact-link-grid a:hover::before {
-  width: 54px;
+  width: 66px;
 }
 
 .contact-card .contact-link-grid a:hover::after {
@@ -453,21 +453,47 @@ LINK SERVIZI NELLA COLONNA SCURA
 
 .contact-card .contact-link-grid span {
   display: block;
-  padding-right: 16px;
+  padding-right: 18px;
   color: var(--white);
-  font-size: clamp(0.88rem, 0.94vw, 0.98rem);
+  font-size: clamp(1.18rem, 1.32vw, 1.45rem);
   font-weight: 900;
-  line-height: 1.12;
+  line-height: 1.02;
 }
 
 .contact-card .contact-link-grid small {
   display: block;
-  max-width: 180px;
-  margin-top: 6px;
-  padding-right: 16px;
+  max-width: 220px;
+  margin-top: 8px;
+  padding-right: 18px;
   color: rgba(255, 255, 255, 0.62);
-  font-size: 0.76rem;
+  font-size: 0.84rem;
   line-height: 1.3;
+}
+
+/* FIX H3 SERVIZI COLONNA SCURA */
+.contact-card .contact-link-grid a h3 {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding-right: 26px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: clamp(1.24rem, 1.42vw, 1.62rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.contact-card .contact-link-grid a h3 + small {
+  display: block;
+  margin-top: 8px;
+}
+
+.contact-card .contact-link-grid a:hover h3 {
+  color: var(--accent-soft);
 }
 
 /* =========================================================
@@ -475,11 +501,16 @@ AREE NELLA COLONNA DESTRA
 ========================================================= */
 
 .contact-content .contact-links-group {
-  margin-top: clamp(28px, 3.2vw, 40px);
+  margin-top: clamp(34px, 3.6vw, 48px);
 }
 
 .contact-content .contact-link-grid-areas a {
-  min-height: 98px;
+  min-height: 132px;
+}
+
+.contact-content .contact-link-grid-areas span {
+  font-size: clamp(1.55rem, 2.1vw, 2.25rem);
+  line-height: 1.02;
 }
 
 /* =========================================================
@@ -488,110 +519,125 @@ DESKTOP BASSI / NOTEBOOK
 
 @media (min-width: 1081px) and (max-height: 850px) {
   .contact-main {
-    padding-top: 88px;
-    padding-bottom: 28px;
+    padding-top: 82px;
+    padding-bottom: 8px;
   }
 
   .contact-shell {
-    gap: clamp(34px, 4vw, 56px);
+    width: min(calc(100% - 90px), 1680px);
+    grid-template-columns: minmax(600px, 0.94fr) minmax(0, 1.06fr);
+    gap: clamp(48px, 4.5vw, 78px);
   }
 
   .contact-card {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 34px;
+    padding-right: clamp(48px, 4.4vw, 70px);
+    padding-bottom: 34px;
+    padding-left: clamp(48px, 4.4vw, 70px);
   }
 
   .contact-card-heading {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .contact-card-heading h2 {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     padding-bottom: 14px;
-    font-size: clamp(1.78rem, 2vw, 2.22rem);
+    font-size: clamp(2rem, 2.25vw, 2.55rem);
   }
 
   .contact-card-heading p {
-    font-size: 0.94rem;
+    font-size: 1rem;
     line-height: 1.36;
   }
 
   .contact-data-grid {
-    margin-bottom: 18px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    margin-bottom: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .contact-card .contact-links-group {
-    margin-top: 18px;
-    padding-top: 16px;
+    margin-top: 20px;
+    padding-top: 18px;
   }
 
   .contact-card .contact-links-group h2 {
-    margin-bottom: 12px;
-    font-size: clamp(1.24rem, 1.6vw, 1.48rem);
+    margin-bottom: 14px;
+    font-size: clamp(1.52rem, 1.9vw, 1.9rem);
   }
 
   .contact-card .contact-link-grid a {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    min-height: 112px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
   .contact-card .contact-link-grid a::before {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  .contact-card .contact-link-grid a h3 {
+    font-size: clamp(1.18rem, 1.34vw, 1.52rem);
+    line-height: 1;
   }
 
   .contact-card .contact-link-grid small {
-    margin-top: 5px;
+    margin-top: 7px;
   }
 
   .contact-content {
-    padding-top: 22px;
+    padding-top: 24px;
   }
 
   .contact-content::before {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   .contact-content .eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .contact-content h1 {
-    margin-bottom: 18px;
-    font-size: clamp(2.28rem, 3.45vw, 3.85rem);
+    margin-bottom: 20px;
+    font-size: clamp(2.65rem, 3.85vw, 4.45rem);
   }
 
   .contact-copy p {
-    font-size: 0.98rem;
+    max-width: 860px;
+    font-size: 1.04rem;
     line-height: 1.5;
   }
 
   .contact-actions {
-    margin-top: 22px;
+    margin-top: 24px;
   }
 
   .contact-links-group {
-    margin-top: 26px;
-    padding-top: 20px;
+    margin-top: 30px;
+    padding-top: 22px;
   }
 
   .contact-links-group h2 {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
   .contact-link-grid a {
-    min-height: 92px;
-    padding-top: 15px;
-    padding-bottom: 18px;
+    min-height: 108px;
+    padding-top: 18px;
+    padding-bottom: 22px;
   }
 
   .contact-link-grid a::before {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .contact-link-grid small {
     margin-top: 6px;
+  }
+
+  .contact-content .contact-link-grid-areas a {
+    min-height: 124px;
   }
 }
 
@@ -600,6 +646,10 @@ RESPONSIVE
 ========================================================= */
 
 @media (max-width: 1080px) {
+  .contact-page {
+    min-height: auto;
+  }
+
   .contact-main {
     padding-top: clamp(120px, 16vw, 160px);
     padding-bottom: var(--section-y);
@@ -608,6 +658,7 @@ RESPONSIVE
   .contact-shell {
     grid-template-columns: 1fr;
     gap: clamp(46px, 8vw, 76px);
+    width: min(100%, var(--container));
   }
 
   .contact-card {
@@ -705,29 +756,4 @@ RESPONSIVE
   .contact-actions a {
     width: 100%;
   }
-}
-/* FIX H3 SERVIZI COLONNA SCURA */
-.contact-card .contact-link-grid a h3 {
-  display: block;
-  max-width: 100%;
-  margin: 0;
-  padding-right: 22px;
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.018em;
-  overflow-wrap: normal;
-  word-break: normal;
-  hyphens: none;
-}
-
-.contact-card .contact-link-grid a h3 + small {
-  display: block;
-  margin-top: 7px;
-}
-
-.contact-card .contact-link-grid a:hover h3 {
-  color: var(--accent-soft);
 }
