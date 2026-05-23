@@ -706,3 +706,24 @@ RESPONSIVE
     width: 100%;
   }
 }
+/* FIX H3 SERVIZI COLONNA SCURA */
+.contact-card .contact-link-grid a h3 {
+  display: block;
+  margin: 0;
+  padding-right: 18px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
+  font-weight: 900;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+}
+
+.contact-card .contact-link-grid a h3 + small {
+  margin-top: 7px;
+}
+
+.contact-card .contact-link-grid a:hover h3 {
+  color: var(--accent-soft);
+}
