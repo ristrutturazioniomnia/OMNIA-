@@ -122,42 +122,70 @@ DATI CONTATTO
   position: relative;
   z-index: 2;
   display: grid;
-  gap: 14px;
-  margin-bottom: clamp(38px, 5vw, 58px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: clamp(30px, 4vw, 44px);
+  padding: clamp(22px, 2.8vw, 30px) 0;
+  border-top: 1px solid rgba(217, 183, 142, 0.34);
+  border-bottom: 1px solid rgba(217, 183, 142, 0.34);
+}
+
+.contact-data-grid::before {
+  content: "";
+  position: absolute;
+  top: clamp(18px, 2.4vw, 26px);
+  bottom: clamp(18px, 2.4vw, 26px);
+  left: 50%;
+  width: 1px;
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(217, 183, 142, 0.62),
+      transparent
+    );
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.contact-data-item,
+.contact-data-item-wide {
+  grid-column: auto;
 }
 
 .contact-data-item {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 16px;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
   min-width: 0;
-  padding: 20px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.075);
+  padding: 0 clamp(18px, 2.4vw, 28px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   transition:
     transform var(--speed),
-    border-color var(--speed),
-    background var(--speed);
+    color var(--speed);
 }
 
-.contact-data-item-wide {
-  grid-column: 1 / -1;
+.contact-data-item:first-child {
+  padding-left: 0;
+}
+
+.contact-data-item:last-child {
+  padding-right: 0;
 }
 
 a.contact-data-item:hover {
-  transform: translateY(-3px);
-  border-color: rgba(217, 183, 142, 0.48);
-  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  background: transparent;
 }
 
 .contact-data-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   color: var(--accent-soft);
   background: rgba(217, 183, 142, 0.13);
@@ -165,9 +193,9 @@ a.contact-data-item:hover {
 
 .contact-data-label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   color: rgba(255, 255, 255, 0.58);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.14em;
   line-height: 1.2;
@@ -178,9 +206,13 @@ a.contact-data-item:hover {
   display: block;
   max-width: 100%;
   color: var(--white);
-  font-size: clamp(0.92rem, 1vw, 1.04rem);
-  line-height: 1.35;
+  font-size: clamp(0.88rem, 0.95vw, 1rem);
+  line-height: 1.32;
   overflow-wrap: anywhere;
+}
+
+.contact-data-item:hover strong {
+  color: var(--accent-soft);
 }
 
 /* =========================================================
