@@ -45,38 +45,38 @@ COLONNA SINISTRA SCURA
       rgba(23, 34, 45, 0.88) 84%,
       rgba(23, 34, 45, 0) 100%
     );
-  border: 0;
+  border-left: 2px solid rgba(184, 121, 69, 0.95);
+  border-right: 2px solid rgba(184, 121, 69, 0.95);
   border-radius: 0;
   box-shadow: none;
   isolation: isolate;
 }
-
 .contact-card::before,
 .contact-card::after {
   content: "";
   position: absolute;
-  z-index: 4;
-  top: clamp(54px, 6vw, 82px);
-  bottom: clamp(54px, 6vw, 82px);
-  width: 2px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
   background:
     linear-gradient(
       180deg,
       transparent 0%,
-      rgba(184, 121, 69, 0.22) 14%,
-      rgba(184, 121, 69, 0.95) 50%,
-      rgba(184, 121, 69, 0.22) 86%,
+      rgba(217, 183, 142, 0.35) 14%,
+      rgba(217, 183, 142, 0.85) 50%,
+      rgba(217, 183, 142, 0.35) 86%,
       transparent 100%
     );
   pointer-events: none;
+  z-index: 5;
 }
 
 .contact-card::before {
-  left: 0;
+  left: 8px;
 }
 
 .contact-card::after {
-  right: 0;
+  right: 8px;
 }
 
 .contact-card-heading {
