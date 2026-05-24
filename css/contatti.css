@@ -710,14 +710,17 @@ RESPONSIVE
 .contact-card .contact-link-grid a h3 {
   display: block;
   margin: 0;
-  padding-right: 18px;
+  padding-right: 8px;
   color: var(--white);
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.16vw, 1.28rem);
+  font-size: clamp(0.96rem, 1.04vw, 1.12rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.025em;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+  text-wrap: balance;
 }
 
 .contact-card .contact-link-grid a h3 + small {
