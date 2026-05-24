@@ -712,7 +712,7 @@ RESPONSIVE
   margin: 0;
   padding-right: 8px;
   color: var(--white);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: clamp(0.96rem, 1.04vw, 1.12rem);
   font-weight: 900;
   line-height: 1.08;
