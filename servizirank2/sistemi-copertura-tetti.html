@@ -23,58 +23,48 @@
     <img src="/img/logo-omnia.png" alt="Omnia ristrutturazioni">
   </a>
 
-  <nav class="site-nav-menu" aria-label="Navigazione principale">
-    <a href="/#hero" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Home</a>
-    <a href="/#chi-siamo" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Chi siamo</a>
-
+<nav class="site-nav-menu" aria-label="Navigazione principale">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#chi-siamo">Chi siamo</a>
     <details class="site-nav-dropdown" name="site-nav-dropdown">
       <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Servizi</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-servizi">
-        <a href="/servizi/ristrutturazione-casa.html">Ristrutturazione interna della casa</a>
-        <a href="/servizi/sistemi-copertura-tetti.html">Assisenza su Sistemi di copertura e tetti</a>
-        <a href="/servizi/rifacimento-facciate.html">Specialisti nel Rifacimento delle facciate</a>
-        <a href="/servizi/ristrutturazione-bagno.html">Ristrutturazione del bagno</a>
+        <a href="/servizirank2/ristrutturazione-casa.html">Ristrutturazione interna della casa</a>
+        <a href="/servizirank2/sistemi-copertura-tetti.html">Riparazioni di tetti e coperture</a>
+        <a href="/servizirank2/rifacimento-facciate.html">Specialisti nel Rifacimento delle facciate</a>
+        <a href="/servizirank2/ristrutturazione-bagno.html">Ristrutturazione del bagno</a>
       </div>
     </details>
-
     <details class="site-nav-dropdown" name="site-nav-dropdown">
-      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Aree</summary>
+      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Dove Lavoriamo</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-aree">
         <div>
-          <strong>Prov. di Milano</strong>
-          <a href="/aree/milano.html">Milano</a>
-          <a href="/aree/cornaredo.html">Cornaredo</a>
-          <a href="/aree/magenta.html">Magenta</a>
-          <a href="/aree/abbiategrasso.html">Abbiategrasso</a>
+          <a href="/areerank2/provincia-milano.html">
+  <strong>Prov. di Milano</strong>
+</a>         
         </div>
-
         <div>
-          <strong>Prov. di Pavia</strong>
-          <a href="/aree/pavia.html">Pavia</a>
-          <a href="/aree/vigevano.html">Vigevano</a>
-          <a href="/aree/garlasco.html">Garlasco</a>
-          <a href="/aree/mortara.html">Mortara</a>
+          <a href="/areerank2/provincia-pavia.html">
+  <strong>Prov. di Pavia</strong>
+</a>         
         </div>
-
         <div>
-          <strong>Prov. di Novara</strong>
-          <a href="/aree/novara.html">Novara</a>
-          <a href="/aree/trecate.html">Trecate</a>
-          <a href="/aree/galliate.html">Galliate</a>
+          <a href="/areerank2/provincia-Novara.html">
+  <strong>Prov. di Novara</strong>
+</a>         
         </div>
       </div>
     </details>
-
-    <a href="#contatti" onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => d.removeAttribute('open'))">Contatti</a>
+    <a href="/contatti/contatti.html">Contatti</a>
   </nav>
-
-  <div class="site-nav-cta">
-    <a href="/contatti.html">Richiedi un preventivo</a>
+ <div class="site-nav-cta">
+    <a href="mailto:info.omniaristrutturazioni@gmail.com">Richiedi un preventivo</a>
     <a href="tel:+393898416691">Chiama</a>
   </div>
 </header>
+
 
 <section id="hero" class="hero service-hero roof-hero">
   <div class="hero-content scroll-reveal scroll-reveal-title">
@@ -87,7 +77,7 @@
     </p>
 
     <div class="hero-buttons">
-      <a href="#contatti">Richiedi un sopralluogo</a>
+      <a href="mailto:info.omniaristrutturazioni@gmail.com">Richiedi un sopralluogo</a>
       <a href="tel:3898416691">Chiama 389 841 6691</a>
     </div>
   </div>
@@ -134,7 +124,7 @@
     </div>
 
     <div class="linked-services-grid">
-      <a class="linked-service-card scroll-reveal scroll-reveal-text" href="/servizirank3/rifacimento-totale.html">
+      <a class="linked-service-card scroll-reveal scroll-reveal-text" href="#rifacimento-totale">
         <img src="/img/tettototale.png" alt="Rifacimento totale del tetto">
         <span class="linked-service-card-index">01</span>
         <div class="linked-service-card__panel">
@@ -146,7 +136,7 @@
         </div>
       </a>
 
-      <a class="linked-service-card scroll-reveal scroll-reveal-text" href="/servizirank3/impermeabilizzazioni-avanzate.html">
+      <a class="linked-service-card scroll-reveal scroll-reveal-text" href="#impermeabilizzazioni-avanzate">
         <img src="/img/lucernario.jpeg" alt="Impermeabilizzazioni avanzate per tetto e coperture">
         <span class="linked-service-card-index">02</span>
         <div class="linked-service-card__panel">
@@ -158,7 +148,7 @@
         </div>
       </a>
 
-      <a class="linked-service-card scroll-reveal scroll-reveal-text" href="/servizirank3/lattoneria-di-precisione.html">
+      <a class="linked-service-card scroll-reveal scroll-reveal-text" href="#lattoneria-di-precisione">
         <img src="/img/lattoneria.png" alt="Lattoneria di precisione per tetti e coperture">
         <span class="linked-service-card-index">03</span>
         <div class="linked-service-card__panel">
@@ -172,7 +162,7 @@
     </div>
   </section>
 
-  <section class="service-feature service-feature-reverse">
+  <section id="rifacimento-totale" class="service-feature service-feature-reverse">
     <div class="service-feature-media scroll-reveal scroll-reveal-media">
       <img src="/img/sistemi-copertura-tetti.jpg" alt="Riparazione tetto e sistemi di copertura">
     </div>
@@ -195,7 +185,7 @@
     </div>
   </section>
 
-  <section class="service-feature">
+  <section id="impermeabilizzazioni-avanzate" class="service-feature">
     <div class="service-feature-text scroll-reveal scroll-reveal-text">
       <p class="eyebrow">Intervento completo</p>
       <h2>Rifacimento totale del tetto </h2>
@@ -217,7 +207,7 @@
     </div>
   </section>
 
-  <section class="service-feature service-feature-reverse">
+  <section id="lattoneria-di-precisione" class="service-feature service-feature-reverse">
     <div class="service-feature-media scroll-reveal scroll-reveal-media">
       <img src="/img/impresa-ristrutturazione-casa.jpg" alt="Impermeabilizzazione tetto e coperture">
     </div>
