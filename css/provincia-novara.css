@@ -1156,3 +1156,38 @@ FIX SEZIONE CITTÀ RANK 3 - STILE PAVIA
     transform: none;
   }
 }
+/* =========================================================
+FIX LINK TESTUALI NELLE RIGHE CITTÀ
+La freccia resta solo sui link CTA della riga,
+non sui link inseriti dentro i paragrafi.
+========================================================= */
+
+.area-rank2-city-row p a,
+.area-rank2-city-main p a {
+  display: inline;
+  width: auto;
+  align-items: initial;
+  justify-self: auto;
+  margin-top: 0;
+  color: var(--accent);
+  font-size: inherit;
+  font-weight: 850;
+  line-height: inherit;
+  white-space: normal;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transform: none;
+}
+
+.area-rank2-city-row p a::after,
+.area-rank2-city-main p a::after {
+  content: none;
+  display: none;
+  margin-left: 0;
+}
+
+.area-rank2-city-row:hover p a,
+.area-rank2-city-main:hover p a {
+  color: var(--accent-dark);
+  transform: none;
+}
