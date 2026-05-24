@@ -712,20 +712,19 @@ RESPONSIVE
   margin: 0;
   padding-right: 8px;
   color: var(--white);
-  font-family: var(--font-heading);
-  font-size: clamp(0.96rem, 1.04vw, 1.12rem);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.1rem, 1.28vw, 1.42rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
   overflow-wrap: normal;
   word-break: keep-all;
   hyphens: none;
-  text-wrap: balance;
 }
 
 .contact-card .contact-link-grid a h3 + small {
   display: block;
-  margin-top: 7px;
+  margin-top: 5px;
 }
 
 .contact-card .contact-link-grid a:hover h3 {
