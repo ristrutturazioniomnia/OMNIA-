@@ -319,10 +319,8 @@
 }
 
 .servizio-link-card__panel::after {
-  content: "Apri la sezione →";
-  color: var(--accent-soft);
-  font-size: 0.92rem;
-  font-weight: 800;
+  content: none;
+  display: none;
 }
 
 .servizio-link-card:hover {
