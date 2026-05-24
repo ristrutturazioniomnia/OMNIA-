@@ -1450,18 +1450,26 @@ body {
 ========================================================= */
 
 @media (max-width: 1180px) {
-  .site-nav {
+    .site-nav {
     grid-template-columns: auto 1fr;
+    min-height: 58px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .site-nav-menu {
     justify-content: flex-end;
+    gap: clamp(12px, 1.6vw, 18px);
+  }
+
+  .site-nav-menu > a,
+  .site-nav-dropdown > summary {
+    min-height: 34px;
+    font-size: 0.78rem;
   }
 
   .site-nav-cta {
-    grid-column: 1 / -1;
-    justify-content: flex-end;
-    padding-top: 6px;
+    display: none;
   }
 
   .site-nav-dropdown-panel-servizi {
