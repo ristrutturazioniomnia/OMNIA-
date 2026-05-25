@@ -1934,3 +1934,83 @@ FIX FOOTER VISIBILE - NO BLUR SU DESKTOP E MOBILE
 .servizio-panel h2 {
   color: var(--white);
 }
+/* =========================================================
+FIX SEZIONE METODO - SENZA FOTO
+H2 a sinistra, linea ocra verticale, testo a destra
+========================================================= */
+
+.chi-siamo-metodo-editorial {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: clamp(42px, 6vw, 96px);
+  align-items: center;
+}
+
+.chi-siamo-metodo-heading {
+  position: relative;
+  padding-top: clamp(18px, 2.4vw, 30px);
+  border-top: 1px solid var(--line-strong);
+}
+
+.chi-siamo-metodo-heading::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 3px;
+  margin-bottom: 26px;
+  background: var(--accent);
+}
+
+.chi-siamo-metodo-heading h2 {
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
+.chi-siamo-metodo-copy {
+  position: relative;
+  padding-left: clamp(34px, 4vw, 58px);
+}
+
+.chi-siamo-metodo-copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+}
+
+.chi-siamo-metodo-copy p {
+  max-width: 660px;
+}
+
+@media (max-width: 980px) {
+  .chi-siamo-metodo-editorial {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .chi-siamo-metodo-copy {
+    padding-left: 0;
+    padding-top: 30px;
+  }
+
+  .chi-siamo-metodo-copy::before {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      transparent
+    );
+  }
+}
