@@ -1191,3 +1191,48 @@ non sui link inseriti dentro i paragrafi.
   color: var(--accent-dark);
   transform: none;
 }
+/* =========================================================
+FIX H1 HERO MOBILE PAGINE AREA
+Evita che il titolo esca dallo schermo su smartphone
+========================================================= */
+
+@media (max-width: 720px) {
+  .area-rank2-hero {
+    padding-left: 18px;
+    padding-right: 18px;
+    overflow: hidden;
+  }
+
+  .area-rank2-hero .hero-content {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .area-rank2-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.25rem, 11vw, 3.45rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .area-rank2-hero h1 span {
+    white-space: normal !important;
+  }
+
+  .area-rank2-hero .hero-content p:not(.eyebrow) {
+    max-width: 100%;
+    font-size: clamp(1rem, 4.2vw, 1.12rem);
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 420px) {
+  .area-rank2-hero h1 {
+    font-size: clamp(2.05rem, 10.5vw, 3rem);
+  }
+}
