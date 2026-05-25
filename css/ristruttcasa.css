@@ -952,3 +952,62 @@
   }
 }
 /* === Fine uniformazione UI === */
+/* Titolo sopra la foto - solo prima sezione intro */
+@media (min-width: 981px) {
+  .service-intro .service-split {
+    align-items: start;
+    grid-template-columns: minmax(0, 0.96fr) minmax(360px, 1.04fr);
+    column-gap: clamp(38px, 5.6vw, 86px);
+    row-gap: clamp(14px, 2vw, 24px);
+  }
+
+  .service-intro .service-split::before {
+    content: "";
+    grid-column: 1 / -1;
+    display: block;
+    width: 88px;
+    height: 3px;
+    margin-bottom: clamp(10px, 1.4vw, 18px);
+    background: var(--accent);
+  }
+
+  .service-intro .service-copy {
+    display: contents;
+  }
+
+  .service-intro .service-copy::before {
+    content: none;
+  }
+
+  .service-intro .service-copy .eyebrow {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .service-intro .service-copy h2 {
+    grid-column: 1 / -1;
+    max-width: none;
+    margin: 0;
+    padding-bottom: clamp(22px, 3vw, 38px);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .service-intro .service-copy p:not(.eyebrow) {
+    grid-column: 1;
+    max-width: 720px;
+    margin: 0 0 1.15em;
+  }
+
+  .service-intro .service-media {
+    grid-column: 2;
+    grid-row: 4 / span 20;
+    align-self: start;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .service-intro .service-copy {
+    display: block;
+  }
+}
