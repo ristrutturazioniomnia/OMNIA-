@@ -2014,3 +2014,20 @@ H2 a sinistra, linea ocra verticale, testo a destra
     );
   }
 }
+/* =========================================================
+CORREZIONE SEZIONE METODO
+Rimuove la riga ocra sopra l'eyebrow e alza il blocco testo
+========================================================= */
+
+.chi-siamo-metodo-heading {
+  padding-top: 14px;
+}
+
+.chi-siamo-metodo-heading::before {
+  content: none !important;
+  display: none !important;
+}
+
+.chi-siamo-metodo-heading .eyebrow {
+  margin-bottom: 12px;
+}
