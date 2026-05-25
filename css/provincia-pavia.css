@@ -431,7 +431,7 @@
   color: var(--white);
   background:
     linear-gradient(110deg, rgba(9, 16, 23, 0.88), rgba(23, 34, 45, 0.42)),
-    url("../img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
+    url("../img/primadelcantiere2.jpg") center center / cover no-repeat;
 }
 .area-rank2-wide-content {
   max-width: 850px;
