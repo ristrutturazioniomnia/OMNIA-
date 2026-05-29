@@ -1096,3 +1096,84 @@
   }
 }
 /* === Fine servizi collegati tetti === */
+@media (max-width: 980px) {
+  .service-intro-grid,
+  .service-feature,
+  .service-feature-reverse,
+  .local-section {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-feature,
+  .service-feature-reverse {
+    gap: clamp(28px, 7vw, 48px) !important;
+  }
+
+  .service-feature-text {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .service-feature-media {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .service-feature-media img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: clamp(320px, 58vw, 520px) !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .service-feature,
+  .service-feature-reverse {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    overflow: hidden !important;
+  }
+
+  .service-feature-text {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .service-feature-media {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 22px !important;
+  }
+
+  .service-feature-media img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 22px !important;
+  }
+
+  .service-feature-media::after {
+    inset: 12px !important;
+    border-radius: 14px !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .service-feature,
+  .service-feature-reverse {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-feature-media img {
+    height: 280px !important;
+  }
+}
