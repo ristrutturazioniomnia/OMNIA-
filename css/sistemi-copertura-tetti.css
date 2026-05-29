@@ -1096,52 +1096,69 @@
   }
 }
 /* === Fine servizi collegati tetti === */
-@media (max-width: 1100px) {
-  .roof-page .service-feature,
-  .roof-page .service-feature-reverse,
-  .service-page .service-feature,
-  .service-page .service-feature-reverse {
-    display: flex !important;
-    flex-direction: column !important;
+/* === FIX DEFINITIVO MOBILE GRONDAIE / SERVICE FEATURE === */
+@media screen and (max-width: 1200px), (hover: none) and (pointer: coarse) {
+  html body .service-feature,
+  html body .service-feature-reverse,
+  html body section.service-feature,
+  html body section.service-feature-reverse {
+    display: block !important;
     grid-template-columns: none !important;
-    align-items: stretch !important;
-    gap: 30px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-  }
-
-  .roof-page .service-feature-text,
-  .roof-page .service-feature-media,
-  .service-page .service-feature-text,
-  .service-page .service-feature-media {
-    order: initial !important;
+    grid-template-areas: none !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
+    overflow: visible !important;
   }
 
-  .roof-page .service-feature-media,
-  .service-page .service-feature-media {
+  html body .service-feature > .service-feature-text,
+  html body .service-feature > .service-feature-media,
+  html body .service-feature-reverse > .service-feature-text,
+  html body .service-feature-reverse > .service-feature-media {
     display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    float: none !important;
+    clear: both !important;
+    transform: none !important;
+  }
+
+  html body .service-feature > .service-feature-text,
+  html body .service-feature-reverse > .service-feature-text {
+    margin-bottom: 28px !important;
+    padding-right: 0 !important;
+  }
+
+  html body .service-feature > .service-feature-media,
+  html body .service-feature-reverse > .service-feature-media {
     position: relative !important;
     margin: 0 !important;
     overflow: hidden !important;
     border-radius: 22px !important;
+    box-shadow: var(--shadow-image) !important;
   }
 
-  .roof-page .service-feature-media img,
-  .service-page .service-feature-media img {
-    position: static !important;
+  html body .service-feature > .service-feature-media img,
+  html body .service-feature-reverse > .service-feature-media img {
+    position: relative !important;
+    inset: auto !important;
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     height: auto !important;
     max-height: none !important;
+    aspect-ratio: auto !important;
     object-fit: contain !important;
     object-position: center center !important;
     border-radius: 22px !important;
     transform: none !important;
   }
+
+  html body .service-feature-media:hover img {
+    transform: none !important;
+    filter: none !important;
+  }
 }
+/* === FINE FIX DEFINITIVO MOBILE GRONDAIE / SERVICE FEATURE === */
