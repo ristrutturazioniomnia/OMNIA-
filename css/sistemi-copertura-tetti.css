@@ -1098,27 +1098,31 @@
 /* === Fine servizi collegati tetti === */
 @media (max-width: 720px) {
   .service-feature,
-  .service-feature.service-feature-reverse {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: none !important;
+  .service-feature-reverse {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
     width: 100% !important;
     max-width: 100% !important;
-    gap: 28px !important;
-    overflow: hidden !important;
   }
 
   .service-feature-text,
   .service-feature-media {
-    order: initial !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
   }
 
+  .service-feature-reverse .service-feature-text {
+    order: 1 !important;
+  }
+
+  .service-feature-reverse .service-feature-media {
+    order: 2 !important;
+  }
+
   .service-feature-media {
-    display: block !important;
-    margin: 0 !important;
+    overflow: hidden !important;
     border-radius: 22px !important;
   }
 
@@ -1130,5 +1134,27 @@
     object-fit: cover !important;
     object-position: center center !important;
     border-radius: 22px !important;
+  }
+
+  .service-feature-media img[src*="gronda" i],
+  .service-feature-media img[alt*="gronda" i] {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: var(--paper-light) !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .service-feature-media img {
+    height: 280px !important;
+  }
+
+  .service-feature-media img[src*="gronda" i],
+  .service-feature-media img[alt*="gronda" i] {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
   }
 }
