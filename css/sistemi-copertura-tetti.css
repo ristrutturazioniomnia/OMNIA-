@@ -1096,69 +1096,96 @@
   }
 }
 /* === Fine servizi collegati tetti === */
-/* === FIX DEFINITIVO MOBILE GRONDAIE / SERVICE FEATURE === */
-@media screen and (max-width: 1200px), (hover: none) and (pointer: coarse) {
-  html body .service-feature,
-  html body .service-feature-reverse,
-  html body section.service-feature,
-  html body section.service-feature-reverse {
-    display: block !important;
-    grid-template-columns: none !important;
-    grid-template-areas: none !important;
+/* === FIX MOBILE DEFINITIVO GRONDAIE + SEZIONI TETTI === */
+@media screen and (max-width: 1180px) {
+  html body main.service-page.roof-page section.wide-detail {
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner,
+  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner[style] {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    gap: 32px !important;
+    align-items: start !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    overflow: visible !important;
+    margin: 0 !important;
+    padding: clamp(56px, 12vw, 86px) var(--pad-x) !important;
+    box-sizing: border-box !important;
   }
 
-  html body .service-feature > .service-feature-text,
-  html body .service-feature > .service-feature-media,
-  html body .service-feature-reverse > .service-feature-text,
-  html body .service-feature-reverse > .service-feature-media {
+  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner > div,
+  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner > div[style] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  html body main.service-page.roof-page section.wide-detail figure,
+  html body main.service-page.roof-page section.wide-detail figure[style] {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    float: none !important;
-    clear: both !important;
-    transform: none !important;
-  }
-
-  html body .service-feature > .service-feature-text,
-  html body .service-feature-reverse > .service-feature-text {
-    margin-bottom: 28px !important;
-    padding-right: 0 !important;
-  }
-
-  html body .service-feature > .service-feature-media,
-  html body .service-feature-reverse > .service-feature-media {
-    position: relative !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     margin: 0 !important;
     overflow: hidden !important;
     border-radius: 22px !important;
-    box-shadow: var(--shadow-image) !important;
+    box-sizing: border-box !important;
   }
 
-  html body .service-feature > .service-feature-media img,
-  html body .service-feature-reverse > .service-feature-media img {
-    position: relative !important;
+  html body main.service-page.roof-page section.wide-detail figure img,
+  html body main.service-page.roof-page section.wide-detail figure img[style],
+  html body main.service-page.roof-page section.wide-detail img[src*="grondaia"] {
+    position: static !important;
     inset: auto !important;
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     height: auto !important;
+    min-height: 0 !important;
     max-height: none !important;
-    aspect-ratio: auto !important;
     object-fit: contain !important;
     object-position: center center !important;
     border-radius: 22px !important;
     transform: none !important;
-  }
-
-  html body .service-feature-media:hover img {
-    transform: none !important;
     filter: none !important;
   }
+
+  html body main.service-page.roof-page .service-feature,
+  html body main.service-page.roof-page .service-feature-reverse {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  html body main.service-page.roof-page .service-feature-text,
+  html body main.service-page.roof-page .service-feature-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  html body main.service-page.roof-page .service-feature-media img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+  }
 }
-/* === FINE FIX DEFINITIVO MOBILE GRONDAIE / SERVICE FEATURE === */
+/* === FINE FIX MOBILE DEFINITIVO GRONDAIE + SEZIONI TETTI === */
