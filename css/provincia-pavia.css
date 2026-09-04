@@ -23,14 +23,6 @@
   font-weight: 700;
 }
 
-.breadcrumb-area a {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.breadcrumb-area a:hover {
-  color: var(--accent-soft);
-}
-
 .breadcrumb-area span::before {
   content: "/";
   margin-right: 10px;
@@ -45,7 +37,7 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.32), rgba(8, 13, 18, 0.58)),
-    url("../img/brochure.png") center center / cover no-repeat;
+    url("../img/brochure.jpg") center center / cover no-repeat;
 }
 
 .area-rank2-hero .hero-content p:not(.eyebrow) {
@@ -84,7 +76,7 @@
 
 .area-rank2-copy a:hover,
 .area-rank2-evaluation-copy a:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   border-color: currentColor;
 }
 
@@ -371,7 +363,7 @@
   width: fit-content;
   align-items: center;
   margin-top: 18px;
-  color: var(--accent);
+  color: var(--accent-dark);
   font-weight: 900;
 }
 
@@ -430,8 +422,7 @@
   padding: var(--section-y) var(--pad-x);
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.88), rgba(23, 34, 45, 0.42)),
-    url("../img/primadelcantiere2.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.88), rgba(23, 34, 45, 0.42));
 }
 .area-rank2-wide-content {
   max-width: 850px;
@@ -501,6 +492,17 @@
 
 .area-rank2-evaluation-full p {
   max-width: 980px;
+}
+
+/* Prende il posto dello style inline che stava su provincia-pavia.html:276.
+   Peso e sottolineatura sono replicati identici perche' la geometria non si
+   muova; cambia solo il colore, che su fondo chiaro dev'essere --accent-dark
+   (5,08:1) e non --accent (3,19:1). */
+.area-rank2-evaluation-full p a {
+  color: var(--accent-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 /* =========================================================
 10. Servizi disponibili nella zona
@@ -599,7 +601,7 @@
   width: fit-content;
   align-items: center;
   margin-top: 18px;
-  color: var(--accent);
+  color: var(--accent-dark);
   font-weight: 900;
 }
 
@@ -1153,18 +1155,6 @@
     transform: none;
   }
 }
-/* Titoli città grandi come Milano */
-.area-rank2-cities .area-rank2-city-row h2,
-.area-rank2-cities .area-rank2-city-row h3,
-.area-rank2-cities .area-rank2-feature-copy h2,
-.area-rank2-cities .area-rank2-feature-copy h3,
-.area-rank2-cities .area-rank2-city-main h2,
-.area-rank2-cities .area-rank2-city-main h3 {
-  font-size: clamp(2.9rem, 5.2vw, 4.35rem);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  margin-bottom: 18px;
-}
 /* =========================================================
 FIX H1 HERO MOBILE PAGINE AREA
 Evita che il titolo esca dallo schermo su smartphone
@@ -1205,7 +1195,7 @@ Evita che il titolo esca dallo schermo su smartphone
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .area-rank2-hero h1 {
     font-size: clamp(2.05rem, 10.5vw, 3rem);
   }

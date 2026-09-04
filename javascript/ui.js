@@ -211,3 +211,262 @@
   window.addEventListener('resize', requestUpdate);
   window.addEventListener('load', requestUpdate);
 }());
+
+/* Menu mobile: apertura e chiusura del pannello sotto 820px.
+   Fa quattro cose e nient'altro: toggle della classe + aria-expanded,
+   chiusura al tap su una voce, chiusura con Esc, blocco dello scroll
+   del body mentre il pannello e' aperto.
+   Gli onclick inline dei due dropdown restano dove sono: qui non si
+   toccano, e non c'e' conflitto perche' agiscono su <details> diversi. */
+(function () {
+  const nav = document.querySelector('.site-nav');
+  const toggle = document.querySelector('.site-nav-toggle');
+  const panel = document.getElementById('site-nav-menu');
+
+  if (!nav || !toggle || !panel) return;
+
+  const cta = nav.querySelector('.site-nav-cta a:first-child');
+  let scrollLocked = false;
+
+  function lockScroll() {
+    if (scrollLocked) return;
+    document.body.style.overflow = 'hidden';
+    scrollLocked = true;
+  }
+
+  function unlockScroll() {
+    if (!scrollLocked) return;
+    document.body.style.removeProperty('overflow');
+    scrollLocked = false;
+  }
+
+  function open() {
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Chiudi il menu');
+    lockScroll();
+  }
+
+  function close() {
+    if (!nav.classList.contains('is-open')) return;
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Apri il menu');
+    nav.querySelectorAll('.site-nav-dropdown[open]').forEach(function (d) {
+      d.removeAttribute('open');
+    });
+    unlockScroll();
+  }
+
+  toggle.addEventListener('click', function () {
+    if (nav.classList.contains('is-open')) close();
+    else open();
+  });
+
+  panel.addEventListener('click', function (event) {
+    if (event.target.closest('a')) close();
+  });
+
+  if (cta) {
+    cta.addEventListener('click', close);
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') close();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 820) close();
+  });
+}());
+
+
+/* Pagine comune (/aree/*.html), configurazione B: selettore a foto dei
+   servizi. Quattro card in fila, un solo pannello a schermo per volta.
+   Ha sostituito l'indice sticky con IntersectionObserver, che con i blocchi
+   non piu' in sequenza non aveva piu' scopo.
+   Senza JS il CSS nasconde le card e i quattro pannelli restano visibili in
+   sequenza, quindi qui si parte sempre chiudendo, mai aprendo. */
+(function () {
+  const selettore = document.querySelector('.comune-b .comune-selettore');
+
+  if (!selettore) return;
+
+  const scelte = Array.from(selettore.querySelectorAll('[role="tab"]'));
+  const pannelli = scelte.map(function (scelta) {
+    return document.getElementById(scelta.getAttribute('aria-controls'));
+  });
+
+  if (!scelte.length || !pannelli.every(Boolean)) return;
+
+  function mostra(idx) {
+    scelte.forEach(function (scelta, i) {
+      const attiva = i === idx;
+
+      scelta.setAttribute('aria-selected', attiva ? 'true' : 'false');
+      scelta.setAttribute('tabindex', attiva ? '0' : '-1');
+      pannelli[i].hidden = !attiva;
+    });
+  }
+
+  scelte.forEach(function (scelta, i) {
+    scelta.addEventListener('click', function () {
+      mostra(i);
+    });
+
+    scelta.addEventListener('keydown', function (event) {
+      let next = -1;
+
+      if (event.key === 'ArrowRight') next = (i + 1) % scelte.length;
+      else if (event.key === 'ArrowLeft') next = (i - 1 + scelte.length) % scelte.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = scelte.length - 1;
+
+      if (next < 0) return;
+
+      event.preventDefault();
+      mostra(next);
+      scelte[next].focus();
+    });
+  });
+
+  mostra(0);
+}());
+
+/* Pagine comune (/aree/*.html), configurazione C: tab dei servizi e
+   accordion delle FAQ. Senza JS il markup resta leggibile: il CSS
+   nasconde le linguette sotto .no-js e tutti i pannelli restano visibili
+   in sequenza, quindi qui si parte sempre chiudendo, mai aprendo. */
+(function () {
+  const tablist = document.querySelector('.comune-c .comune-tablist');
+
+  if (tablist) {
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const panels = tabs.map(function (tab) {
+      return document.getElementById(tab.getAttribute('aria-controls'));
+    });
+
+    if (tabs.length && panels.every(Boolean)) {
+      const select = function (idx) {
+        tabs.forEach(function (tab, i) {
+          const on = i === idx;
+          tab.setAttribute('aria-selected', on ? 'true' : 'false');
+          tab.setAttribute('tabindex', on ? '0' : '-1');
+          panels[i].hidden = !on;
+        });
+      };
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () {
+          select(i);
+        });
+
+        tab.addEventListener('keydown', function (event) {
+          let next = -1;
+
+          if (event.key === 'ArrowRight') next = (i + 1) % tabs.length;
+          else if (event.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+
+          if (next < 0) return;
+
+          event.preventDefault();
+          select(next);
+          tabs[next].focus();
+        });
+      });
+
+      select(0);
+    }
+  }
+
+  const toggles = Array.from(document.querySelectorAll('.comune-c .comune-faq-toggle'));
+
+  toggles.forEach(function (toggle, i) {
+    const panel = document.getElementById(toggle.getAttribute('aria-controls'));
+
+    if (!panel) return;
+
+    const open = i === 0;
+
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.hidden = !open;
+
+    toggle.addEventListener('click', function () {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+      toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      panel.hidden = isOpen;
+    });
+  });
+}());
+
+/* Pagine comune (/aree/*.html), configurazioni A e B: risposte delle FAQ
+   chiuse a 2,5 righe, con un pulsante che le apre. Diverso dall'accordion
+   di C: la domanda resta ferma e sempre visibile, si apre solo il resto
+   della risposta.
+   Il CSS parte con tutto aperto e senza pulsante; qui si aggiunge
+   .has-more solo dove la risposta chiusa sborda davvero, misurando contro
+   l'altezza che da' il CSS. max-height: none non si anima: per la durata
+   della transizione si passa dal valore in px, e lo si rilascia al
+   transitionend cosi' l'altezza resta fluida. */
+(function () {
+  const items = Array.from(document.querySelectorAll('.comune-a .comune-faq-item, .comune-b .comune-faq-item'));
+
+  if (!items.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  items.forEach(function (item) {
+    const answer = item.querySelector('.comune-faq-answer');
+    const more = item.querySelector('.comune-faq-more');
+
+    if (!answer || !more) return;
+
+    item.classList.add('has-more');
+
+    if (answer.scrollHeight <= answer.clientHeight) {
+      item.classList.remove('has-more');
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    const more = event.target.closest('.comune-faq-more');
+
+    if (!more) return;
+
+    const item = more.closest('.comune-faq-item');
+    const answer = document.getElementById(more.getAttribute('aria-controls'));
+
+    if (!item || !answer) return;
+
+    const isOpen = more.getAttribute('aria-expanded') === 'true';
+
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+
+    if (isOpen) {
+      // La lettura forza il layout: i px diventano il punto di partenza
+      // della transizione verso l'altezza chiusa.
+      void answer.offsetHeight;
+      item.classList.remove('is-open');
+      answer.style.removeProperty('max-height');
+    } else {
+      item.classList.add('is-open');
+      if (reduceMotion) answer.style.removeProperty('max-height');
+    }
+
+    more.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    more.setAttribute('aria-label', isOpen ? 'Leggi tutta la risposta' : 'Riduci la risposta');
+  });
+
+  document.addEventListener('transitionend', function (event) {
+    const answer = event.target;
+
+    if (event.propertyName !== 'max-height') return;
+    if (!answer.classList || !answer.classList.contains('comune-faq-answer')) return;
+    if (!answer.closest('.is-open')) return;
+
+    answer.style.removeProperty('max-height');
+  });
+}());

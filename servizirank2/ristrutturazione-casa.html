@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  >
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/ristruttcasa.css">
   <script src="/javascript/ui.js" defer></script>
 
-  <title>Servizi di ristrutturazione della casa in provincia di Milano, Pavia e Novara | Omnia Ristrutturazioni. Se stai cercando ristrutturazione interna vicino a me, oppure ristrutturazione salotto e ristrutturazione della cucina vicino a me, Omnia Ristrutturazioni è l'impresa che fa per te.</title>
+  <title>Ristrutturazione della casa in provincia di Milano, Pavia e Novara | Omnia Ristrutturazioni. Cerchi ristrutturazione interna, rifacimento cucina o nuovi pavimenti vicino a me? Siamo l'impresa da contattare.</title>
 <meta name="description" content="Omnia Ristrutturazioni segue ristrutturazioni casa, pavimentazioni, opere murarie, tinteggiature e serramenti. Richiedi un sopralluogo.">
 <link rel="canonical" href="https://omnia-ristrutturazioni.com/servizirank2/ristrutturazione-casa.html">
 <meta name="robots" content="index, follow">
@@ -38,10 +36,10 @@
       "image": {
         "@type": "ImageObject",
         "@id": "https://omnia-ristrutturazioni.com/servizirank2/ristrutturazione-casa.html#primaryimage",
-        "url": "https://omnia-ristrutturazioni.com/img/brochure.png"
+        "url": "https://omnia-ristrutturazioni.com/img/brochure.jpg"
       },
       "isPartOf": {
-        "@id": "https://omnia-ristrutturazioni.com/"
+        "@id": "https://omnia-ristrutturazioni.com/#website"
       },
       "about": {
         "@id": "https://omnia-ristrutturazioni.com/servizirank2/ristrutturazione-casa.html#service"
@@ -58,10 +56,10 @@
       "@id": "https://omnia-ristrutturazioni.com/#localbusiness",
       "name": "Omnia Ristrutturazioni",
       "url": "https://omnia-ristrutturazioni.com/",
-      "logo": "https://omnia-ristrutturazioni.com/img/logo-omnia.png",
-      "image": "https://omnia-ristrutturazioni.com/img/brochure.png",
+      "logo": "https://omnia-ristrutturazioni.com/img/favicon/web-app-manifest-512x512.png",
+      "image": "https://omnia-ristrutturazioni.com/img/brochure.jpg",
       "description": "Omnia Ristrutturazioni è un'impresa specializzata in ristrutturazioni interne ed esterne, rifacimento facciate, tetti, coperture e bagni, con sede a Vigevano e operatività nelle province di Milano, Pavia e Novara.",
-      "telephone": "389 841 6691",
+      "telephone": "+393898416691",
       "email": "info.omniaristrutturazioni@gmail.com",
       "address": {
         "@type": "PostalAddress",
@@ -105,6 +103,9 @@
         }
       ],
       "hasMap": "https://maps.app.goo.gl/MjQzf1ptpEysJN2E6",
+      "sameAs": [
+        "https://maps.app.goo.gl/MjQzf1ptpEysJN2E6"
+      ],
       "areaServed": [
         {
           "@type": "AdministrativeArea",
@@ -117,6 +118,50 @@
         {
           "@type": "AdministrativeArea",
           "name": "Provincia di Novara"
+        },
+        {
+          "@type": "City",
+          "name": "Milano"
+        },
+        {
+          "@type": "City",
+          "name": "Cornaredo"
+        },
+        {
+          "@type": "City",
+          "name": "Magenta"
+        },
+        {
+          "@type": "City",
+          "name": "Abbiategrasso"
+        },
+        {
+          "@type": "City",
+          "name": "Pavia"
+        },
+        {
+          "@type": "City",
+          "name": "Vigevano"
+        },
+        {
+          "@type": "City",
+          "name": "Garlasco"
+        },
+        {
+          "@type": "City",
+          "name": "Mortara"
+        },
+        {
+          "@type": "City",
+          "name": "Novara"
+        },
+        {
+          "@type": "City",
+          "name": "Trecate"
+        },
+        {
+          "@type": "City",
+          "name": "Galliate"
         }
       ]
     },
@@ -127,7 +172,7 @@
       "serviceType": "Ristrutturazione interna della casa",
       "description": "Servizio di ristrutturazione interna della casa con interventi su pavimentazioni, opere murarie, tinteggiature, serramenti, cucine, salotti, bagni, camere, ingressi e locali danneggiati da perdite o infiltrazioni.",
       "url": "https://omnia-ristrutturazioni.com/servizirank2/ristrutturazione-casa.html",
-      "image": "https://omnia-ristrutturazioni.com/img/brochure.png",
+      "image": "https://omnia-ristrutturazioni.com/img/brochure.jpg",
       "provider": {
         "@id": "https://omnia-ristrutturazioni.com/#localbusiness"
       },
@@ -242,25 +287,30 @@
 
 <body>
 <header class="site-nav">
-  <a href="/index.html" class="site-nav-logo" aria-label="Torna alla home">
-    <img src="/img/logo-omnia.png" alt="Omnia ristrutturazioni">
+  <a href="/#hero" class="site-nav-logo" aria-label="Torna alla home">
+    <img src="/img/logo-omnia.png" width="86" height="129" alt="Omnia Ristrutturazioni">
   </a>
+  <button class="site-nav-toggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-    <nav class="site-nav-menu" aria-label="Navigazione principale">
-    <a href="/index.html">Home</a>
-    <a href="/index.html#chi-siamo">Chi siamo</a>
+    <nav class="site-nav-menu" id="site-nav-menu" aria-label="Navigazione principale">
+    <a href="/">Home</a>
+    <a href="/#chi-siamo">Chi siamo</a>
     <details class="site-nav-dropdown" name="site-nav-dropdown">
       <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Servizi</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-servizi">
         <a href="/servizirank2/ristrutturazione-casa.html">Ristrutturazione interna della casa</a>
         <a href="/servizirank2/sistemi-copertura-tetti.html">Riparazioni di tetti e coperture</a>
-        <a href="/servizirank2/rifacimento-facciate.html">Specialisti nel rifacimento delle facciate</a>
+        <a href="/servizirank2/rifacimento-facciate.html">Specialisti nel Rifacimento delle facciate</a>
         <a href="/servizirank2/ristrutturazione-bagno.html">Ristrutturazione del bagno</a>
       </div>
     </details>
     <details class="site-nav-dropdown" name="site-nav-dropdown">
-      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Dove lavoriamo</summary>
+      <summary onclick="document.querySelectorAll('.site-nav-dropdown[open]').forEach(d => { if (d !== this.parentElement) d.removeAttribute('open') })">Dove Lavoriamo</summary>
 
       <div class="site-nav-dropdown-panel site-nav-dropdown-panel-aree">
         <div>
@@ -283,7 +333,7 @@
     <a href="/contatti/contatti.html">Contatti</a>
   </nav>
  <div class="site-nav-cta">
-    <a href="mailto:omniaristrutturazione@pec.it">Richiedi un preventivo</a>
+    <a href="/contatti/contatti.html">Richiedi un preventivo</a>
     <a href="tel:+393898416691">Chiama</a>
   </div>
 </header>
@@ -300,8 +350,8 @@
     </p>
 
     <div class="hero-buttons">
-      <a href="mailto:omniaristrutturazione@pec.it">Richiedi un sopralluogo</a>
-      <a href="tel:3898416691">Chiama 389 841 6691</a>
+      <a href="/contatti/contatti.html">Richiedi un sopralluogo</a>
+      <a href="tel:+393898416691">Chiama 389 841 6691</a>
     </div>
   </div>
 </section>
@@ -320,12 +370,12 @@
           Il nostro lavoro è trasformare una richiesta iniziale in un percorso chiaro. Durante la valutazione analizziamo i pavimenti, le pareti, i soffitti, e le finiture presenti. Questo permette di capire se l’intervento richiede solo un aggiornamento estetico o se servono opere murarie più profonde prima della posa finale.
         </p>
         <p>
-          Operiamo su abitazioni private e seguiamo interventi completi o parziali, anche quando il cliente vuole rinnovare solo alcune stanze. In una casa a <a href="/areerank2/provincia-milano.html">Milano</a>, ci è capitato di partire da un problema molto semplice: ambienti belli, ma poco pratici da vivere ogni giorno. In quel caso la priorità non era solo “rifare”, ma recuperare spazio utile e rendere gli interni più funzionali. In abitazioni più residenziali, invece, spesso il primo tema diventa un altro: migliorare isolamento, comfort e continuità delle finiture, così da rendere la casa più comoda ed efficiente.
+          Operiamo su abitazioni private e seguiamo interventi completi o parziali, anche quando il cliente vuole rinnovare solo alcune stanze. In una casa a <a href="/aree/milano.html">Milano</a>, ci è capitato di partire da un problema molto semplice: ambienti belli, ma poco pratici da vivere ogni giorno. In quel caso la priorità non era solo “rifare”, ma recuperare spazio utile e rendere gli interni più funzionali. In abitazioni più residenziali, invece, spesso il primo tema diventa un altro: migliorare isolamento, comfort e continuità delle finiture, così da rendere la casa più comoda ed efficiente.
         </p>
       </div>
 
       <div class="service-media scroll-reveal scroll-reveal-media">
-        <img src="/img/ristruttcasa.jpg" alt="Metodo di lavoro durante una ristrutturazione casa">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -341,7 +391,7 @@
 
  <div class="rank-grid">
   <a class="rank-card scroll-reveal scroll-reveal-text" href="#pavimentazioni">
-    <img src="/img/pavimentazioni.jpg" alt="Pavimentazioni per ristrutturazione casa">
+    <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
 
     <div>
       <h3>sostituzione e posa di pavimentazioni</h3>
@@ -352,7 +402,7 @@
   </a>
 
   <a class="rank-card scroll-reveal scroll-reveal-text" href="#opere-murarie-tinteggiatura">
-    <img src="/img/finitureepitture.jpg" alt="Opere murarie e tinteggiatura per interni">
+    <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
 
     <div>
       <h3>Opere murarie e tinteggiatura</h3>
@@ -363,7 +413,7 @@
   </a>
 
   <a class="rank-card scroll-reveal scroll-reveal-text" href="#serramenti">
-    <img src="/img/serramenti.jpg" alt="Sostituzione serramenti in abitazione privata">
+    <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
 
     <div>
       <h3>Sostituzione dei serramenti</h3>
@@ -384,7 +434,7 @@
           La pavimentazione incide subito sulla percezione della casa, ma prima della scelta estetica viene la parte tecnica.Durante il sopralluogo controlliamo la regolarità del fondo e i raccordi tra gli ambienti, comprese soglie e battiscopa. Se il fondo non è stabile o presenta dislivelli, la nuova posa rischia di creare problemi visibili già dopo poco tempo.
         </p>
         <p>
-          Possiamo intervenire su pavimenti usurati, superfici non più coerenti con l’arredo, stanze danneggiate da infiltrazioni o ambienti da uniformare dopo lavori murari. In un intervento recente a <a href="/areerank2/provincia-milano.html">Cornaredo</a>, il pavimento del soggiorno era rimasto visivamente diverso rispetto alla zona cucina dopo alcune modifiche interne: la nuova posa ha permesso di rendere l’appartamento più moderno e continuo, senza dover stravolgere tutto l’arredo esistente.
+          Possiamo intervenire su pavimenti usurati, superfici non più coerenti con l’arredo, stanze danneggiate da infiltrazioni o ambienti da uniformare dopo lavori murari. In un intervento recente a <a href="/aree/cornaredo.html">Cornaredo</a>, il pavimento del soggiorno era rimasto visivamente diverso rispetto alla zona cucina dopo alcune modifiche interne: la nuova posa ha permesso di rendere l’appartamento più moderno e continuo, senza dover stravolgere tutto l’arredo esistente.
         </p>
 <p>
   La posa viene coordinata con porte e serramenti, insieme alle finiture finali, perché un buon risultato non dipende da una singola lavorazione ma dall’allineamento tra tutti gli elementi della casa.
@@ -393,7 +443,7 @@
       </div>
 
       <div class="service-media scroll-reveal scroll-reveal-media">
-        <img src="/img/pavimenti1.jpg" alt="Pavimentazione interna durante una ristrutturazione casa">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -407,7 +457,7 @@
          Le opere murarie sono spesso la parte meno visibile nel risultato finale, ma sono decisive per ottenere un lavoro pulito. Rientrano in questa fase tutti quegli interventi che preparano davvero la casa alle finiture: dal ripristino delle pareti rovinate alle demolizioni controllate, fino alle modifiche necessarie per correggere aperture, superfici e punti critici emersi durante la ristrutturazione.
         </p>
         <p>
-          La tinteggiatura non viene trattata come una semplice mano di colore. Prima si valuta la qualità del supporto, la presenza di umidità, crepe, vecchie pitture o zone danneggiate. In un intervento a <a href="/areerank2/provincia-milano.html">Magenta</a>, su una parete segnata da infiltrazioni è stato necessario stabilizzarla e prepararla con intonaci traspiranti: coprire il problema senza risolverlo significa ritrovarlo dopo poco.
+          La tinteggiatura non viene trattata come una semplice mano di colore. Prima si valuta la qualità del supporto, la presenza di umidità, crepe, vecchie pitture o zone danneggiate. In un intervento a <a href="/aree/magenta.html">Magenta</a>, su una parete segnata da infiltrazioni è stato necessario stabilizzarla e prepararla con intonaci traspiranti: coprire il problema senza risolverlo significa ritrovarlo dopo poco.
         </p>
         <p>
           L’obiettivo è rendere gli ambienti uniformi e coerenti con il resto della ristrutturazione, scegliendo cicli di preparazione e finitura adatti alla stanza e all’uso quotidiano.
@@ -416,7 +466,7 @@
       </div>
 
       <div class="service-media scroll-reveal scroll-reveal-media">
-        <img src="/img/pareti1.jpg" alt="Opere murarie e tinteggiatura in abitazione privata">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -430,7 +480,7 @@
          I serramenti incidono sul comfort abitativo e sulla luminosità, oltre che sull’isolamento e sull’aspetto della casa. Quando vengono inseriti in una ristrutturazione interna, non vanno valutati come elemento isolato: il nuovo infisso deve inserirsi correttamente con tutte le finiture che lo circondano. Una sostituzione non coordinata può lasciare segni visibili, piccoli dislivelli o raccordi poco curati tra pareti, pavimenti e tinteggiature.
         </p>
         <p>
-       Durante il sopralluogo verifichiamo lo stato dei serramenti esistenti, controllando eventuali spifferi o condensa, i telai e la zona perimetrale. In un’abitazione ad <a href="/areerank2/provincia-pavia.html">Abbiategrasso</a>, la sostituzione degli infissi ha evidenziato piccoli distacchi nelle spallette interne e segni lasciati dai vecchi telai: per questo l’intervento è stato completato con ripristini localizzati e tinteggiatura, così da consegnare gli ambienti già rifiniti e coerenti con il resto della casa.
+       Durante il sopralluogo verifichiamo lo stato dei serramenti esistenti, controllando eventuali spifferi o condensa, i telai e la zona perimetrale. In un’abitazione ad <a href="/aree/abbiategrasso.html">Abbiategrasso</a>, la sostituzione degli infissi ha evidenziato piccoli distacchi nelle spallette interne e segni lasciati dai vecchi telai: per questo l’intervento è stato completato con ripristini localizzati e tinteggiatura, così da consegnare gli ambienti già rifiniti e coerenti con il resto della casa.
         </p>
         <p>
           Il risultato deve essere pratico e pulito: nuovi serramenti ben integrati, finiture laterali ordinate e nessuna lavorazione lasciata incompleta.
@@ -439,7 +489,7 @@
       </div>
 
       <div class="service-media scroll-reveal scroll-reveal-media">
-        <img src="/img/serrramenti1.jpg" alt="Serramenti e finiture interne durante una ristrutturazione">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -455,7 +505,7 @@
 
     <div class="rooms-grid">
       <article class="room-card scroll-reveal scroll-reveal-text">
-        <img src="/img/cucina.jpg" alt="Ristrutturazione cucina">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
         <div class="room-content">
           <h3>Ristrutturazione della cucina</h3>
           <p>
@@ -471,7 +521,7 @@
       </article>
 
       <article class="room-card scroll-reveal scroll-reveal-text">
-        <img src="/img/salotto.jpg" alt="Ristrutturazione salotto">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
         <div class="room-content">
           <h3>Ristrutturazione del salotto</h3>
           <p>
@@ -487,7 +537,7 @@
       </article>
 
       <article class="room-card scroll-reveal scroll-reveal-text">
-        <img src="/img/bagno.jpg" alt="Ristrutturazione bagno">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
         <div class="room-content">
           <h3>Ristrutturazione del bagno</h3>
           <p>
@@ -503,7 +553,7 @@
       </article>
 
       <article class="room-card scroll-reveal scroll-reveal-text">
-        <img src="/img/camera.jpg" alt="Ristrutturazione camera da letto">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
         <div class="room-content">
           <h3>Ristrutturazione della camera</h3>
           <p>
@@ -522,7 +572,7 @@
 
 
         
-        <img src="/img/ingresso.jpg" alt="Ristrutturazione ingresso e corridoi">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
         <div class="room-content">
           <h3>Ristrutturazione di ingresso e corridoi</h3>
           <p>
@@ -538,7 +588,7 @@
       </article>
 
       <article class="room-card scroll-reveal scroll-reveal-text">
-        <img src="/img/infiltrazioni.jpg" alt="Ripristino locali interni danneggiati">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
         <div class="room-content">
           <h3>Ristrutturazione di locali con perdite o infiltrazioni</h3>
           <p>
@@ -572,7 +622,7 @@
       </div>
 
       <div class="service-media scroll-reveal scroll-reveal-media">
-        <img src="/img/sopralluogoconsegna.jpg" alt="Aree servite per ristrutturazione casa">
+        <img src="/img/placeholder-omnia.svg" width="1200" height="800" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -650,7 +700,7 @@
 
 
       <div class="contatti-azioni">
-        <a href="/contatti/contatti.html">Compila il modulo e verrai contattato entro 48H</a>
+        <a href="/contatti/contatti.html">Richiedi un sopralluogo gratuito</a>
       </div>
     </div>
 
@@ -661,7 +711,7 @@
         <ul>
           <li><a href="/servizirank2/ristrutturazione-casa.html">Ristrutturazione interna della casa</a></li>
           <li><a href="/servizirank2/sistemi-copertura-tetti.html">Riparazione di tetti e coperture</a></li>
-          <li><a href="/servizirank2/rifacimento-facciate.html">Specialisti nel rifacimento delle facciate</a></li>
+          <li><a href="/servizirank2/rifacimento-facciate.html">Specialisti nel Rifacimento delle facciate</a></li>
           <li><a href="/servizirank2/ristrutturazione-bagno.html">Ristrutturazione del bagno</a></li>
         </ul>
       </div>
@@ -687,9 +737,9 @@
       <h3>Link rapidi</h3>
 
       <ul class="footer__links">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/index.html#chi-siamo">Chi siamo</a></li>
-        <li><a href="/index.html#servizi">Servizi</a></li>
+        <li><a href="/#hero">Home</a></li>
+        <li><a href="/#chi-siamo">Chi siamo</a></li>
+        <li><a href="/#servizi">Servizi</a></li>
         <li><a href="/contatti/contatti.html">Contatti</a></li>
       </ul>
     </div>
@@ -710,18 +760,23 @@
         <h4>Sede principale</h4>
 
         <div class="office__row">
-          <i class="fa-solid fa-location-dot"></i>
-          <p>Via Giuseppe Giusti 3<br>Vigevano, 27029, PV</p>
+          <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+          <p>Via Giuseppe Giusti, 3,<br>27029 Vigevano PV</p>
         </div>
 
         <div class="office__row">
-          <i class="fa-solid fa-phone"></i>
+          <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
           <p>389 841 6691</p>
         </div>
 
+        <div class="office__row office__row--email">
+          <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+          <p><a href="mailto:info.omniaristrutturazioni@gmail.com" aria-label="Email">info.omniaristrutturazioni@<wbr>gmail.com</a></p>
+        </div>
+
         <div class="office__row office__row--pec">
-          <i class="fa-solid fa-envelope-circle-check"></i>
-          <p><a href="mailto:omniaristrutturazione@pec.it">PEC: omniaristrutturazione@pec.it</a></p>
+          <svg viewBox="0 0 640 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0l57.4-43c23.9-59.8 79.7-103.3 146.3-109.8l13.9-10.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176V384c0 35.3 28.7 64 64 64H360.2C335.1 417.6 320 378.5 320 336c0-5.6 .3-11.1 .8-16.6l-26.4 19.8zM640 336a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zm-76.7-43.3c6.2 6.2 6.2 16.4 0 22.6l-72 72c-6.2 6.2-16.4 6.2-22.6 0l-40-40c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L480 353.4l60.7-60.7c6.2-6.2 16.4-6.2 22.6 0z"/></svg>
+          <p><a href="mailto:omniaristrutturazione@pec.it" aria-label="PEC">omniaristrutturazione@<wbr>pec.it</a></p>
         </div>
       </div>
 
@@ -747,7 +802,7 @@
 
       <p class="appointment__text">
         Organizza il tuo sopralluogo con semplicità. Offriamo servizi professionali
-        per valutazioni, consulenze tecniche, perizie, verifiche e interventi su misura
+        per valutare lo stato dell’immobile e capire quale intervento sia più adatto
         in base alle esigenze del cliente.
       </p>
 
@@ -757,18 +812,18 @@
 
     <div class="appointment__box">
        <a href="tel:+393898416691" class="appointment__icon" aria-label="Chiama il numero 389 841 6691">
-  <i class="fa-solid fa-phone-volume"></i>
+  <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z"/></svg>
 </a>
 
         <div>
           <h4>Chiamaci oggi</h4>
-          <a href="tel:3898416691">389 841 6691</a>
+          <a href="tel:+393898416691">389 841 6691</a>
         </div>
       </div>
 
       <div class="appointment__box">
       <a href="mailto:info.omniaristrutturazioni@gmail.com" class="appointment__icon" aria-label="Invia una email">
-  <i class="fa-regular fa-envelope"></i>
+  <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
 </a>
 
         <div>

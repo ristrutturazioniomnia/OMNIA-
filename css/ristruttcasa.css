@@ -4,7 +4,7 @@
   background:
     radial-gradient(circle at 52% 30%, rgba(184, 121, 69, 0.24), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.34), rgba(8, 13, 18, 0.58)),
-    url("../img/brochure.png") center center / cover no-repeat;
+    url("../img/brochure.jpg") center center / cover no-repeat;
 }
 
 .service-hero .hero-content p:not(.eyebrow) {
@@ -87,8 +87,8 @@
 
 .service-copy p a:hover,
 .room-content details a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-dark);
+  border-color: currentColor;
 }
 
 .service-media {
@@ -200,16 +200,6 @@
   font-size: 0.96rem;
 }
 
-.rank-card a {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  margin-top: 22px;
-  color: var(--accent-soft);
-  font-size: 0.92rem;
-  font-weight: 800;
-}
-
 .rank-card a::after {
   content: "→";
   margin-left: 10px;
@@ -281,8 +271,7 @@
 
 .rooms-section {
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.95), rgba(23, 34, 45, 0.84)),
-    url("../img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.95), rgba(23, 34, 45, 0.84));
 }
 
 .rooms-section h2,
@@ -596,7 +585,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .service-media img {
     height: 280px;
   }
@@ -674,8 +663,15 @@
 }
 
 .service-page a:not(.hero-buttons a):not(.inline-action):not(.contatti-azioni a):hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration-color: currentColor;
+}
+
+/* Fondo scuro: le card .rank-card stanno dentro un blocco --ink, dove
+   --accent-dark scenderebbe a 2,46:1. Qui il colore giusto e' --accent. */
+.service-page a.rank-card:not(.hero-buttons a):not(.inline-action):not(.contatti-azioni a),
+.service-page a.rank-card:not(.hero-buttons a):not(.inline-action):not(.contatti-azioni a):hover {
+  color: var(--accent);
 }
 
 .service-section::before {
@@ -712,8 +708,7 @@
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("../img/ristrutturazione-casa.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86));
 }
 
 .linked-services::before {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://omnia-ristrutturazioni.com/</loc>
@@ -35,6 +35,50 @@
 
   <url>
     <loc>https://omnia-ristrutturazioni.com/contatti/contatti.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/milano.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/pavia.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/novara.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/abbiategrasso.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/cornaredo.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/galliate.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/garlasco.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/magenta.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/mortara.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/trecate.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omnia-ristrutturazioni.com/aree/vigevano.html</loc>
   </url>
 
 </urlset>

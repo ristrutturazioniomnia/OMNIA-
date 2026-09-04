@@ -1,0 +1,1100 @@
+/* =========================================================
+   AREE RANK 3 — pagine comune (/aree/*.html)
+   Caricato DOPO css/style.css.
+
+   Tre configurazioni sullo stesso set di 5 sezioni, nello stesso
+   ordine: Hero · Servizi · FAQ locali · Metodo · Contatti.
+   La variante e' una classe sul <main>:
+     .comune-a  Pavia   hero centrato + barra 4 celle · 4 fasce alternate
+                        · FAQ in colonna stretta · metodo 2x2
+     .comune-b  Milano  hero split + box · indice sticky + blocchi lunghi
+                        · FAQ 2x2 · metodo a lista · contatti a card
+     .comune-c  Novara  hero pieno + chip · tab a 4 linguette
+                        · FAQ accordion · metodo 3 step
+
+   Navbar e footer NON stanno qui: il loro markup e' copiato verbatim
+   dalle altre pagine e i loro stili arrivano da style.css.
+   Breakpoint: solo 980 e 720.
+========================================================= */
+
+/* =========================================================
+1. STRUTTURA COMUNE ALLE TRE CONFIGURAZIONI
+========================================================= */
+
+.comune-page > section {
+  width: 100%;
+  padding: var(--section-y) var(--pad-x);
+}
+
+/* Config B: le pagine sono piu' lunghe delle altre e il ritmo verticale
+   si stringe di circa un quarto. Il token globale di style.css non si
+   tocca: il valore vale solo dentro .comune-b. */
+.comune-b {
+  --section-y: clamp(56px, 6vw, 92px);
+}
+
+.comune-page h2 {
+  font-size: clamp(1.48rem, 2.6vw, 2.28rem);
+}
+
+/* Filetto di sezione: stessa declaration di style.css:161-171,
+   ridichiarata qui perche' quella e' agganciata a tre nomi di classe
+   della home e style.css non si tocca. */
+.comune-a .comune-faq::before,
+.comune-c .comune-faq::before {
+  content: "";
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  top: var(--section-y);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
+/* =========================================================
+2. LINK DI TESTO — il colore dipende dal fondo su cui poggiano
+   Fondo chiaro  -> --accent-dark, anche al :hover
+   Fondo scuro   -> --accent, anche al :hover
+   L'hover cambia solo la sottolineatura.
+========================================================= */
+
+.comune-copy a,
+.comune-faq-answer a {
+  color: var(--accent-dark);
+  font-weight: 800;
+  border-bottom: 1px solid rgba(184, 121, 69, 0.36);
+}
+
+.comune-copy a:hover,
+.comune-faq-answer a:hover {
+  color: var(--accent-dark);
+  border-color: currentColor;
+}
+
+.comune-hero a:not(.comune-hero-cta),
+.comune-contatti a:not(.comune-contatti-cta) {
+  color: var(--accent);
+  font-weight: 800;
+  border-bottom: 1px solid rgba(184, 121, 69, 0.36);
+}
+
+.comune-hero a:not(.comune-hero-cta):hover,
+.comune-contatti a:not(.comune-contatti-cta):hover {
+  color: var(--accent);
+  border-color: currentColor;
+}
+
+/* Freccine: restano --accent e non seguono il colore del link. */
+.comune-more::after,
+.comune-hero-links a::after,
+.comune-hero-chips a::after {
+  content: "\2192";
+  margin-left: 8px;
+  color: var(--accent);
+}
+
+.comune-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 18px;
+  color: var(--accent-dark);
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(184, 121, 69, 0.36);
+}
+
+.comune-more:hover {
+  color: var(--accent-dark);
+  border-color: currentColor;
+}
+
+/* =========================================================
+3. HERO — fascia --ink piena, comune alle tre configurazioni
+========================================================= */
+
+/* Il selettore deve restare piu' specifico di `.comune-page > section`,
+   altrimenti il padding del blocco 1 vince e l'hero perde la
+   compensazione della navbar fissa. */
+.comune-page > .comune-hero {
+  min-height: 79svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(88px, 9vw, 140px);
+  padding-bottom: clamp(52px, 6vw, 82px);
+  color: var(--white);
+  background:
+    radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
+    linear-gradient(180deg, rgba(8, 13, 18, 0.36), rgba(8, 13, 18, 0.58)),
+    url("../img/brochure.jpg") center center / cover no-repeat;
+}
+
+.comune-hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+}
+
+.comune-hero-sub {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 1.65vw, 1.32rem);
+}
+
+/* =========================================================
+4. HERO A — centrato, barra a 4 celle
+========================================================= */
+
+/* La fascia dei comuni si appoggia al fondo dell'hero: il padding
+   inferiore va a 0 e il blocco titolo si centra con i margini auto.
+   Specificita' 0,3,1 contro 0,2,1 della sezione 3. */
+.comune-page.comune-a > .comune-hero {
+  padding-bottom: 0;
+}
+
+.comune-a .comune-hero {
+  text-align: center;
+}
+
+.comune-a .comune-hero-inner {
+  max-width: 1040px;
+  margin: auto;
+}
+
+.comune-a .comune-hero .eyebrow {
+  justify-content: center;
+  color: var(--accent-soft);
+}
+
+.comune-a .comune-hero-sub {
+  max-width: 780px;
+  margin: 26px auto 0;
+}
+
+.comune-a .comune-hero-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(42px, 5vw, 66px);
+  margin-left: calc(var(--pad-x) * -1);
+  margin-right: calc(var(--pad-x) * -1);
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+  border-top: 1px solid var(--line-light);
+  background: var(--ink);
+}
+
+.comune-a .comune-hero-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 18px 12px;
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  border-bottom: 0;
+  border-left: 1px solid var(--line-light);
+}
+
+.comune-a .comune-hero-links a:first-child {
+  border-left: 0;
+}
+
+.comune-a .comune-hero-links a:last-child {
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+}
+
+.comune-a .comune-hero-links a:last-child::after {
+  content: none;
+}
+
+/* =========================================================
+5. HERO B — split, box dei comuni a destra
+========================================================= */
+
+.comune-b .comune-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 286px;
+  grid-template-rows: auto auto auto;
+  column-gap: clamp(34px, 5vw, 76px);
+  align-items: start;
+}
+
+/* Il box sta nella stessa riga del gruppo titolo e si centra su di essa:
+   i due centri coincidono a qualsiasi larghezza, senza numeri fissi. */
+.comune-b .comune-hero-inner > .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.comune-b .comune-hero-titolo {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.comune-b .comune-hero-inner > .hero-buttons {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.comune-b .comune-hero h1 {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+
+.comune-b .comune-hero .eyebrow {
+  color: var(--accent-soft);
+}
+
+.comune-b .comune-hero-sub {
+  max-width: 620px;
+  margin-top: 26px;
+}
+
+.comune-b .comune-hero .hero-buttons {
+  justify-content: flex-start;
+}
+
+.comune-b .comune-hero-box {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  padding: clamp(22px, 2.64vw, 31px);
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-small);
+  background: var(--ink);
+}
+
+.comune-b .comune-hero-box-label {
+  display: block;
+  padding: 0 0 18px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: clamp(0.81rem, 1.05vw, 0.90rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.comune-b .comune-hero-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 13px 0;
+  font-size: clamp(0.95rem, 1.05vw, 1.03rem);
+  border-top: 1px solid var(--line-light);
+  border-bottom: 0;
+}
+
+.comune-b .comune-hero-links a:last-child {
+  padding-bottom: 0;
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+}
+
+/* =========================================================
+6. HERO C — pieno e centrato, chip dei comuni
+========================================================= */
+
+.comune-c .comune-hero {
+  text-align: center;
+}
+
+.comune-c .comune-hero-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.comune-c .comune-hero .eyebrow {
+  justify-content: center;
+  color: var(--accent-soft);
+}
+
+.comune-c .comune-hero-rule {
+  width: 60px;
+  height: 1px;
+  margin: 26px auto 0;
+  background: var(--line-light);
+}
+
+.comune-c .comune-hero-sub {
+  max-width: 780px;
+  margin: 26px auto 0;
+}
+
+.comune-c .comune-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: clamp(34px, 4vw, 48px);
+}
+
+.comune-c .comune-hero-chips a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px 22px;
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+.comune-c .comune-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(34px, 4vw, 48px);
+}
+
+.comune-c .comune-hero-actions .hero-buttons {
+  margin-top: 0;
+}
+
+/* =========================================================
+7. SERVIZI A — 4 fasce a tutta larghezza, alternate
+========================================================= */
+
+.comune-a .comune-servizi {
+  padding: 0;
+}
+
+.comune-a .comune-fascia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(34px, 5vw, 76px);
+  align-items: center;
+  padding: var(--section-y) var(--pad-x);
+  background: var(--paper);
+}
+
+/* Il titolo di ogni fascia e' un h2: la sezione non ha piu' un h2 suo.
+   `h2` di style.css e `.comune-page h2` lo farebbero grande come un
+   titolo di sezione; qui riprende i valori dell'h3 di style.css:220,
+   cosi' appare identico a prima. line-height e letter-spacing non si
+   ridichiarano: h2 e h3 li condividono gia'. */
+.comune-a .comune-fascia h2 {
+  max-width: none;
+  margin-bottom: 12px;
+  font-size: clamp(1.22rem, 2vw, 1.68rem);
+  font-weight: 720;
+}
+
+/* nth-of-type, non nth-child: l'h2 qui sopra e' un figlio della sezione
+   e con nth-child sposterebbe la parita' di tutte e quattro le fasce,
+   invertendo fondi e lato dell'immagine. Contando solo gli <article> il
+   titolo esce dal conteggio. Non riportare a nth-child. */
+.comune-a .comune-fascia:nth-of-type(even) {
+  background: var(--paper-light);
+}
+
+/* Fasce pari: immagine a sinistra. Si sposta con order, non con
+   row-reverse: il contenitore e' una griglia, non un flex. */
+.comune-a .comune-fascia:nth-of-type(even) .comune-media {
+  order: -1;
+}
+
+/* =========================================================
+8. SERVIZI B — selettore a foto + un pannello per volta
+   Ha sostituito l'indice sticky: le regole di quello sono state
+   rimosse, non lasciate orfane.
+========================================================= */
+
+.comune-b .comune-selettore {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: clamp(26px, 3vw, 38px);
+}
+
+/* Senza JS le card non fanno niente: si nascondono e restano i quattro
+   pannelli in sequenza. Stesso schema delle linguette di Novara. */
+.no-js .comune-b .comune-selettore {
+  display: none;
+}
+
+.comune-b .comune-scelta {
+  display: block;
+  min-height: 44px;
+  padding: 0;
+  font-family: var(--font-body);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.comune-b .comune-scelta img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color var(--speed);
+}
+
+.comune-b .comune-scelta span {
+  display: block;
+  margin-top: 12px;
+  color: var(--ink-soft);
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  font-weight: 600;
+  transition: color var(--speed);
+}
+
+.comune-b .comune-scelta:hover span {
+  color: var(--accent-dark);
+}
+
+.comune-b .comune-scelta[aria-selected="true"] img {
+  outline-color: var(--accent);
+}
+
+.comune-b .comune-scelta[aria-selected="true"] span {
+  color: var(--accent-dark);
+}
+
+.comune-b .comune-pannello {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: clamp(28px, 4vw, 54px);
+  margin-top: clamp(26px, 3vw, 38px);
+  padding: clamp(28px, 4.1vw, 48px);
+  border-radius: var(--radius-small);
+  background: var(--paper-light);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Il `display: grid` qui sopra e' piu' specifico della regola UA
+   `[hidden] { display: none }`, quindi senza questa riga i pannelli
+   chiusi dal JS resterebbero comunque a schermo. */
+.comune-b .comune-pannello[hidden] {
+  display: none;
+}
+
+/* Tre figli diretti su due righe: il titolo nella prima, la CTA nella
+   seconda che si allunga fino in fondo, il testo a destra su entrambe.
+   Cosi' il bottone sta nell'angolo in basso a sinistra del pannello, e
+   la riga 2 non puo' schiacciarsi sotto il suo contenuto: il bottone non
+   sale mai sul titolo, nemmeno nel pannello col testo piu' corto. */
+.comune-b .comune-pannello > h3 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.comune-b .comune-pannello > .comune-copy {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.comune-b .comune-pannello > .comune-servizi-cta {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: end;
+  justify-self: start;
+}
+
+.comune-b .comune-pannello .comune-copy {
+  max-width: 620px;
+}
+
+.comune-b .comune-pannello .comune-copy p + p {
+  margin-top: 16px;
+}
+
+/* Figlio diretto del pannello, nell'angolo in basso a sinistra: la
+   collocazione sulla griglia sta qui sopra. Resta flex alla larghezza
+   del suo contenuto perche' la sua cella e' larga quanto la colonna del
+   titolo e la pillola non deve tirarsi. Nessun margine: la riga 2 gliela
+   da' la griglia. Sotto i 980px, dove il pannello e' a una colonna, il
+   bottone torna in fondo e riprende il margine: vedi §14. */
+.comune-b .comune-servizi-cta {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 12px 26px rgba(184, 121, 69, 0.24);
+  transition: transform var(--speed), box-shadow var(--speed);
+}
+
+.comune-b .comune-servizi-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(184, 121, 69, 0.32);
+}
+
+/* =========================================================
+9. SERVIZI C — tab a 4 linguette
+========================================================= */
+
+.comune-c .comune-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(26px, 3vw, 38px);
+}
+
+.no-js .comune-c .comune-tablist {
+  display: none;
+}
+
+.comune-c .comune-tablist button {
+  min-height: 44px;
+  padding: 12px 26px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  font-weight: 800;
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--speed), background var(--speed), border-color var(--speed);
+}
+
+.comune-c .comune-tablist button[aria-selected="true"] {
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.comune-c .comune-tabpanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(28px, 4vw, 54px);
+  align-items: center;
+  margin-top: clamp(26px, 3vw, 38px);
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: var(--radius-small);
+  background: var(--paper-light);
+  box-shadow: var(--shadow-soft);
+}
+
+.comune-c .comune-tabpanel + .comune-tabpanel {
+  margin-top: 20px;
+}
+
+/* Il `display: grid` qui sopra e' piu' specifico della regola UA
+   `[hidden] { display: none }`, quindi senza questa riga i pannelli
+   chiusi dal JS resterebbero comunque a schermo. */
+.comune-c .comune-tabpanel[hidden] {
+  display: none;
+}
+
+.comune-bullets li {
+  position: relative;
+  margin-top: 10px;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.14vw, 1.07rem);
+}
+
+.comune-bullets li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* =========================================================
+10. FAQ LOCALI
+========================================================= */
+
+.comune-a .comune-faq {
+  background: var(--paper);
+  text-align: center;
+}
+
+.comune-b .comune-faq,
+.comune-c .comune-faq {
+  background: var(--paper-light);
+}
+
+.comune-faq-answer {
+  color: var(--muted);
+}
+
+/* A — colonna stretta centrata, tutte aperte */
+.comune-a .comune-faq .eyebrow {
+  justify-content: center;
+}
+
+.comune-a .comune-faq h2 {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comune-a .comune-faq-list {
+  max-width: 560px;
+  margin: clamp(34px, 4vw, 52px) auto 0;
+  text-align: left;
+}
+
+.comune-a .comune-faq-item + .comune-faq-item {
+  margin-top: clamp(16px, 1.8vw, 23px);
+}
+
+/* B — testata a sinistra, griglia 2x2 */
+.comune-b .comune-faq-inner {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: clamp(26px, 3.75vw, 57px);
+  align-items: start;
+}
+
+.comune-b .comune-faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.25vw, 33px);
+}
+
+/* A e B — risposta chiusa a 2,5 righe, con un pulsante che la apre.
+   Lo stato di partenza, senza classe, e' tutto aperto e senza pulsante:
+   vale senza JS e per le risposte gia' corte. E' il JS ad aggiungere
+   .has-more solo dove la risposta chiusa sborda davvero.
+   Altezza chiusa: 2,5 righe x line-height 1.65 (style.css:107) x
+   font-size del p (style.css:224). */
+.comune-a .comune-faq-item.has-more,
+.comune-b .comune-faq-item.has-more {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  column-gap: 18px;
+}
+
+.comune-a .comune-faq-item.has-more h3,
+.comune-b .comune-faq-item.has-more h3 {
+  grid-column: 1 / -1;
+}
+
+.comune-a .has-more .comune-faq-answer,
+.comune-b .has-more .comune-faq-answer {
+  position: relative;
+  max-height: calc(2.5 * 1.65 * clamp(0.98rem, 1.14vw, 1.07rem));
+  overflow: hidden;
+  transition: max-height var(--speed);
+}
+
+.comune-a .has-more.is-open .comune-faq-answer,
+.comune-b .has-more.is-open .comune-faq-answer {
+  max-height: none;
+}
+
+/* Sfumatura alta una riga verso il fondo della sezione: --paper su A,
+   --paper-light su B. */
+.comune-a .has-more .comune-faq-answer::after,
+.comune-b .has-more .comune-faq-answer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(1.65 * clamp(0.98rem, 1.14vw, 1.07rem));
+  pointer-events: none;
+  transition: opacity var(--speed);
+}
+
+.comune-a .has-more .comune-faq-answer::after {
+  background: linear-gradient(180deg, transparent, var(--paper));
+}
+
+.comune-b .has-more .comune-faq-answer::after {
+  background: linear-gradient(180deg, transparent, var(--paper-light));
+}
+
+.comune-a .has-more.is-open .comune-faq-answer::after,
+.comune-b .has-more.is-open .comune-faq-answer::after {
+  opacity: 0;
+}
+
+/* Il pulsante sta a destra della risposta, centrato sulla sua prima
+   riga: meta' riga meno meta' pulsante. Chevron 22px, come il segno "+"
+   dell'accordion di C. */
+.comune-faq-more {
+  display: none;
+}
+
+.comune-a .has-more .comune-faq-more,
+.comune-b .has-more .comune-faq-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2;
+  align-self: start;
+  width: 44px;
+  height: 44px;
+  margin-top: calc(1.65 * clamp(0.98rem, 1.14vw, 1.07rem) / 2 - 22px);
+  padding: 0;
+  color: var(--accent);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.comune-faq-more svg {
+  width: 22px;
+  height: 22px;
+  transition: transform var(--speed);
+}
+
+.comune-faq-more[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* C — accordion, prima voce aperta */
+.comune-c .comune-faq-list {
+  margin-top: clamp(26px, 3vw, 38px);
+  border-top: 1px solid var(--line);
+}
+
+.comune-c .comune-faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.comune-c .comune-faq-item h3 {
+  margin-bottom: 0;
+}
+
+.comune-c .comune-faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  min-height: 44px;
+  padding: 20px 0;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.comune-c .comune-faq-toggle::after {
+  content: "+";
+  flex: none;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.comune-c .comune-faq-toggle[aria-expanded="true"]::after {
+  content: "\2013";
+}
+
+.no-js .comune-c .comune-faq-toggle {
+  cursor: default;
+}
+
+.no-js .comune-c .comune-faq-toggle::after {
+  content: none;
+}
+
+.comune-c .comune-faq-answer {
+  padding-bottom: 24px;
+}
+
+/* =========================================================
+11. METODO — fascia --paper-warm
+========================================================= */
+
+.comune-metodo {
+  background: var(--paper-warm);
+}
+
+.comune-step-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.comune-a .comune-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 54px);
+  margin-top: clamp(34px, 4vw, 52px);
+}
+
+.comune-b .comune-steps {
+  margin-top: clamp(34px, 4vw, 52px);
+  border-top: 1px solid var(--line);
+}
+
+.comune-b .comune-step {
+  display: grid;
+  grid-template-columns: 90px 220px minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 38px);
+  align-items: baseline;
+  padding: clamp(22px, 3vw, 32px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* align-self perche' .comune-b .comune-step allinea a baseline e un SVG non ne ha. */
+.comune-b .comune-step-icon {
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.comune-c .comune-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 54px);
+  margin-top: clamp(34px, 4vw, 52px);
+}
+
+/* =========================================================
+12. CONTATTI — fascia --ink, cucitura di 24px verso il footer
+   (stesso trattamento di css/contatti.css:66-71)
+========================================================= */
+
+.comune-contatti {
+  color: var(--white);
+  background: linear-gradient(
+    180deg,
+    var(--ink) 0%,
+    var(--ink) calc(100% - 24px),
+    #050505 100%
+  );
+}
+
+.comune-contatti h2 {
+  color: var(--white);
+}
+
+.comune-contatti .eyebrow {
+  color: var(--accent-soft);
+}
+
+.comune-recapiti p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.comune-recapiti p + p {
+  margin-top: 10px;
+}
+
+/* style.css:1202 da' `width: min(100%, 636px)` a un `.contatti-azioni a`
+   figlio unico. Qui il pulsante deve restare largo quanto il suo testo,
+   come quello dell'hero. Specificita' 0,3,1 contro 0,2,1: vince senza
+   toccare style.css. */
+.comune-contatti .contatti-azioni a:only-child {
+  width: auto;
+}
+
+/* A e C — due colonne, immagine a destra */
+.comune-a .comune-contatti-inner,
+.comune-c .comune-contatti-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(34px, 5vw, 76px);
+  align-items: center;
+}
+
+.comune-a .comune-contatti-media img {
+  height: 100%;
+  min-height: 320px;
+  aspect-ratio: auto;
+}
+
+/* B — griglia 2x2 di card */
+.comune-b .comune-recapiti {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: clamp(26px, 3vw, 38px);
+}
+
+.comune-b .comune-recapito {
+  padding: clamp(20px, 2.4vw, 28px);
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-small);
+}
+
+.comune-b .comune-recapito-label {
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: clamp(0.74rem, 0.95vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.comune-b .comune-contatti .contatti-azioni {
+  margin-top: clamp(26px, 3vw, 38px);
+}
+
+/* =========================================================
+13. IMMAGINI
+========================================================= */
+
+.comune-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-image);
+  box-shadow: var(--shadow-image);
+}
+
+/* =========================================================
+14. RESPONSIVE — 980
+========================================================= */
+
+@media (max-width: 980px) {
+  .comune-b .comune-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-a .comune-fascia {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-a .comune-fascia:nth-of-type(even) .comune-media {
+    order: 0;
+  }
+
+  .comune-b .comune-faq-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* A una colonna le collocazioni della §8 chiederebbero una colonna 2
+     che qui non esiste, e il browser ne creerebbe una implicita: si
+     azzerano, e i tre figli tornano nell'ordine del DOM. */
+  .comune-b .comune-pannello {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .comune-b .comune-pannello > h3,
+  .comune-b .comune-pannello > .comune-copy,
+  .comune-b .comune-pannello > .comune-servizi-cta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  /* Il margine e' dichiarato solo qui: sopra i 980 il bottone ha una
+     riga sua e non gli serve. */
+  .comune-b .comune-pannello > .comune-servizi-cta {
+    margin-top: 18px;
+  }
+
+  .comune-b .comune-faq-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-c .comune-tabpanel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-a .comune-contatti-inner,
+  .comune-c .comune-contatti-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-a .comune-contatti-media img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  /* Il box torna sotto la colonna di testo: si azzerano i piazzamenti
+     della griglia, e il margine sostituisce il row-gap che la sezione 5
+     non ha piu'. Stesso valore del vecchio gap. */
+  .comune-b .comune-hero-inner > .eyebrow,
+  .comune-b .comune-hero-titolo,
+  .comune-b .comune-hero-inner > .hero-buttons,
+  .comune-b .comune-hero-box {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .comune-b .comune-hero-box {
+    align-self: stretch;
+    margin-top: clamp(34px, 5vw, 76px);
+  }
+}
+
+/* =========================================================
+15. RESPONSIVE — 720
+========================================================= */
+
+@media (max-width: 720px) {
+  .comune-b .comune-selettore {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .comune-a .comune-hero-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-a .comune-hero-links a {
+    justify-content: flex-start;
+    border-left: 0;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .comune-a .comune-hero-links a:last-child {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .comune-a .comune-steps,
+  .comune-c .comune-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-b .comune-step {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .comune-step-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Come .hero-buttons a in style.css:1734-1738: sotto i 720px i
+     pulsanti vanno a tutta larghezza. */
+  .comune-b .comune-servizi-cta {
+    width: 100%;
+  }
+
+  .comune-b .comune-recapiti {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .comune-c .comune-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Sotto i 720px style.css:1735-1739 porta a piena larghezza sia il
+     pulsante dell'hero sia questo. La regola della sezione 12 e' piu'
+     specifica e lo impedirebbe: qui si rimette in riga. */
+  .comune-contatti .contatti-azioni a:only-child {
+    width: 100%;
+  }
+}

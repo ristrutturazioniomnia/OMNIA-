@@ -19,7 +19,7 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.36), rgba(8, 13, 18, 0.58)),
-    url("../img/brochure.png") center center / cover no-repeat;
+    url("../img/brochure.jpg") center center / cover no-repeat;
 }
 
 .area-rank2-hero .hero-content p:not(.eyebrow) {
@@ -97,8 +97,8 @@
 
 .area-rank2-copy a:hover,
 .area-rank2-proof a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-dark);
+  border-color: currentColor;
 }
 
 .area-rank2-side-image,
@@ -729,7 +729,7 @@
 }
 
 .area-rank2-service-card:hover a {
-  color: var(--accent);
+  color: var(--accent-dark);
   transform: translateX(3px);
 }
 
@@ -978,7 +978,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .area-rank2-wide-image,
   .area-rank2-wide-panel {
     min-height: 560px;
@@ -1033,7 +1033,7 @@ Evita che il titolo esca dallo schermo su smartphone
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .area-rank2-hero h1 {
     font-size: clamp(2.05rem, 10.5vw, 3rem);
   }

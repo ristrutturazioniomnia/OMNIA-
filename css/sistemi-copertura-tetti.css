@@ -2,7 +2,7 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.24), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.38), rgba(8, 13, 18, 0.58)),
-    url("/img/brochure.png") center center / cover no-repeat;
+    url("/img/brochure.jpg") center center / cover no-repeat;
 }
 
 .service-page {
@@ -142,8 +142,7 @@
   border-radius: 30px;
   color: var(--white);
   background:
-    linear-gradient(145deg, rgba(8, 13, 18, 0.84), rgba(23, 34, 45, 0.78)),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+    linear-gradient(145deg, rgba(8, 13, 18, 0.84), rgba(23, 34, 45, 0.78));
   box-shadow: 0 28px 74px rgba(23, 34, 45, 0.20);
   isolation: isolate;
 }
@@ -256,8 +255,8 @@
 }
 
 .service-feature-text a:not(.service-inline-link):hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-dark);
+  border-color: currentColor;
 }
 
 .service-feature-media {
@@ -318,10 +317,10 @@
 }
 
 .wide-detail {
+  padding: 0;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86));
 }
 
 .wide-detail h2,
@@ -338,10 +337,41 @@
 }
 
 .wide-detail-inner {
-  max-width: 920px;
-  padding: clamp(28px, 4vw, 48px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 42%);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: stretch;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(70px, 8vw, 120px) clamp(22px, 5vw, 72px);
   border-top: 1px solid var(--line-light);
   border-bottom: 1px solid var(--line-light);
+}
+
+.wide-detail-copy {
+  max-width: 820px;
+}
+
+/* border-radius e box-shadow sono volutamente fuori dal sistema:
+   28px invece di --radius-image (30px) e un'ombra propria piu' scura
+   di --shadow-image, perche' l'immagine appoggia su fondo scuro.
+   Conservati dagli style inline per non alterare l'aspetto. */
+.wide-detail-media {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.wide-detail-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .process-section {
@@ -394,8 +424,7 @@
   align-items: start;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.95), rgba(23, 34, 45, 0.82)),
-    url("/img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.95), rgba(23, 34, 45, 0.82));
 }
 
 .local-section h2,
@@ -414,17 +443,6 @@
 .local-content {
   padding-top: clamp(18px, 2.4vw, 30px);
   border-top: 1px solid var(--line-light);
-}
-
-.local-content a {
-  color: var(--accent-soft);
-  font-weight: 800;
-  border-bottom: 1px solid rgba(217, 183, 142, 0.38);
-}
-
-.local-content a:hover {
-  color: var(--white);
-  border-color: var(--white);
 }
 
 .local-note {
@@ -604,7 +622,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .service-feature-media img {
     height: 280px;
   }
@@ -698,8 +716,17 @@
 
 .roof-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a):hover,
 .service-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a):hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration-color: currentColor;
+}
+
+/* Fondo scuro: le card .linked-service-card stanno dentro un blocco --ink,
+   dove --accent-dark scenderebbe a 2,46:1. Qui il colore giusto e' --accent. */
+.roof-page a.linked-service-card:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a),
+.roof-page a.linked-service-card:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a):hover,
+.service-page a.linked-service-card:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a),
+.service-page a.linked-service-card:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):not(.contatti-sidebar a):hover {
+  color: var(--accent);
 }
 
 .service-intro::before,
@@ -742,8 +769,7 @@
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86));
 }
 
 .linked-services::before {
@@ -897,8 +923,7 @@
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("/img/sistemi-copertura-tetti.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86));
 }
 
 .linked-services::before {
@@ -1090,7 +1115,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .linked-service-card {
     min-height: 390px;
   }
@@ -1103,8 +1128,7 @@
     overflow: hidden !important;
   }
 
-  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner,
-  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner[style] {
+  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
     grid-template-rows: auto auto !important;
@@ -1118,15 +1142,13 @@
     box-sizing: border-box !important;
   }
 
-  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner > div,
-  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner > div[style] {
+  html body main.service-page.roof-page section.wide-detail > .wide-detail-inner > div {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
   }
 
-  html body main.service-page.roof-page section.wide-detail figure,
-  html body main.service-page.roof-page section.wide-detail figure[style] {
+  html body main.service-page.roof-page section.wide-detail figure {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -1141,7 +1163,6 @@
   }
 
   html body main.service-page.roof-page section.wide-detail figure img,
-  html body main.service-page.roof-page section.wide-detail figure img[style],
   html body main.service-page.roof-page section.wide-detail img[src*="grondaia"] {
     position: static !important;
     inset: auto !important;

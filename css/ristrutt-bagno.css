@@ -10,7 +10,7 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.22), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.18), rgba(8, 13, 18, 0.52)),
-    url("../img/brochure.png") center center / cover no-repeat;
+    url("../img/brochure.jpg") center center / cover no-repeat;
 }
 
 .service-page .service-section {
@@ -93,7 +93,7 @@
 }
 
 .service-section-text a:not(.service-inline-link):hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   border-color: transparent;
 }
 
@@ -586,7 +586,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .service-inline-link {
     width: 100%;
     justify-content: center;
@@ -664,7 +664,7 @@
 }
 
 .service-page a:not(.hero-buttons a):not(.service-inline-link):not(.contatti-azioni a):hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration-color: currentColor;
 }
 
@@ -710,8 +710,7 @@
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("../img/ristrutturazione-bagno.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86));
 }
 
 .service-section-dark::before {
@@ -881,8 +880,7 @@
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86)),
-    url("../img/ristrutturazione-bagno.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.86));
 }
 
 .rank3-section.service-section-dark::before {
@@ -1062,7 +1060,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .rank3-card,
   .service-page .rank3-card {
     min-height: 390px;

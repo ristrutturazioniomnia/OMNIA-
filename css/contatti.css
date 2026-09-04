@@ -11,8 +11,10 @@ CSS dedicato completo
 }
 
 .contact-main {
-  --contact-top-space: clamp(96px, 9vh, 118px);
-  --contact-bottom-space: clamp(34px, 5vh, 54px);
+  /* Il blocco scuro combacia con navbar e footer: nessun padding verticale.
+     Lo spazio per la navbar fixed (62px + 1px border) è dentro .contact-card. */
+  --contact-top-space: 0px;
+  --contact-bottom-space: 0px;
 
   display: flex;
   align-items: stretch;
@@ -33,6 +35,21 @@ CSS dedicato completo
   margin: 0 auto;
 }
 
+/* Nel markup .contact-content viene prima di .contact-card, cosi che l H1
+   sia il primo heading della pagina e che da telefono titolo e pulsanti
+   stiano sopra i recapiti. Da 1081px in su l ordine a schermo torna
+   quello di sempre: colonna scura a sinistra. Vale anche dentro la media
+   query (min-width: 1081px) and (max-height: 850px), che e piu stretta. */
+@media (min-width: 1081px) {
+  .contact-shell > .contact-card {
+    order: 1;
+  }
+
+  .contact-shell > .contact-content {
+    order: 2;
+  }
+}
+
 /* =========================================================
 COLONNA SINISTRA SCURA
 ========================================================= */
@@ -42,15 +59,15 @@ COLONNA SINISTRA SCURA
   overflow: hidden;
   min-height: 100%;
   padding: clamp(34px, 3.8vw, 48px) clamp(38px, 4vw, 56px);
+  /* 63px = altezza navbar fixed (62px + 1px di border-bottom) */
+  padding-top: calc(63px + clamp(34px, 3.8vw, 48px));
   color: var(--white);
   background:
     linear-gradient(
       180deg,
-      rgba(23, 34, 45, 0) 0%,
-      rgba(23, 34, 45, 0.88) 12%,
-      rgba(23, 34, 45, 0.98) 50%,
-      rgba(23, 34, 45, 0.88) 88%,
-      rgba(23, 34, 45, 0) 100%
+      var(--ink) 0%,
+      var(--ink) calc(100% - 24px),
+      #050505 100%
     );
   border-left: 2px solid rgba(184, 121, 69, 0.95);
   border-right: 2px solid rgba(184, 121, 69, 0.95);
@@ -66,15 +83,7 @@ COLONNA SINISTRA SCURA
   top: 0;
   bottom: 0;
   width: 1px;
-  background:
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(217, 183, 142, 0.35) 14%,
-      rgba(217, 183, 142, 0.85) 50%,
-      rgba(217, 183, 142, 0.35) 86%,
-      transparent 100%
-    );
+  background: rgba(217, 183, 142, 0.85);
   pointer-events: none;
   z-index: 5;
 }
@@ -209,6 +218,12 @@ a.contact-data-item:hover {
   background: rgba(217, 183, 142, 0.13);
 }
 
+.contact-data-icon svg {
+  display: block;
+  width: auto;
+  height: 1em;
+}
+
 .contact-data-label {
   display: block;
   margin-bottom: 4px;
@@ -250,17 +265,11 @@ COLONNA DESTRA
   position: relative;
   align-self: start;
   min-width: 0;
-  padding-top: clamp(22px, 3vw, 32px);
+  /* 63px di margine (non padding): il border-top resta visibile
+     subito sotto la navbar fixed invece di finirci sotto. */
+  margin-top: 63px;
+  padding-top: clamp(14px, 1.6vw, 20px);
   border-top: 1px solid var(--line-strong);
-}
-
-.contact-content::before {
-  content: "";
-  display: block;
-  width: 86px;
-  height: 3px;
-  margin-bottom: 22px;
-  background: var(--accent);
 }
 
 .contact-content .eyebrow {
@@ -502,6 +511,15 @@ AREE NELLA COLONNA DESTRA
   margin-top: clamp(28px, 3.2vw, 40px);
 }
 
+.contact-areas-intro {
+  max-width: 560px;
+  margin-bottom: clamp(18px, 2.2vw, 26px);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  line-height: 1.5;
+}
+
 .contact-content .contact-link-grid-areas a {
   min-height: 98px;
 }
@@ -511,17 +529,15 @@ DESKTOP BASSI / NOTEBOOK
 ========================================================= */
 
 @media (min-width: 1081px) and (max-height: 850px) {
-  .contact-main {
-    --contact-top-space: 88px;
-    --contact-bottom-space: 28px;
-  }
+  /* Nessun override di --contact-top-space / --contact-bottom-space:
+     restano a 0 così il blocco scuro combacia con navbar e footer. */
 
   .contact-shell {
     gap: clamp(34px, 4vw, 56px);
   }
 
   .contact-card {
-    padding-top: 30px;
+    padding-top: calc(63px + 30px);
     padding-bottom: 30px;
   }
 
@@ -570,11 +586,8 @@ DESKTOP BASSI / NOTEBOOK
   }
 
   .contact-content {
-    padding-top: 22px;
-  }
-
-  .contact-content::before {
-    margin-bottom: 18px;
+    margin-top: 63px;
+    padding-top: 14px;
   }
 
   .contact-content .eyebrow {
@@ -620,6 +633,19 @@ DESKTOP BASSI / NOTEBOOK
 }
 
 /* =========================================================
+DESKTOP: DISTANZA DELLE CARD AREE
+Distanza fissa dal paragrafo, non ancoraggio in fondo: le
+card restano legate al testo a qualunque altezza di finestra.
+========================================================= */
+
+@media (min-width: 1081px) {
+  .contact-content .contact-link-grid-areas {
+    margin-top: clamp(56px, 6vh, 88px);
+    margin-bottom: clamp(40px, 4vw, 56px);
+  }
+}
+
+/* =========================================================
 RESPONSIVE
 ========================================================= */
 
@@ -639,6 +665,16 @@ RESPONSIVE
     min-height: calc(100svh - var(--contact-top-space));
     padding-top: clamp(64px, 8vw, 86px);
     padding-bottom: clamp(64px, 8vw, 86px);
+    /* A una colonna sotto la card c'è .contact-content (fondo chiaro),
+       non il footer: la cucitura nera qui è sbagliata. Si sfuma a
+       trasparente per fondersi col gradiente di .contact-page. */
+    background:
+      linear-gradient(
+        180deg,
+        var(--ink) 0%,
+        var(--ink) 88%,
+        rgba(23, 34, 45, 0) 100%
+      );
   }
 
   .contact-card-heading h2 {
@@ -647,6 +683,9 @@ RESPONSIVE
   }
 
   .contact-content {
+    /* A una colonna la colonna chiara sta sotto la card, non sotto la
+       navbar: nessun margine di compensazione, spaziatura invariata. */
+    margin-top: 0;
     padding-top: 36px;
   }
 
@@ -656,6 +695,24 @@ RESPONSIVE
 
   .contact-link-grid-areas {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+FORMATI INTERMEDI
+Qui la navbar è ancora fixed e alta 63px: il blocco scuro
+ci combacia come su desktop. Sotto gli 820px la navbar
+diventa position: absolute e va a capo su più righe,
+quindi l'altezza non è prevedibile e non si compensa.
+========================================================= */
+
+@media (min-width: 821px) and (max-width: 1080px) {
+  .contact-main {
+    --contact-top-space: 0px;
+  }
+
+  .contact-card {
+    padding-top: calc(63px + clamp(64px, 8vw, 86px));
   }
 }
 
@@ -673,7 +730,7 @@ RESPONSIVE
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .contact-main {
     padding-left: 18px;
     padding-right: 18px;

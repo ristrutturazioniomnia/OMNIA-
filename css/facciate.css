@@ -13,7 +13,7 @@
 }
 
 .facciate-page a:not(.hero-buttons a):not(.text-cta):not(.servizio-link-card):not(.contatti-azioni a):hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration-color: currentColor;
 }
 
@@ -21,7 +21,7 @@
   background:
     radial-gradient(circle at 50% 34%, rgba(184, 121, 69, 0.25), transparent 34rem),
     linear-gradient(180deg, rgba(8, 13, 18, 0.30), rgba(8, 13, 18, 0.56)),
-    url("../img/brochure.png") center center / cover no-repeat;
+    url("../img/brochure.jpg") center center / cover no-repeat;
 }
 
 .facciate-hero h1 {
@@ -407,8 +407,7 @@
 .aree-facciate {
   color: var(--white);
   background:
-    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.84)),
-    url("../img/aree-servite-milano-pavia.jpg") center center / cover no-repeat;
+    linear-gradient(110deg, rgba(9, 16, 23, 0.96), rgba(23, 34, 45, 0.84));
 }
 
 .aree-facciate::before {
@@ -458,11 +457,6 @@
 
 .area-rank-card p {
   max-width: none;
-}
-
-.area-rank-card a {
-  color: var(--accent-soft) !important;
-  text-decoration-color: rgba(217, 183, 142, 0.38) !important;
 }
 
 .area-rank-card:hover {
@@ -667,7 +661,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .section-split__media img {
     height: 300px;
   }
