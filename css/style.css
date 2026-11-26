@@ -2260,3 +2260,42 @@ UTILITY
     margin: 4px 0 8px;
   }
 }
+
+/* Firma HS Agency in fondo al footer */
+.footer__bottom {
+  width: 100%;
+  max-width: 1440px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer .footer__firma {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  color: #9fa0a0;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer .footer__firma:hover {
+  color: #ffffff;
+}
+
+.footer .footer__firma img {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .footer__bottom {
+    margin-top: 28px;
+    justify-content: flex-start;
+  }
+}
